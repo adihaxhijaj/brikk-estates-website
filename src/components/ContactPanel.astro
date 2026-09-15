@@ -55,7 +55,9 @@ const pv = priceView(l, lang);
   .contact-panel__price { font-size: var(--fs-lg); font-weight: 780; font-stretch: 110%; line-height: 1.2; }
   .contact-panel__sub { font-size: var(--fs-sm); font-weight: 500; color: var(--muted); font-stretch: 100%; }
   .contact-panel__title { font-size: var(--fs-md); margin-top: var(--s-2); }
-  .contact-panel__actions { display: grid; grid-template-columns: 1fr 1fr; gap: var(--s-2); }
+  .contact-panel { min-width: 0; }
+  .contact-panel__actions { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 8.5rem), 1fr)); gap: var(--s-2); }
+  .contact-panel__actions .btn { padding-inline: 0.6rem; }
   .contact-panel__phone { display: grid; gap: 2px; font-weight: 650; }
   .contact-panel__note { font-weight: 450; font-size: var(--fs-sm); color: var(--muted); }
   .contact-panel__status { font-size: var(--fs-sm); color: var(--green-ink); min-height: 1.4em; margin-top: var(--s-1); }

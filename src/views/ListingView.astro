@@ -212,7 +212,8 @@ const jsonLd = [
   .detail__loc { display: flex; gap: var(--s-2); align-items: flex-start; color: var(--ink-2); }
   .detail__loc :global(svg) { color: var(--green); flex: none; margin-top: 0.2em; }
 
-  .detail__layout { display: grid; gap: var(--s-6); margin-top: var(--s-6); }
+  .detail__layout { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--s-6); margin-top: var(--s-6); }
+  .detail__side { min-width: 0; }
   @media (min-width: 62rem) {
     .detail__layout { grid-template-columns: minmax(0, 1fr) 22rem; gap: var(--s-7); align-items: start; }
     .detail__side { position: sticky; top: calc(var(--header-h) + var(--s-4)); }
@@ -225,7 +226,8 @@ const jsonLd = [
   .facts :global(svg) { color: var(--green); }
 
   .spec { display: grid; border-top: 1px solid var(--line); }
-  .spec > div { display: grid; grid-template-columns: minmax(8rem, 40%) 1fr; gap: var(--s-4); padding: var(--s-3) 0; border-bottom: 1px solid var(--line); }
+  .spec > div { display: grid; grid-template-columns: minmax(0, 40%) minmax(0, 1fr); gap: var(--s-4); padding: var(--s-3) 0; border-bottom: 1px solid var(--line); }
+  .spec dt { overflow-wrap: anywhere; }
   .spec dt { color: var(--muted); }
   .spec dd { font-weight: 550; overflow-wrap: anywhere; }
   .spec--price dd { font-size: var(--fs-md); font-weight: 700; }
