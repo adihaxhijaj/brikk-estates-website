@@ -77,82 +77,89 @@
     "Banesa aktualisht është në proces të legalizimit, ndërsa kontrata e shitblerjes realizohet përmes avokatit.",
     "Çmimi i pronës është 125,000€."
   ],
-  "descriptionEn": null,
+  "descriptionEn": [
+    "Offered for sale: an apartment with an area of 72m², located on Rruga Abdyl Frashëri, in Aktash, Prishtina.",
+    "The apartment is on the 10th floor, in a building with an elevator, and is of the 1+1 type. The space consists of a living room with kitchen, one bedroom, one bathroom and a terrace.",
+    "A private garage is also included in the price.",
+    "The location offers good access to the Gazmend Zajmi and Lordi Bajron streets, while various private and public services are nearby.",
+    "The apartment is currently in the process of legalisation, while the sale contract is carried out through a lawyer.",
+    "The price of the property is €125,000."
+  ],
   "descriptionEnIsTranslation": true,
   "extraCaptions": [],
   "images": [
-    {
-      "src": "../../assets/listings/b388/01.jpg",
-      "file": "01.jpg",
-      "width": 1080,
-      "height": 810,
-      "kind": "other",
-      "overlay": null,
-      "hasTextOverlay": null,
-      "altSq": "Fotografi e pronës, banesë në shitje në Aktash, Prishtinë, Ref B388 (1/6)",
-      "altEn": "Property photo, apartment for sale in Aktash, Prishtina, Ref B388 (1/6)"
-    },
     {
       "src": "../../assets/listings/b388/02.jpg",
       "file": "02.jpg",
       "width": 1080,
       "height": 810,
-      "kind": "other",
-      "overlay": null,
-      "hasTextOverlay": null,
-      "altSq": "Fotografi e pronës, banesë në shitje në Aktash, Prishtinë, Ref B388 (2/6)",
-      "altEn": "Property photo, apartment for sale in Aktash, Prishtina, Ref B388 (2/6)"
+      "kind": "living",
+      "overlay": "brand",
+      "hasTextOverlay": false,
+      "altSq": "Qëndrimi ditor, banesë në shitje në Aktash, Prishtinë, Ref B388 (1/6)",
+      "altEn": "Living room, apartment for sale in Aktash, Prishtina, Ref B388 (1/6)"
     },
     {
       "src": "../../assets/listings/b388/03.jpg",
       "file": "03.jpg",
       "width": 1080,
       "height": 810,
-      "kind": "other",
-      "overlay": null,
-      "hasTextOverlay": null,
-      "altSq": "Fotografi e pronës, banesë në shitje në Aktash, Prishtinë, Ref B388 (3/6)",
-      "altEn": "Property photo, apartment for sale in Aktash, Prishtina, Ref B388 (3/6)"
+      "kind": "kitchen",
+      "overlay": "brand",
+      "hasTextOverlay": false,
+      "altSq": "Kuzhina, banesë në shitje në Aktash, Prishtinë, Ref B388 (2/6)",
+      "altEn": "Kitchen, apartment for sale in Aktash, Prishtina, Ref B388 (2/6)"
     },
     {
       "src": "../../assets/listings/b388/04.jpg",
       "file": "04.jpg",
       "width": 1080,
       "height": 810,
-      "kind": "other",
-      "overlay": null,
-      "hasTextOverlay": null,
-      "altSq": "Fotografi e pronës, banesë në shitje në Aktash, Prishtinë, Ref B388 (4/6)",
-      "altEn": "Property photo, apartment for sale in Aktash, Prishtina, Ref B388 (4/6)"
+      "kind": "dining",
+      "overlay": "brand",
+      "hasTextOverlay": false,
+      "altSq": "Tryezaria, banesë në shitje në Aktash, Prishtinë, Ref B388 (3/6)",
+      "altEn": "Dining area, apartment for sale in Aktash, Prishtina, Ref B388 (3/6)"
     },
     {
       "src": "../../assets/listings/b388/05.jpg",
       "file": "05.jpg",
       "width": 1080,
       "height": 810,
-      "kind": "other",
-      "overlay": null,
-      "hasTextOverlay": null,
-      "altSq": "Fotografi e pronës, banesë në shitje në Aktash, Prishtinë, Ref B388 (5/6)",
-      "altEn": "Property photo, apartment for sale in Aktash, Prishtina, Ref B388 (5/6)"
+      "kind": "bedroom",
+      "overlay": "brand",
+      "hasTextOverlay": false,
+      "altSq": "Dhoma e gjumit, banesë në shitje në Aktash, Prishtinë, Ref B388 (4/6)",
+      "altEn": "Bedroom, apartment for sale in Aktash, Prishtina, Ref B388 (4/6)"
     },
     {
       "src": "../../assets/listings/b388/06.jpg",
       "file": "06.jpg",
       "width": 1080,
       "height": 810,
-      "kind": "other",
-      "overlay": null,
-      "hasTextOverlay": null,
-      "altSq": "Fotografi e pronës, banesë në shitje në Aktash, Prishtinë, Ref B388 (6/6)",
-      "altEn": "Property photo, apartment for sale in Aktash, Prishtina, Ref B388 (6/6)"
+      "kind": "bedroom",
+      "overlay": "brand",
+      "hasTextOverlay": false,
+      "altSq": "Dhoma e gjumit, banesë në shitje në Aktash, Prishtinë, Ref B388 (5/6)",
+      "altEn": "Bedroom, apartment for sale in Aktash, Prishtina, Ref B388 (5/6)"
+    },
+    {
+      "src": "../../assets/listings/b388/01.jpg",
+      "file": "01.jpg",
+      "width": 1080,
+      "height": 810,
+      "kind": "living",
+      "overlay": "text",
+      "hasTextOverlay": true,
+      "altSq": "Qëndrimi ditor, banesë në shitje në Aktash, Prishtinë, Ref B388 (6/6)",
+      "altEn": "Living room, apartment for sale in Aktash, Prishtina, Ref B388 (6/6)"
     }
   ],
   "coverIndex": 0,
   "provenance": {
     "overridden": {},
     "warnings": [],
-    "reviewedImages": false,
-    "translated": false
+    "reviewedImages": true,
+    "translated": true
   }
 }

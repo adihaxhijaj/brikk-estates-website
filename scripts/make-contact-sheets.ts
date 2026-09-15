@@ -1,7 +1,7 @@
 // Builds one numbered contact sheet per listing (data/import-draft/sheets/<REF>.jpg) for human/visual image review.
 import fs from 'node:fs/promises';
 import path from 'node:path';
-import sharp from 'sharp';
+import sharp, { type OverlayOptions } from 'sharp';
 
 const SOURCE = path.resolve('..', 'instagram', 'listings');
 const OUT = path.join('data', 'import-draft', 'sheets');
@@ -13,7 +13,7 @@ for (const dir of (await fs.readdir(SOURCE)).sort()) {
   const files = (await fs.readdir(path.join(SOURCE, dir))).filter((f) => /\.jpe?g$/i.test(f)).sort();
   const rows = Math.ceil(files.length / COLS);
   const W = COLS * (CELL + PAD) + PAD, H = rows * (CELL + LABEL + PAD) + PAD;
-  const composites: sharp.OverlayOptions[] = [];
+  const composites: OverlayOptions[] = [];
   for (const [i, f] of files.entries()) {
     const x = PAD + (i % COLS) * (CELL + PAD), y = PAD + Math.floor(i / COLS) * (CELL + LABEL + PAD);
     const thumb = await sharp(path.join(SOURCE, dir, f)).rotate().resize(CELL, CELL, { fit: 'contain', background: '#222' }).toBuffer();

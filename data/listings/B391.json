@@ -1,0 +1,16 @@
+{
+  "ref": "B391",
+  "descriptionEn": [
+    "Offered for sale: an apartment with an area of 109m², positioned on the 8th floor.\nThe apartment has a functional layout and consists of a living room with kitchen, two bedrooms, one bathroom and two terraces.\nThe property has an ownership certificate.",
+    "Price: €700/m²\nTotal price: €76,300",
+    "For interior photos of the apartment, contact us on WhatsApp or Viber:"
+  ],
+  "images": [
+    { "file": "01.jpg", "kind": "aerial", "overlay": "text", "reason": "aerial photo of the area with label \"Rruga Abedin Sogojeva, Fushë Kosovë\" and \"700€/m²\" (matches caption); building not marked" }
+  ],
+  "overrides": {
+    "city": { "value": "Fushë Kosovë", "evidence": ["image:01.jpg Rruga Abedin Sogojeva, Fushë Kosovë"], "note": "caption names only the street; the city is shown on the listing's own cover graphic" },
+    "country": { "value": "XK", "evidence": ["image:01.jpg Rruga Abedin Sogojeva, Fushë Kosovë"], "note": "follows from the city on the listing's own cover graphic (Fushë Kosovë, Kosovo)" }
+  },
+  "notes": "Only one image (aerial, no interior photos; caption asks buyers to request interior photos via WhatsApp/Viber). The last descriptionSq paragraph ends with a colon because the phone number was stripped as a contact line; consider rewording or dropping that paragraph on the site. Total €76,300 = 109 m² × €700 as stated. Generated title will now use Fushë Kosovë instead of the caption's street-based title."
+}

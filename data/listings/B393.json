@@ -1,0 +1,35 @@
+{
+  "ref": "B393",
+  "descriptionEn": [
+    "Offered for sale: land with a total area of about 74 ares, divided into 14 individual plots, each approximately 4.6 to 5.1 ares in size.",
+    "The plots are organised with access via a shared cadastrally registered road, which connects them to the main road and provides regular access to each plot.",
+    "The property has the necessary infrastructure available, has an ownership certificate and is suitable both for individual construction and living, and for a larger investment.",
+    "Price: €3,400 per are\nFor the purchase of the entire property, the price is negotiated separately."
+  ],
+  "images": [
+    {
+      "file": "01.jpg",
+      "kind": "aerial",
+      "overlay": "text",
+      "reason": "aerial photo with the 14 plots outlined and numbered; label \"Mramor, Prishtinë.\", \"74 Ari\", \"3400€/Ari\" (matches caption)"
+    },
+    {
+      "file": "02.jpg",
+      "kind": "render",
+      "overlay": "text",
+      "reason": "AI concept visualisation of 14 villas with pools on the plots; on-image disclaimer \"Vizualizim konceptual me AI ilustrim i potencialit të investimit të ardhshëm.\""
+    },
+    {
+      "file": "03.jpg",
+      "kind": "render",
+      "overlay": "text",
+      "reason": "wide AI concept visualisation of the villa development in the landscape; same on-image AI disclaimer"
+    }
+  ],
+  "notes": "02.jpg and 03.jpg are AI-generated concept renders carrying an AI disclaimer only on the image; the caption has no AI disclaimer, so aiDisclaimerSq is null and aiVisualisation will be false. Maintainer should consider flagging the listing as an AI visualisation (not an allowed override key). The renders are gallery-sorted after 01.jpg because of text overlays. No total price stated (price per are only; whole-property price negotiated separately). Street not stated.",
+  "aiDisclaimerFromImage": {
+    "file": "02.jpg",
+    "sq": "Vizualizim konceptual me AI ilustrim i potencialit të investimit të ardhshëm.",
+    "en": "Conceptual AI visualisation illustrating the potential of a future investment."
+  }
+}

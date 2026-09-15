@@ -1,0 +1,75 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Icon from '../components/Icon.astro';
+import { SITE } from '../config/site';
+import { dict, ROUTES, type Lang } from '../i18n';
+import { agentJsonLd } from '../lib/seo';
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const t = dict(lang);
+const c = t.contact;
+const cards = [
+  {
+    id: 'phone', label: c.phoneLabel, value: SITE.phoneDisplay, copy: SITE.phoneDisplay, copyLabel: c.copyPhone,
+    actions: [
+      { href: `tel:${SITE.phoneE164}`, label: c.call, icon: 'phone', primary: true },
+      { href: SITE.whatsapp, label: c.whatsapp, icon: 'message-circle' },
+      { href: SITE.viber, label: c.viber, icon: 'phone-call' },
+    ],
+  },
+  { id: 'info', label: c.infoLabel, value: SITE.emailInfo, copy: SITE.emailInfo, copyLabel: c.copyEmail(SITE.emailInfo), actions: [{ href: `mailto:${SITE.emailInfo}`, label: c.writeEmail, icon: 'mail', primary: true }] },
+  { id: 'properties', label: c.propertiesLabel, value: SITE.emailProperties, copy: SITE.emailProperties, copyLabel: c.copyEmail(SITE.emailProperties), actions: [{ href: `mailto:${SITE.emailProperties}`, label: c.writeEmail, icon: 'mail', primary: true }] },
+  { id: 'instagram', label: c.instagramLabel, value: SITE.instagramHandle, copy: null, copyLabel: '', actions: [{ href: SITE.instagram, label: c.openInstagram, icon: 'external-link', primary: true }] },
+];
+---
+<BaseLayout lang={lang} title={c.metaTitle} description={c.metaDescription} alternates={ROUTES.contact} jsonLd={agentJsonLd(lang)}>
+  <section class="contact-hero surface-green on-dark">
+    <div class="container">
+      <h1>{c.h1}</h1>
+      <p>{c.intro}</p>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container">
+      <ul role="list" class="contact-cards">
+        {cards.map((card) => (
+          <li class="contact-card">
+            <h2 class="contact-card__label">{card.label}</h2>
+            <p class="contact-card__value tabular" id={`value-${card.id}`}>{card.value}</p>
+            <div class="contact-card__actions">
+              {card.actions.map((a) => (
+                <a class:list={['btn', { 'btn--outline': !a.primary }]} href={a.href} rel={a.href.startsWith('http') ? 'noopener' : undefined}>
+                  <Icon name={a.icon} />{a.label}
+                </a>
+              ))}
+              {card.copy && (
+                <button type="button" class="btn btn--outline" data-copy={card.copy} data-ok={c.copied} data-fail={c.copyFailed} data-status={`status-${card.id}`} aria-label={card.copyLabel} hidden>
+                  <Icon name="copy" />{c.copy}
+                </button>
+              )}
+            </div>
+            {card.copy && <p class="contact-card__status" id={`status-${card.id}`} role="status" aria-live="polite"></p>}
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  import '../scripts/copy-share';
+</script>
+
+<style>
+  .contact-hero { padding-block: clamp(3rem, 2rem + 5vw, 6rem); }
+  .contact-hero h1 { font-size: var(--fs-2xl); color: var(--cream); line-height: 1.04; }
+  .contact-hero p { margin-top: var(--s-4); font-size: var(--fs-md); max-width: 44ch; }
+  .contact-cards { display: grid; gap: var(--s-4); grid-template-columns: repeat(auto-fit, minmax(min(100%, 22rem), 1fr)); }
+  .contact-card { display: grid; gap: var(--s-3); align-content: start; padding: var(--s-5); background: var(--white); border: 1px solid var(--line); border-radius: var(--radius-lg); }
+  .contact-card__label { font-size: var(--fs-sm); font-weight: 600; color: var(--muted); font-stretch: 100%; letter-spacing: 0; }
+  .contact-card__value { font-size: var(--fs-lg); font-weight: 750; font-stretch: 105%; overflow-wrap: anywhere; line-height: 1.25; }
+  .contact-card__actions { display: flex; flex-wrap: wrap; gap: var(--s-2); }
+  .contact-card__actions > * { flex: 1 1 11rem; }
+  .contact-card__status { font-size: var(--fs-sm); color: var(--green-ink); min-height: 1.4em; }
+</style>

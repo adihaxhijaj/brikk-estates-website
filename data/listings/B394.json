@@ -1,0 +1,33 @@
+{
+  "ref": "B394",
+  "descriptionEn": [
+    "Offered for rent: an apartment with an area of 60m², located on Rruga Abdyl Frashëri, in Aktash.",
+    "The apartment is on the 2nd floor and is fully equipped for living. It has a complete kitchen with dishes, glasses, a microwave, a dishwasher and a washing machine, together with the other appliances needed for everyday life.",
+    "The rent also includes the building maintenance, including the elevator and the cleaning of the common areas.",
+    "Monthly rent: €500\nDeposit: €500\nContract: 1 year"
+  ],
+  "extraCaptionsEn": [
+    [
+      "60m² in the heart of Aktash, on Rruga Abdyl Frashëri, furnished and completely ready to move in.",
+      "The apartment is on the 2nd floor and comes with an equipped kitchen, a dishwasher, a washing machine and everything you need for everyday life.",
+      "The rent also includes the building maintenance, the elevator and the cleaning of the common areas.",
+      "Rent: €500\nDeposit: €500\nContract: 1 year"
+    ]
+  ],
+  "images": [
+    { "file": "01.jpg", "kind": "living", "overlay": "text", "reason": "cover label \"Aktash, Prishtinë\" and \"500€ muaji\" (matches caption)" },
+    { "file": "02.jpg", "kind": "living", "overlay": "brand" },
+    { "file": "03.jpg", "kind": "living-kitchen", "overlay": "brand", "reason": "kitchen and dining table in the open-plan living area" },
+    { "file": "04.jpg", "kind": "living-kitchen", "overlay": "brand", "reason": "kitchen with dining table and living area behind" },
+    { "file": "05.jpg", "kind": "balcony", "overlay": "brand", "reason": "balcony with view of neighbouring buildings" },
+    { "file": "06.jpg", "kind": "bedroom", "overlay": "brand" },
+    { "file": "07.jpg", "kind": "bedroom", "overlay": "brand" },
+    { "file": "08.jpg", "kind": "hallway", "overlay": "brand", "reason": "entrance hall with front door" },
+    { "file": "09.jpg", "kind": "bathroom", "overlay": "brand" },
+    { "file": "10_video-cover.jpg", "kind": "living", "overlay": "none", "reason": "portrait video cover frame, no watermark or text" }
+  ],
+  "overrides": {
+    "features": { "value": ["elevator", "furnished"], "evidence": ["e mobiluar dhe komplet e gatshme për banim"], "note": "secondary (video) caption states the apartment is furnished; elevator kept from parsed" }
+  },
+  "notes": "Room counts are not stated in either caption (bedrooms/bathrooms left null; photos not used for counting). Air conditioning is visible in photos but not mentioned, so not added. Contract 1 year = 12 months as parsed."
+}

@@ -1,0 +1,54 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Icon from '../components/Icon.astro';
+import { SITE } from '../config/site';
+import { dict, route, ROUTES, type Lang } from '../i18n';
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const t = dict(lang);
+const w = t.wanted;
+const wa = `${SITE.whatsapp}?text=${encodeURIComponent(w.whatsappMessage)}`;
+---
+<BaseLayout lang={lang} title={w.metaTitle} description={w.metaDescription} alternates={ROUTES.wanted}>
+  <section class="index-head surface-cream">
+    <div class="container">
+      <h1>{w.h1}</h1>
+      <p class="lead">{w.intro}</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container wanted">
+      {w.blocks.map((b, i) => (
+        <article class="wanted__block" aria-labelledby={`wanted-${i}`}>
+          <h2 id={`wanted-${i}`}>{b.title}</h2>
+          <p>{b.text}</p>
+          {b.points.length > 0 && <ul class="piece-list">{b.points.map((p) => <li>{p}</li>)}</ul>}
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="section section--tight surface-green on-dark" aria-labelledby="wanted-cta">
+    <div class="container cta">
+      <h2 id="wanted-cta">{w.ctaTitle}</h2>
+      <div class="cta__actions">
+        <a class="btn btn--cream" href={`${route('owners', lang)}#submit-property`}>{w.ctaComposer}<Icon name="arrow-right" /></a>
+        <a class="btn btn--ghost-dark" href={wa}><Icon name="message-circle" />WhatsApp</a>
+        <a class="btn btn--ghost-dark tabular" href={`tel:${SITE.phoneE164}`}><Icon name="phone" />{SITE.phoneDisplay}</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .index-head { padding-block: var(--s-7) var(--s-6); }
+  .lead { margin-top: var(--s-3); font-size: var(--fs-md); max-width: 56ch; color: var(--ink-2); }
+  .wanted { display: grid; gap: var(--s-5); grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr)); }
+  .wanted__block { display: grid; gap: var(--s-3); align-content: start; padding: var(--s-5); background: var(--white); border: 1px solid var(--line); border-radius: var(--radius-lg); }
+  .wanted__block p { color: var(--ink-2); }
+  .cta { display: grid; gap: var(--s-4); }
+  .cta h2 { color: var(--cream); font-size: var(--fs-xl); }
+  .cta__actions { display: flex; flex-wrap: wrap; gap: var(--s-3); }
+</style>

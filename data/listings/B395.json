@@ -1,0 +1,21 @@
+{
+  "ref": "B395",
+  "descriptionEn": [
+    "Offered for sale: an apartment with an area of 91.48m², located on Rruga Talat Pallaska, in Mati 1, built by Valoni Company.",
+    "The apartment is on the 10th floor, faces East and has a layout suitable for family living. The space consists of a living room with kitchen, two bedrooms, one bathroom, one WC and a terrace.",
+    "The location offers good access both to Rruga C and to Rruga Muharrem Fejza.",
+    "The building has two elevators, while the apartment has underfloor heating and electric shutters.",
+    "A storage room and a private garage in the basement are also included in the price.\nThe sale contract is signed at the notary.\nThe price of the property is €135,000."
+  ],
+  "images": [
+    { "file": "01.jpg", "kind": "interior", "overlay": "text", "reason": "empty unfurnished room with balcony door; cover label \"Rruga C, Prishtinë.\" and \"135,000€\"" },
+    { "file": "02.jpg", "kind": "interior", "overlay": "brand", "reason": "large empty room, kitchen not fitted/visible" },
+    { "file": "03.jpg", "kind": "bedroom", "overlay": "brand" },
+    { "file": "04.jpg", "kind": "bedroom", "overlay": "brand" },
+    { "file": "05.jpg", "kind": "interior", "overlay": "brand", "reason": "empty room with balcony door" },
+    { "file": "06.jpg", "kind": "interior", "overlay": "brand", "reason": "empty room with doorway to hallway" },
+    { "file": "07.jpg", "kind": "terrace", "overlay": "brand", "reason": "terrace with view of neighbouring buildings and a construction crane" },
+    { "file": "08.jpg", "kind": "bathroom", "overlay": "brand" }
+  ],
+  "notes": "Cover 01.jpg labels the location \"Rruga C, Prishtinë.\" while the caption places the apartment on Rruga Talat Pallaska with access to Rruga C; parsed street (caption) kept. Developer Valoni Company is explicitly named (\"ndërtim nga Valoni Company\"). Rooms are empty/unfurnished; generic kind used where the room function is not evident. 'basement' feature comes from the garage being in the basement (\"garazh privat në podrum\"). No images excluded."
+}

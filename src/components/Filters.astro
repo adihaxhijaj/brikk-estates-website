@@ -1,0 +1,165 @@
+---
+// Filter + sort controls for property index pages. Hidden without JavaScript (the full list stays usable);
+// src/scripts/filters.ts reveals and drives them. Options are generated from the listings on this page.
+import Icon from './Icon.astro';
+import { CATEGORY } from '../i18n/vocab';
+import { dict, type Lang } from '../i18n';
+import { categoryOf, cityName, type Listing } from '../lib/listings';
+
+interface Props { lang: Lang; listings: Listing[]; showDeal: boolean }
+const { lang, listings, showDeal } = Astro.props;
+const t = dict(lang);
+
+const count = <T,>(arr: T[], f: (x: T) => boolean) => arr.filter(f).length;
+const cats = Object.entries(CATEGORY).filter(([k]) => listings.some((l) => categoryOf(l) === k));
+const cities = [...new Map(listings.filter((l) => l.city).map((l) => [l.city!, cityName(l, lang)!])).entries()]
+  .map(([value, label]) => ({ value, label, n: count(listings, (l) => l.city === value) }))
+  .sort((a, b) => b.n - a.n || a.label.localeCompare(b.label));
+const hoods = [...new Map(listings.filter((l) => l.neighbourhood).map((l) => [l.neighbourhood!, l.city ?? ''])).entries()]
+  .map(([value, city]) => ({ value, city }))
+  .sort((a, b) => a.value.localeCompare(b.value, 'sq'));
+const hasBeds = listings.some((l) => l.bedrooms !== null);
+const hasFurnished = listings.some((l) => l.features.includes('furnished'));
+const hasNew = listings.some((l) => l.isNewBuild);
+const hasPrice = listings.some((l) => l.price !== null || l.rentMonthly !== null);
+const hasArea = listings.some((l) => l.areaNet !== null);
+const bedOptions = [1, 2, 3, 4].filter((n) => listings.some((l) => (l.bedrooms ?? 0) >= n));
+---
+<div class="filters-bar" data-filters-bar hidden>
+  <button type="button" class="btn btn--outline filters-bar__open" aria-expanded="false" aria-controls="filters-panel" data-filters-open>
+    <Icon name="sliders-horizontal" />{t.filters.open}<span class="filters-bar__badge tabular" data-active-count hidden></span>
+  </button>
+  <div class="field filters-bar__sort">
+    <label for="f-sort">{t.filters.sort}</label>
+    <select class="control" id="f-sort" name="sort" form="filters-form" data-sort>
+      <option value="">{t.filters.sortNewest}</option>
+      {hasPrice && <option value="price-asc">{t.filters.sortPriceAsc}</option>}
+      {hasPrice && <option value="price-desc">{t.filters.sortPriceDesc}</option>}
+      {hasArea && <option value="size">{t.filters.sortSize}</option>}
+    </select>
+  </div>
+</div>
+
+<div class="filters" id="filters-panel" data-filters-panel hidden role="region" aria-labelledby="filters-title">
+  <div class="filters__head">
+    <h2 id="filters-title" class="filters__title">{t.filters.title}</h2>
+    <button type="button" class="filters__close" data-filters-close aria-label={t.filters.close}><Icon name="x" size={22} /></button>
+  </div>
+  <form id="filters-form" class="filters__form" data-filters-form action="" method="get">
+    {showDeal && (
+      <div class="field">
+        <label for="f-deal">{t.filters.deal}</label>
+        <select class="control" id="f-deal" name="deal">
+          <option value="">{t.filters.any}</option>
+          <option value="sale">{t.search.sale}</option>
+          <option value="rent">{t.search.rent}</option>
+        </select>
+      </div>
+    )}
+    {cats.length > 1 && (
+      <div class="field">
+        <label for="f-cat">{t.filters.category}</label>
+        <select class="control" id="f-cat" name="cat">
+          <option value="">{t.filters.any}</option>
+          {cats.map(([k, c]) => <option value={k}>{c.label[lang]}</option>)}
+        </select>
+      </div>
+    )}
+    {cities.length > 1 && (
+      <div class="field">
+        <label for="f-city">{t.filters.city}</label>
+        <select class="control" id="f-city" name="city">
+          <option value="">{t.filters.any}</option>
+          {cities.map((c) => <option value={c.value}>{c.label}</option>)}
+        </select>
+      </div>
+    )}
+    {hoods.length > 1 && (
+      <div class="field">
+        <label for="f-hood">{t.filters.neighbourhood}</label>
+        <select class="control" id="f-hood" name="hood">
+          <option value="">{t.filters.any}</option>
+          {hoods.map((h) => <option value={h.value} data-city={h.city}>{h.value}</option>)}
+        </select>
+      </div>
+    )}
+    {hasPrice && (
+      <fieldset class="field filters__range">
+        <legend class="label">{t.filters.price}</legend>
+        <div class="filters__pair">
+          <label class="visually-hidden" for="f-pmin">{t.filters.priceMin}</label>
+          <input class="control tabular" id="f-pmin" name="pmin" type="number" inputmode="numeric" min="0" step="1" placeholder={t.filters.min} />
+          <label class="visually-hidden" for="f-pmax">{t.filters.priceMax}</label>
+          <input class="control tabular" id="f-pmax" name="pmax" type="number" inputmode="numeric" min="0" step="1" placeholder={t.filters.max} />
+        </div>
+      </fieldset>
+    )}
+    {hasArea && (
+      <fieldset class="field filters__range">
+        <legend class="label">{t.filters.size}</legend>
+        <div class="filters__pair">
+          <label class="visually-hidden" for="f-amin">{t.filters.sizeMin}</label>
+          <input class="control tabular" id="f-amin" name="amin" type="number" inputmode="numeric" min="0" step="1" placeholder={t.filters.min} />
+          <label class="visually-hidden" for="f-amax">{t.filters.sizeMax}</label>
+          <input class="control tabular" id="f-amax" name="amax" type="number" inputmode="numeric" min="0" step="1" placeholder={t.filters.max} />
+        </div>
+      </fieldset>
+    )}
+    {hasBeds && (
+      <div class="field">
+        <label for="f-beds">{t.filters.bedrooms}</label>
+        <select class="control" id="f-beds" name="beds">
+          <option value="">{t.filters.bedroomsAny}</option>
+          {bedOptions.map((n) => <option value={n}>{t.filters.bedroomsMin(n)}</option>)}
+        </select>
+      </div>
+    )}
+    {(hasFurnished || hasNew) && (
+      <div class="filters__checks">
+        {hasFurnished && <label class="check"><input type="checkbox" name="furnished" value="1" />{t.filters.furnished}</label>}
+        {hasNew && <label class="check"><input type="checkbox" name="new" value="1" />{t.filters.newBuild}</label>}
+      </div>
+    )}
+    <div class="filters__actions">
+      <button type="submit" class="btn btn--block filters__apply" data-filters-apply data-label-template={t.filters.apply(999999)} data-label-one={t.filters.apply(1)}>{t.filters.apply(listings.length)}</button>
+      <button type="reset" class="btn btn--outline btn--block" data-filters-clear>{t.filters.clear}</button>
+    </div>
+  </form>
+</div>
+
+<style>
+  .filters-bar { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: var(--s-3); margin-bottom: var(--s-5); }
+  .filters-bar__sort { display: flex; align-items: center; gap: var(--s-3); }
+  .filters-bar__sort label { white-space: nowrap; }
+  .filters-bar__sort .control { min-width: 13rem; }
+  .filters-bar__badge { display: inline-grid; place-items: center; min-width: 1.5rem; height: 1.5rem; padding: 0 0.35rem; border-radius: 999px; background: var(--green); color: var(--white); font-size: var(--fs-xs); }
+
+  .filters { background: var(--white); }
+  .filters__head { display: flex; align-items: center; justify-content: space-between; gap: var(--s-3); margin-bottom: var(--s-4); }
+  .filters__title { font-size: var(--fs-md); }
+  .filters__close { display: grid; place-items: center; width: 44px; height: 44px; border: 0; background: transparent; border-radius: var(--radius); color: var(--ink); }
+  .filters__close:hover { background: var(--cream-soft); }
+  .filters__form { display: grid; gap: var(--s-4); }
+  .filters__range { border: 0; padding: 0; min-width: 0; }
+  .filters__pair { display: grid; grid-template-columns: 1fr 1fr; gap: var(--s-2); }
+  .filters__checks { display: grid; gap: var(--s-1); }
+  .filters__actions { display: grid; gap: var(--s-2); }
+
+  /* Mobile/tablet: bottom sheet */
+  @media (max-width: 61.99rem) {
+    .filters {
+      position: fixed; inset: auto 0 0 0; z-index: 70; max-height: min(88dvh, 100%); overflow-y: auto; overscroll-behavior: contain;
+      padding: var(--s-4) var(--gutter) calc(var(--s-4) + env(safe-area-inset-bottom));
+      border-radius: var(--radius-lg) var(--radius-lg) 0 0; box-shadow: 0 -12px 40px rgb(0 0 0 / 0.25);
+    }
+    .filters__actions { position: sticky; bottom: calc(-1 * (var(--s-4) + env(safe-area-inset-bottom))); background: var(--white); padding-block: var(--s-3) var(--s-2); margin-inline: calc(-1 * var(--gutter)); padding-inline: var(--gutter); border-top: 1px solid var(--line); }
+    :global(.filters-backdrop) { position: fixed; inset: 0; z-index: 60; background: rgb(23 33 28 / 0.5); }
+  }
+  /* Desktop: sidebar */
+  @media (min-width: 62rem) {
+    .filters-bar__open { display: none; }
+    .filters { position: sticky; top: calc(var(--header-h) + var(--s-4)); border: 1px solid var(--line); border-radius: var(--radius-lg); padding: var(--s-5); max-height: calc(100vh - var(--header-h) - var(--s-6)); overflow-y: auto; }
+    .filters__close { display: none; }
+    .filters__apply { display: none; }
+  }
+</style>

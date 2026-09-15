@@ -1,0 +1,23 @@
+{
+  "ref": "B390",
+  "descriptionEn": [
+    "Offered for sale: an apartment with an area of 99m², located on Rruga Gjergj Fishta, in the Linda 5 building, built by the company AlTrade.",
+    "The apartment is on the 4th floor, faces East and the building has two elevators.",
+    "The space consists of a living room with kitchen and dining area, three bedrooms, one bathroom, one WC and two terraces.\nThe apartment has underfloor heating, air conditioning and a kitchen equipped with appliances from the Gorenje brand.",
+    "The property has an ownership certificate, while the sale contract is signed at the notary.\nA private garage is also offered for sale separately from the price of the apartment.",
+    "Price: €970/m²\nTotal price: €96,030"
+  ],
+  "images": [
+    { "file": "01.jpg", "kind": "living", "overlay": "text", "reason": "cover label \"Rruga Gjergj Fishta, Fushë Kosovë.\" and \"970€/m²\" (matches caption); TV shows a film still (pilot in helmet), not a private person; small framed item on wall has no face" },
+    { "file": "02.jpg", "kind": "dining", "overlay": "brand", "reason": "dining table by the entrance door" },
+    { "file": "03.jpg", "kind": "kitchen", "overlay": "brand" },
+    { "file": "04.jpg", "kind": "kitchen", "overlay": "brand" },
+    { "file": "05.jpg", "kind": "kitchen", "overlay": "brand", "reason": "kitchen counter with living room in background" },
+    { "file": "06.jpg", "kind": "view", "overlay": "brand", "reason": "view from terrace/balcony over neighbouring residential blocks" },
+    { "file": "07.jpg", "kind": "bedroom", "overlay": "brand", "reason": "children's bedroom, no people" },
+    { "file": "08.jpg", "kind": "bedroom", "overlay": "brand" },
+    { "file": "09.jpg", "kind": "bedroom", "overlay": "brand" },
+    { "file": "10.jpg", "kind": "bathroom", "overlay": "brand" }
+  ],
+  "notes": "Developer AlTrade is explicitly named (\"ndërtim nga kompania AlTrade\"). Total €96,030 = 99 m² × €970 as stated in the caption. Garage is sold separately (garageOptional), so 'garage' is not in features. Two terraces stated; areaTerrace not given. No images excluded."
+}

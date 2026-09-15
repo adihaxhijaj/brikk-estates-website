@@ -1,0 +1,103 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ListingCard from '../components/ListingCard.astro';
+import Filters from '../components/Filters.astro';
+import Icon from '../components/Icon.astro';
+import { SITE } from '../config/site';
+import { dict, route, ROUTES, type Lang } from '../i18n';
+import { categoryOf, getVisibleListings, isLandInvestment, type Listing } from '../lib/listings';
+import { breadcrumbJsonLd } from '../lib/seo';
+
+type Kind = 'properties' | 'sale' | 'rent' | 'land' | 'newBuilds';
+interface Props { lang: Lang; kind: Kind }
+const { lang, kind } = Astro.props;
+const t = dict(lang);
+const all = await getVisibleListings();
+const pick: Record<Kind, (l: Listing) => boolean> = {
+  properties: () => true,
+  sale: (l) => l.deal === 'sale',
+  rent: (l) => l.deal === 'rent',
+  land: isLandInvestment,
+  newBuilds: (l) => l.isNewBuild === true,
+};
+const listings = all.filter(pick[kind]);
+const metaKey = kind === 'properties' ? 'all' : kind;
+const h1 = { properties: t.listings.allH1, sale: t.listings.saleH1, rent: t.listings.rentH1, land: t.listings.landH1, newBuilds: t.listings.newH1 }[kind];
+const intro = kind === 'land' ? t.listings.landIntro : kind === 'newBuilds' ? t.listings.newIntro : null;
+const showDeal = new Set(listings.map((l) => l.deal)).size > 1;
+const priceOf = (l: Listing) => (l.deal === 'rent' ? l.rentMonthly : l.price);
+const emptyWa = `${SITE.whatsapp}?text=${encodeURIComponent(t.filters.emptyWhatsApp)}`;
+const crumbs = breadcrumbJsonLd([
+  { name: 'Brikk Estates', url: new URL(route('home', lang), SITE.url).href },
+  { name: h1, url: new URL(ROUTES[kind][lang], SITE.url).href },
+]);
+---
+<BaseLayout lang={lang} title={t.listings.metaTitle[metaKey]} description={t.listings.metaDescription[metaKey](listings.length)} alternates={ROUTES[kind]} jsonLd={crumbs}>
+  <section class="index-head surface-cream">
+    <div class="container">
+      <h1 tabindex="-1">{h1}</h1>
+      {intro && <p class="index-head__intro">{intro}</p>}
+      <p class="index-head__meta">
+        <span class="index-head__count tabular" data-count data-template={t.filters.results(999999)} data-one={t.filters.results(1)} aria-live="polite" aria-atomic="true">{t.filters.results(listings.length)}</span>
+        <span class="availability-note">{t.listings.availability}</span>
+      </p>
+    </div>
+  </section>
+
+  <section class="section section--tight">
+    <div class="container index-layout">
+      <aside class="index-layout__filters">
+        <Filters lang={lang} listings={listings} showDeal={showDeal} />
+      </aside>
+      <div class="index-layout__results">
+        <ul role="list" class="results" data-results>
+          {listings.map((l, i) => (
+            <li
+              data-deal={l.deal}
+              data-cat={categoryOf(l)}
+              data-city={l.city ?? ''}
+              data-hood={l.neighbourhood ?? ''}
+              data-price={priceOf(l) ?? ''}
+              data-area={l.areaNet ?? ''}
+              data-beds={l.bedrooms ?? ''}
+              data-furnished={l.features.includes('furnished') ? '1' : '0'}
+              data-new={l.isNewBuild ? '1' : '0'}
+            >
+              <ListingCard listing={l} lang={lang} eager={i < 2} headingLevel="h2" />
+            </li>
+          ))}
+        </ul>
+        <div class="empty" data-empty hidden>
+          <h2 class="empty__title">{t.filters.emptyTitle}</h2>
+          <p>{t.filters.emptyText}</p>
+          <div class="empty__actions">
+            <button type="reset" form="filters-form" class="btn btn--outline" data-clear-empty>{t.filters.clear}</button>
+            <a class="btn" href={emptyWa}><Icon name="message-circle" />{t.filters.emptyCta}</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  import '../scripts/filters';
+</script>
+
+<style>
+  .index-head { padding-block: var(--s-7) var(--s-6); }
+  .index-head h1 { max-width: 24ch; }
+  .index-head h1:focus { outline: none; }
+  .index-head__intro { margin-top: var(--s-3); max-width: 60ch; color: var(--ink-2); font-size: var(--fs-md); }
+  .index-head__meta { display: flex; flex-wrap: wrap; gap: var(--s-1) var(--s-4); align-items: baseline; margin-top: var(--s-4); }
+  .index-head__count { font-weight: 650; }
+  .index-layout { display: grid; gap: var(--s-5); }
+  @media (min-width: 62rem) {
+    .index-layout { grid-template-columns: 17.5rem minmax(0, 1fr); align-items: start; gap: var(--s-6); }
+  }
+  .results { display: grid; gap: var(--s-5); grid-template-columns: repeat(auto-fill, minmax(min(100%, 17rem), 1fr)); }
+  .results > li { min-width: 0; }
+  .empty { display: grid; gap: var(--s-3); justify-items: start; padding: var(--s-6); border: 1px dashed var(--line-strong); border-radius: var(--radius-lg); background: var(--white); }
+  .empty__title { font-size: var(--fs-md); }
+  .empty__actions { display: flex; flex-wrap: wrap; gap: var(--s-3); margin-top: var(--s-2); }
+</style>

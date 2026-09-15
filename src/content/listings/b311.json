@@ -78,104 +78,110 @@
     "Ky objekt është i përshtatshëm për familje që kërkojnë rehati, stabilitet dhe pozicion urban të favorshëm.",
     "Çmimi sipas marrëveshjes dhe kontrata realizohet te noteri."
   ],
-  "descriptionEn": null,
+  "descriptionEn": [
+    "An apartment is offered for sale in Fushë Kosovë, along Rruga “Tahir Zemaj”.",
+    "The apartment is located in a developed and dynamic area, with easy access to the M9 main road, Rruga “Nënë Tereza” and a quick exit to Bresje. The area offers easy access to markets, public transport and everyday services, creating a favourable environment for balanced and efficient living.",
+    "The property has a total area of 89.91m² and includes a living room with kitchen, two bedrooms, bathroom, storage room and balcony. The space is unfurnished, with a regular floor plan, quality finishes and natural light from its north orientation. The apartment also offers two elevators, access to the complex’s public parking, electric shutters, central heating and laminate flooring.",
+    "This property is suitable for families looking for comfort, stability and a favourable urban location.",
+    "Price by agreement and the contract is signed at the notary."
+  ],
   "descriptionEnIsTranslation": true,
   "extraCaptions": [],
   "images": [
     {
-      "src": "../../assets/listings/b311/01.jpg",
-      "file": "01.jpg",
-      "width": 2048,
-      "height": 1365,
-      "kind": "other",
-      "overlay": null,
-      "hasTextOverlay": null,
-      "altSq": "Fotografi e pronës, banesë në shitje në Fushë Kosovë, Ref B311 (1/8)",
-      "altEn": "Property photo, apartment for sale in Fushë Kosovë, Ref B311 (1/8)"
-    },
-    {
       "src": "../../assets/listings/b311/02.jpg",
       "file": "02.jpg",
-      "width": 2048,
-      "height": 1365,
-      "kind": "other",
-      "overlay": null,
-      "hasTextOverlay": null,
-      "altSq": "Fotografi e pronës, banesë në shitje në Fushë Kosovë, Ref B311 (2/8)",
-      "altEn": "Property photo, apartment for sale in Fushë Kosovë, Ref B311 (2/8)"
+      "width": 2000,
+      "height": 1333,
+      "kind": "living",
+      "overlay": "brand",
+      "hasTextOverlay": false,
+      "altSq": "Qëndrimi ditor, banesë në shitje në Fushë Kosovë, Ref B311 (1/8)",
+      "altEn": "Living room, apartment for sale in Fushë Kosovë, Ref B311 (1/8)"
     },
     {
       "src": "../../assets/listings/b311/03.jpg",
       "file": "03.jpg",
-      "width": 2048,
-      "height": 1365,
-      "kind": "other",
-      "overlay": null,
-      "hasTextOverlay": null,
-      "altSq": "Fotografi e pronës, banesë në shitje në Fushë Kosovë, Ref B311 (3/8)",
-      "altEn": "Property photo, apartment for sale in Fushë Kosovë, Ref B311 (3/8)"
+      "width": 2000,
+      "height": 1333,
+      "kind": "interior",
+      "overlay": "brand",
+      "hasTextOverlay": false,
+      "altSq": "Hapësira e brendshme, banesë në shitje në Fushë Kosovë, Ref B311 (2/8)",
+      "altEn": "Interior space, apartment for sale in Fushë Kosovë, Ref B311 (2/8)"
     },
     {
       "src": "../../assets/listings/b311/04.jpg",
       "file": "04.jpg",
-      "width": 2048,
-      "height": 1365,
-      "kind": "other",
-      "overlay": null,
-      "hasTextOverlay": null,
-      "altSq": "Fotografi e pronës, banesë në shitje në Fushë Kosovë, Ref B311 (4/8)",
-      "altEn": "Property photo, apartment for sale in Fushë Kosovë, Ref B311 (4/8)"
+      "width": 2000,
+      "height": 1333,
+      "kind": "bedroom",
+      "overlay": "brand",
+      "hasTextOverlay": false,
+      "altSq": "Dhoma e gjumit, banesë në shitje në Fushë Kosovë, Ref B311 (3/8)",
+      "altEn": "Bedroom, apartment for sale in Fushë Kosovë, Ref B311 (3/8)"
     },
     {
       "src": "../../assets/listings/b311/05.jpg",
       "file": "05.jpg",
-      "width": 2048,
-      "height": 1365,
-      "kind": "other",
-      "overlay": null,
-      "hasTextOverlay": null,
-      "altSq": "Fotografi e pronës, banesë në shitje në Fushë Kosovë, Ref B311 (5/8)",
-      "altEn": "Property photo, apartment for sale in Fushë Kosovë, Ref B311 (5/8)"
+      "width": 2000,
+      "height": 1333,
+      "kind": "bedroom",
+      "overlay": "brand",
+      "hasTextOverlay": false,
+      "altSq": "Dhoma e gjumit, banesë në shitje në Fushë Kosovë, Ref B311 (4/8)",
+      "altEn": "Bedroom, apartment for sale in Fushë Kosovë, Ref B311 (4/8)"
     },
     {
       "src": "../../assets/listings/b311/06.jpg",
       "file": "06.jpg",
-      "width": 2048,
-      "height": 1365,
-      "kind": "other",
-      "overlay": null,
-      "hasTextOverlay": null,
-      "altSq": "Fotografi e pronës, banesë në shitje në Fushë Kosovë, Ref B311 (6/8)",
-      "altEn": "Property photo, apartment for sale in Fushë Kosovë, Ref B311 (6/8)"
+      "width": 2000,
+      "height": 1333,
+      "kind": "hallway",
+      "overlay": "brand",
+      "hasTextOverlay": false,
+      "altSq": "Korridori, banesë në shitje në Fushë Kosovë, Ref B311 (5/8)",
+      "altEn": "Hallway, apartment for sale in Fushë Kosovë, Ref B311 (5/8)"
     },
     {
       "src": "../../assets/listings/b311/07.jpg",
       "file": "07.jpg",
-      "width": 2048,
-      "height": 1365,
-      "kind": "other",
-      "overlay": null,
-      "hasTextOverlay": null,
-      "altSq": "Fotografi e pronës, banesë në shitje në Fushë Kosovë, Ref B311 (7/8)",
-      "altEn": "Property photo, apartment for sale in Fushë Kosovë, Ref B311 (7/8)"
+      "width": 2000,
+      "height": 1333,
+      "kind": "bathroom",
+      "overlay": "brand",
+      "hasTextOverlay": false,
+      "altSq": "Banjo, banesë në shitje në Fushë Kosovë, Ref B311 (6/8)",
+      "altEn": "Bathroom, apartment for sale in Fushë Kosovë, Ref B311 (6/8)"
     },
     {
       "src": "../../assets/listings/b311/08.jpg",
       "file": "08.jpg",
-      "width": 2048,
-      "height": 1365,
-      "kind": "other",
-      "overlay": null,
-      "hasTextOverlay": null,
-      "altSq": "Fotografi e pronës, banesë në shitje në Fushë Kosovë, Ref B311 (8/8)",
-      "altEn": "Property photo, apartment for sale in Fushë Kosovë, Ref B311 (8/8)"
+      "width": 2000,
+      "height": 1333,
+      "kind": "balcony",
+      "overlay": "brand",
+      "hasTextOverlay": false,
+      "altSq": "Ballkoni, banesë në shitje në Fushë Kosovë, Ref B311 (7/8)",
+      "altEn": "Balcony, apartment for sale in Fushë Kosovë, Ref B311 (7/8)"
+    },
+    {
+      "src": "../../assets/listings/b311/01.jpg",
+      "file": "01.jpg",
+      "width": 2000,
+      "height": 1333,
+      "kind": "building",
+      "overlay": "text",
+      "hasTextOverlay": true,
+      "altSq": "Ndërtesa, banesë në shitje në Fushë Kosovë, Ref B311 (8/8)",
+      "altEn": "Building, apartment for sale in Fushë Kosovë, Ref B311 (8/8)"
     }
   ],
   "coverIndex": 0,
   "provenance": {
     "overridden": {},
     "warnings": [],
-    "reviewedImages": false,
-    "translated": false
+    "reviewedImages": true,
+    "translated": true
   }
 }

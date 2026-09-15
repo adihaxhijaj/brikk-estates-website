@@ -77,137 +77,142 @@
     "Banesa posedon ngrohje elektrike nën dysheme dhe ndodhet në një ambient të qetë, me hapësirë të dedikuar për fëmijë dhe qasje të mirë në pjesët kryesore të qytetit. Në afërsi ndodhen markete, shkolla dhe shërbime të tjera të nevojshme për përditshmëri.",
     "Banesa posedon fletë poseduese dhe kontrata e shitblerjes realizohet te noteri.\nÇmimi i pronës është 140,000€, me një garazhë të përfshirë.\nNdërsa sipas kërkesës mund të blihet edhe një garazhë e dytë sipas marrëveshjes."
   ],
-  "descriptionEn": null,
+  "descriptionEn": [
+    "Offered for sale: an apartment with an area of 87m², located on Rruga Ndue Përlleshi, in the EVERGREEN complex, built by Vëllezërit Asllani.",
+    "The apartment is on the 1st floor, in a building with two elevators, and has a functional floor plan for family living. The space consists of a living room with kitchen and a separate dining area, two bedrooms, one bathroom, one WC and a balcony.",
+    "The apartment has electric underfloor heating and is located in a quiet setting, with a dedicated space for children and good access to the main parts of the city. Markets, schools and other services needed for everyday life are nearby.",
+    "The apartment has an ownership certificate and the sale contract is signed at the notary.\nThe price of the property is €140,000, with one garage included.\nOn request, a second garage can also be purchased by agreement."
+  ],
   "descriptionEnIsTranslation": true,
   "extraCaptions": [],
   "images": [
     {
       "src": "../../assets/listings/b377/01.jpg",
       "file": "01.jpg",
-      "width": 2730,
-      "height": 1820,
-      "kind": "other",
-      "overlay": null,
-      "hasTextOverlay": null,
-      "altSq": "Fotografi e pronës, banesë në shitje në Bregun e Diellit, Prishtinë, Ref B377 (1/11)",
-      "altEn": "Property photo, apartment for sale in Bregu i Diellit, Prishtina, Ref B377 (1/11)"
+      "width": 2000,
+      "height": 1333,
+      "kind": "building",
+      "overlay": "brand",
+      "hasTextOverlay": false,
+      "altSq": "Ndërtesa, banesë në shitje në Bregun e Diellit, Prishtinë, Ref B377 (1/11)",
+      "altEn": "Building, apartment for sale in Bregu i Diellit, Prishtina, Ref B377 (1/11)"
     },
     {
       "src": "../../assets/listings/b377/02.jpg",
       "file": "02.jpg",
-      "width": 2730,
-      "height": 1820,
-      "kind": "other",
-      "overlay": null,
-      "hasTextOverlay": null,
-      "altSq": "Fotografi e pronës, banesë në shitje në Bregun e Diellit, Prishtinë, Ref B377 (2/11)",
-      "altEn": "Property photo, apartment for sale in Bregu i Diellit, Prishtina, Ref B377 (2/11)"
+      "width": 2000,
+      "height": 1333,
+      "kind": "living",
+      "overlay": "brand",
+      "hasTextOverlay": false,
+      "altSq": "Qëndrimi ditor, banesë në shitje në Bregun e Diellit, Prishtinë, Ref B377 (2/11)",
+      "altEn": "Living room, apartment for sale in Bregu i Diellit, Prishtina, Ref B377 (2/11)"
     },
     {
       "src": "../../assets/listings/b377/03.jpg",
       "file": "03.jpg",
-      "width": 2730,
-      "height": 1820,
-      "kind": "other",
-      "overlay": null,
-      "hasTextOverlay": null,
-      "altSq": "Fotografi e pronës, banesë në shitje në Bregun e Diellit, Prishtinë, Ref B377 (3/11)",
-      "altEn": "Property photo, apartment for sale in Bregu i Diellit, Prishtina, Ref B377 (3/11)"
+      "width": 2000,
+      "height": 1333,
+      "kind": "living",
+      "overlay": "brand",
+      "hasTextOverlay": false,
+      "altSq": "Qëndrimi ditor, banesë në shitje në Bregun e Diellit, Prishtinë, Ref B377 (3/11)",
+      "altEn": "Living room, apartment for sale in Bregu i Diellit, Prishtina, Ref B377 (3/11)"
     },
     {
       "src": "../../assets/listings/b377/04.jpg",
       "file": "04.jpg",
-      "width": 2730,
-      "height": 1820,
-      "kind": "other",
-      "overlay": null,
-      "hasTextOverlay": null,
-      "altSq": "Fotografi e pronës, banesë në shitje në Bregun e Diellit, Prishtinë, Ref B377 (4/11)",
-      "altEn": "Property photo, apartment for sale in Bregu i Diellit, Prishtina, Ref B377 (4/11)"
+      "width": 2000,
+      "height": 1333,
+      "kind": "kitchen",
+      "overlay": "brand",
+      "hasTextOverlay": false,
+      "altSq": "Kuzhina, banesë në shitje në Bregun e Diellit, Prishtinë, Ref B377 (4/11)",
+      "altEn": "Kitchen, apartment for sale in Bregu i Diellit, Prishtina, Ref B377 (4/11)"
     },
     {
       "src": "../../assets/listings/b377/05.jpg",
       "file": "05.jpg",
-      "width": 2730,
-      "height": 1820,
-      "kind": "other",
-      "overlay": null,
-      "hasTextOverlay": null,
-      "altSq": "Fotografi e pronës, banesë në shitje në Bregun e Diellit, Prishtinë, Ref B377 (5/11)",
-      "altEn": "Property photo, apartment for sale in Bregu i Diellit, Prishtina, Ref B377 (5/11)"
+      "width": 2000,
+      "height": 1333,
+      "kind": "living-kitchen",
+      "overlay": "brand",
+      "hasTextOverlay": false,
+      "altSq": "Qëndrimi ditor me kuzhinë, banesë në shitje në Bregun e Diellit, Prishtinë, Ref B377 (5/11)",
+      "altEn": "Living room with kitchen, apartment for sale in Bregu i Diellit, Prishtina, Ref B377 (5/11)"
     },
     {
       "src": "../../assets/listings/b377/06.jpg",
       "file": "06.jpg",
-      "width": 2730,
-      "height": 1820,
-      "kind": "other",
-      "overlay": null,
-      "hasTextOverlay": null,
-      "altSq": "Fotografi e pronës, banesë në shitje në Bregun e Diellit, Prishtinë, Ref B377 (6/11)",
-      "altEn": "Property photo, apartment for sale in Bregu i Diellit, Prishtina, Ref B377 (6/11)"
+      "width": 2000,
+      "height": 1333,
+      "kind": "balcony",
+      "overlay": "brand",
+      "hasTextOverlay": false,
+      "altSq": "Ballkoni, banesë në shitje në Bregun e Diellit, Prishtinë, Ref B377 (6/11)",
+      "altEn": "Balcony, apartment for sale in Bregu i Diellit, Prishtina, Ref B377 (6/11)"
     },
     {
       "src": "../../assets/listings/b377/07.jpg",
       "file": "07.jpg",
-      "width": 2730,
-      "height": 1820,
-      "kind": "other",
-      "overlay": null,
-      "hasTextOverlay": null,
-      "altSq": "Fotografi e pronës, banesë në shitje në Bregun e Diellit, Prishtinë, Ref B377 (7/11)",
-      "altEn": "Property photo, apartment for sale in Bregu i Diellit, Prishtina, Ref B377 (7/11)"
+      "width": 2000,
+      "height": 1333,
+      "kind": "bedroom",
+      "overlay": "brand",
+      "hasTextOverlay": false,
+      "altSq": "Dhoma e gjumit, banesë në shitje në Bregun e Diellit, Prishtinë, Ref B377 (7/11)",
+      "altEn": "Bedroom, apartment for sale in Bregu i Diellit, Prishtina, Ref B377 (7/11)"
     },
     {
       "src": "../../assets/listings/b377/08.jpg",
       "file": "08.jpg",
-      "width": 2730,
-      "height": 1820,
-      "kind": "other",
-      "overlay": null,
-      "hasTextOverlay": null,
-      "altSq": "Fotografi e pronës, banesë në shitje në Bregun e Diellit, Prishtinë, Ref B377 (8/11)",
-      "altEn": "Property photo, apartment for sale in Bregu i Diellit, Prishtina, Ref B377 (8/11)"
+      "width": 2000,
+      "height": 1333,
+      "kind": "bedroom",
+      "overlay": "brand",
+      "hasTextOverlay": false,
+      "altSq": "Dhoma e gjumit, banesë në shitje në Bregun e Diellit, Prishtinë, Ref B377 (8/11)",
+      "altEn": "Bedroom, apartment for sale in Bregu i Diellit, Prishtina, Ref B377 (8/11)"
     },
     {
       "src": "../../assets/listings/b377/09.jpg",
       "file": "09.jpg",
-      "width": 2730,
-      "height": 1820,
-      "kind": "other",
-      "overlay": null,
-      "hasTextOverlay": null,
-      "altSq": "Fotografi e pronës, banesë në shitje në Bregun e Diellit, Prishtinë, Ref B377 (9/11)",
-      "altEn": "Property photo, apartment for sale in Bregu i Diellit, Prishtina, Ref B377 (9/11)"
+      "width": 2000,
+      "height": 1333,
+      "kind": "bathroom",
+      "overlay": "brand",
+      "hasTextOverlay": false,
+      "altSq": "Banjo, banesë në shitje në Bregun e Diellit, Prishtinë, Ref B377 (9/11)",
+      "altEn": "Bathroom, apartment for sale in Bregu i Diellit, Prishtina, Ref B377 (9/11)"
     },
     {
       "src": "../../assets/listings/b377/10.jpg",
       "file": "10.jpg",
-      "width": 2730,
-      "height": 1820,
-      "kind": "other",
-      "overlay": null,
-      "hasTextOverlay": null,
-      "altSq": "Fotografi e pronës, banesë në shitje në Bregun e Diellit, Prishtinë, Ref B377 (10/11)",
-      "altEn": "Property photo, apartment for sale in Bregu i Diellit, Prishtina, Ref B377 (10/11)"
+      "width": 2000,
+      "height": 1333,
+      "kind": "bathroom",
+      "overlay": "brand",
+      "hasTextOverlay": false,
+      "altSq": "Banjo, banesë në shitje në Bregun e Diellit, Prishtinë, Ref B377 (10/11)",
+      "altEn": "Bathroom, apartment for sale in Bregu i Diellit, Prishtina, Ref B377 (10/11)"
     },
     {
       "src": "../../assets/listings/b377/11.jpg",
       "file": "11.jpg",
-      "width": 2730,
-      "height": 1820,
-      "kind": "other",
-      "overlay": null,
-      "hasTextOverlay": null,
-      "altSq": "Fotografi e pronës, banesë në shitje në Bregun e Diellit, Prishtinë, Ref B377 (11/11)",
-      "altEn": "Property photo, apartment for sale in Bregu i Diellit, Prishtina, Ref B377 (11/11)"
+      "width": 2000,
+      "height": 1333,
+      "kind": "entrance",
+      "overlay": "brand",
+      "hasTextOverlay": false,
+      "altSq": "Hyrja, banesë në shitje në Bregun e Diellit, Prishtinë, Ref B377 (11/11)",
+      "altEn": "Entrance, apartment for sale in Bregu i Diellit, Prishtina, Ref B377 (11/11)"
     }
   ],
   "coverIndex": 0,
   "provenance": {
     "overridden": {},
     "warnings": [],
-    "reviewedImages": false,
-    "translated": false
+    "reviewedImages": true,
+    "translated": true
   }
 }

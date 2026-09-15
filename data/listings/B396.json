@@ -1,0 +1,71 @@
+{
+  "ref": "B396",
+  "descriptionEn": [
+    "Offered for rent: a house located on Rruga Nekibe Kelmendi, within Lagjja Ndërkombëtare, a private neighbourhood with access control via a barrier and 24/7 security, suitable for families looking for peace, privacy and security.",
+    "The house has a good layout and consists of three bedrooms, one of which is a master bedroom (Master Bedroom) with a separate walk-in wardrobe and a private bathroom, as well as two other shared bathrooms.",
+    "The living room has direct access to the back yard, where there is also an outdoor veranda for sitting and relaxing. The kitchen is separate and has a separate dining area.",
+    "The property has a garage, additional parking in front of the garage, two balconies and a basement that can be adapted as needed as an extra bedroom, gym, home office, entertainment space or multifunctional room.",
+    "Under the roof there is also a separate space for an additional wardrobe and storage of seasonal or personal belongings.",
+    "Heating is provided by a heat pump from the Vaillant brand.",
+    "Monthly rent: €2,300\nDeposit: €2,300\nMinimum contract: 1 year"
+  ],
+  "images": [
+    {
+      "file": "01.jpg",
+      "kind": "living",
+      "overlay": "text",
+      "reason": "cover label \"Fshati Ndërkombëtar, Prishtinë.\" and \"2300€ Muaji\" (rent matches caption)"
+    },
+    {
+      "file": "02.jpg",
+      "kind": "kitchen",
+      "overlay": "brand",
+      "reason": "kitchen with dining table"
+    },
+    {
+      "file": "03.jpg",
+      "kind": "terrace",
+      "overlay": "brand",
+      "reason": "wooden veranda deck with outdoor furniture in the back yard"
+    },
+    {
+      "file": "04.jpg",
+      "kind": "interior",
+      "overlay": "brand",
+      "reason": "empty room with balcony door"
+    },
+    {
+      "file": "05.jpg",
+      "kind": "bedroom",
+      "overlay": "brand"
+    },
+    {
+      "file": "06.jpg",
+      "kind": "bedroom",
+      "overlay": "brand"
+    },
+    {
+      "file": "07.jpg",
+      "kind": "interior",
+      "overlay": "brand",
+      "reason": "large empty room"
+    },
+    {
+      "file": "08.jpg",
+      "kind": "bathroom",
+      "overlay": "brand"
+    },
+    {
+      "file": "09.jpg",
+      "kind": "bathroom",
+      "overlay": "brand"
+    },
+    {
+      "file": "10.jpg",
+      "kind": "bathroom",
+      "overlay": "brand",
+      "reason": "photographer's camera on tripod reflected in mirror; no person visible"
+    }
+  ],
+  "notes": "Parser left bathrooms null (numbered and unnumbered mentions); set to 3 from the single sentence describing one en-suite plus two other bathrooms — maintainer may revert to null if a stricter reading is preferred. Cover 01.jpg says \"Fshati Ndërkombëtar\" whereas the caption says \"Lagjes Ndërkombëtare\"; caption neighbourhood kept. No living area stated. 'basement' feature is explicit (\"një podrum\"). No images excluded. Bathrooms left null: caption mentions a private bathroom plus two other bathrooms; totals are not summed."
+}

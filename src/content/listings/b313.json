@@ -64,7 +64,7 @@
     "garageOptional": null,
     "tradeInEn": null
   },
-  "aiVisualisation": false,
+  "aiVisualisation": true,
   "aiDisclaimerSq": null,
   "aiDisclaimerEn": null,
   "status": "unconfirmed",
@@ -75,7 +75,12 @@
     "Hapësira përfshin sallon të gjerë me kuzhinë të integruar, 3.5 dhoma gjumi, banjo dhe WC, korridor funksional dhe ballkon me pamje të hapur. Banesa ka ngrohje me rrymë/radiator dhe klimë, është e ndriçuar natyralisht dhe gati për banim, duke ofruar një ambient urban me balancë ideale mes qetësisë dhe dinamikës.",
     "Çmimi sipas marrëveshjes."
   ],
-  "descriptionEn": null,
+  "descriptionEn": [
+    "An apartment is offered for rent in Lakrishte, in the “BeniDona” building, Prishtina.",
+    "The apartment is located on the 10th floor of a modern building, served by two elevators and with access secured by key fobs, offering complete quiet, safety and comfort. The location is strategic, close to the centre, institutions, shopping centres and public transport.",
+    "The space includes a spacious living room with integrated kitchen, 3.5 bedrooms, bathroom and WC, a functional hallway and a balcony with an open view. The apartment has electric/radiator heating and air conditioning, is naturally lit and ready to move into, offering an urban setting with an ideal balance between quiet and dynamism.",
+    "Price by agreement."
+  ],
   "descriptionEnIsTranslation": true,
   "extraCaptions": [
     {
@@ -86,137 +91,142 @@
         "Ngrohje me rrymë / radiator + klimë.\nHapësirë e rregullt, urbane, gati për ty.",
         "📍 Lakrishtë – zemra e qytetit."
       ],
-      "en": null
+      "en": [
+        "🟣 Apartment for Rent – Lakrishte | BeniDona",
+        "On the 10th floor, with 2 elevators and key fob access.\nLiving room with kitchen + 3.5 bedrooms, bathroom + WC, hallway and balcony with a view.",
+        "Electric / radiator heating + air conditioning.\nRegular, urban space, ready for you.",
+        "📍 Lakrishtë – the heart of the city."
+      ]
     }
   ],
   "images": [
     {
-      "src": "../../assets/listings/b313/01.jpg",
-      "file": "01.jpg",
-      "width": 2025,
-      "height": 1350,
-      "kind": "other",
-      "overlay": null,
-      "hasTextOverlay": null,
-      "altSq": "Fotografi e pronës, banesë me qira në Lakrishte, Prishtinë, Ref B313 (1/11)",
-      "altEn": "Property photo, apartment for rent in Lakrishte, Prishtina, Ref B313 (1/11)"
-    },
-    {
       "src": "../../assets/listings/b313/02.jpg",
       "file": "02.jpg",
-      "width": 2025,
-      "height": 1350,
-      "kind": "other",
-      "overlay": null,
-      "hasTextOverlay": null,
-      "altSq": "Fotografi e pronës, banesë me qira në Lakrishte, Prishtinë, Ref B313 (2/11)",
-      "altEn": "Property photo, apartment for rent in Lakrishte, Prishtina, Ref B313 (2/11)"
+      "width": 2000,
+      "height": 1333,
+      "kind": "living",
+      "overlay": "brand",
+      "hasTextOverlay": false,
+      "altSq": "Qëndrimi ditor, banesë me qira në Lakrishte, Prishtinë, Ref B313 (1/11)",
+      "altEn": "Living room, apartment for rent in Lakrishte, Prishtina, Ref B313 (1/11)"
     },
     {
       "src": "../../assets/listings/b313/03.jpg",
       "file": "03.jpg",
-      "width": 2025,
-      "height": 1350,
-      "kind": "other",
-      "overlay": null,
-      "hasTextOverlay": null,
-      "altSq": "Fotografi e pronës, banesë me qira në Lakrishte, Prishtinë, Ref B313 (3/11)",
-      "altEn": "Property photo, apartment for rent in Lakrishte, Prishtina, Ref B313 (3/11)"
+      "width": 2000,
+      "height": 1333,
+      "kind": "living",
+      "overlay": "brand",
+      "hasTextOverlay": false,
+      "altSq": "Qëndrimi ditor, banesë me qira në Lakrishte, Prishtinë, Ref B313 (2/11)",
+      "altEn": "Living room, apartment for rent in Lakrishte, Prishtina, Ref B313 (2/11)"
     },
     {
       "src": "../../assets/listings/b313/04.jpg",
       "file": "04.jpg",
-      "width": 2025,
-      "height": 1350,
-      "kind": "other",
-      "overlay": null,
-      "hasTextOverlay": null,
-      "altSq": "Fotografi e pronës, banesë me qira në Lakrishte, Prishtinë, Ref B313 (4/11)",
-      "altEn": "Property photo, apartment for rent in Lakrishte, Prishtina, Ref B313 (4/11)"
+      "width": 2000,
+      "height": 1333,
+      "kind": "living-kitchen",
+      "overlay": "brand",
+      "hasTextOverlay": false,
+      "altSq": "Qëndrimi ditor me kuzhinë, banesë me qira në Lakrishte, Prishtinë, Ref B313 (3/11)",
+      "altEn": "Living room with kitchen, apartment for rent in Lakrishte, Prishtina, Ref B313 (3/11)"
     },
     {
       "src": "../../assets/listings/b313/05.jpg",
       "file": "05.jpg",
-      "width": 2025,
-      "height": 1350,
-      "kind": "other",
-      "overlay": null,
-      "hasTextOverlay": null,
-      "altSq": "Fotografi e pronës, banesë me qira në Lakrishte, Prishtinë, Ref B313 (5/11)",
-      "altEn": "Property photo, apartment for rent in Lakrishte, Prishtina, Ref B313 (5/11)"
+      "width": 2000,
+      "height": 1333,
+      "kind": "interior",
+      "overlay": "brand",
+      "hasTextOverlay": false,
+      "altSq": "Hapësira e brendshme, banesë me qira në Lakrishte, Prishtinë, Ref B313 (4/11)",
+      "altEn": "Interior space, apartment for rent in Lakrishte, Prishtina, Ref B313 (4/11)"
     },
     {
       "src": "../../assets/listings/b313/06.jpg",
       "file": "06.jpg",
-      "width": 2025,
-      "height": 1350,
-      "kind": "other",
-      "overlay": null,
-      "hasTextOverlay": null,
-      "altSq": "Fotografi e pronës, banesë me qira në Lakrishte, Prishtinë, Ref B313 (6/11)",
-      "altEn": "Property photo, apartment for rent in Lakrishte, Prishtina, Ref B313 (6/11)"
+      "width": 2000,
+      "height": 1333,
+      "kind": "bedroom",
+      "overlay": "brand",
+      "hasTextOverlay": false,
+      "altSq": "Dhoma e gjumit, banesë me qira në Lakrishte, Prishtinë, Ref B313 (5/11)",
+      "altEn": "Bedroom, apartment for rent in Lakrishte, Prishtina, Ref B313 (5/11)"
     },
     {
       "src": "../../assets/listings/b313/07.jpg",
       "file": "07.jpg",
-      "width": 2025,
-      "height": 1350,
-      "kind": "other",
-      "overlay": null,
-      "hasTextOverlay": null,
-      "altSq": "Fotografi e pronës, banesë me qira në Lakrishte, Prishtinë, Ref B313 (7/11)",
-      "altEn": "Property photo, apartment for rent in Lakrishte, Prishtina, Ref B313 (7/11)"
+      "width": 2000,
+      "height": 1333,
+      "kind": "bedroom",
+      "overlay": "brand",
+      "hasTextOverlay": false,
+      "altSq": "Dhoma e gjumit, banesë me qira në Lakrishte, Prishtinë, Ref B313 (6/11)",
+      "altEn": "Bedroom, apartment for rent in Lakrishte, Prishtina, Ref B313 (6/11)"
     },
     {
       "src": "../../assets/listings/b313/08.jpg",
       "file": "08.jpg",
-      "width": 2025,
-      "height": 1350,
-      "kind": "other",
-      "overlay": null,
-      "hasTextOverlay": null,
-      "altSq": "Fotografi e pronës, banesë me qira në Lakrishte, Prishtinë, Ref B313 (8/11)",
-      "altEn": "Property photo, apartment for rent in Lakrishte, Prishtina, Ref B313 (8/11)"
+      "width": 2000,
+      "height": 1333,
+      "kind": "interior",
+      "overlay": "brand",
+      "hasTextOverlay": false,
+      "altSq": "Hapësira e brendshme, banesë me qira në Lakrishte, Prishtinë, Ref B313 (7/11)",
+      "altEn": "Interior space, apartment for rent in Lakrishte, Prishtina, Ref B313 (7/11)"
     },
     {
       "src": "../../assets/listings/b313/09.jpg",
       "file": "09.jpg",
-      "width": 2025,
-      "height": 1350,
-      "kind": "other",
-      "overlay": null,
-      "hasTextOverlay": null,
-      "altSq": "Fotografi e pronës, banesë me qira në Lakrishte, Prishtinë, Ref B313 (9/11)",
-      "altEn": "Property photo, apartment for rent in Lakrishte, Prishtina, Ref B313 (9/11)"
+      "width": 2000,
+      "height": 1333,
+      "kind": "bathroom",
+      "overlay": "brand",
+      "hasTextOverlay": false,
+      "altSq": "Banjo, banesë me qira në Lakrishte, Prishtinë, Ref B313 (8/11)",
+      "altEn": "Bathroom, apartment for rent in Lakrishte, Prishtina, Ref B313 (8/11)"
     },
     {
       "src": "../../assets/listings/b313/10.jpg",
       "file": "10.jpg",
-      "width": 2025,
-      "height": 1350,
-      "kind": "other",
-      "overlay": null,
-      "hasTextOverlay": null,
-      "altSq": "Fotografi e pronës, banesë me qira në Lakrishte, Prishtinë, Ref B313 (10/11)",
-      "altEn": "Property photo, apartment for rent in Lakrishte, Prishtina, Ref B313 (10/11)"
+      "width": 2000,
+      "height": 1333,
+      "kind": "bathroom",
+      "overlay": "brand",
+      "hasTextOverlay": false,
+      "altSq": "Banjo, banesë me qira në Lakrishte, Prishtinë, Ref B313 (9/11)",
+      "altEn": "Bathroom, apartment for rent in Lakrishte, Prishtina, Ref B313 (9/11)"
+    },
+    {
+      "src": "../../assets/listings/b313/01.jpg",
+      "file": "01.jpg",
+      "width": 2000,
+      "height": 1333,
+      "kind": "render",
+      "overlay": "text",
+      "hasTextOverlay": true,
+      "altSq": "Vizualizim, banesë me qira në Lakrishte, Prishtinë, Ref B313 (10/11)",
+      "altEn": "Visualisation, apartment for rent in Lakrishte, Prishtina, Ref B313 (10/11)"
     },
     {
       "src": "../../assets/listings/b313/11_video-cover.jpg",
       "file": "11_video-cover.jpg",
       "width": 1080,
       "height": 1920,
-      "kind": "other",
-      "overlay": null,
-      "hasTextOverlay": null,
-      "altSq": "Fotografi e pronës, banesë me qira në Lakrishte, Prishtinë, Ref B313 (11/11)",
-      "altEn": "Property photo, apartment for rent in Lakrishte, Prishtina, Ref B313 (11/11)"
+      "kind": "building",
+      "overlay": "text",
+      "hasTextOverlay": true,
+      "altSq": "Ndërtesa, banesë me qira në Lakrishte, Prishtinë, Ref B313 (11/11)",
+      "altEn": "Building, apartment for rent in Lakrishte, Prishtina, Ref B313 (11/11)"
     }
   ],
   "coverIndex": 0,
   "provenance": {
     "overridden": {},
     "warnings": [],
-    "reviewedImages": false,
-    "translated": false
+    "reviewedImages": true,
+    "translated": true
   }
 }

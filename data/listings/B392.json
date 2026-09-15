@@ -1,0 +1,20 @@
+{
+  "ref": "B392",
+  "descriptionEn": [
+    "Offered for sale: an apartment with an area of 89m², located on Rruga Idriz Breznica, in Fushë Kosovë.",
+    "The apartment is on the 9th floor, in a building by Model Slovenia, and faces East.\nThe space consists of a living room with kitchen, two bedrooms, one bathroom, a storage room and a balcony. The property has underfloor heating.",
+    "The property has an ownership certificate.\nThe price of the property is €72,500."
+  ],
+  "images": [
+    { "file": "01.jpg", "kind": "living", "overlay": "text", "reason": "cover label \"Rruga Idriz Breznica, Fushë Kosovë.\" and \"72,500€\" (matches caption)" },
+    { "file": "02.jpg", "kind": "living", "overlay": "brand" },
+    { "file": "03.jpg", "kind": "kitchen", "overlay": "brand", "reason": "kitchen with dining table" },
+    { "file": "04.jpg", "kind": "kitchen", "overlay": "brand", "reason": "kitchen and dining table with doors to hallway" },
+    { "file": "05.jpg", "kind": "balcony", "overlay": "brand", "reason": "balcony with view over neighbouring buildings" },
+    { "file": "06.jpg", "kind": "bedroom", "overlay": "brand" },
+    { "file": "07.jpg", "kind": "bedroom", "overlay": "brand" },
+    { "file": "08.jpg", "kind": "bedroom", "overlay": "brand" },
+    { "file": "09.jpg", "kind": "bathroom", "overlay": "brand" }
+  ],
+  "notes": "Parsed developer \"Model Slovenia\" comes from \"në objekt nga Model Slovenia\" (\"in a building by Model Slovenia\"); kept as it attributes the building to a named party, but the wording is not the usual \"ndërtim nga\" — maintainer may want to confirm Model Slovenia is the builder. No price per m² stated. No images excluded."
+}

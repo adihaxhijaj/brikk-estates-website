@@ -1,0 +1,21 @@
+{
+  "ref": "B318",
+  "descriptionEn": [
+    "An apartment is offered for rent in Bregu i Diellit, Prishtina.",
+    "The apartment is located in the Standardi complex, built by Miri Construction, in a strategic location near Rruga B, schools, hospitals and main services.",
+    "The space includes a living room with kitchen, three bedrooms, bathroom, WC, pantry and balcony. The apartment has abundant natural light and is functionally organised, suitable for long-term living.",
+    "Price by agreement."
+  ],
+  "images": [
+    { "file": "01.jpg", "kind": "living", "overlay": "text", "reason": "cover headline “BANESË ME QIRA – BREGU I DIELLIT, PRISHTINË”" },
+    { "file": "02.jpg", "kind": "living", "overlay": "brand" },
+    { "file": "03.jpg", "kind": "kitchen", "overlay": "brand", "reason": "kitchen with dining table; framed Last Supper reproduction on wall, not a private person" },
+    { "file": "04.jpg", "kind": "kitchen", "overlay": "brand" },
+    { "file": "05.jpg", "kind": "bedroom", "overlay": "brand" },
+    { "file": "06.jpg", "kind": "bedroom", "overlay": "brand" },
+    { "file": "07.jpg", "kind": "interior", "overlay": "brand", "reason": "small room with ironing board, desk and toys; no people" },
+    { "file": "08.jpg", "kind": "bathroom", "overlay": "brand" },
+    { "file": "09.jpg", "kind": "bathroom", "overlay": "brand", "reason": "WC with washing machine" }
+  ],
+  "notes": "Developer Miri Construction is explicit ('me ndërtim të Miri Construction'). The caption says 'kompleksin e Standardit' (the Standard/Standardi complex); complex left null because the nominative name form cannot be confirmed from the caption — maintainer may set it. The English text renders it as “the Standardi complex”. 'shpajz' (pantry) is the source of storage: true. 'banjo, WC' has no numerals, so bathrooms/wc left null. Area and rent not stated. Photos show an occupied, furnished home, but the caption does not say furnished."
+}

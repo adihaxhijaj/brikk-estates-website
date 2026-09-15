@@ -1,23 +1,23 @@
 {
   "ref": "B391",
-  "slugSq": "b391-banese-ne-shitje-abedin-sogojeva",
-  "slugEn": "b391-apartment-for-sale-abedin-sogojeva",
+  "slugSq": "b391-banese-ne-shitje-fushe-kosove",
+  "slugEn": "b391-apartment-for-sale-fushe-kosove",
   "postedAt": "2026-09-04",
   "instagramUrl": "https://www.instagram.com/p/Dc3G87JCos6/",
   "deal": "sale",
   "type": "apartment",
   "multipleUnits": false,
-  "titleSq": "Banesë në shitje në Rrugën Abedin Sogojeva",
-  "titleEn": "Apartment for sale in Rruga Abedin Sogojeva",
-  "city": null,
-  "cityEn": null,
+  "titleSq": "Banesë në shitje në Fushë Kosovë",
+  "titleEn": "Apartment for sale in Fushë Kosovë",
+  "city": "Fushë Kosovë",
+  "cityEn": "Fushë Kosovë",
   "neighbourhood": null,
   "neighbourhoodLoc": null,
   "street": "Rruga Abedin Sogojeva",
   "complex": null,
   "landmark": null,
   "landmarkEn": null,
-  "country": null,
+  "country": "XK",
   "developer": null,
   "isNewBuild": null,
   "completion": null,
@@ -72,7 +72,11 @@
     "Çmimi: 700€/m²\nÇmimi total: 76,300€",
     "Për fotografi të brendshme të banesës, na kontaktoni në WhatsApp ose Viber:"
   ],
-  "descriptionEn": null,
+  "descriptionEn": [
+    "Offered for sale: an apartment with an area of 109m², positioned on the 8th floor.\nThe apartment has a functional layout and consists of a living room with kitchen, two bedrooms, one bathroom and two terraces.\nThe property has an ownership certificate.",
+    "Price: €700/m²\nTotal price: €76,300",
+    "For interior photos of the apartment, contact us on WhatsApp or Viber:"
+  ],
   "descriptionEnIsTranslation": true,
   "extraCaptions": [],
   "images": [
@@ -81,18 +85,35 @@
       "file": "01.jpg",
       "width": 1440,
       "height": 1080,
-      "kind": "other",
-      "overlay": null,
-      "hasTextOverlay": null,
-      "altSq": "Fotografi e pronës, banesë në shitje në Rrugën Abedin Sogojeva, Ref B391 (1/1)",
-      "altEn": "Property photo, apartment for sale in Rruga Abedin Sogojeva, Ref B391 (1/1)"
+      "kind": "aerial",
+      "overlay": "text",
+      "hasTextOverlay": true,
+      "altSq": "Pamje nga lart, banesë në shitje në Fushë Kosovë, Ref B391 (1/1)",
+      "altEn": "Aerial view, apartment for sale in Fushë Kosovë, Ref B391 (1/1)"
     }
   ],
   "coverIndex": 0,
   "provenance": {
-    "overridden": {},
+    "overridden": {
+      "city": {
+        "from": null,
+        "to": "Fushë Kosovë",
+        "evidence": [
+          "image:01.jpg Rruga Abedin Sogojeva, Fushë Kosovë"
+        ],
+        "note": "caption names only the street; the city is shown on the listing's own cover graphic"
+      },
+      "country": {
+        "from": null,
+        "to": "XK",
+        "evidence": [
+          "image:01.jpg Rruga Abedin Sogojeva, Fushë Kosovë"
+        ],
+        "note": "follows from the city on the listing's own cover graphic (Fushë Kosovë, Kosovo)"
+      }
+    },
     "warnings": [],
-    "reviewedImages": false,
-    "translated": false
+    "reviewedImages": true,
+    "translated": true
   }
 }

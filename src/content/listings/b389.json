@@ -15,8 +15,8 @@
   "neighbourhoodLoc": "Llukar",
   "street": "Rruga Ramiz Varvarica",
   "complex": null,
-  "landmark": null,
-  "landmarkEn": null,
+  "landmark": "rreth 600 metra larg Fushës Sportive Derbi",
+  "landmarkEn": "about 600 metres from the Derbi sports field (Fusha Sportive Derbi)",
   "country": "XK",
   "developer": null,
   "isNewBuild": null,
@@ -70,7 +70,11 @@
     "Toka posedon fletë poseduese dhe shitet vetëm si tërësi.",
     "Çmimi: 10,000€/ari\nÇmimi total: 57,000€"
   ],
-  "descriptionEn": null,
+  "descriptionEn": [
+    "Offered for sale: land with an area of 5.70 ares, located on Rruga Ramiz Varvarica, in Llukar, about 600 metres from the Derbi sports field (Fusha Sportive Derbi) and with good access to the M9 Prishtina–Mutivodë main road.\nThe property is suitable for building a house and has access to electricity, water and sewerage.",
+    "The land has an ownership certificate and is sold only as a whole.",
+    "Price: €10,000 per are\nTotal price: €57,000"
+  ],
   "descriptionEnIsTranslation": true,
   "extraCaptions": [],
   "images": [
@@ -79,18 +83,27 @@
       "file": "01.jpg",
       "width": 1440,
       "height": 1080,
-      "kind": "other",
-      "overlay": null,
-      "hasTextOverlay": null,
-      "altSq": "Fotografi e pronës, tokë në shitje në Llukar, Prishtinë, Ref B389 (1/1)",
-      "altEn": "Property photo, land for sale in Llukar, Prishtina, Ref B389 (1/1)"
+      "kind": "aerial",
+      "overlay": "text",
+      "hasTextOverlay": true,
+      "altSq": "Pamje nga lart, tokë në shitje në Llukar, Prishtinë, Ref B389 (1/1)",
+      "altEn": "Aerial view, land for sale in Llukar, Prishtina, Ref B389 (1/1)"
     }
   ],
   "coverIndex": 0,
   "provenance": {
-    "overridden": {},
+    "overridden": {
+      "landmark": {
+        "from": null,
+        "to": "rreth 600 metra larg Fushës Sportive Derbi",
+        "evidence": [
+          "rreth 600 metra larg Fushës Sportive Derbi"
+        ],
+        "note": "proximity landmark stated explicitly in the caption"
+      }
+    },
     "warnings": [],
-    "reviewedImages": false,
-    "translated": false
+    "reviewedImages": true,
+    "translated": true
   }
 }

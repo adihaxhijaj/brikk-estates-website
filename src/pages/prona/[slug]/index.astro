@@ -1,0 +1,11 @@
+---
+import View from '../../../views/ListingView.astro';
+import { getVisibleListings, type Listing } from '../../../lib/listings';
+
+export async function getStaticPaths() {
+  const listings = await getVisibleListings();
+  return listings.map((listing) => ({ params: { slug: listing.slugSq }, props: { listing } }));
+}
+const { listing } = Astro.props as { listing: Listing };
+---
+<View listing={listing} lang="sq" />

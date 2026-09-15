@@ -332,6 +332,7 @@ export const en: Dict = {
     ],
     whereTitle: 'Where we work',
     whereIntro: 'Areas where we have published properties:',
+    alsoTitle: 'Further afield',
     identity: 'A new identity. The same dedication.',
   },
 

@@ -1,4 +1,4 @@
-﻿import sharp from 'sharp';
+import sharp from 'sharp';
 const src = 'C:/Users/AdiH/Desktop/Brikk-Estates/instagram/other-posts/2026-08-21_brikk-estates/01.jpg';
 const { data, info } = await sharp(src).raw().toBuffer({ resolveWithObject: true });
 const W = info.width, H = info.height, C = info.channels;

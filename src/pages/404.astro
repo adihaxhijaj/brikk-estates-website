@@ -1,0 +1,25 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { dict, ROUTES } from '../i18n';
+
+const sq = dict('sq');
+const en = dict('en');
+---
+<BaseLayout lang="sq" title={sq.notFound.title} description={sq.notFound.text} alternates={ROUTES.home}>
+  <section class="section">
+    <div class="container nf">
+      <h1>{sq.notFound.h1}</h1>
+      <p>{sq.notFound.text}</p>
+      <p><a class="btn" href={ROUTES.properties.sq}>{sq.notFound.cta}</a></p>
+      <div lang="en" class="nf__en">
+        <h2>{en.notFound.h1}</h2>
+        <p>{en.notFound.text}</p>
+        <p><a class="btn btn--outline" href={ROUTES.properties.en}>{en.notFound.cta}</a></p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+<style>
+  .nf { display: grid; gap: var(--s-4); justify-items: start; }
+  .nf__en { display: grid; gap: var(--s-3); justify-items: start; margin-top: var(--s-6); padding-top: var(--s-5); border-top: 1px solid var(--line); }
+</style>

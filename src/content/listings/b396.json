@@ -82,119 +82,127 @@
     "Ngrohja realizohet përmes pompës termike nga brendi Vaillant.",
     "Qiraja mujore: 2,300€\nDepozita: 2,300€\nKontrata minimale: 1 vit"
   ],
-  "descriptionEn": null,
+  "descriptionEn": [
+    "Offered for rent: a house located on Rruga Nekibe Kelmendi, within Lagjja Ndërkombëtare, a private neighbourhood with access control via a barrier and 24/7 security, suitable for families looking for peace, privacy and security.",
+    "The house has a good layout and consists of three bedrooms, one of which is a master bedroom (Master Bedroom) with a separate walk-in wardrobe and a private bathroom, as well as two other shared bathrooms.",
+    "The living room has direct access to the back yard, where there is also an outdoor veranda for sitting and relaxing. The kitchen is separate and has a separate dining area.",
+    "The property has a garage, additional parking in front of the garage, two balconies and a basement that can be adapted as needed as an extra bedroom, gym, home office, entertainment space or multifunctional room.",
+    "Under the roof there is also a separate space for an additional wardrobe and storage of seasonal or personal belongings.",
+    "Heating is provided by a heat pump from the Vaillant brand.",
+    "Monthly rent: €2,300\nDeposit: €2,300\nMinimum contract: 1 year"
+  ],
   "descriptionEnIsTranslation": true,
   "extraCaptions": [],
   "images": [
     {
-      "src": "../../assets/listings/b396/01.jpg",
-      "file": "01.jpg",
-      "width": 2048,
-      "height": 1365,
-      "kind": "other",
-      "overlay": null,
-      "hasTextOverlay": null,
-      "altSq": "Fotografi e pronës, shtëpi me qira në Lagjen Ndërkombëtare, Prishtinë, Ref B396 (1/10)",
-      "altEn": "Property photo, house for rent in Lagjja Ndërkombëtare, Prishtina, Ref B396 (1/10)"
-    },
-    {
       "src": "../../assets/listings/b396/02.jpg",
       "file": "02.jpg",
-      "width": 2048,
-      "height": 1365,
-      "kind": "other",
-      "overlay": null,
-      "hasTextOverlay": null,
-      "altSq": "Fotografi e pronës, shtëpi me qira në Lagjen Ndërkombëtare, Prishtinë, Ref B396 (2/10)",
-      "altEn": "Property photo, house for rent in Lagjja Ndërkombëtare, Prishtina, Ref B396 (2/10)"
+      "width": 2000,
+      "height": 1333,
+      "kind": "kitchen",
+      "overlay": "brand",
+      "hasTextOverlay": false,
+      "altSq": "Kuzhina, shtëpi me qira në Lagjen Ndërkombëtare, Prishtinë, Ref B396 (1/10)",
+      "altEn": "Kitchen, house for rent in Lagjja Ndërkombëtare, Prishtina, Ref B396 (1/10)"
     },
     {
       "src": "../../assets/listings/b396/03.jpg",
       "file": "03.jpg",
-      "width": 2048,
-      "height": 1365,
-      "kind": "other",
-      "overlay": null,
-      "hasTextOverlay": null,
-      "altSq": "Fotografi e pronës, shtëpi me qira në Lagjen Ndërkombëtare, Prishtinë, Ref B396 (3/10)",
-      "altEn": "Property photo, house for rent in Lagjja Ndërkombëtare, Prishtina, Ref B396 (3/10)"
+      "width": 2000,
+      "height": 1333,
+      "kind": "terrace",
+      "overlay": "brand",
+      "hasTextOverlay": false,
+      "altSq": "Tarraca, shtëpi me qira në Lagjen Ndërkombëtare, Prishtinë, Ref B396 (2/10)",
+      "altEn": "Terrace, house for rent in Lagjja Ndërkombëtare, Prishtina, Ref B396 (2/10)"
     },
     {
       "src": "../../assets/listings/b396/04.jpg",
       "file": "04.jpg",
-      "width": 2048,
-      "height": 1365,
-      "kind": "other",
-      "overlay": null,
-      "hasTextOverlay": null,
-      "altSq": "Fotografi e pronës, shtëpi me qira në Lagjen Ndërkombëtare, Prishtinë, Ref B396 (4/10)",
-      "altEn": "Property photo, house for rent in Lagjja Ndërkombëtare, Prishtina, Ref B396 (4/10)"
+      "width": 2000,
+      "height": 1333,
+      "kind": "interior",
+      "overlay": "brand",
+      "hasTextOverlay": false,
+      "altSq": "Hapësira e brendshme, shtëpi me qira në Lagjen Ndërkombëtare, Prishtinë, Ref B396 (3/10)",
+      "altEn": "Interior space, house for rent in Lagjja Ndërkombëtare, Prishtina, Ref B396 (3/10)"
     },
     {
       "src": "../../assets/listings/b396/05.jpg",
       "file": "05.jpg",
-      "width": 2048,
-      "height": 1365,
-      "kind": "other",
-      "overlay": null,
-      "hasTextOverlay": null,
-      "altSq": "Fotografi e pronës, shtëpi me qira në Lagjen Ndërkombëtare, Prishtinë, Ref B396 (5/10)",
-      "altEn": "Property photo, house for rent in Lagjja Ndërkombëtare, Prishtina, Ref B396 (5/10)"
+      "width": 2000,
+      "height": 1333,
+      "kind": "bedroom",
+      "overlay": "brand",
+      "hasTextOverlay": false,
+      "altSq": "Dhoma e gjumit, shtëpi me qira në Lagjen Ndërkombëtare, Prishtinë, Ref B396 (4/10)",
+      "altEn": "Bedroom, house for rent in Lagjja Ndërkombëtare, Prishtina, Ref B396 (4/10)"
     },
     {
       "src": "../../assets/listings/b396/06.jpg",
       "file": "06.jpg",
-      "width": 2048,
-      "height": 1365,
-      "kind": "other",
-      "overlay": null,
-      "hasTextOverlay": null,
-      "altSq": "Fotografi e pronës, shtëpi me qira në Lagjen Ndërkombëtare, Prishtinë, Ref B396 (6/10)",
-      "altEn": "Property photo, house for rent in Lagjja Ndërkombëtare, Prishtina, Ref B396 (6/10)"
+      "width": 2000,
+      "height": 1333,
+      "kind": "bedroom",
+      "overlay": "brand",
+      "hasTextOverlay": false,
+      "altSq": "Dhoma e gjumit, shtëpi me qira në Lagjen Ndërkombëtare, Prishtinë, Ref B396 (5/10)",
+      "altEn": "Bedroom, house for rent in Lagjja Ndërkombëtare, Prishtina, Ref B396 (5/10)"
     },
     {
       "src": "../../assets/listings/b396/07.jpg",
       "file": "07.jpg",
-      "width": 2048,
-      "height": 1365,
-      "kind": "other",
-      "overlay": null,
-      "hasTextOverlay": null,
-      "altSq": "Fotografi e pronës, shtëpi me qira në Lagjen Ndërkombëtare, Prishtinë, Ref B396 (7/10)",
-      "altEn": "Property photo, house for rent in Lagjja Ndërkombëtare, Prishtina, Ref B396 (7/10)"
+      "width": 2000,
+      "height": 1333,
+      "kind": "interior",
+      "overlay": "brand",
+      "hasTextOverlay": false,
+      "altSq": "Hapësira e brendshme, shtëpi me qira në Lagjen Ndërkombëtare, Prishtinë, Ref B396 (6/10)",
+      "altEn": "Interior space, house for rent in Lagjja Ndërkombëtare, Prishtina, Ref B396 (6/10)"
     },
     {
       "src": "../../assets/listings/b396/08.jpg",
       "file": "08.jpg",
-      "width": 2048,
-      "height": 1365,
-      "kind": "other",
-      "overlay": null,
-      "hasTextOverlay": null,
-      "altSq": "Fotografi e pronës, shtëpi me qira në Lagjen Ndërkombëtare, Prishtinë, Ref B396 (8/10)",
-      "altEn": "Property photo, house for rent in Lagjja Ndërkombëtare, Prishtina, Ref B396 (8/10)"
+      "width": 2000,
+      "height": 1333,
+      "kind": "bathroom",
+      "overlay": "brand",
+      "hasTextOverlay": false,
+      "altSq": "Banjo, shtëpi me qira në Lagjen Ndërkombëtare, Prishtinë, Ref B396 (7/10)",
+      "altEn": "Bathroom, house for rent in Lagjja Ndërkombëtare, Prishtina, Ref B396 (7/10)"
     },
     {
       "src": "../../assets/listings/b396/09.jpg",
       "file": "09.jpg",
-      "width": 2048,
-      "height": 1365,
-      "kind": "other",
-      "overlay": null,
-      "hasTextOverlay": null,
-      "altSq": "Fotografi e pronës, shtëpi me qira në Lagjen Ndërkombëtare, Prishtinë, Ref B396 (9/10)",
-      "altEn": "Property photo, house for rent in Lagjja Ndërkombëtare, Prishtina, Ref B396 (9/10)"
+      "width": 2000,
+      "height": 1333,
+      "kind": "bathroom",
+      "overlay": "brand",
+      "hasTextOverlay": false,
+      "altSq": "Banjo, shtëpi me qira në Lagjen Ndërkombëtare, Prishtinë, Ref B396 (8/10)",
+      "altEn": "Bathroom, house for rent in Lagjja Ndërkombëtare, Prishtina, Ref B396 (8/10)"
     },
     {
       "src": "../../assets/listings/b396/10.jpg",
       "file": "10.jpg",
-      "width": 2048,
-      "height": 1365,
-      "kind": "other",
-      "overlay": null,
-      "hasTextOverlay": null,
-      "altSq": "Fotografi e pronës, shtëpi me qira në Lagjen Ndërkombëtare, Prishtinë, Ref B396 (10/10)",
-      "altEn": "Property photo, house for rent in Lagjja Ndërkombëtare, Prishtina, Ref B396 (10/10)"
+      "width": 2000,
+      "height": 1333,
+      "kind": "bathroom",
+      "overlay": "brand",
+      "hasTextOverlay": false,
+      "altSq": "Banjo, shtëpi me qira në Lagjen Ndërkombëtare, Prishtinë, Ref B396 (9/10)",
+      "altEn": "Bathroom, house for rent in Lagjja Ndërkombëtare, Prishtina, Ref B396 (9/10)"
+    },
+    {
+      "src": "../../assets/listings/b396/01.jpg",
+      "file": "01.jpg",
+      "width": 2000,
+      "height": 1333,
+      "kind": "living",
+      "overlay": "text",
+      "hasTextOverlay": true,
+      "altSq": "Qëndrimi ditor, shtëpi me qira në Lagjen Ndërkombëtare, Prishtinë, Ref B396 (10/10)",
+      "altEn": "Living room, house for rent in Lagjja Ndërkombëtare, Prishtina, Ref B396 (10/10)"
     }
   ],
   "coverIndex": 0,
@@ -203,7 +211,7 @@
     "warnings": [
       "bathrooms: numbered and unnumbered mentions; left null"
     ],
-    "reviewedImages": false,
-    "translated": false
+    "reviewedImages": true,
+    "translated": true
   }
 }

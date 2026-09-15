@@ -1,0 +1,250 @@
+---
+import { getImage } from 'astro:assets';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Gallery from '../components/Gallery.astro';
+import ContactPanel from '../components/ContactPanel.astro';
+import ListingCard from '../components/ListingCard.astro';
+import Icon from '../components/Icon.astro';
+import { SITE } from '../config/site';
+import { FEATURE } from '../i18n/vocab';
+import { dict, formatArea, formatAres, formatDate, formatEuro, formatNumber, formatPerAre, formatPerM2, listingPath, route, type Lang } from '../i18n';
+import {
+  cityName, dealLabel, floorLabel, getVisibleListings, locationLine, metaDescription, orientationLabel, similarListings, specItems, title, typeLabel, type Listing,
+} from '../lib/listings';
+import { breadcrumbJsonLd, listingJsonLd } from '../lib/seo';
+
+interface Props { listing: Listing; lang: Lang }
+const { listing: l, lang } = Astro.props;
+const t = dict(lang);
+const r = t.detail.rows;
+const name = title(l, lang);
+const alternates = { sq: listingPath(l, 'sq'), en: listingPath(l, 'en') };
+const url = new URL(alternates[lang], SITE.url).href;
+const cover = l.images[l.coverIndex];
+const og = await getImage({ src: cover.src, width: 1200, height: 630, fit: 'cover', format: 'jpg', quality: 82 });
+const description = metaDescription(l, lang);
+const all = await getVisibleListings();
+const similar = similarListings(l, all);
+const paragraphs = lang === 'en' ? l.descriptionEn ?? [] : l.descriptionSq;
+const indexRoute = l.deal === 'sale' ? route('sale', lang) : route('rent', lang);
+const indexName = l.deal === 'sale' ? t.listings.saleH1 : t.listings.rentH1;
+const approx = l.areaApprox ? `${t.detail.approx} ` : '';
+
+// Specification rows — only populated fields.
+const rows: [string, string][] = [];
+const push = (label: string, value: string | null | undefined) => { if (value !== null && value !== undefined && value !== '') rows.push([label, value]); };
+push(r.ref, l.ref);
+push(r.deal, dealLabel(l, lang));
+push(r.type, typeLabel(l, lang));
+push(r.city, cityName(l, lang));
+push(r.neighbourhood, l.neighbourhood);
+push(r.street, l.street);
+push(r.complex, l.complex);
+push(r.landmark, lang === 'en' ? l.landmarkEn : l.landmark);
+if (l.country && l.country !== 'XK') push(r.country, t.detail.countries[l.country]);
+push(r.developer, l.developer);
+if (l.isNewBuild) push(r.newBuild, r.yes);
+push(r.completion, lang === 'en' ? l.completionEn : l.completion);
+if (l.type !== 'land' && l.areaNet !== null) push(r.areaNet, approx + formatArea(l.areaNet, lang));
+if (l.areaTerrace !== null) push(r.areaTerrace, formatArea(l.areaTerrace, lang));
+if (l.plotAres !== null) push(r.plotAres, (l.type === 'land' ? approx : '') + formatAres(l.plotAres, lang));
+push(r.floor, floorLabel(l, lang));
+push(r.orientation, orientationLabel(l, lang));
+if (l.bedrooms !== null) push(r.bedrooms, formatNumber(l.bedrooms, lang));
+if (l.bathrooms !== null) push(r.bathrooms, formatNumber(l.bathrooms, lang));
+if (l.wc !== null) push(r.wc, formatNumber(l.wc, lang));
+if (l.livingWithKitchen !== null) push(r.livingWithKitchen, l.livingWithKitchen ? r.livingWithKitchenYes : r.livingWithKitchenNo);
+if (l.storage) push(r.storage, r.yes);
+if (l.balcony) push(r.balcony, r.yes);
+
+// Price block
+const priceRows: [string, string][] = [];
+if (l.deal === 'rent') {
+  if (l.rentMonthly !== null) priceRows.push([t.detail.rentMonthly, formatEuro(l.rentMonthly, lang)]);
+  if (l.deposit !== null) priceRows.push([t.detail.deposit, formatEuro(l.deposit, lang)]);
+  if (l.minContractMonths !== null) priceRows.push([t.detail.minContract, t.detail.months(l.minContractMonths)]);
+}
+if (l.price !== null) priceRows.push([l.pricePerM2 !== null || l.pricePerAre !== null ? t.detail.priceTotal : t.detail.price, formatEuro(l.price, lang)]);
+if (l.pricePerM2 !== null) priceRows.push([`${t.detail.price} ${t.detail.perM2}`, formatPerM2(l.pricePerM2, lang)]);
+if (l.pricePerAre !== null) priceRows.push([`${t.detail.price} ${t.detail.perAre}`, formatPerAre(l.pricePerAre, lang)]);
+
+const legalItems = (Object.keys(t.detail.legal) as (keyof typeof t.detail.legal)[]).filter((k) => l.legal[k] === true).map((k) => t.detail.legal[k]);
+const extras: string[] = [];
+if (l.extras.financing) extras.push(t.detail.extras.financing(l.extras.financing));
+if (l.extras.installments) extras.push(t.detail.extras.installments);
+if (l.extras.tradeIn) extras.push(t.detail.extras.tradeIn(lang === 'en' ? l.extras.tradeInEn ?? l.extras.tradeIn : l.extras.tradeIn));
+if (l.extras.tenanted) extras.push(t.detail.extras.tenanted);
+if (l.extras.rentalIncome !== null) extras.push(t.detail.extras.rentalIncome(formatEuro(l.extras.rentalIncome, lang)));
+if (l.extras.garageOptional) extras.push(t.detail.extras.garageOptional);
+
+const keyFacts = specItems(l, lang);
+const jsonLd = [
+  listingJsonLd(l, lang, url, og.src.startsWith('http') ? og.src : new URL(og.src, SITE.url).href, `${name} · Ref ${l.ref}`, description),
+  breadcrumbJsonLd([
+    { name: 'Brikk Estates', url: new URL(route('home', lang), SITE.url).href },
+    { name: indexName, url: new URL(indexRoute, SITE.url).href },
+    { name, url },
+  ]),
+];
+---
+<BaseLayout lang={lang} title={`${name} | Ref ${l.ref} | Brikk Estates`} description={description} alternates={alternates} ogImage={og.src} ogType="article" jsonLd={jsonLd} bodyClass="has-action-bar">
+  <div class="container detail">
+    <nav class="crumbs" aria-label={t.detail.breadcrumb}>
+      <ol role="list">
+        <li><a href={route('home', lang)}>Brikk Estates</a></li>
+        <li><a href={indexRoute}>{indexName}</a></li>
+        <li><span aria-current="page">Ref {l.ref}</span></li>
+      </ol>
+    </nav>
+
+    <header class="detail__head">
+      <h1 class="detail__title">{name}</h1>
+      {locationLine(l, lang) && <p class="detail__loc"><Icon name="map-pin" size={18} />{locationLine(l, lang)}</p>}
+    </header>
+
+    <Gallery listing={l} lang={lang} />
+
+    <div class="detail__layout">
+      <div class="detail__main">
+        {keyFacts.length > 0 && (
+          <section aria-labelledby="facts-title" class="detail__block">
+            <h2 id="facts-title" class="visually-hidden">{t.detail.keyFacts}</h2>
+            <ul role="list" class="facts">
+              {keyFacts.map((f) => <li><Icon name={f.icon} size={22} /><span aria-hidden="true">{f.label}</span><span class="visually-hidden">{f.srLabel}</span></li>)}
+            </ul>
+          </section>
+        )}
+
+        {priceRows.length > 0 && (
+          <section aria-labelledby="price-title" class="detail__block">
+            <h2 id="price-title">{t.detail.price}</h2>
+            <dl class="spec spec--price">
+              {priceRows.map(([k, v]) => <div><dt>{k}</dt><dd class="tabular">{v}</dd></div>)}
+            </dl>
+          </section>
+        )}
+
+        <section aria-labelledby="spec-title" class="detail__block">
+          <h2 id="spec-title">{t.detail.specs}</h2>
+          <dl class="spec">
+            {rows.map(([k, v]) => <div><dt>{k}</dt><dd>{v}</dd></div>)}
+          </dl>
+        </section>
+
+        {l.features.length > 0 && (
+          <section aria-labelledby="features-title" class="detail__block">
+            <h2 id="features-title">{t.detail.features}</h2>
+            <ul role="list" class="features">
+              {l.features.map((f) => <li><Icon name="check" size={18} />{FEATURE[f]?.[lang] ?? f}</li>)}
+            </ul>
+          </section>
+        )}
+
+        {legalItems.length > 0 && (
+          <section aria-labelledby="legal-title" class="detail__block legal">
+            <h2 id="legal-title">{t.detail.legalTitle}</h2>
+            <ul role="list" class="legal__list">
+              {legalItems.map((i) => <li><Icon name="file-check" size={22} /><span>{i}</span></li>)}
+            </ul>
+          </section>
+        )}
+
+        {extras.length > 0 && (
+          <section aria-labelledby="extras-title" class="detail__block">
+            <h2 id="extras-title">{t.detail.extrasTitle}</h2>
+            <ul class="piece-list">{extras.map((e) => <li>{e}</li>)}</ul>
+          </section>
+        )}
+
+        <section aria-labelledby="desc-title" class="detail__block">
+          <h2 id="desc-title">{t.detail.description}</h2>
+          {lang === 'en' && <p class="translation-note">{t.detail.translationNote}</p>}
+          <div class="prose description" lang={lang === 'en' ? 'en' : 'sq'}>
+            {paragraphs.map((p) => <p set:html={p.split('\n').map((line) => line.replace(/&/g, '&amp;').replace(/</g, '&lt;')).join('<br />')} />)}
+          </div>
+          {l.extraCaptions.length > 0 && (
+            <div class="description__extra">
+              <h3>{t.detail.otherCaptions}</h3>
+              {l.extraCaptions.map((c) => (
+                <div class="prose description">
+                  {((lang === 'en' ? c.en : c.sq) ?? []).map((p) => <p set:html={p.split('\n').map((line) => line.replace(/&/g, '&amp;').replace(/</g, '&lt;')).join('<br />')} />)}
+                </div>
+              ))}
+            </div>
+          )}
+          {l.aiVisualisation && (lang === 'en' ? l.aiDisclaimerEn : l.aiDisclaimerSq) && (
+            <p class="ai-note"><strong>{t.detail.aiNote}:</strong> {lang === 'en' ? l.aiDisclaimerEn : l.aiDisclaimerSq}</p>
+          )}
+          <p class="detail__source">
+            {t.detail.postedOn} <time datetime={l.postedAt}>{formatDate(l.postedAt, lang)}</time> ·
+            <a href={l.instagramUrl} rel="noopener">{t.detail.instagram}</a>
+          </p>
+        </section>
+      </div>
+
+      <div class="detail__side">
+        <ContactPanel listing={l} lang={lang} url={url} />
+      </div>
+    </div>
+  </div>
+
+  {similar.length > 0 && (
+    <section class="section surface-white similar" aria-labelledby="similar-title">
+      <div class="container">
+        <h2 id="similar-title" class="section-head">{t.detail.similar}</h2>
+        <ul role="list" class="similar__grid">
+          {similar.map((s) => <li><ListingCard listing={s} lang={lang} /></li>)}
+        </ul>
+      </div>
+    </section>
+  )}
+</BaseLayout>
+
+<style>
+  .detail { padding-block: var(--s-5) var(--s-8); }
+  .crumbs ol { display: flex; flex-wrap: wrap; gap: var(--s-1) var(--s-2); font-size: var(--fs-sm); color: var(--muted); }
+  .crumbs li:not(:last-child)::after { content: '/'; margin-left: var(--s-2); color: var(--line-strong); }
+  .crumbs a { color: var(--ink-2); display: inline-flex; min-height: 32px; align-items: center; }
+  .crumbs span { display: inline-flex; min-height: 32px; align-items: center; }
+  .detail__head { margin-block: var(--s-4) var(--s-5); display: grid; gap: var(--s-2); }
+  .detail__title { font-size: var(--fs-xl); max-width: 30ch; }
+  .detail__loc { display: flex; gap: var(--s-2); align-items: flex-start; color: var(--ink-2); }
+  .detail__loc :global(svg) { color: var(--green); flex: none; margin-top: 0.2em; }
+
+  .detail__layout { display: grid; gap: var(--s-6); margin-top: var(--s-6); }
+  @media (min-width: 62rem) {
+    .detail__layout { grid-template-columns: minmax(0, 1fr) 22rem; gap: var(--s-7); align-items: start; }
+    .detail__side { position: sticky; top: calc(var(--header-h) + var(--s-4)); }
+  }
+  .detail__main { display: grid; gap: var(--s-6); min-width: 0; }
+  .detail__block h2 { font-size: var(--fs-md); margin-bottom: var(--s-3); }
+
+  .facts { display: flex; flex-wrap: wrap; gap: var(--s-3) var(--s-6); padding: var(--s-4) 0; border-block: 1px solid var(--line); font-size: var(--fs-md); font-weight: 600; font-variant-numeric: tabular-nums; }
+  .facts li { display: inline-flex; align-items: center; gap: var(--s-2); }
+  .facts :global(svg) { color: var(--green); }
+
+  .spec { display: grid; border-top: 1px solid var(--line); }
+  .spec > div { display: grid; grid-template-columns: minmax(8rem, 40%) 1fr; gap: var(--s-4); padding: var(--s-3) 0; border-bottom: 1px solid var(--line); }
+  .spec dt { color: var(--muted); }
+  .spec dd { font-weight: 550; overflow-wrap: anywhere; }
+  .spec--price dd { font-size: var(--fs-md); font-weight: 700; }
+
+  .features { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 14rem), 1fr)); gap: var(--s-2) var(--s-5); }
+  .features li { display: flex; gap: var(--s-2); align-items: center; }
+  .features :global(svg) { color: var(--green); flex: none; }
+
+  .legal { background: var(--tint); border-radius: var(--radius-lg); padding: var(--s-5); }
+  .legal__list { display: grid; gap: var(--s-3); }
+  .legal__list li { display: flex; gap: var(--s-3); align-items: center; font-weight: 600; color: var(--green-ink); }
+  .legal__list :global(svg) { color: var(--green); flex: none; }
+
+  .translation-note { font-size: var(--fs-sm); color: var(--muted); margin-bottom: var(--s-3); font-style: italic; }
+  .description { color: var(--ink); }
+  .description__extra { margin-top: var(--s-5); padding-top: var(--s-4); border-top: 1px solid var(--line); display: grid; gap: var(--s-3); }
+  .description__extra h3 { font-size: var(--fs-base); color: var(--ink-2); }
+  .ai-note { margin-top: var(--s-4); padding: var(--s-3) var(--s-4); border-left: 3px solid var(--green); background: var(--cream-soft); font-size: var(--fs-sm); }
+  .detail__source { margin-top: var(--s-5); font-size: var(--fs-sm); color: var(--muted); }
+  .detail__source a { color: var(--ink-2); }
+
+  .similar__grid { display: grid; gap: var(--s-5); grid-template-columns: repeat(auto-fill, minmax(min(100%, 17.5rem), 1fr)); }
+</style>

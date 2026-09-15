@@ -71,49 +71,54 @@
     "Hapësira ka rreth 360m² dhe është e përshtatshme për lounge bar, restaurant, market ose çdo biznes komercial. Ambienti është i gjerë dhe funksional, me mundësi organizimi fleksibël, ndriçim natyral dhe qasje direkte nga rruga kryesore. Lokali ofron pozicion ideal për një biznes të qëndrueshëm dhe afatgjatë, me akses të lehtë për klientë nga zonat përreth dhe potencial të lartë komercial.",
     "Çmimi dhe kontrata sipas marrëveshjes."
   ],
-  "descriptionEn": null,
+  "descriptionEn": [
+    "A commercial unit is offered for rent on Rruga “Tahir Zemaj”, Fushë Kosovë.",
+    "The unit is located in a strategic position along the main road and near new residential complexes. The area is dynamic, developing rapidly and offers a constant flow of potential customers, with easy access to markets, public transport and other commercial businesses.",
+    "The space is about 360m² and is suitable for a lounge bar, restaurant, market or any commercial business. The space is large and functional, with flexible layout options, natural light and direct access from the main road. The unit offers an ideal location for a stable, long-term business, with easy access for customers from the surrounding areas and high commercial potential.",
+    "Price and contract by agreement."
+  ],
   "descriptionEnIsTranslation": true,
   "extraCaptions": [],
   "images": [
     {
-      "src": "../../assets/listings/b316/01.jpg",
-      "file": "01.jpg",
-      "width": 2048,
-      "height": 1365,
-      "kind": "other",
-      "overlay": null,
-      "hasTextOverlay": null,
-      "altSq": "Fotografi e pronës, lokal me qira në Fushë Kosovë, Ref B316 (1/3)",
-      "altEn": "Property photo, commercial unit for rent in Fushë Kosovë, Ref B316 (1/3)"
-    },
-    {
       "src": "../../assets/listings/b316/02.jpg",
       "file": "02.jpg",
-      "width": 2048,
-      "height": 1365,
-      "kind": "other",
-      "overlay": null,
-      "hasTextOverlay": null,
-      "altSq": "Fotografi e pronës, lokal me qira në Fushë Kosovë, Ref B316 (2/3)",
-      "altEn": "Property photo, commercial unit for rent in Fushë Kosovë, Ref B316 (2/3)"
+      "width": 2000,
+      "height": 1333,
+      "kind": "interior",
+      "overlay": "brand",
+      "hasTextOverlay": false,
+      "altSq": "Hapësira e brendshme, lokal me qira në Fushë Kosovë, Ref B316 (1/3)",
+      "altEn": "Interior space, commercial unit for rent in Fushë Kosovë, Ref B316 (1/3)"
     },
     {
       "src": "../../assets/listings/b316/03.jpg",
       "file": "03.jpg",
-      "width": 2048,
-      "height": 1365,
-      "kind": "other",
-      "overlay": null,
-      "hasTextOverlay": null,
-      "altSq": "Fotografi e pronës, lokal me qira në Fushë Kosovë, Ref B316 (3/3)",
-      "altEn": "Property photo, commercial unit for rent in Fushë Kosovë, Ref B316 (3/3)"
+      "width": 2000,
+      "height": 1333,
+      "kind": "bathroom",
+      "overlay": "brand",
+      "hasTextOverlay": false,
+      "altSq": "Banjo, lokal me qira në Fushë Kosovë, Ref B316 (2/3)",
+      "altEn": "Bathroom, commercial unit for rent in Fushë Kosovë, Ref B316 (2/3)"
+    },
+    {
+      "src": "../../assets/listings/b316/01.jpg",
+      "file": "01.jpg",
+      "width": 2000,
+      "height": 1333,
+      "kind": "interior",
+      "overlay": "text",
+      "hasTextOverlay": true,
+      "altSq": "Hapësira e brendshme, lokal me qira në Fushë Kosovë, Ref B316 (3/3)",
+      "altEn": "Interior space, commercial unit for rent in Fushë Kosovë, Ref B316 (3/3)"
     }
   ],
   "coverIndex": 0,
   "provenance": {
     "overridden": {},
     "warnings": [],
-    "reviewedImages": false,
-    "translated": false
+    "reviewedImages": true,
+    "translated": true
   }
 }

@@ -1,0 +1,21 @@
+{
+  "ref": "B311",
+  "descriptionEn": [
+    "An apartment is offered for sale in Fushë Kosovë, along Rruga “Tahir Zemaj”.",
+    "The apartment is located in a developed and dynamic area, with easy access to the M9 main road, Rruga “Nënë Tereza” and a quick exit to Bresje. The area offers easy access to markets, public transport and everyday services, creating a favourable environment for balanced and efficient living.",
+    "The property has a total area of 89.91m² and includes a living room with kitchen, two bedrooms, bathroom, storage room and balcony. The space is unfurnished, with a regular floor plan, quality finishes and natural light from its north orientation. The apartment also offers two elevators, access to the complex’s public parking, electric shutters, central heating and laminate flooring.",
+    "This property is suitable for families looking for comfort, stability and a favourable urban location.",
+    "Price by agreement and the contract is signed at the notary."
+  ],
+  "images": [
+    { "file": "01.jpg", "kind": "building", "overlay": "text", "reason": "cover headline “BANESË NË SHITJE – TAHIR ZEMAJ, FUSHË KOSOVË”" },
+    { "file": "02.jpg", "kind": "living", "overlay": "brand", "reason": "empty room with balcony doors" },
+    { "file": "03.jpg", "kind": "interior", "overlay": "brand", "reason": "empty room with wall outlets, function unclear" },
+    { "file": "04.jpg", "kind": "bedroom", "overlay": "brand" },
+    { "file": "05.jpg", "kind": "bedroom", "overlay": "brand" },
+    { "file": "06.jpg", "kind": "hallway", "overlay": "brand" },
+    { "file": "07.jpg", "kind": "bathroom", "overlay": "brand" },
+    { "file": "08.jpg", "kind": "balcony", "overlay": "brand", "reason": "balcony overlooking a construction site" }
+  ],
+  "notes": "Parsed fields match the caption. 'banjo' has no numeral, so bathrooms left null. Floor not stated. Parking is 'qasje në parkingun publik të kompleksit' (access to the complex's public parking), not a private space. Photos show an unfinished apartment (bathroom fixtures not installed)."
+}

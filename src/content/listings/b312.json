@@ -15,8 +15,8 @@
   "neighbourhoodLoc": "Prishtinën e Re",
   "street": "Rruga Behar Begolli",
   "complex": "PUHIZA 2",
-  "landmark": null,
-  "landmarkEn": null,
+  "landmark": "pranë QKUK-së",
+  "landmarkEn": "near QKUK (University Clinical Center of Kosovo)",
   "country": "XK",
   "developer": null,
   "isNewBuild": null,
@@ -75,115 +75,130 @@
     "Ky objekt është i përshtatshëm për familje dhe ofron qarkullim të lirë të hapësirës, si dhe akses të lehtë në çdo pjesë të qytetit.",
     "Çmimi ofrohet sipas marrëveshjes dhe kontrata realizohet te noteri."
   ],
-  "descriptionEn": null,
+  "descriptionEn": [
+    "An apartment is offered for sale in Prishtina e Re, in the PUHIZA 2 complex, Rruga “Behar Begolli”.",
+    "The apartment is located in a sought-after and dynamic area, with easy access to services, business centres, markets and public transport. The practical location is ideal for families or professionals, near QKUK and Rruga A, in a quiet setting with complete infrastructure.",
+    "The property has a total area of 134.40m² and includes a living room with kitchen, three bedrooms, a bathroom and a separate WC, two terraces facing two sides of the building and a storage room/additional space. The apartment is designed for comfort and functionality, with abundant natural light and underfloor heating, which offers comfort and thermal efficiency.",
+    "This property is suitable for families and offers free-flowing space, as well as easy access to every part of the city.",
+    "The price is offered by agreement and the contract is signed at the notary."
+  ],
   "descriptionEnIsTranslation": true,
   "extraCaptions": [],
   "images": [
     {
-      "src": "../../assets/listings/b312/01.jpg",
-      "file": "01.jpg",
-      "width": 2025,
-      "height": 1350,
-      "kind": "other",
-      "overlay": null,
-      "hasTextOverlay": null,
-      "altSq": "Fotografi e pronës, banesë në shitje në Prishtinën e Re, Prishtinë, Ref B312 (1/9)",
-      "altEn": "Property photo, apartment for sale in Prishtina e Re, Prishtina, Ref B312 (1/9)"
-    },
-    {
       "src": "../../assets/listings/b312/02.jpg",
       "file": "02.jpg",
-      "width": 2025,
-      "height": 1350,
-      "kind": "other",
-      "overlay": null,
-      "hasTextOverlay": null,
-      "altSq": "Fotografi e pronës, banesë në shitje në Prishtinën e Re, Prishtinë, Ref B312 (2/9)",
-      "altEn": "Property photo, apartment for sale in Prishtina e Re, Prishtina, Ref B312 (2/9)"
+      "width": 2000,
+      "height": 1333,
+      "kind": "living",
+      "overlay": "brand",
+      "hasTextOverlay": false,
+      "altSq": "Qëndrimi ditor, banesë në shitje në Prishtinën e Re, Prishtinë, Ref B312 (1/9)",
+      "altEn": "Living room, apartment for sale in Prishtina e Re, Prishtina, Ref B312 (1/9)"
     },
     {
       "src": "../../assets/listings/b312/03.jpg",
       "file": "03.jpg",
-      "width": 2025,
-      "height": 1350,
-      "kind": "other",
-      "overlay": null,
-      "hasTextOverlay": null,
-      "altSq": "Fotografi e pronës, banesë në shitje në Prishtinën e Re, Prishtinë, Ref B312 (3/9)",
-      "altEn": "Property photo, apartment for sale in Prishtina e Re, Prishtina, Ref B312 (3/9)"
+      "width": 2000,
+      "height": 1333,
+      "kind": "interior",
+      "overlay": "brand",
+      "hasTextOverlay": false,
+      "altSq": "Hapësira e brendshme, banesë në shitje në Prishtinën e Re, Prishtinë, Ref B312 (2/9)",
+      "altEn": "Interior space, apartment for sale in Prishtina e Re, Prishtina, Ref B312 (2/9)"
     },
     {
       "src": "../../assets/listings/b312/04.jpg",
       "file": "04.jpg",
-      "width": 2025,
-      "height": 1350,
-      "kind": "other",
-      "overlay": null,
-      "hasTextOverlay": null,
-      "altSq": "Fotografi e pronës, banesë në shitje në Prishtinën e Re, Prishtinë, Ref B312 (4/9)",
-      "altEn": "Property photo, apartment for sale in Prishtina e Re, Prishtina, Ref B312 (4/9)"
+      "width": 2000,
+      "height": 1333,
+      "kind": "bedroom",
+      "overlay": "brand",
+      "hasTextOverlay": false,
+      "altSq": "Dhoma e gjumit, banesë në shitje në Prishtinën e Re, Prishtinë, Ref B312 (3/9)",
+      "altEn": "Bedroom, apartment for sale in Prishtina e Re, Prishtina, Ref B312 (3/9)"
     },
     {
       "src": "../../assets/listings/b312/05.jpg",
       "file": "05.jpg",
-      "width": 2025,
-      "height": 1350,
-      "kind": "other",
-      "overlay": null,
-      "hasTextOverlay": null,
-      "altSq": "Fotografi e pronës, banesë në shitje në Prishtinën e Re, Prishtinë, Ref B312 (5/9)",
-      "altEn": "Property photo, apartment for sale in Prishtina e Re, Prishtina, Ref B312 (5/9)"
+      "width": 2000,
+      "height": 1333,
+      "kind": "bedroom",
+      "overlay": "brand",
+      "hasTextOverlay": false,
+      "altSq": "Dhoma e gjumit, banesë në shitje në Prishtinën e Re, Prishtinë, Ref B312 (4/9)",
+      "altEn": "Bedroom, apartment for sale in Prishtina e Re, Prishtina, Ref B312 (4/9)"
     },
     {
       "src": "../../assets/listings/b312/06.jpg",
       "file": "06.jpg",
-      "width": 2025,
-      "height": 1350,
-      "kind": "other",
-      "overlay": null,
-      "hasTextOverlay": null,
-      "altSq": "Fotografi e pronës, banesë në shitje në Prishtinën e Re, Prishtinë, Ref B312 (6/9)",
-      "altEn": "Property photo, apartment for sale in Prishtina e Re, Prishtina, Ref B312 (6/9)"
+      "width": 2000,
+      "height": 1333,
+      "kind": "terrace",
+      "overlay": "brand",
+      "hasTextOverlay": false,
+      "altSq": "Tarraca, banesë në shitje në Prishtinën e Re, Prishtinë, Ref B312 (5/9)",
+      "altEn": "Terrace, apartment for sale in Prishtina e Re, Prishtina, Ref B312 (5/9)"
     },
     {
       "src": "../../assets/listings/b312/07.jpg",
       "file": "07.jpg",
-      "width": 2025,
-      "height": 1350,
-      "kind": "other",
-      "overlay": null,
-      "hasTextOverlay": null,
-      "altSq": "Fotografi e pronës, banesë në shitje në Prishtinën e Re, Prishtinë, Ref B312 (7/9)",
-      "altEn": "Property photo, apartment for sale in Prishtina e Re, Prishtina, Ref B312 (7/9)"
+      "width": 2000,
+      "height": 1333,
+      "kind": "view",
+      "overlay": "brand",
+      "hasTextOverlay": false,
+      "altSq": "Pamja, banesë në shitje në Prishtinën e Re, Prishtinë, Ref B312 (6/9)",
+      "altEn": "View, apartment for sale in Prishtina e Re, Prishtina, Ref B312 (6/9)"
     },
     {
       "src": "../../assets/listings/b312/08.jpg",
       "file": "08.jpg",
-      "width": 2025,
-      "height": 1350,
-      "kind": "other",
-      "overlay": null,
-      "hasTextOverlay": null,
-      "altSq": "Fotografi e pronës, banesë në shitje në Prishtinën e Re, Prishtinë, Ref B312 (8/9)",
-      "altEn": "Property photo, apartment for sale in Prishtina e Re, Prishtina, Ref B312 (8/9)"
+      "width": 2000,
+      "height": 1333,
+      "kind": "bathroom",
+      "overlay": "brand",
+      "hasTextOverlay": false,
+      "altSq": "Banjo, banesë në shitje në Prishtinën e Re, Prishtinë, Ref B312 (7/9)",
+      "altEn": "Bathroom, apartment for sale in Prishtina e Re, Prishtina, Ref B312 (7/9)"
     },
     {
       "src": "../../assets/listings/b312/09.jpg",
       "file": "09.jpg",
-      "width": 2025,
-      "height": 1350,
-      "kind": "other",
-      "overlay": null,
-      "hasTextOverlay": null,
-      "altSq": "Fotografi e pronës, banesë në shitje në Prishtinën e Re, Prishtinë, Ref B312 (9/9)",
-      "altEn": "Property photo, apartment for sale in Prishtina e Re, Prishtina, Ref B312 (9/9)"
+      "width": 2000,
+      "height": 1333,
+      "kind": "bathroom",
+      "overlay": "brand",
+      "hasTextOverlay": false,
+      "altSq": "Banjo, banesë në shitje në Prishtinën e Re, Prishtinë, Ref B312 (8/9)",
+      "altEn": "Bathroom, apartment for sale in Prishtina e Re, Prishtina, Ref B312 (8/9)"
+    },
+    {
+      "src": "../../assets/listings/b312/01.jpg",
+      "file": "01.jpg",
+      "width": 2000,
+      "height": 1333,
+      "kind": "building",
+      "overlay": "text",
+      "hasTextOverlay": true,
+      "altSq": "Ndërtesa, banesë në shitje në Prishtinën e Re, Prishtinë, Ref B312 (9/9)",
+      "altEn": "Building, apartment for sale in Prishtina e Re, Prishtina, Ref B312 (9/9)"
     }
   ],
   "coverIndex": 0,
   "provenance": {
-    "overridden": {},
+    "overridden": {
+      "landmark": {
+        "from": null,
+        "to": "pranë QKUK-së",
+        "evidence": [
+          "pranë QKUK-së"
+        ],
+        "note": "proximity to QKUK (University Clinical Center of Kosovo) stated explicitly; parser only recognises business landmarks"
+      }
+    },
     "warnings": [],
-    "reviewedImages": false,
-    "translated": false
+    "reviewedImages": true,
+    "translated": true
   }
 }

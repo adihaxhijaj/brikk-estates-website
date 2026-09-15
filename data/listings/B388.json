@@ -1,0 +1,20 @@
+{
+  "ref": "B388",
+  "descriptionEn": [
+    "Offered for sale: an apartment with an area of 72m², located on Rruga Abdyl Frashëri, in Aktash, Prishtina.",
+    "The apartment is on the 10th floor, in a building with an elevator, and is of the 1+1 type. The space consists of a living room with kitchen, one bedroom, one bathroom and a terrace.",
+    "A private garage is also included in the price.",
+    "The location offers good access to the Gazmend Zajmi and Lordi Bajron streets, while various private and public services are nearby.",
+    "The apartment is currently in the process of legalisation, while the sale contract is carried out through a lawyer.",
+    "The price of the property is €125,000."
+  ],
+  "images": [
+    { "file": "01.jpg", "kind": "living", "overlay": "text", "reason": "cover label \"Aktash, Prishtinë\", \"72m²\", \"125,000€\" (matches caption)" },
+    { "file": "02.jpg", "kind": "living", "overlay": "brand" },
+    { "file": "03.jpg", "kind": "kitchen", "overlay": "brand" },
+    { "file": "04.jpg", "kind": "dining", "overlay": "brand", "reason": "dining table with part of the living area" },
+    { "file": "05.jpg", "kind": "bedroom", "overlay": "brand" },
+    { "file": "06.jpg", "kind": "bedroom", "overlay": "brand", "reason": "wardrobe and bed" }
+  ],
+  "notes": "Parsed fields match the caption. Legal: in legalisation, contract via lawyer (no ownership certificate or notary mentioned). The terrace is not shown in the photos. No images excluded."
+}

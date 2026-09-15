@@ -1,0 +1,130 @@
+---
+import Logo from './Logo.astro';
+import Icon from './Icon.astro';
+import LanguageSwitch from './LanguageSwitch.astro';
+import { SITE } from '../config/site';
+import { dict, route, type Lang } from '../i18n';
+
+interface Props { lang: Lang; alternates: Record<Lang, string> }
+const { lang, alternates } = Astro.props;
+const t = dict(lang);
+const current = Astro.url.pathname;
+const items = [
+  { href: route('sale', lang), label: t.nav.sale },
+  { href: route('rent', lang), label: t.nav.rent },
+  { href: route('land', lang), label: t.nav.land },
+  { href: route('newBuilds', lang), label: t.nav.newBuilds },
+  { href: route('owners', lang), label: t.nav.owners },
+  { href: route('about', lang), label: t.nav.about },
+  { href: route('contact', lang), label: t.nav.contact },
+];
+---
+<header class="site-header on-dark" data-header>
+  <div class="container site-header__bar">
+    <a class="site-header__brand" href={route('home', lang)} aria-label={t.nav.home}>
+      <Logo variant="horizontal" tone="on-dark" decorative class="site-header__logo" />
+    </a>
+
+    <nav class="site-nav" aria-label={t.nav.label}>
+      <ul role="list" class="site-nav__list" id="site-menu" data-menu>
+        {items.map((i) => (
+          <li><a href={i.href} aria-current={current === i.href ? 'page' : undefined}>{i.label}</a></li>
+        ))}
+        <li class="site-nav__lang-mobile"><LanguageSwitch lang={lang} alternates={alternates} /></li>
+      </ul>
+    </nav>
+
+    <div class="site-header__actions">
+      <a class="site-header__phone tabular" href={`tel:${SITE.phoneE164}`}>
+        <Icon name="phone" size={18} />
+        <span class="site-header__phone-text">{SITE.phoneDisplay}</span>
+        <span class="visually-hidden site-header__phone-sr">{t.nav.call}</span>
+      </a>
+      <div class="site-header__lang-desktop"><LanguageSwitch lang={lang} alternates={alternates} /></div>
+      <button class="site-header__menu-btn" type="button" aria-expanded="false" aria-controls="site-menu" data-menu-toggle hidden>
+        <Icon name="menu" size={20} class="icon-open" />
+        <Icon name="x" size={20} class="icon-close" />
+        <span data-menu-label data-open={t.nav.menu} data-close={t.nav.close}>{t.nav.menu}</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<script>
+  const btn = document.querySelector<HTMLButtonElement>('[data-menu-toggle]');
+  const menu = document.querySelector<HTMLElement>('[data-menu]');
+  const header = document.querySelector<HTMLElement>('[data-header]');
+  if (btn && menu && header) {
+    btn.hidden = false;
+    header.classList.add('has-js');
+    const label = btn.querySelector<HTMLElement>('[data-menu-label]')!;
+    const mq = window.matchMedia('(min-width: 75rem)');
+    const setOpen = (open: boolean, restoreFocus = false) => {
+      btn.setAttribute('aria-expanded', String(open));
+      header.classList.toggle('is-open', open);
+      label.textContent = open ? label.dataset.close! : label.dataset.open!;
+      if (open) menu.querySelector<HTMLElement>('a')?.focus();
+      else if (restoreFocus) btn.focus();
+    };
+    btn.addEventListener('click', () => setOpen(btn.getAttribute('aria-expanded') !== 'true'));
+    menu.addEventListener('click', (e) => { if ((e.target as HTMLElement).closest('a') && !mq.matches) setOpen(false); });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && btn.getAttribute('aria-expanded') === 'true') setOpen(false, true);
+    });
+    mq.addEventListener('change', () => setOpen(false));
+  }
+</script>
+
+<style>
+  .site-header {
+    position: sticky; top: 0; z-index: 50;
+    background: var(--green); color: var(--cream);
+    border-bottom: 1px solid rgb(239 232 216 / 0.14);
+  }
+  .site-header__bar { display: flex; align-items: center; gap: var(--s-4); min-height: var(--header-h); }
+  .site-header__brand { display: block; padding-block: var(--s-2); margin-right: auto; border-radius: var(--radius-sm); }
+  .site-header__logo { width: clamp(118px, 26vw, 150px); }
+
+  .site-nav__list { display: flex; gap: var(--s-1); align-items: center; }
+  .site-nav a {
+    display: flex; align-items: center; min-height: 44px; padding: 0 0.6rem;
+    color: var(--cream); text-decoration: none; font-weight: 550; font-size: var(--fs-sm); white-space: nowrap;
+    border-radius: var(--radius-sm);
+  }
+  .site-nav a:hover { background: rgb(239 232 216 / 0.1); }
+  .site-nav a[aria-current='page'] { box-shadow: inset 0 -2px 0 var(--leaf); }
+  .site-nav__lang-mobile { display: none; }
+
+  .site-header__actions { display: flex; align-items: center; gap: var(--s-2); }
+  .site-header__phone {
+    display: inline-flex; align-items: center; gap: var(--s-2); min-height: 44px; min-width: 44px; justify-content: center;
+    padding: 0 0.6rem; color: var(--cream); text-decoration: none; font-weight: 600; font-size: var(--fs-sm); border-radius: var(--radius-sm);
+  }
+  .site-header__phone:hover { background: rgb(239 232 216 / 0.1); }
+  .site-header__menu-btn {
+    display: none; align-items: center; gap: var(--s-2); min-height: 44px; padding: 0 0.85rem;
+    background: transparent; color: var(--cream); border: 1.5px solid rgb(239 232 216 / 0.5); border-radius: var(--radius); font-weight: 600;
+  }
+  .site-header__menu-btn .icon-close { display: none; }
+  .site-header.is-open .site-header__menu-btn .icon-close { display: block; }
+  .site-header.is-open .site-header__menu-btn .icon-open { display: none; }
+
+  /* Below 75rem the navigation collapses into a panel (only when JS runs; without JS it wraps under the bar). */
+  @media (max-width: 74.99rem) {
+    .site-header__bar { flex-wrap: wrap; }
+    .site-nav { order: 3; width: 100%; }
+    .site-nav__list { flex-wrap: wrap; padding-bottom: var(--s-3); }
+    .site-header.has-js .site-header__menu-btn { display: inline-flex; }
+    .site-header.has-js .site-nav { display: none; }
+    .site-header.has-js.is-open .site-nav { display: block; }
+    .site-header.has-js .site-nav__list { flex-direction: column; align-items: stretch; gap: 0; padding-block: var(--s-2) var(--s-4); border-top: 1px solid rgb(239 232 216 / 0.14); }
+    .site-header.has-js .site-nav a { font-size: var(--fs-md); min-height: 52px; padding-inline: var(--s-2); }
+    .site-header.has-js .site-nav a[aria-current='page'] { box-shadow: inset 3px 0 0 var(--leaf); }
+    .site-header.has-js .site-nav__lang-mobile { display: block; padding: var(--s-3) var(--s-2) 0; }
+    .site-header.has-js .site-header__lang-desktop { display: none; }
+    .site-header.is-open { max-height: 100dvh; overflow-y: auto; }
+  }
+  @media (max-width: 40rem) {
+    .site-header__phone-text { display: none; }
+  }
+</style>

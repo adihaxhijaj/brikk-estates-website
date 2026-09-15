@@ -1,0 +1,29 @@
+---
+// Functional icons from Lucide (ISC licence, licenses/Lucide-ISC.txt), inlined at build time.
+import fs from 'node:fs';
+import path from 'node:path';
+
+interface Props { name: string; size?: number; class?: string; label?: string }
+const { name, size = 20, class: className, label } = Astro.props;
+
+const file = path.join(process.cwd(), 'node_modules', 'lucide-static', 'icons', `${name}.svg`);
+const raw = fs.readFileSync(file, 'utf8');
+const inner = raw.replace(/<!--[\s\S]*?-->/g, '').replace(/^[\s\S]*?<svg[^>]*>/, '').replace(/<\/svg>\s*$/, '');
+---
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width={size}
+  height={size}
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.75"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  class:list={['icon', className]}
+  aria-hidden={label ? undefined : 'true'}
+  role={label ? 'img' : undefined}
+  aria-label={label}
+  focusable="false"
+  set:html={inner}
+/>

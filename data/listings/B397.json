@@ -1,0 +1,20 @@
+{
+  "ref": "B397",
+  "descriptionEn": [
+    "Offered for sale: an apartment with an area of 133.03m², located in the Eliza C complex (Kompleksi Eliza C) in Fushë Kosovë, built by Cima Construction.",
+    "The apartment is on the 8th floor and has a layout suitable for family living. It consists of a living room with kitchen, three bedrooms, two bathrooms, a storage room and a balcony.",
+    "The building has two elevators, while the apartment also has for its exclusive use a corridor of about 12m², which is not included in the area and price of the property.",
+    "The complex is currently in the completion phase and handover of the apartment is expected during 2026, finished turnkey.",
+    "Eliza C offers green spaces and a park between the buildings, ample parking and complete infrastructure. Nearby there are markets, restaurants, bakeries, a school and a medical clinic, with good access to the main parts of Fushë Kosovë."
+  ],
+  "valuesEn": { "completion": "during 2026" },
+  "images": [
+    { "file": "01.jpg", "kind": "render", "overlay": "text", "reason": "3D architectural visualisation of the complex (not a photograph) with label \"Eliza C, Fushë Kosovë\" and \"870€/m²\"; only tiny rendered figures on balconies" },
+    { "file": "02.jpg", "kind": "render", "overlay": "brand", "reason": "aerial 3D visualisation of the complex with one building section highlighted in yellow; watermark and footer only, no copy" },
+    { "file": "03.jpg", "kind": "floorplan", "overlay": "text", "reason": "floor-plan card on green branded background: \"133.03 m²\", \"Kati: 8\", \"3 dhoma gjumi\", \"Qëndrim ditor me kuzhinë\", \"2 banjo\", \"1 depo\", \"1 ballkon\", \"2 ashensorë\" (all match caption)" }
+  ],
+  "overrides": {
+    "pricePerM2": { "value": 870, "evidence": ["image:01.jpg 870€/m²"], "note": "price per m² shown only on the listing's own cover graphic; the caption states no price. Total price not stated and not computed." }
+  },
+  "notes": "Caption has no price; 870€/m² comes solely from the agency's cover graphic 01.jpg — maintainer should confirm it is current. With this override priceOnRequest becomes false. No photographs of the actual apartment: 01/02 are CG renders of the complex, 03 is the floor plan. Developer Cima Construction explicitly named (\"ndërtim nga Cima Construction\"). The ~12 m² exclusive-use corridor is excluded from area and price per the caption. Contact email in this caption is info@ rather than properties@ (removed line, no action needed)."
+}

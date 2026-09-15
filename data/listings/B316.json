@@ -1,0 +1,15 @@
+{
+  "ref": "B316",
+  "descriptionEn": [
+    "A commercial unit is offered for rent on Rruga “Tahir Zemaj”, Fushë Kosovë.",
+    "The unit is located in a strategic position along the main road and near new residential complexes. The area is dynamic, developing rapidly and offers a constant flow of potential customers, with easy access to markets, public transport and other commercial businesses.",
+    "The space is about 360m² and is suitable for a lounge bar, restaurant, market or any commercial business. The space is large and functional, with flexible layout options, natural light and direct access from the main road. The unit offers an ideal location for a stable, long-term business, with easy access for customers from the surrounding areas and high commercial potential.",
+    "Price and contract by agreement."
+  ],
+  "images": [
+    { "file": "01.jpg", "kind": "interior", "overlay": "text", "reason": "cover headline “LOKAL ME QIRA – RR TAHIR ZEMAJ, FUSHË KOSOVË” over open-plan commercial space" },
+    { "file": "02.jpg", "kind": "interior", "overlay": "brand", "reason": "open-plan commercial space; two small unrecognisable people outside on the street seen through the far window, kept" },
+    { "file": "03.jpg", "kind": "bathroom", "overlay": "brand", "reason": "WC" }
+  ],
+  "notes": "Caption ID line reads “ID: 316” (missing B). Parsed fields match the caption; area is approximate ('rreth 360m²'). Floor, rent and legal terms not stated ('Çmimi dhe kontrata sipas marrëveshjes'). Same street as B311 (Rruga Tahir Zemaj), but a separate commercial listing."
+}

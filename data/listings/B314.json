@@ -1,0 +1,26 @@
+{
+  "ref": "B314",
+  "descriptionEn": [
+    "A house is offered for rent in Marigona Residence, Prishtina.",
+    "The house is located in one of the safest and most sought-after areas near Prishtina, with easy access to schools, markets, restaurants and everyday services, as well as a quick connection to the main roads and the motorway. The area offers quiet, privacy and 24/7 security, making it ideal for families and professionals.",
+    "The space includes a living room with access to the yard, a fully equipped kitchen also with access to the yard, three bedrooms, a bathroom and two WCs, as well as a basement that can be converted into a bedroom, office or storage room.",
+    "The house has a green, well-maintained yard, private parking, a quiet entrance with a high level of privacy, an alarm system and security cameras, as well as efficient heating and good insulation. The space is furnished, clean and ready to move into.",
+    "Price by agreement."
+  ],
+  "images": [
+    { "file": "01.jpg", "kind": "exterior", "overlay": "text", "reason": "cover headline “SHTËPI ME QIRA – MARIGONA RESIDENCE, PRISHTINË”" },
+    { "file": "02.jpg", "kind": "living", "overlay": "brand", "reason": "landscape painting on wall, no people" },
+    { "file": "03.jpg", "kind": "kitchen", "overlay": "brand" },
+    { "file": "04.jpg", "kind": "dining", "overlay": "brand", "reason": "flower painting on wall, no people" },
+    { "file": "05.jpg", "kind": "bedroom", "overlay": "brand" },
+    { "file": "06.jpg", "kind": "bedroom", "overlay": "brand" },
+    { "file": "07.jpg", "kind": "bedroom", "overlay": "brand" },
+    { "file": "08.jpg", "kind": "interior", "overlay": "brand", "reason": "room with sofa bed and drying rack, function not stated" },
+    { "file": "09.jpg", "kind": "bathroom", "overlay": "brand" },
+    { "file": "10.jpg", "kind": "yard", "overlay": "brand", "reason": "rear patio and lawn" }
+  ],
+  "overrides": {
+    "storage": { "value": null, "evidence": ["podrum me mundësi shndërrimi në dhomë gjumi, zyrë ose depo"], "note": "no storage room is stated; the basement can only be converted into a bedroom, office or storage room, so storage is not an existing feature (basement feature kept)" }
+  },
+  "notes": "Caption ID line reads “ID: 314” (missing B). Area and rent not stated. 'banjo dhe dy WC': wc 2 parsed; bathroom has no numeral, so bathrooms left null. security-24-7 comes from 'Zona ofron qetësi, privatësi dhe siguri 24/7' (area-level security). A different house from B310 (also Marigona Residence, different photos and layout)."
+}

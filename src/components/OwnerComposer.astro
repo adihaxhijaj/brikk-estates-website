@@ -1,0 +1,101 @@
+---
+// "Submit your property" composer. No backend: validated fields are formatted into a message that opens
+// in WhatsApp or the visitor's email app. Nothing is stored or sent by the site.
+import Icon from './Icon.astro';
+import { SITE } from '../config/site';
+import { dict, type Lang } from '../i18n';
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const t = dict(lang);
+const c = t.composer;
+const req = <span class="req">({c.required})</span>;
+const opt = <small>({c.optional})</small>;
+---
+<form class="composer" id="composer" data-composer novalidate hidden
+  data-wa={SITE.whatsapp} data-email={SITE.emailProperties} data-subject={c.emailSubject} data-title={c.messageTitle}
+  data-err-required={c.errorRequired('{label}')} data-err-phone={c.errorPhone} data-opened={c.opened}
+  data-labels={JSON.stringify(c.labels)}>
+  <div class="composer__errors" data-errors tabindex="-1" hidden>
+    <p><strong>{c.errorsTitle}</strong></p>
+    <ul></ul>
+  </div>
+
+  <fieldset class="field composer__deal">
+    <legend class="label">{c.deal} {req}</legend>
+    <div class="segmented">
+      <input type="radio" name="deal" id="c-sale" value={c.dealSale} checked />
+      <label for="c-sale">{c.dealSale}</label>
+      <input type="radio" name="deal" id="c-rent" value={c.dealRent} />
+      <label for="c-rent">{c.dealRent}</label>
+    </div>
+  </fieldset>
+
+  <div class="composer__grid">
+    <div class="field">
+      <label for="c-type">{c.type} {req}</label>
+      <select class="control" id="c-type" name="type" required aria-describedby="c-type-err">
+        <option value="">{c.choose}</option>
+        {Object.values(c.types).map((v) => <option value={v}>{v}</option>)}
+      </select>
+      <p class="field-error" id="c-type-err" hidden></p>
+    </div>
+    <div class="field">
+      <label for="c-city">{c.city} {req}</label>
+      <input class="control" id="c-city" name="city" type="text" autocomplete="address-level2" required aria-describedby="c-city-err" />
+      <p class="field-error" id="c-city-err" hidden></p>
+    </div>
+    <div class="field">
+      <label for="c-hood">{c.neighbourhood} {opt}</label>
+      <input class="control" id="c-hood" name="neighbourhood" type="text" />
+    </div>
+    <div class="field">
+      <label for="c-size">{c.size} {opt}</label>
+      <input class="control" id="c-size" name="size" type="text" inputmode="decimal" aria-describedby="c-size-hint" />
+      <small id="c-size-hint">{c.sizeHint}</small>
+    </div>
+    <div class="field">
+      <label for="c-price">{c.price} {opt}</label>
+      <input class="control" id="c-price" name="price" type="text" inputmode="decimal" />
+    </div>
+    <div class="field">
+      <label for="c-name">{c.name} {req}</label>
+      <input class="control" id="c-name" name="name" type="text" autocomplete="name" required aria-describedby="c-name-err" />
+      <p class="field-error" id="c-name-err" hidden></p>
+    </div>
+    <div class="field">
+      <label for="c-phone">{c.phone} {req}</label>
+      <input class="control" id="c-phone" name="phone" type="tel" autocomplete="tel" required aria-describedby="c-phone-err" />
+      <p class="field-error" id="c-phone-err" hidden></p>
+    </div>
+    <div class="field composer__full">
+      <label for="c-note">{c.note} {opt}</label>
+      <textarea class="control" id="c-note" name="note" rows="3"></textarea>
+    </div>
+  </div>
+
+  <div class="composer__actions">
+    <button type="submit" class="btn" value="whatsapp" data-send="whatsapp"><Icon name="message-circle" />{c.sendWhatsApp}</button>
+    <button type="submit" class="btn btn--outline" value="email" data-send="email"><Icon name="mail" />{c.sendEmail}</button>
+  </div>
+  <p class="composer__status" role="status" aria-live="polite" data-status></p>
+</form>
+
+<script>
+  import '../scripts/composer';
+</script>
+
+<style>
+  .composer { display: grid; gap: var(--s-5); background: var(--white); color: var(--ink); border: 1px solid var(--line); border-radius: var(--radius-lg); padding: clamp(1rem, 0.6rem + 2vw, 2rem); }
+  .composer fieldset { border: 0; padding: 0; min-width: 0; }
+  .composer__grid { display: grid; gap: var(--s-4); }
+  @media (min-width: 40rem) { .composer__grid { grid-template-columns: 1fr 1fr; } .composer__full { grid-column: 1 / -1; } }
+  .req { font-weight: 450; color: var(--muted); font-size: var(--fs-sm); }
+  .composer__actions { display: flex; flex-wrap: wrap; gap: var(--s-3); }
+  .composer__actions .btn { flex: 1 1 14rem; }
+  .composer__errors { border: 2px solid var(--danger); border-radius: var(--radius); padding: var(--s-3) var(--s-4); color: var(--danger); }
+  .composer__errors ul { margin-top: var(--s-2); padding-left: 1.2rem; }
+  .composer__errors a { color: var(--danger); }
+  .composer__status { color: var(--green-ink); font-weight: 550; }
+  .composer__status:empty { display: none; }
+</style>

@@ -1,0 +1,55 @@
+---
+// BRIKK ESTATES logo — RECONSTRUCTION from instagram/other-posts/2026-08-21_brikk-estates/01.jpg
+// (symbol rebuilt from measured geometry, wordmark vector-traced; see scripts/brand/).
+// To use official artwork: replace src/assets/brand/logo-parts.json (or this component's markup) with the client's vector files.
+import parts from '../assets/brand/logo-parts.json';
+
+interface Props {
+  variant?: 'symbol' | 'horizontal' | 'stacked';
+  tone?: 'on-dark' | 'on-light';
+  class?: string;
+  title?: string;
+  decorative?: boolean;
+}
+const { variant = 'horizontal', tone = 'on-dark', class: className, title = 'Brikk Estates', decorative = false } = Astro.props;
+
+const { green, leaf, cream } = parts.colours;
+const symbolFill = tone === 'on-dark' ? leaf : green;
+const wordFill = tone === 'on-dark' ? cream : green;
+const [sx, sy, sw, sh] = parts.symbol.viewBox;
+const c = parts.symbolCentre;
+const t = parts.wordmark.transform;
+const wb = parts.wordmarkBBox;
+
+const symbolPaths = parts.symbol.paths.map((d) => `<path d="${d}"/>`).join('');
+const wordmark = `<g transform="translate(${t.x} ${t.y}) scale(${t.scale})"><path fill-rule="evenodd" d="${parts.wordmark.path}"/></g>`;
+
+let viewBox = '';
+let body = '';
+if (variant === 'symbol') {
+  viewBox = `${sx} ${sy} ${sw} ${sh}`;
+  body = `<g fill="${symbolFill}">${symbolPaths}</g>`;
+} else if (variant === 'horizontal') {
+  const x0 = c.x + sx, y0 = c.y + sy;
+  viewBox = `${x0} ${y0} ${wb.x1 - x0} ${sh}`;
+  body = `<g fill="${symbolFill}" transform="translate(${c.x} ${c.y})">${symbolPaths}</g><g fill="${wordFill}">${wordmark}</g>`;
+} else {
+  const ww = wb.x1 - wb.x0, wh = wb.y1 - wb.y0, gap = 150;
+  viewBox = `0 0 ${ww} ${sh + gap + wh}`;
+  body = `<g fill="${symbolFill}" transform="translate(${ww / 2} ${-sy})">${symbolPaths}</g><g fill="${wordFill}" transform="translate(${-wb.x0} ${sh + gap - wb.y0})">${wordmark}</g>`;
+}
+---
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox={viewBox}
+  class:list={['logo', `logo--${variant}`, className]}
+  role={decorative ? undefined : 'img'}
+  aria-label={decorative ? undefined : title}
+  aria-hidden={decorative ? 'true' : undefined}
+  focusable="false"
+  set:html={body}
+/>
+<style>
+  .logo { display: block; height: auto; }
+  @media (forced-colors: active) { .logo :global(g) { fill: CanvasText; } }
+</style>

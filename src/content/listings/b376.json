@@ -78,126 +78,121 @@
     "Posedon kondicioner, ngrohje me energji elektrike, ashensor dhe vendparkim.",
     "Kontrata e pronës aktualisht realizohet përmes avokatit.\nÇmimi i pronës është 75,000€."
   ],
-  "descriptionEn": null,
+  "descriptionEn": [
+    "Offered for sale: an apartment with an area of 78.84m², located on Rruga “Hysen Xhakolli”, in Fushë Kosovë, built by Arditi Group.",
+    "The apartment has a functional floor plan and consists of a living room with kitchen, two bedrooms, one bathroom, a storage room and a balcony/terrace. The east orientation gives the space good natural light during the first part of the day.",
+    "A particular advantage is the additional investment in thermal insulation above the apartment’s slab, which helps reduce heat loss in winter and overheating in summer.",
+    "It has air conditioning, electric heating, an elevator and a parking space.",
+    "The property contract is currently carried out through a lawyer.\nThe price of the property is €75,000."
+  ],
   "descriptionEnIsTranslation": true,
   "extraCaptions": [],
   "images": [
     {
-      "src": "../../assets/listings/b376/01.jpg",
-      "file": "01.jpg",
-      "width": 2048,
-      "height": 1365,
-      "kind": "other",
-      "overlay": null,
-      "hasTextOverlay": null,
-      "altSq": "Fotografi e pronës, banesë në shitje në Fushë Kosovë, Ref B376 (1/10)",
-      "altEn": "Property photo, apartment for sale in Fushë Kosovë, Ref B376 (1/10)"
-    },
-    {
       "src": "../../assets/listings/b376/02.jpg",
       "file": "02.jpg",
-      "width": 2048,
-      "height": 1365,
-      "kind": "other",
-      "overlay": null,
-      "hasTextOverlay": null,
-      "altSq": "Fotografi e pronës, banesë në shitje në Fushë Kosovë, Ref B376 (2/10)",
-      "altEn": "Property photo, apartment for sale in Fushë Kosovë, Ref B376 (2/10)"
+      "width": 2000,
+      "height": 1333,
+      "kind": "living",
+      "overlay": "brand",
+      "hasTextOverlay": false,
+      "altSq": "Qëndrimi ditor, banesë në shitje në Fushë Kosovë, Ref B376 (1/9)",
+      "altEn": "Living room, apartment for sale in Fushë Kosovë, Ref B376 (1/9)"
     },
     {
       "src": "../../assets/listings/b376/03.jpg",
       "file": "03.jpg",
-      "width": 2048,
-      "height": 1365,
-      "kind": "other",
-      "overlay": null,
-      "hasTextOverlay": null,
-      "altSq": "Fotografi e pronës, banesë në shitje në Fushë Kosovë, Ref B376 (3/10)",
-      "altEn": "Property photo, apartment for sale in Fushë Kosovë, Ref B376 (3/10)"
+      "width": 2000,
+      "height": 1333,
+      "kind": "kitchen",
+      "overlay": "brand",
+      "hasTextOverlay": false,
+      "altSq": "Kuzhina, banesë në shitje në Fushë Kosovë, Ref B376 (2/9)",
+      "altEn": "Kitchen, apartment for sale in Fushë Kosovë, Ref B376 (2/9)"
     },
     {
       "src": "../../assets/listings/b376/04.jpg",
       "file": "04.jpg",
-      "width": 2048,
-      "height": 1365,
-      "kind": "other",
-      "overlay": null,
-      "hasTextOverlay": null,
-      "altSq": "Fotografi e pronës, banesë në shitje në Fushë Kosovë, Ref B376 (4/10)",
-      "altEn": "Property photo, apartment for sale in Fushë Kosovë, Ref B376 (4/10)"
+      "width": 2000,
+      "height": 1333,
+      "kind": "bedroom",
+      "overlay": "brand",
+      "hasTextOverlay": false,
+      "altSq": "Dhoma e gjumit, banesë në shitje në Fushë Kosovë, Ref B376 (3/9)",
+      "altEn": "Bedroom, apartment for sale in Fushë Kosovë, Ref B376 (3/9)"
     },
     {
       "src": "../../assets/listings/b376/05.jpg",
       "file": "05.jpg",
-      "width": 2048,
-      "height": 1365,
-      "kind": "other",
-      "overlay": null,
-      "hasTextOverlay": null,
-      "altSq": "Fotografi e pronës, banesë në shitje në Fushë Kosovë, Ref B376 (5/10)",
-      "altEn": "Property photo, apartment for sale in Fushë Kosovë, Ref B376 (5/10)"
+      "width": 2000,
+      "height": 1333,
+      "kind": "bedroom",
+      "overlay": "brand",
+      "hasTextOverlay": false,
+      "altSq": "Dhoma e gjumit, banesë në shitje në Fushë Kosovë, Ref B376 (4/9)",
+      "altEn": "Bedroom, apartment for sale in Fushë Kosovë, Ref B376 (4/9)"
     },
     {
       "src": "../../assets/listings/b376/06.jpg",
       "file": "06.jpg",
-      "width": 2048,
-      "height": 1365,
-      "kind": "other",
-      "overlay": null,
-      "hasTextOverlay": null,
-      "altSq": "Fotografi e pronës, banesë në shitje në Fushë Kosovë, Ref B376 (6/10)",
-      "altEn": "Property photo, apartment for sale in Fushë Kosovë, Ref B376 (6/10)"
+      "width": 2000,
+      "height": 1333,
+      "kind": "bedroom",
+      "overlay": "brand",
+      "hasTextOverlay": false,
+      "altSq": "Dhoma e gjumit, banesë në shitje në Fushë Kosovë, Ref B376 (5/9)",
+      "altEn": "Bedroom, apartment for sale in Fushë Kosovë, Ref B376 (5/9)"
     },
     {
       "src": "../../assets/listings/b376/07.jpg",
       "file": "07.jpg",
-      "width": 2048,
-      "height": 1365,
-      "kind": "other",
-      "overlay": null,
-      "hasTextOverlay": null,
-      "altSq": "Fotografi e pronës, banesë në shitje në Fushë Kosovë, Ref B376 (7/10)",
-      "altEn": "Property photo, apartment for sale in Fushë Kosovë, Ref B376 (7/10)"
+      "width": 2000,
+      "height": 1333,
+      "kind": "hallway",
+      "overlay": "brand",
+      "hasTextOverlay": false,
+      "altSq": "Korridori, banesë në shitje në Fushë Kosovë, Ref B376 (6/9)",
+      "altEn": "Hallway, apartment for sale in Fushë Kosovë, Ref B376 (6/9)"
     },
     {
       "src": "../../assets/listings/b376/08.jpg",
       "file": "08.jpg",
-      "width": 2048,
-      "height": 1365,
-      "kind": "other",
-      "overlay": null,
-      "hasTextOverlay": null,
-      "altSq": "Fotografi e pronës, banesë në shitje në Fushë Kosovë, Ref B376 (8/10)",
-      "altEn": "Property photo, apartment for sale in Fushë Kosovë, Ref B376 (8/10)"
+      "width": 2000,
+      "height": 1333,
+      "kind": "balcony",
+      "overlay": "brand",
+      "hasTextOverlay": false,
+      "altSq": "Ballkoni, banesë në shitje në Fushë Kosovë, Ref B376 (7/9)",
+      "altEn": "Balcony, apartment for sale in Fushë Kosovë, Ref B376 (7/9)"
     },
     {
       "src": "../../assets/listings/b376/09.jpg",
       "file": "09.jpg",
-      "width": 2048,
-      "height": 1365,
-      "kind": "other",
-      "overlay": null,
-      "hasTextOverlay": null,
-      "altSq": "Fotografi e pronës, banesë në shitje në Fushë Kosovë, Ref B376 (9/10)",
-      "altEn": "Property photo, apartment for sale in Fushë Kosovë, Ref B376 (9/10)"
+      "width": 2000,
+      "height": 1333,
+      "kind": "bathroom",
+      "overlay": "brand",
+      "hasTextOverlay": false,
+      "altSq": "Banjo, banesë në shitje në Fushë Kosovë, Ref B376 (8/9)",
+      "altEn": "Bathroom, apartment for sale in Fushë Kosovë, Ref B376 (8/9)"
     },
     {
       "src": "../../assets/listings/b376/10.jpg",
       "file": "10.jpg",
-      "width": 2048,
-      "height": 1365,
-      "kind": "other",
-      "overlay": null,
-      "hasTextOverlay": null,
-      "altSq": "Fotografi e pronës, banesë në shitje në Fushë Kosovë, Ref B376 (10/10)",
-      "altEn": "Property photo, apartment for sale in Fushë Kosovë, Ref B376 (10/10)"
+      "width": 2000,
+      "height": 1333,
+      "kind": "building",
+      "overlay": "brand",
+      "hasTextOverlay": false,
+      "altSq": "Ndërtesa, banesë në shitje në Fushë Kosovë, Ref B376 (9/9)",
+      "altEn": "Building, apartment for sale in Fushë Kosovë, Ref B376 (9/9)"
     }
   ],
   "coverIndex": 0,
   "provenance": {
     "overridden": {},
     "warnings": [],
-    "reviewedImages": false,
-    "translated": false
+    "reviewedImages": true,
+    "translated": true
   }
 }

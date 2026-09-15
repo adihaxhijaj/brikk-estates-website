@@ -37,7 +37,8 @@
   "storage": null,
   "balcony": null,
   "features": [
-    "elevator"
+    "elevator",
+    "furnished"
   ],
   "legal": {
     "ownershipCertificate": null,
@@ -73,7 +74,12 @@
     "Në çmimin e qirasë përfshihet edhe mirëmbajtja e objektit, përfshirë liftin dhe pastrimin e hapësirave të përbashkëta.",
     "Qiraja mujore: 500€\nDepozita: 500€\nKontrata: 1-vjeçare"
   ],
-  "descriptionEn": null,
+  "descriptionEn": [
+    "Offered for rent: an apartment with an area of 60m², located on Rruga Abdyl Frashëri, in Aktash.",
+    "The apartment is on the 2nd floor and is fully equipped for living. It has a complete kitchen with dishes, glasses, a microwave, a dishwasher and a washing machine, together with the other appliances needed for everyday life.",
+    "The rent also includes the building maintenance, including the elevator and the cleaning of the common areas.",
+    "Monthly rent: €500\nDeposit: €500\nContract: 1 year"
+  ],
   "descriptionEnIsTranslation": true,
   "extraCaptions": [
     {
@@ -84,126 +90,145 @@
         "Në qira përfshihet edhe mirëmbajtja e objektit, lifti dhe pastrimi i hapësirave të përbashkëta.",
         "Qiraja: 500€\nDepozita: 500€\nKontrata: 1 vit"
       ],
-      "en": null
+      "en": [
+        "60m² in the heart of Aktash, on Rruga Abdyl Frashëri, furnished and completely ready to move in.",
+        "The apartment is on the 2nd floor and comes with an equipped kitchen, a dishwasher, a washing machine and everything you need for everyday life.",
+        "The rent also includes the building maintenance, the elevator and the cleaning of the common areas.",
+        "Rent: €500\nDeposit: €500\nContract: 1 year"
+      ]
     }
   ],
   "images": [
     {
-      "src": "../../assets/listings/b394/01.jpg",
-      "file": "01.jpg",
-      "width": 2730,
-      "height": 1820,
-      "kind": "other",
-      "overlay": null,
-      "hasTextOverlay": null,
-      "altSq": "Fotografi e pronës, banesë me qira në Aktash, Prishtinë, Ref B394 (1/10)",
-      "altEn": "Property photo, apartment for rent in Aktash, Prishtina, Ref B394 (1/10)"
-    },
-    {
       "src": "../../assets/listings/b394/02.jpg",
       "file": "02.jpg",
-      "width": 2730,
-      "height": 1820,
-      "kind": "other",
-      "overlay": null,
-      "hasTextOverlay": null,
-      "altSq": "Fotografi e pronës, banesë me qira në Aktash, Prishtinë, Ref B394 (2/10)",
-      "altEn": "Property photo, apartment for rent in Aktash, Prishtina, Ref B394 (2/10)"
+      "width": 2000,
+      "height": 1333,
+      "kind": "living",
+      "overlay": "brand",
+      "hasTextOverlay": false,
+      "altSq": "Qëndrimi ditor, banesë me qira në Aktash, Prishtinë, Ref B394 (1/10)",
+      "altEn": "Living room, apartment for rent in Aktash, Prishtina, Ref B394 (1/10)"
     },
     {
       "src": "../../assets/listings/b394/03.jpg",
       "file": "03.jpg",
-      "width": 2730,
-      "height": 1820,
-      "kind": "other",
-      "overlay": null,
-      "hasTextOverlay": null,
-      "altSq": "Fotografi e pronës, banesë me qira në Aktash, Prishtinë, Ref B394 (3/10)",
-      "altEn": "Property photo, apartment for rent in Aktash, Prishtina, Ref B394 (3/10)"
+      "width": 2000,
+      "height": 1333,
+      "kind": "living-kitchen",
+      "overlay": "brand",
+      "hasTextOverlay": false,
+      "altSq": "Qëndrimi ditor me kuzhinë, banesë me qira në Aktash, Prishtinë, Ref B394 (2/10)",
+      "altEn": "Living room with kitchen, apartment for rent in Aktash, Prishtina, Ref B394 (2/10)"
     },
     {
       "src": "../../assets/listings/b394/04.jpg",
       "file": "04.jpg",
-      "width": 2730,
-      "height": 1820,
-      "kind": "other",
-      "overlay": null,
-      "hasTextOverlay": null,
-      "altSq": "Fotografi e pronës, banesë me qira në Aktash, Prishtinë, Ref B394 (4/10)",
-      "altEn": "Property photo, apartment for rent in Aktash, Prishtina, Ref B394 (4/10)"
+      "width": 2000,
+      "height": 1333,
+      "kind": "living-kitchen",
+      "overlay": "brand",
+      "hasTextOverlay": false,
+      "altSq": "Qëndrimi ditor me kuzhinë, banesë me qira në Aktash, Prishtinë, Ref B394 (3/10)",
+      "altEn": "Living room with kitchen, apartment for rent in Aktash, Prishtina, Ref B394 (3/10)"
     },
     {
       "src": "../../assets/listings/b394/05.jpg",
       "file": "05.jpg",
-      "width": 2730,
-      "height": 1820,
-      "kind": "other",
-      "overlay": null,
-      "hasTextOverlay": null,
-      "altSq": "Fotografi e pronës, banesë me qira në Aktash, Prishtinë, Ref B394 (5/10)",
-      "altEn": "Property photo, apartment for rent in Aktash, Prishtina, Ref B394 (5/10)"
+      "width": 2000,
+      "height": 1333,
+      "kind": "balcony",
+      "overlay": "brand",
+      "hasTextOverlay": false,
+      "altSq": "Ballkoni, banesë me qira në Aktash, Prishtinë, Ref B394 (4/10)",
+      "altEn": "Balcony, apartment for rent in Aktash, Prishtina, Ref B394 (4/10)"
     },
     {
       "src": "../../assets/listings/b394/06.jpg",
       "file": "06.jpg",
-      "width": 2730,
-      "height": 1820,
-      "kind": "other",
-      "overlay": null,
-      "hasTextOverlay": null,
-      "altSq": "Fotografi e pronës, banesë me qira në Aktash, Prishtinë, Ref B394 (6/10)",
-      "altEn": "Property photo, apartment for rent in Aktash, Prishtina, Ref B394 (6/10)"
+      "width": 2000,
+      "height": 1333,
+      "kind": "bedroom",
+      "overlay": "brand",
+      "hasTextOverlay": false,
+      "altSq": "Dhoma e gjumit, banesë me qira në Aktash, Prishtinë, Ref B394 (5/10)",
+      "altEn": "Bedroom, apartment for rent in Aktash, Prishtina, Ref B394 (5/10)"
     },
     {
       "src": "../../assets/listings/b394/07.jpg",
       "file": "07.jpg",
-      "width": 2730,
-      "height": 1820,
-      "kind": "other",
-      "overlay": null,
-      "hasTextOverlay": null,
-      "altSq": "Fotografi e pronës, banesë me qira në Aktash, Prishtinë, Ref B394 (7/10)",
-      "altEn": "Property photo, apartment for rent in Aktash, Prishtina, Ref B394 (7/10)"
+      "width": 2000,
+      "height": 1333,
+      "kind": "bedroom",
+      "overlay": "brand",
+      "hasTextOverlay": false,
+      "altSq": "Dhoma e gjumit, banesë me qira në Aktash, Prishtinë, Ref B394 (6/10)",
+      "altEn": "Bedroom, apartment for rent in Aktash, Prishtina, Ref B394 (6/10)"
     },
     {
       "src": "../../assets/listings/b394/08.jpg",
       "file": "08.jpg",
-      "width": 2730,
-      "height": 1820,
-      "kind": "other",
-      "overlay": null,
-      "hasTextOverlay": null,
-      "altSq": "Fotografi e pronës, banesë me qira në Aktash, Prishtinë, Ref B394 (8/10)",
-      "altEn": "Property photo, apartment for rent in Aktash, Prishtina, Ref B394 (8/10)"
+      "width": 2000,
+      "height": 1333,
+      "kind": "hallway",
+      "overlay": "brand",
+      "hasTextOverlay": false,
+      "altSq": "Korridori, banesë me qira në Aktash, Prishtinë, Ref B394 (7/10)",
+      "altEn": "Hallway, apartment for rent in Aktash, Prishtina, Ref B394 (7/10)"
     },
     {
       "src": "../../assets/listings/b394/09.jpg",
       "file": "09.jpg",
-      "width": 2730,
-      "height": 1820,
-      "kind": "other",
-      "overlay": null,
-      "hasTextOverlay": null,
-      "altSq": "Fotografi e pronës, banesë me qira në Aktash, Prishtinë, Ref B394 (9/10)",
-      "altEn": "Property photo, apartment for rent in Aktash, Prishtina, Ref B394 (9/10)"
+      "width": 2000,
+      "height": 1333,
+      "kind": "bathroom",
+      "overlay": "brand",
+      "hasTextOverlay": false,
+      "altSq": "Banjo, banesë me qira në Aktash, Prishtinë, Ref B394 (8/10)",
+      "altEn": "Bathroom, apartment for rent in Aktash, Prishtina, Ref B394 (8/10)"
     },
     {
       "src": "../../assets/listings/b394/10_video-cover.jpg",
       "file": "10_video-cover.jpg",
-      "width": 1217,
-      "height": 2160,
-      "kind": "other",
-      "overlay": null,
-      "hasTextOverlay": null,
-      "altSq": "Fotografi e pronës, banesë me qira në Aktash, Prishtinë, Ref B394 (10/10)",
-      "altEn": "Property photo, apartment for rent in Aktash, Prishtina, Ref B394 (10/10)"
+      "width": 1127,
+      "height": 2000,
+      "kind": "living",
+      "overlay": "none",
+      "hasTextOverlay": false,
+      "altSq": "Qëndrimi ditor, banesë me qira në Aktash, Prishtinë, Ref B394 (9/10)",
+      "altEn": "Living room, apartment for rent in Aktash, Prishtina, Ref B394 (9/10)"
+    },
+    {
+      "src": "../../assets/listings/b394/01.jpg",
+      "file": "01.jpg",
+      "width": 2000,
+      "height": 1333,
+      "kind": "living",
+      "overlay": "text",
+      "hasTextOverlay": true,
+      "altSq": "Qëndrimi ditor, banesë me qira në Aktash, Prishtinë, Ref B394 (10/10)",
+      "altEn": "Living room, apartment for rent in Aktash, Prishtina, Ref B394 (10/10)"
     }
   ],
-  "coverIndex": 0,
+  "coverIndex": 8,
   "provenance": {
-    "overridden": {},
+    "overridden": {
+      "features": {
+        "from": [
+          "elevator"
+        ],
+        "to": [
+          "elevator",
+          "furnished"
+        ],
+        "evidence": [
+          "e mobiluar dhe komplet e gatshme për banim"
+        ],
+        "note": "secondary (video) caption states the apartment is furnished; elevator kept from parsed"
+      }
+    },
     "warnings": [],
-    "reviewedImages": false,
-    "translated": false
+    "reviewedImages": true,
+    "translated": true
   }
 }

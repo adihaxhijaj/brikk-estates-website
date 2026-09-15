@@ -1,0 +1,31 @@
+{
+  "ref": "B313",
+  "descriptionEn": [
+    "An apartment is offered for rent in Lakrishte, in the “BeniDona” building, Prishtina.",
+    "The apartment is located on the 10th floor of a modern building, served by two elevators and with access secured by key fobs, offering complete quiet, safety and comfort. The location is strategic, close to the centre, institutions, shopping centres and public transport.",
+    "The space includes a spacious living room with integrated kitchen, 3.5 bedrooms, bathroom and WC, a functional hallway and a balcony with an open view. The apartment has electric/radiator heating and air conditioning, is naturally lit and ready to move into, offering an urban setting with an ideal balance between quiet and dynamism.",
+    "Price by agreement."
+  ],
+  "extraCaptionsEn": [
+    [
+      "🟣 Apartment for Rent – Lakrishte | BeniDona",
+      "On the 10th floor, with 2 elevators and key fob access.\nLiving room with kitchen + 3.5 bedrooms, bathroom + WC, hallway and balcony with a view.",
+      "Electric / radiator heating + air conditioning.\nRegular, urban space, ready for you.",
+      "📍 Lakrishtë – the heart of the city."
+    ]
+  ],
+  "images": [
+    { "file": "01.jpg", "kind": "render", "overlay": "text", "reason": "architectural visualisation of the building with cover headline “BANESË ME QIRA – LAKRISHTË, PRISHTINË”" },
+    { "file": "02.jpg", "kind": "living", "overlay": "brand" },
+    { "file": "03.jpg", "kind": "living", "overlay": "brand" },
+    { "file": "04.jpg", "kind": "living-kitchen", "overlay": "brand", "reason": "kitchen units and dining table seen from the living area" },
+    { "file": "05.jpg", "kind": "interior", "overlay": "brand", "reason": "small tiled space with table and chair by a window, possibly an enclosed balcony" },
+    { "file": "06.jpg", "kind": "bedroom", "overlay": "brand" },
+    { "file": "07.jpg", "kind": "bedroom", "overlay": "brand" },
+    { "file": "08.jpg", "kind": "interior", "overlay": "brand", "reason": "empty room with door to balcony" },
+    { "file": "09.jpg", "kind": "bathroom", "overlay": "brand", "reason": "with washing machine" },
+    { "file": "10.jpg", "kind": "bathroom", "overlay": "brand" },
+    { "file": "11_video-cover.jpg", "kind": "building", "overlay": "text", "reason": "video cover with headline “BANESË ME QIRA – LAKRISHTE, PRISHTINË” over building photo" }
+  ],
+  "notes": "Parsed fields match the caption. Area and rent not stated (price by agreement). '3.5 dhoma gjumi' kept as 3.5 exactly as stated. 'banjo dhe WC' has no numerals, so bathrooms/wc left null. Photos show furniture, but the caption does not say furnished, so no furnished feature added. 01.jpg appears to be a CG render of the BeniDona building, not a photograph. The video caption spells the neighbourhood “Lakrishtë” and has the typo “Në kati e 10-të”."
+}

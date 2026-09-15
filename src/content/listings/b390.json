@@ -77,126 +77,132 @@
     "Prona ka fletë poseduese, ndërsa kontrata e shitblerjes realizohet te noteri.\nJashtë çmimit të banesës ofrohet për shitje edhe një garazh privat.",
     "Çmimi: 970€/m²\nÇmimi total: 96,030€"
   ],
-  "descriptionEn": null,
+  "descriptionEn": [
+    "Offered for sale: an apartment with an area of 99m², located on Rruga Gjergj Fishta, in the Linda 5 building, built by the company AlTrade.",
+    "The apartment is on the 4th floor, faces East and the building has two elevators.",
+    "The space consists of a living room with kitchen and dining area, three bedrooms, one bathroom, one WC and two terraces.\nThe apartment has underfloor heating, air conditioning and a kitchen equipped with appliances from the Gorenje brand.",
+    "The property has an ownership certificate, while the sale contract is signed at the notary.\nA private garage is also offered for sale separately from the price of the apartment.",
+    "Price: €970/m²\nTotal price: €96,030"
+  ],
   "descriptionEnIsTranslation": true,
   "extraCaptions": [],
   "images": [
     {
-      "src": "../../assets/listings/b390/01.jpg",
-      "file": "01.jpg",
-      "width": 2730,
-      "height": 1820,
-      "kind": "other",
-      "overlay": null,
-      "hasTextOverlay": null,
-      "altSq": "Fotografi e pronës, banesë në shitje në Fushë Kosovë, Ref B390 (1/10)",
-      "altEn": "Property photo, apartment for sale in Fushë Kosovë, Ref B390 (1/10)"
-    },
-    {
       "src": "../../assets/listings/b390/02.jpg",
       "file": "02.jpg",
-      "width": 2730,
-      "height": 1820,
-      "kind": "other",
-      "overlay": null,
-      "hasTextOverlay": null,
-      "altSq": "Fotografi e pronës, banesë në shitje në Fushë Kosovë, Ref B390 (2/10)",
-      "altEn": "Property photo, apartment for sale in Fushë Kosovë, Ref B390 (2/10)"
+      "width": 2000,
+      "height": 1333,
+      "kind": "dining",
+      "overlay": "brand",
+      "hasTextOverlay": false,
+      "altSq": "Tryezaria, banesë në shitje në Fushë Kosovë, Ref B390 (1/10)",
+      "altEn": "Dining area, apartment for sale in Fushë Kosovë, Ref B390 (1/10)"
     },
     {
       "src": "../../assets/listings/b390/03.jpg",
       "file": "03.jpg",
-      "width": 2730,
-      "height": 1820,
-      "kind": "other",
-      "overlay": null,
-      "hasTextOverlay": null,
-      "altSq": "Fotografi e pronës, banesë në shitje në Fushë Kosovë, Ref B390 (3/10)",
-      "altEn": "Property photo, apartment for sale in Fushë Kosovë, Ref B390 (3/10)"
+      "width": 2000,
+      "height": 1333,
+      "kind": "kitchen",
+      "overlay": "brand",
+      "hasTextOverlay": false,
+      "altSq": "Kuzhina, banesë në shitje në Fushë Kosovë, Ref B390 (2/10)",
+      "altEn": "Kitchen, apartment for sale in Fushë Kosovë, Ref B390 (2/10)"
     },
     {
       "src": "../../assets/listings/b390/04.jpg",
       "file": "04.jpg",
-      "width": 2730,
-      "height": 1820,
-      "kind": "other",
-      "overlay": null,
-      "hasTextOverlay": null,
-      "altSq": "Fotografi e pronës, banesë në shitje në Fushë Kosovë, Ref B390 (4/10)",
-      "altEn": "Property photo, apartment for sale in Fushë Kosovë, Ref B390 (4/10)"
+      "width": 2000,
+      "height": 1333,
+      "kind": "kitchen",
+      "overlay": "brand",
+      "hasTextOverlay": false,
+      "altSq": "Kuzhina, banesë në shitje në Fushë Kosovë, Ref B390 (3/10)",
+      "altEn": "Kitchen, apartment for sale in Fushë Kosovë, Ref B390 (3/10)"
     },
     {
       "src": "../../assets/listings/b390/05.jpg",
       "file": "05.jpg",
-      "width": 2730,
-      "height": 1820,
-      "kind": "other",
-      "overlay": null,
-      "hasTextOverlay": null,
-      "altSq": "Fotografi e pronës, banesë në shitje në Fushë Kosovë, Ref B390 (5/10)",
-      "altEn": "Property photo, apartment for sale in Fushë Kosovë, Ref B390 (5/10)"
+      "width": 2000,
+      "height": 1333,
+      "kind": "kitchen",
+      "overlay": "brand",
+      "hasTextOverlay": false,
+      "altSq": "Kuzhina, banesë në shitje në Fushë Kosovë, Ref B390 (4/10)",
+      "altEn": "Kitchen, apartment for sale in Fushë Kosovë, Ref B390 (4/10)"
     },
     {
       "src": "../../assets/listings/b390/06.jpg",
       "file": "06.jpg",
-      "width": 2730,
-      "height": 1820,
-      "kind": "other",
-      "overlay": null,
-      "hasTextOverlay": null,
-      "altSq": "Fotografi e pronës, banesë në shitje në Fushë Kosovë, Ref B390 (6/10)",
-      "altEn": "Property photo, apartment for sale in Fushë Kosovë, Ref B390 (6/10)"
+      "width": 2000,
+      "height": 1333,
+      "kind": "view",
+      "overlay": "brand",
+      "hasTextOverlay": false,
+      "altSq": "Pamja, banesë në shitje në Fushë Kosovë, Ref B390 (5/10)",
+      "altEn": "View, apartment for sale in Fushë Kosovë, Ref B390 (5/10)"
     },
     {
       "src": "../../assets/listings/b390/07.jpg",
       "file": "07.jpg",
-      "width": 2730,
-      "height": 1820,
-      "kind": "other",
-      "overlay": null,
-      "hasTextOverlay": null,
-      "altSq": "Fotografi e pronës, banesë në shitje në Fushë Kosovë, Ref B390 (7/10)",
-      "altEn": "Property photo, apartment for sale in Fushë Kosovë, Ref B390 (7/10)"
+      "width": 2000,
+      "height": 1333,
+      "kind": "bedroom",
+      "overlay": "brand",
+      "hasTextOverlay": false,
+      "altSq": "Dhoma e gjumit, banesë në shitje në Fushë Kosovë, Ref B390 (6/10)",
+      "altEn": "Bedroom, apartment for sale in Fushë Kosovë, Ref B390 (6/10)"
     },
     {
       "src": "../../assets/listings/b390/08.jpg",
       "file": "08.jpg",
-      "width": 2730,
-      "height": 1820,
-      "kind": "other",
-      "overlay": null,
-      "hasTextOverlay": null,
-      "altSq": "Fotografi e pronës, banesë në shitje në Fushë Kosovë, Ref B390 (8/10)",
-      "altEn": "Property photo, apartment for sale in Fushë Kosovë, Ref B390 (8/10)"
+      "width": 2000,
+      "height": 1333,
+      "kind": "bedroom",
+      "overlay": "brand",
+      "hasTextOverlay": false,
+      "altSq": "Dhoma e gjumit, banesë në shitje në Fushë Kosovë, Ref B390 (7/10)",
+      "altEn": "Bedroom, apartment for sale in Fushë Kosovë, Ref B390 (7/10)"
     },
     {
       "src": "../../assets/listings/b390/09.jpg",
       "file": "09.jpg",
-      "width": 2730,
-      "height": 1820,
-      "kind": "other",
-      "overlay": null,
-      "hasTextOverlay": null,
-      "altSq": "Fotografi e pronës, banesë në shitje në Fushë Kosovë, Ref B390 (9/10)",
-      "altEn": "Property photo, apartment for sale in Fushë Kosovë, Ref B390 (9/10)"
+      "width": 2000,
+      "height": 1333,
+      "kind": "bedroom",
+      "overlay": "brand",
+      "hasTextOverlay": false,
+      "altSq": "Dhoma e gjumit, banesë në shitje në Fushë Kosovë, Ref B390 (8/10)",
+      "altEn": "Bedroom, apartment for sale in Fushë Kosovë, Ref B390 (8/10)"
     },
     {
       "src": "../../assets/listings/b390/10.jpg",
       "file": "10.jpg",
-      "width": 2730,
-      "height": 1820,
-      "kind": "other",
-      "overlay": null,
-      "hasTextOverlay": null,
-      "altSq": "Fotografi e pronës, banesë në shitje në Fushë Kosovë, Ref B390 (10/10)",
-      "altEn": "Property photo, apartment for sale in Fushë Kosovë, Ref B390 (10/10)"
+      "width": 2000,
+      "height": 1333,
+      "kind": "bathroom",
+      "overlay": "brand",
+      "hasTextOverlay": false,
+      "altSq": "Banjo, banesë në shitje në Fushë Kosovë, Ref B390 (9/10)",
+      "altEn": "Bathroom, apartment for sale in Fushë Kosovë, Ref B390 (9/10)"
+    },
+    {
+      "src": "../../assets/listings/b390/01.jpg",
+      "file": "01.jpg",
+      "width": 2000,
+      "height": 1333,
+      "kind": "living",
+      "overlay": "text",
+      "hasTextOverlay": true,
+      "altSq": "Qëndrimi ditor, banesë në shitje në Fushë Kosovë, Ref B390 (10/10)",
+      "altEn": "Living room, apartment for sale in Fushë Kosovë, Ref B390 (10/10)"
     }
   ],
   "coverIndex": 0,
   "provenance": {
     "overridden": {},
     "warnings": [],
-    "reviewedImages": false,
-    "translated": false
+    "reviewedImages": true,
+    "translated": true
   }
 }

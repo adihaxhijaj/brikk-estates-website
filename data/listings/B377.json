@@ -1,0 +1,23 @@
+{
+  "ref": "B377",
+  "descriptionEn": [
+    "Offered for sale: an apartment with an area of 87m², located on Rruga Ndue Përlleshi, in the EVERGREEN complex, built by Vëllezërit Asllani.",
+    "The apartment is on the 1st floor, in a building with two elevators, and has a functional floor plan for family living. The space consists of a living room with kitchen and a separate dining area, two bedrooms, one bathroom, one WC and a balcony.",
+    "The apartment has electric underfloor heating and is located in a quiet setting, with a dedicated space for children and good access to the main parts of the city. Markets, schools and other services needed for everyday life are nearby.",
+    "The apartment has an ownership certificate and the sale contract is signed at the notary.\nThe price of the property is €140,000, with one garage included.\nOn request, a second garage can also be purchased by agreement."
+  ],
+  "images": [
+    { "file": "01.jpg", "kind": "building", "overlay": "brand" },
+    { "file": "02.jpg", "kind": "living", "overlay": "brand" },
+    { "file": "03.jpg", "kind": "living", "overlay": "brand" },
+    { "file": "04.jpg", "kind": "kitchen", "overlay": "brand" },
+    { "file": "05.jpg", "kind": "living-kitchen", "overlay": "brand" },
+    { "file": "06.jpg", "kind": "balcony", "overlay": "brand" },
+    { "file": "07.jpg", "kind": "bedroom", "overlay": "brand" },
+    { "file": "08.jpg", "kind": "bedroom", "overlay": "brand" },
+    { "file": "09.jpg", "kind": "bathroom", "overlay": "brand" },
+    { "file": "10.jpg", "kind": "bathroom", "overlay": "brand", "reason": "WC; toiletries on shelf, no people" },
+    { "file": "11.jpg", "kind": "entrance", "overlay": "brand" }
+  ],
+  "notes": "Parsed fields match the caption. Developer from 'ndërtim nga Vëllezërit Asllani'. One garage is included in the €140,000 price (garage feature); a second garage can be bought on request by agreement, with no price stated — garageOptional correctly left null since a garage is included. Playground comes from 'hapësirë të dedikuar për fëmijë' (dedicated space for children)."
+}

@@ -1,0 +1,26 @@
+{
+  "ref": "B312",
+  "descriptionEn": [
+    "An apartment is offered for sale in Prishtina e Re, in the PUHIZA 2 complex, Rruga “Behar Begolli”.",
+    "The apartment is located in a sought-after and dynamic area, with easy access to services, business centres, markets and public transport. The practical location is ideal for families or professionals, near QKUK and Rruga A, in a quiet setting with complete infrastructure.",
+    "The property has a total area of 134.40m² and includes a living room with kitchen, three bedrooms, a bathroom and a separate WC, two terraces facing two sides of the building and a storage room/additional space. The apartment is designed for comfort and functionality, with abundant natural light and underfloor heating, which offers comfort and thermal efficiency.",
+    "This property is suitable for families and offers free-flowing space, as well as easy access to every part of the city.",
+    "The price is offered by agreement and the contract is signed at the notary."
+  ],
+  "valuesEn": { "landmark": "near QKUK (University Clinical Center of Kosovo)" },
+  "images": [
+    { "file": "01.jpg", "kind": "building", "overlay": "text", "reason": "cover headline “BANESË NË SHITJE – PRISHTINA E RE, PRISHTINË”" },
+    { "file": "02.jpg", "kind": "living", "overlay": "brand", "reason": "empty room with large windows" },
+    { "file": "03.jpg", "kind": "interior", "overlay": "brand", "reason": "empty room with wall outlets, function unclear" },
+    { "file": "04.jpg", "kind": "bedroom", "overlay": "brand" },
+    { "file": "05.jpg", "kind": "bedroom", "overlay": "brand" },
+    { "file": "06.jpg", "kind": "terrace", "overlay": "brand" },
+    { "file": "07.jpg", "kind": "view", "overlay": "brand", "reason": "view from terrace with glass railing" },
+    { "file": "08.jpg", "kind": "bathroom", "overlay": "brand" },
+    { "file": "09.jpg", "kind": "bathroom", "overlay": "brand", "reason": "WC" }
+  ],
+  "overrides": {
+    "landmark": { "value": "pranë QKUK-së", "evidence": ["pranë QKUK-së"], "note": "proximity to QKUK (University Clinical Center of Kosovo) stated explicitly; parser only recognises business landmarks" }
+  },
+  "notes": "'banjo dhe një WC të veçantë': wc 1 parsed; bathroom has no numeral, so bathrooms left null. 'dy terasa' (two terraces) without area, so areaTerrace null. Floor not stated. Caption ID line reads “ID:B312” (no space)."
+}

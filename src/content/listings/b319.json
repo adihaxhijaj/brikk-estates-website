@@ -14,9 +14,9 @@
   "neighbourhood": null,
   "neighbourhoodLoc": null,
   "street": "Rruga Gjergj Fishta",
-  "complex": null,
-  "landmark": null,
-  "landmarkEn": null,
+  "complex": "ALTRADE – Linda 8",
+  "landmark": "shumë afër AlTrade (Ish Baumarket)",
+  "landmarkEn": "very close to AlTrade (formerly Baumarket)",
   "country": "XK",
   "developer": null,
   "isNewBuild": null,
@@ -31,7 +31,7 @@
   "totalFloors": null,
   "orientation": null,
   "bedrooms": null,
-  "bathrooms": null,
+  "bathrooms": 1,
   "wc": null,
   "livingWithKitchen": null,
   "storage": null,
@@ -74,71 +74,102 @@
     "Ky lokal ofron vizibilitet të lartë, strukturë fleksibile dhe mundësi zgjerimi, duke e bërë investim ideal me potencial rritjeje dhe stabilitet afatgjatë.",
     "Çmimi: 1,600 €/m²."
   ],
-  "descriptionEn": null,
+  "descriptionEn": [
+    "A commercial unit is offered for sale on Rruga Gjergj Fishta, Fushë Kosovë.",
+    "The unit is located in a dynamic commercial hub, very close to AlTrade (formerly Baumarket), inside the ALTRADE – Linda 8 building, with immediate access to the main road Nëna Terezë. The area offers high visibility, constant footfall and strong development potential for any business activity.",
+    "The space has a total area of 81.02m² on the ground floor, organised as an open space with one bathroom, and regular documentation with an ownership certificate. There is an option to expand by 64.58m² + 39.45m², as needed, with direct access to the main road and ample parking near the building.",
+    "This unit offers high visibility, a flexible structure and expansion options, making it an ideal investment with growth potential and long-term stability.",
+    "Price: €1,600/m²."
+  ],
   "descriptionEnIsTranslation": true,
   "extraCaptions": [],
   "images": [
-    {
-      "src": "../../assets/listings/b319/01.jpg",
-      "file": "01.jpg",
-      "width": 1620,
-      "height": 1080,
-      "kind": "other",
-      "overlay": null,
-      "hasTextOverlay": null,
-      "altSq": "Fotografi e pronës, lokal në shitje në Fushë Kosovë, Ref B319 (1/5)",
-      "altEn": "Property photo, commercial unit for sale in Fushë Kosovë, Ref B319 (1/5)"
-    },
     {
       "src": "../../assets/listings/b319/02.jpg",
       "file": "02.jpg",
       "width": 1620,
       "height": 1080,
-      "kind": "other",
-      "overlay": null,
-      "hasTextOverlay": null,
-      "altSq": "Fotografi e pronës, lokal në shitje në Fushë Kosovë, Ref B319 (2/5)",
-      "altEn": "Property photo, commercial unit for sale in Fushë Kosovë, Ref B319 (2/5)"
+      "kind": "interior",
+      "overlay": "brand",
+      "hasTextOverlay": false,
+      "altSq": "Hapësira e brendshme, lokal në shitje në Fushë Kosovë, Ref B319 (1/5)",
+      "altEn": "Interior space, commercial unit for sale in Fushë Kosovë, Ref B319 (1/5)"
     },
     {
       "src": "../../assets/listings/b319/03.jpg",
       "file": "03.jpg",
       "width": 1620,
       "height": 1080,
-      "kind": "other",
-      "overlay": null,
-      "hasTextOverlay": null,
-      "altSq": "Fotografi e pronës, lokal në shitje në Fushë Kosovë, Ref B319 (3/5)",
-      "altEn": "Property photo, commercial unit for sale in Fushë Kosovë, Ref B319 (3/5)"
+      "kind": "interior",
+      "overlay": "brand",
+      "hasTextOverlay": false,
+      "altSq": "Hapësira e brendshme, lokal në shitje në Fushë Kosovë, Ref B319 (2/5)",
+      "altEn": "Interior space, commercial unit for sale in Fushë Kosovë, Ref B319 (2/5)"
     },
     {
       "src": "../../assets/listings/b319/04.jpg",
       "file": "04.jpg",
       "width": 1620,
       "height": 1080,
-      "kind": "other",
-      "overlay": null,
-      "hasTextOverlay": null,
-      "altSq": "Fotografi e pronës, lokal në shitje në Fushë Kosovë, Ref B319 (4/5)",
-      "altEn": "Property photo, commercial unit for sale in Fushë Kosovë, Ref B319 (4/5)"
+      "kind": "interior",
+      "overlay": "brand",
+      "hasTextOverlay": false,
+      "altSq": "Hapësira e brendshme, lokal në shitje në Fushë Kosovë, Ref B319 (3/5)",
+      "altEn": "Interior space, commercial unit for sale in Fushë Kosovë, Ref B319 (3/5)"
     },
     {
       "src": "../../assets/listings/b319/05.jpg",
       "file": "05.jpg",
       "width": 1620,
       "height": 1080,
-      "kind": "other",
-      "overlay": null,
-      "hasTextOverlay": null,
-      "altSq": "Fotografi e pronës, lokal në shitje në Fushë Kosovë, Ref B319 (5/5)",
-      "altEn": "Property photo, commercial unit for sale in Fushë Kosovë, Ref B319 (5/5)"
+      "kind": "bathroom",
+      "overlay": "brand",
+      "hasTextOverlay": false,
+      "altSq": "Banjo, lokal në shitje në Fushë Kosovë, Ref B319 (4/5)",
+      "altEn": "Bathroom, commercial unit for sale in Fushë Kosovë, Ref B319 (4/5)"
+    },
+    {
+      "src": "../../assets/listings/b319/01.jpg",
+      "file": "01.jpg",
+      "width": 1620,
+      "height": 1080,
+      "kind": "exterior",
+      "overlay": "text",
+      "hasTextOverlay": true,
+      "altSq": "Pamja e jashtme, lokal në shitje në Fushë Kosovë, Ref B319 (5/5)",
+      "altEn": "Exterior, commercial unit for sale in Fushë Kosovë, Ref B319 (5/5)"
     }
   ],
   "coverIndex": 0,
   "provenance": {
-    "overridden": {},
+    "overridden": {
+      "bathrooms": {
+        "from": null,
+        "to": 1,
+        "evidence": [
+          "organizuar open-space me një banjo"
+        ],
+        "note": "one bathroom stated explicitly"
+      },
+      "complex": {
+        "from": null,
+        "to": "ALTRADE – Linda 8",
+        "evidence": [
+          "brenda objektit ALTRADE – Linda 8"
+        ],
+        "note": "building name stated explicitly; a complex named after a company is not a developer claim, so developer left null"
+      },
+      "landmark": {
+        "from": null,
+        "to": "shumë afër AlTrade (Ish Baumarket)",
+        "evidence": [
+          "shumë afër AlTrade (Ish Baumarket)"
+        ],
+        "note": "proximity landmark stated explicitly; parser only recognises certain business landmark patterns"
+      }
+    },
     "warnings": [],
-    "reviewedImages": false,
-    "translated": false
+    "reviewedImages": true,
+    "translated": true
   }
 }

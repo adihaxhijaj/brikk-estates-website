@@ -1,0 +1,16 @@
+{
+  "ref": "B389",
+  "descriptionEn": [
+    "Offered for sale: land with an area of 5.70 ares, located on Rruga Ramiz Varvarica, in Llukar, about 600 metres from the Derbi sports field (Fusha Sportive Derbi) and with good access to the M9 Prishtina–Mutivodë main road.\nThe property is suitable for building a house and has access to electricity, water and sewerage.",
+    "The land has an ownership certificate and is sold only as a whole.",
+    "Price: €10,000 per are\nTotal price: €57,000"
+  ],
+  "valuesEn": { "landmark": "about 600 metres from the Derbi sports field (Fusha Sportive Derbi)" },
+  "images": [
+    { "file": "01.jpg", "kind": "aerial", "overlay": "text", "reason": "aerial photo with the plot outlined in yellow; label \"Llukar, Prishtinë\", \"5.70 Ari\", \"10,000€/Ari\" (matches caption)" }
+  ],
+  "overrides": {
+    "landmark": { "value": "rreth 600 metra larg Fushës Sportive Derbi", "evidence": ["rreth 600 metra larg Fushës Sportive Derbi"], "note": "proximity landmark stated explicitly in the caption" }
+  },
+  "notes": "Single aerial image. Utilities (electricity, water, sewerage) and access to the M9 road are stated but have no feature vocabulary entry. Sold only as a whole."
+}

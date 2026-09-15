@@ -1,0 +1,21 @@
+{
+  "ref": "B317",
+  "descriptionEn": [
+    "An apartment is offered for sale in Fushë Kosovë, Rruga Dardania.",
+    "The apartment is located in a developed and sought-after area, with easy access to services, markets, public transport and the main points of the city. The property is on the first floor and has regular documentation with an ownership certificate.",
+    "The 76m² space includes a living room with integrated kitchen, two bedrooms, bathroom and WC, as well as a balcony accessible from the living room and the rooms. The apartment is furnished in a modern style with premium details, natural light and is very comfortable, ready to move into without additional investment. The building is quiet and well maintained, in a strategic location near all services.",
+    "Price by agreement."
+  ],
+  "images": [
+    { "file": "01.jpg", "kind": "living", "overlay": "text", "reason": "cover headline “BANESË NË SHITJE – RRUGA DARDANIA, FUSHË KOSOVË”" },
+    { "file": "02.jpg", "kind": "living-kitchen", "overlay": "brand" },
+    { "file": "03.jpg", "kind": "kitchen", "overlay": "brand" },
+    { "file": "04.jpg", "kind": "kitchen", "overlay": "brand" },
+    { "file": "05.jpg", "kind": "bedroom", "overlay": "brand" },
+    { "file": "06.jpg", "kind": "bedroom", "overlay": "brand" },
+    { "file": "07.jpg", "kind": "balcony", "overlay": "brand" },
+    { "file": "08.jpg", "kind": "bathroom", "overlay": "brand" },
+    { "file": "09.jpg", "kind": "bathroom", "overlay": "brand", "reason": "WC" }
+  ],
+  "notes": "Parsed fields match the caption. Floor 1 from 'katin e parë'. Ownership certificate stated (caption misspells it “fletë poseduse”). 'banjo dhe WC' has no numerals, so bathrooms/wc left null. Price not stated."
+}

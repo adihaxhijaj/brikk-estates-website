@@ -71,115 +71,120 @@
     "Hapësira përfshin sallon me kuzhinë, tre dhoma gjumi, banjo, WC, shpajz dhe ballkon. Banesa ka ndriçim natyral të bollshëm dhe është e organizuar në mënyrë funksionale, e përshtatshme për banim afatgjatë.",
     "Çmimi sipas marrëveshjes."
   ],
-  "descriptionEn": null,
+  "descriptionEn": [
+    "An apartment is offered for rent in Bregu i Diellit, Prishtina.",
+    "The apartment is located in the Standardi complex, built by Miri Construction, in a strategic location near Rruga B, schools, hospitals and main services.",
+    "The space includes a living room with kitchen, three bedrooms, bathroom, WC, pantry and balcony. The apartment has abundant natural light and is functionally organised, suitable for long-term living.",
+    "Price by agreement."
+  ],
   "descriptionEnIsTranslation": true,
   "extraCaptions": [],
   "images": [
-    {
-      "src": "../../assets/listings/b318/01.jpg",
-      "file": "01.jpg",
-      "width": 1620,
-      "height": 1080,
-      "kind": "other",
-      "overlay": null,
-      "hasTextOverlay": null,
-      "altSq": "Fotografi e pronës, banesë me qira në Bregun e Diellit, Prishtinë, Ref B318 (1/9)",
-      "altEn": "Property photo, apartment for rent in Bregu i Diellit, Prishtina, Ref B318 (1/9)"
-    },
     {
       "src": "../../assets/listings/b318/02.jpg",
       "file": "02.jpg",
       "width": 1620,
       "height": 1080,
-      "kind": "other",
-      "overlay": null,
-      "hasTextOverlay": null,
-      "altSq": "Fotografi e pronës, banesë me qira në Bregun e Diellit, Prishtinë, Ref B318 (2/9)",
-      "altEn": "Property photo, apartment for rent in Bregu i Diellit, Prishtina, Ref B318 (2/9)"
+      "kind": "living",
+      "overlay": "brand",
+      "hasTextOverlay": false,
+      "altSq": "Qëndrimi ditor, banesë me qira në Bregun e Diellit, Prishtinë, Ref B318 (1/9)",
+      "altEn": "Living room, apartment for rent in Bregu i Diellit, Prishtina, Ref B318 (1/9)"
     },
     {
       "src": "../../assets/listings/b318/03.jpg",
       "file": "03.jpg",
       "width": 1620,
       "height": 1080,
-      "kind": "other",
-      "overlay": null,
-      "hasTextOverlay": null,
-      "altSq": "Fotografi e pronës, banesë me qira në Bregun e Diellit, Prishtinë, Ref B318 (3/9)",
-      "altEn": "Property photo, apartment for rent in Bregu i Diellit, Prishtina, Ref B318 (3/9)"
+      "kind": "kitchen",
+      "overlay": "brand",
+      "hasTextOverlay": false,
+      "altSq": "Kuzhina, banesë me qira në Bregun e Diellit, Prishtinë, Ref B318 (2/9)",
+      "altEn": "Kitchen, apartment for rent in Bregu i Diellit, Prishtina, Ref B318 (2/9)"
     },
     {
       "src": "../../assets/listings/b318/04.jpg",
       "file": "04.jpg",
       "width": 1620,
       "height": 1080,
-      "kind": "other",
-      "overlay": null,
-      "hasTextOverlay": null,
-      "altSq": "Fotografi e pronës, banesë me qira në Bregun e Diellit, Prishtinë, Ref B318 (4/9)",
-      "altEn": "Property photo, apartment for rent in Bregu i Diellit, Prishtina, Ref B318 (4/9)"
+      "kind": "kitchen",
+      "overlay": "brand",
+      "hasTextOverlay": false,
+      "altSq": "Kuzhina, banesë me qira në Bregun e Diellit, Prishtinë, Ref B318 (3/9)",
+      "altEn": "Kitchen, apartment for rent in Bregu i Diellit, Prishtina, Ref B318 (3/9)"
     },
     {
       "src": "../../assets/listings/b318/05.jpg",
       "file": "05.jpg",
       "width": 1620,
       "height": 1080,
-      "kind": "other",
-      "overlay": null,
-      "hasTextOverlay": null,
-      "altSq": "Fotografi e pronës, banesë me qira në Bregun e Diellit, Prishtinë, Ref B318 (5/9)",
-      "altEn": "Property photo, apartment for rent in Bregu i Diellit, Prishtina, Ref B318 (5/9)"
+      "kind": "bedroom",
+      "overlay": "brand",
+      "hasTextOverlay": false,
+      "altSq": "Dhoma e gjumit, banesë me qira në Bregun e Diellit, Prishtinë, Ref B318 (4/9)",
+      "altEn": "Bedroom, apartment for rent in Bregu i Diellit, Prishtina, Ref B318 (4/9)"
     },
     {
       "src": "../../assets/listings/b318/06.jpg",
       "file": "06.jpg",
       "width": 1620,
       "height": 1080,
-      "kind": "other",
-      "overlay": null,
-      "hasTextOverlay": null,
-      "altSq": "Fotografi e pronës, banesë me qira në Bregun e Diellit, Prishtinë, Ref B318 (6/9)",
-      "altEn": "Property photo, apartment for rent in Bregu i Diellit, Prishtina, Ref B318 (6/9)"
+      "kind": "bedroom",
+      "overlay": "brand",
+      "hasTextOverlay": false,
+      "altSq": "Dhoma e gjumit, banesë me qira në Bregun e Diellit, Prishtinë, Ref B318 (5/9)",
+      "altEn": "Bedroom, apartment for rent in Bregu i Diellit, Prishtina, Ref B318 (5/9)"
     },
     {
       "src": "../../assets/listings/b318/07.jpg",
       "file": "07.jpg",
       "width": 1620,
       "height": 1080,
-      "kind": "other",
-      "overlay": null,
-      "hasTextOverlay": null,
-      "altSq": "Fotografi e pronës, banesë me qira në Bregun e Diellit, Prishtinë, Ref B318 (7/9)",
-      "altEn": "Property photo, apartment for rent in Bregu i Diellit, Prishtina, Ref B318 (7/9)"
+      "kind": "interior",
+      "overlay": "brand",
+      "hasTextOverlay": false,
+      "altSq": "Hapësira e brendshme, banesë me qira në Bregun e Diellit, Prishtinë, Ref B318 (6/9)",
+      "altEn": "Interior space, apartment for rent in Bregu i Diellit, Prishtina, Ref B318 (6/9)"
     },
     {
       "src": "../../assets/listings/b318/08.jpg",
       "file": "08.jpg",
       "width": 1620,
       "height": 1080,
-      "kind": "other",
-      "overlay": null,
-      "hasTextOverlay": null,
-      "altSq": "Fotografi e pronës, banesë me qira në Bregun e Diellit, Prishtinë, Ref B318 (8/9)",
-      "altEn": "Property photo, apartment for rent in Bregu i Diellit, Prishtina, Ref B318 (8/9)"
+      "kind": "bathroom",
+      "overlay": "brand",
+      "hasTextOverlay": false,
+      "altSq": "Banjo, banesë me qira në Bregun e Diellit, Prishtinë, Ref B318 (7/9)",
+      "altEn": "Bathroom, apartment for rent in Bregu i Diellit, Prishtina, Ref B318 (7/9)"
     },
     {
       "src": "../../assets/listings/b318/09.jpg",
       "file": "09.jpg",
       "width": 1620,
       "height": 1080,
-      "kind": "other",
-      "overlay": null,
-      "hasTextOverlay": null,
-      "altSq": "Fotografi e pronës, banesë me qira në Bregun e Diellit, Prishtinë, Ref B318 (9/9)",
-      "altEn": "Property photo, apartment for rent in Bregu i Diellit, Prishtina, Ref B318 (9/9)"
+      "kind": "bathroom",
+      "overlay": "brand",
+      "hasTextOverlay": false,
+      "altSq": "Banjo, banesë me qira në Bregun e Diellit, Prishtinë, Ref B318 (8/9)",
+      "altEn": "Bathroom, apartment for rent in Bregu i Diellit, Prishtina, Ref B318 (8/9)"
+    },
+    {
+      "src": "../../assets/listings/b318/01.jpg",
+      "file": "01.jpg",
+      "width": 1620,
+      "height": 1080,
+      "kind": "living",
+      "overlay": "text",
+      "hasTextOverlay": true,
+      "altSq": "Qëndrimi ditor, banesë me qira në Bregun e Diellit, Prishtinë, Ref B318 (9/9)",
+      "altEn": "Living room, apartment for rent in Bregu i Diellit, Prishtina, Ref B318 (9/9)"
     }
   ],
   "coverIndex": 0,
   "provenance": {
     "overridden": {},
     "warnings": [],
-    "reviewedImages": false,
-    "translated": false
+    "reviewedImages": true,
+    "translated": true
   }
 }

@@ -1,0 +1,23 @@
+{
+  "ref": "B376",
+  "descriptionEn": [
+    "Offered for sale: an apartment with an area of 78.84m², located on Rruga “Hysen Xhakolli”, in Fushë Kosovë, built by Arditi Group.",
+    "The apartment has a functional floor plan and consists of a living room with kitchen, two bedrooms, one bathroom, a storage room and a balcony/terrace. The east orientation gives the space good natural light during the first part of the day.",
+    "A particular advantage is the additional investment in thermal insulation above the apartment’s slab, which helps reduce heat loss in winter and overheating in summer.",
+    "It has air conditioning, electric heating, an elevator and a parking space.",
+    "The property contract is currently carried out through a lawyer.\nThe price of the property is €75,000."
+  ],
+  "images": [
+    { "file": "01.jpg", "kind": "living-kitchen", "overlay": "brand", "exclude": true, "reason": "poster of two children with clearly recognisable faces and a string of family photos on the wall" },
+    { "file": "02.jpg", "kind": "living", "overlay": "brand", "reason": "logo and small script tagline “E menduar për jetë.” only; decorative name plate on shelf, no faces" },
+    { "file": "03.jpg", "kind": "kitchen", "overlay": "brand", "reason": "logo and small script tagline only" },
+    { "file": "04.jpg", "kind": "bedroom", "overlay": "brand", "reason": "logo and small script tagline only" },
+    { "file": "05.jpg", "kind": "bedroom", "overlay": "brand", "reason": "children's room; wall stickers only, no people" },
+    { "file": "06.jpg", "kind": "bedroom", "overlay": "brand", "reason": "children's room; hand-painted illustration on wardrobe, no photos of people" },
+    { "file": "07.jpg", "kind": "hallway", "overlay": "brand", "reason": "logo and small script tagline only" },
+    { "file": "08.jpg", "kind": "balcony", "overlay": "brand" },
+    { "file": "09.jpg", "kind": "bathroom", "overlay": "brand" },
+    { "file": "10.jpg", "kind": "building", "overlay": "brand" }
+  ],
+  "notes": "Parsed fields match the caption (developer from 'ndërtim nga Arditi Group'; contract via lawyer; €75,000). Floor not stated. 'ballkon/terasë' is one outdoor space, recorded as balcony plus terrace feature by the parser; no terrace area. 01.jpg excluded for recognisable children's faces in a wall poster; the cover therefore falls to 02.jpg. The apartment is currently occupied and furnished in photos, but the caption does not say it is sold furnished."
+}

@@ -1,0 +1,39 @@
+---
+// Large static six-house symbol used as a supporting graphic. With `animate`, the pieces settle into the ring once per tab session
+// (transform + opacity, 650ms). Reduced motion: no movement. Purely decorative.
+import parts from '../assets/brand/logo-parts.json';
+
+interface Props { class?: string; animate?: boolean; tone?: 'leaf' | 'green' | 'cream' }
+const { class: className, animate = false, tone = 'leaf' } = Astro.props;
+const [sx, sy, sw, sh] = parts.symbol.viewBox;
+const fill = tone === 'leaf' ? parts.colours.leaf : tone === 'cream' ? parts.colours.cream : parts.colours.green;
+const pieces = parts.symbol.paths.map((d, i) => {
+  const a = (i * 60 * Math.PI) / 180;
+  return { d, dx: +(Math.sin(a) * 70).toFixed(1), dy: +(-Math.cos(a) * 70).toFixed(1) };
+});
+---
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox={`${sx} ${sy} ${sw} ${sh}`}
+  class:list={['symbol-graphic', className, { 'symbol-graphic--animate': animate }]}
+  aria-hidden="true"
+  focusable="false"
+>
+  <g fill={fill}>
+    {pieces.map((p, i) => <path d={p.d} style={`--dx:${p.dx}px;--dy:${p.dy}px;--i:${i}`} />)}
+  </g>
+</svg>
+<style>
+  .symbol-graphic { display: block; overflow: visible; }
+  @media (prefers-reduced-motion: no-preference) {
+    :global(html[data-brand-moment]) .symbol-graphic--animate path {
+      animation: settle 650ms cubic-bezier(0.16, 1, 0.3, 1) both;
+      animation-delay: calc(var(--i) * 25ms);
+    }
+  }
+  @keyframes settle {
+    from { opacity: 0; transform: translate(var(--dx), var(--dy)); }
+    to { opacity: 1; transform: none; }
+  }
+  @media (forced-colors: active) { .symbol-graphic { display: none; } }
+</style>

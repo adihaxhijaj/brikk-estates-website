@@ -1,0 +1,76 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SymbolGraphic from '../components/SymbolGraphic.astro';
+import OwnerComposer from '../components/OwnerComposer.astro';
+import ContactStrip from '../components/ContactStrip.astro';
+import { dict, ROUTES, type Lang } from '../i18n';
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const t = dict(lang);
+const o = t.owners;
+---
+<BaseLayout lang={lang} title={o.metaTitle} description={o.metaDescription} alternates={ROUTES.owners}>
+  <section class="owners-hero surface-green on-dark">
+    <SymbolGraphic class="owners-hero__symbol" />
+    <div class="container owners-hero__inner">
+      <p class="eyebrow owners-hero__eyebrow">{t.nav.owners}</p>
+      <h1 class="owners-hero__title">{o.h1}</h1>
+      <p class="owners-hero__intro">{o.intro}</p>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="services-title">
+    <div class="container two-col">
+      <h2 id="services-title">{o.servicesTitle}</h2>
+      <ul class="piece-list services">
+        {o.services.map((s) => <li>{s}</li>)}
+      </ul>
+    </div>
+  </section>
+
+  <section class="section surface-white" aria-labelledby="process-title">
+    <div class="container">
+      <h2 id="process-title" class="section-head">{o.processTitle}</h2>
+      <ol role="list" class="process">
+        {o.process.map((step, i) => (
+          <li class="process__step">
+            <span class="process__num tabular" aria-hidden="true">{i + 1}</span>
+            <h3>{step.title}</h3>
+            <p>{step.text}</p>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <section class="section surface-cream" aria-labelledby="composer-title" id="submit-property">
+    <div class="container two-col">
+      <div>
+        <h2 id="composer-title">{o.composerTitle}</h2>
+        <p class="composer-intro">{o.composerIntro}</p>
+      </div>
+      <OwnerComposer lang={lang} />
+    </div>
+  </section>
+
+  <ContactStrip lang={lang} title={t.home.contactTitle} />
+</BaseLayout>
+
+<style>
+  .owners-hero { position: relative; overflow: hidden; isolation: isolate; }
+  .owners-hero__inner { padding-block: clamp(3rem, 2rem + 5vw, 6.5rem); display: grid; gap: var(--s-4); }
+  .owners-hero__eyebrow { color: var(--leaf); }
+  .owners-hero__title { font-size: var(--fs-2xl); font-weight: 780; line-height: 1.04; letter-spacing: -0.02em; max-width: 18ch; color: var(--cream); }
+  .owners-hero__intro { font-size: var(--fs-md); max-width: 52ch; }
+  .owners-hero__symbol { position: absolute; z-index: -1; width: 30rem; right: -10rem; top: 50%; translate: 0 -50%; }
+  @media (max-width: 47.99rem) { .owners-hero__symbol { width: 14rem; right: -7rem; top: 1rem; translate: none; } .owners-hero__title { padding-right: 2.5rem; } }
+  .two-col { display: grid; gap: var(--s-6); }
+  @media (min-width: 62rem) { .two-col { grid-template-columns: minmax(0, 1fr) minmax(0, 1.6fr); gap: var(--s-8); align-items: start; } }
+  .services { font-size: var(--fs-md); gap: var(--s-4); }
+  .process { display: grid; gap: var(--s-5); grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 1fr)); counter-reset: none; padding: 0; }
+  .process__step { display: grid; gap: var(--s-2); align-content: start; padding-top: var(--s-4); border-top: 2px solid var(--green); }
+  .process__num { display: grid; place-items: center; width: 2.5rem; height: 2.5rem; border-radius: var(--radius); background: var(--green); color: var(--white); font-weight: 700; margin-bottom: var(--s-2); }
+  .process__step p { color: var(--ink-2); }
+  .composer-intro { margin-top: var(--s-3); color: var(--ink-2); max-width: 44ch; }
+</style>

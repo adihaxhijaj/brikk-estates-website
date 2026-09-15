@@ -40,6 +40,8 @@ interface Annotation {
   descriptionEn?: string[];
   extraCaptionsEn?: string[][];
   aiDisclaimerEn?: string;
+  /** Disclaimer printed only on the agency's own render image (caption has none). */
+  aiDisclaimerFromImage?: { file: string; sq: string; en: string };
   valuesEn?: Record<string, string>;
   images?: ImageNote[];
   overrides?: Record<string, { value: unknown; evidence: string[]; note?: string }>;
@@ -134,6 +136,10 @@ async function main() {
     const extraCaptions = secondary.map((s, i) => ({ url: s.url, sq: s.paragraphs, en: ann.extraCaptionsEn?.[i] ?? null }));
     extraCaptions.forEach((c, i) => { if (c.en && c.en.length !== c.sq.length) fail(ref, `extraCaptionsEn[${i}] paragraph count mismatch`); });
     if (primary.aiDisclaimer && !ann.aiDisclaimerEn) fail(ref, 'aiDisclaimerEn missing');
+    const imgAi = ann.aiDisclaimerFromImage;
+    if (imgAi && !existsSync(path.join(folderAbs, imgAi.file))) fail(ref, `aiDisclaimerFromImage: ${imgAi.file} not found`);
+    const aiSq = primary.aiDisclaimer ?? imgAi?.sq ?? null;
+    const aiEn = primary.aiDisclaimer ? ann.aiDisclaimerEn ?? null : imgAi?.en ?? null;
 
     // --- images ---
     const sourceImages = (await fs.readdir(folderAbs)).filter((f) => /\.jpe?g$/i.test(f)).sort();
@@ -205,8 +211,8 @@ async function main() {
       price: p.price, pricePerM2: p.pricePerM2, pricePerAre: p.pricePerAre, priceOnRequest: p.priceOnRequest,
       rentMonthly: p.rentMonthly, deposit: p.deposit, minContractMonths: p.minContractMonths,
       extras: { ...p.extras, tradeInEn: p.extras.tradeIn ? ann.valuesEn?.tradeIn ?? null : null },
-      aiVisualisation: Boolean(primary.aiDisclaimer),
-      aiDisclaimerSq: primary.aiDisclaimer, aiDisclaimerEn: primary.aiDisclaimer ? ann.aiDisclaimerEn ?? null : null,
+      aiVisualisation: Boolean(aiSq) || images.some((i) => i.kind === 'render'),
+      aiDisclaimerSq: aiSq, aiDisclaimerEn: aiEn,
       status: ann.status ?? p.status,
       hidden: ann.hidden ?? false,
       descriptionSq: primary.paragraphs,

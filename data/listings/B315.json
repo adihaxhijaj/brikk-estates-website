@@ -1,0 +1,35 @@
+{
+  "ref": "B315",
+  "descriptionEn": [
+    "A house is offered for rent in Priam Village, Veternik.",
+    "The house is located in a gated, quiet and exclusive community, with access for residents only and 24/7 security. The location offers quick access to essential services, connecting roads and strategic points of reference.",
+    "The 135m² space includes a living room with kitchen, three bedrooms, two bathrooms, a technical room, two terraces and a private yard of 2.6 ares. The house is furnished and offers the option of furnishing two additional rooms as desired.",
+    "The building was built to modern standards, in a gated neighbourhood that guarantees security, privacy and a large functional yard.",
+    "Price by agreement."
+  ],
+  "extraCaptionsEn": [
+    [
+      "House for Rent – Lagjja Priam, Veternik",
+      "Functional space built to a high standard:\n• 135 m²\n• 2.60 ares yard\n• 3 bedrooms\n• 2 bathrooms\n• Living room + kitchen\n• Technical room\n• 2 terraces",
+      "Furnished, with the option of furnishing two additional rooms on request.\nGated neighbourhood with access for residents only and 24/7 security.",
+      "Price: By agreement"
+    ]
+  ],
+  "images": [
+    { "file": "01.jpg", "kind": "exterior", "overlay": "text", "reason": "cover headline “SHTËPI ME QIRA – PRIAM VILLAGE, PRISHTINË”" },
+    { "file": "02.jpg", "kind": "living", "overlay": "brand" },
+    { "file": "03.jpg", "kind": "kitchen", "overlay": "brand" },
+    { "file": "04.jpg", "kind": "stairs", "overlay": "brand" },
+    { "file": "05.jpg", "kind": "other", "overlay": "brand", "reason": "technical room with boiler and hot-water tank" },
+    { "file": "06.jpg", "kind": "bedroom", "overlay": "brand" },
+    { "file": "07.jpg", "kind": "interior", "overlay": "brand", "reason": "room with desk and shelving" },
+    { "file": "08.jpg", "kind": "interior", "overlay": "brand", "reason": "empty room with large window" },
+    { "file": "09.jpg", "kind": "bathroom", "overlay": "brand" },
+    { "file": "10.jpg", "kind": "yard", "overlay": "brand", "reason": "lawn and patio beside the house" },
+    { "file": "11_video-cover.jpg", "kind": "exterior", "overlay": "text", "reason": "video cover with headline “SHTEPI ME QIRA PRIAM VILLAGE”; parked car in front, no people" }
+  ],
+  "overrides": {
+    "complex": { "value": "Priam Village", "evidence": ["Ofrohet me qira shtëpi në Priam Village, Veternik."], "note": "gated community named in the title; the video caption calls it “Lagjja Priam”" }
+  },
+  "notes": "Caption ID line reads “ID: 315” (missing B). City Prishtinë comes from the company profile (caption names only Veternik); the cover graphic also labels “PRIAM VILLAGE, PRISHTINË”. The 2.6 ares is the private yard ('oborr privat prej 2.6 ari'), not the plot, so plotAres left null. 'dy terasa' has no area, so areaTerrace null. Rent not stated."
+}

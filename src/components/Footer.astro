@@ -1,0 +1,68 @@
+---
+import Logo from './Logo.astro';
+import LanguageSwitch from './LanguageSwitch.astro';
+import { SITE } from '../config/site';
+import { dict, route, type Lang } from '../i18n';
+
+interface Props { lang: Lang; alternates: Record<Lang, string> }
+const { lang, alternates } = Astro.props;
+const t = dict(lang);
+const year = new Date().getFullYear();
+const nav = [
+  { href: route('properties', lang), label: t.footer.all },
+  { href: route('sale', lang), label: t.nav.sale },
+  { href: route('rent', lang), label: t.nav.rent },
+  { href: route('land', lang), label: t.nav.land },
+  { href: route('newBuilds', lang), label: t.nav.newBuilds },
+  { href: route('owners', lang), label: t.nav.owners },
+  { href: route('wanted', lang), label: t.footer.wanted },
+  { href: route('about', lang), label: t.nav.about },
+  { href: route('contact', lang), label: t.nav.contact },
+];
+---
+<footer class="site-footer surface-green on-dark">
+  <div class="container site-footer__grid">
+    <div class="site-footer__brand">
+      <a href={route('home', lang)} aria-label={t.nav.home} class="site-footer__logo-link">
+        <Logo variant="stacked" tone="on-dark" decorative class="site-footer__logo" />
+      </a>
+      <p class="site-footer__tagline">{t.tagline}</p>
+    </div>
+
+    <nav aria-labelledby="footer-nav-title">
+      <h2 id="footer-nav-title" class="eyebrow site-footer__title">{t.footer.navTitle}</h2>
+      <ul role="list" class="site-footer__links site-footer__links--cols">
+        {nav.map((n) => <li><a href={n.href}>{n.label}</a></li>)}
+      </ul>
+    </nav>
+
+    <div>
+      <h2 class="eyebrow site-footer__title">{t.footer.contactTitle}</h2>
+      <ul role="list" class="site-footer__links">
+        <li><a class="tabular" href={`tel:${SITE.phoneE164}`}>{SITE.phoneDisplay}</a></li>
+        <li><a href={SITE.whatsapp}>WhatsApp</a> · <a href={SITE.viber}>Viber</a></li>
+        <li><a href={`mailto:${SITE.emailInfo}`}>{SITE.emailInfo}</a></li>
+        <li><a href={`mailto:${SITE.emailProperties}`}>{SITE.emailProperties}</a></li>
+        <li><a href={SITE.instagram} rel="noopener">Instagram {SITE.instagramHandle}</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="container site-footer__base">
+    <p>{t.footer.rights(year)}</p>
+    <LanguageSwitch lang={lang} alternates={alternates} />
+  </div>
+</footer>
+<style>
+  .site-footer { padding-block: var(--s-8) var(--s-5); margin-top: auto; }
+  .site-footer__grid { display: grid; gap: var(--s-7) var(--s-6); grid-template-columns: 1fr; }
+  @media (min-width: 48rem) { .site-footer__grid { grid-template-columns: 1.1fr 1.4fr 1fr; } }
+  .site-footer__logo-link { display: inline-block; border-radius: var(--radius-sm); }
+  .site-footer__logo { width: 132px; }
+  .site-footer__tagline { margin-top: var(--s-5); font-stretch: var(--wide); font-weight: 600; font-size: var(--fs-md); max-width: 22ch; line-height: var(--lh-snug); }
+  .site-footer__title { color: var(--leaf); margin-bottom: var(--s-4); font-size: var(--fs-sm); }
+  .site-footer__links { display: grid; gap: var(--s-1); }
+  .site-footer__links--cols { grid-template-columns: repeat(auto-fill, minmax(11rem, 1fr)); column-gap: var(--s-5); }
+  .site-footer a { color: var(--cream); text-decoration: none; display: inline-flex; align-items: center; min-height: 40px; overflow-wrap: anywhere; }
+  .site-footer a:hover { text-decoration: underline; }
+  .site-footer__base { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--s-4); margin-top: var(--s-7); padding-top: var(--s-5); border-top: 1px solid rgb(239 232 216 / 0.18); font-size: var(--fs-sm); }
+</style>

@@ -14,7 +14,7 @@ const listings = defineCollection({
       slugSq: z.string(),
       slugEn: z.string(),
       postedAt: z.string().regex(/^\d{4}-\d{2}-\d{2}$/),
-      instagramUrl: z.string().url(),
+      instagramUrl: z.url(),
       deal: z.enum(['sale', 'rent']),
       type: z.enum(['apartment', 'duplex', 'penthouse', 'house', 'land', 'commercial', 'office', 'warehouse', 'building']),
       multipleUnits: z.boolean(),

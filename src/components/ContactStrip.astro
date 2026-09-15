@@ -1,0 +1,31 @@
+---
+import Icon from './Icon.astro';
+import { SITE } from '../config/site';
+import { dict, type Lang } from '../i18n';
+
+interface Props { lang: Lang; title: string; message?: string }
+const { lang, title, message } = Astro.props;
+const t = dict(lang);
+const wa = message ? `${SITE.whatsapp}?text=${encodeURIComponent(message)}` : SITE.whatsapp;
+---
+<section class="contact-strip section--tight surface-cream" aria-labelledby="contact-strip-title">
+  <div class="container contact-strip__inner">
+    <h2 id="contact-strip-title" class="contact-strip__title">{title}</h2>
+    <ul role="list" class="contact-strip__actions">
+      <li><a class="btn" href={`tel:${SITE.phoneE164}`}><Icon name="phone" />{t.detail.call} <span class="tabular">{SITE.phoneDisplay}</span></a></li>
+      <li><a class="btn btn--outline" href={wa}><Icon name="message-circle" />WhatsApp</a></li>
+      <li><a class="btn btn--outline" href={SITE.viber}><Icon name="phone-call" />Viber</a></li>
+      <li><a class="btn btn--outline" href={`mailto:${SITE.emailInfo}`}><Icon name="mail" />{SITE.emailInfo}</a></li>
+    </ul>
+  </div>
+</section>
+<style>
+  .contact-strip__inner { display: grid; gap: var(--s-5); }
+  .contact-strip__title { max-width: 24ch; }
+  .contact-strip__actions { display: flex; flex-wrap: wrap; gap: var(--s-3); }
+  .contact-strip__actions li { flex: 1 1 14rem; }
+  .contact-strip__actions .btn { width: 100%; overflow-wrap: anywhere; }
+  @media (min-width: 75rem) {
+    .contact-strip__inner { grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.6fr); align-items: center; }
+  }
+</style>

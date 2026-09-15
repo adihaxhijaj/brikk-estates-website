@@ -1,0 +1,61 @@
+---
+// Home search. A plain GET form to the properties page, so it works without JavaScript.
+import Icon from './Icon.astro';
+import { dict, route, type Lang } from '../i18n';
+import { CATEGORY } from '../i18n/vocab';
+import { categoryOf, cityName, type Listing } from '../lib/listings';
+
+interface Props { lang: Lang; listings: Listing[] }
+const { lang, listings } = Astro.props;
+const t = dict(lang);
+const cats = Object.entries(CATEGORY).filter(([k]) => listings.some((l) => categoryOf(l) === k));
+const cities = [...new Map(listings.filter((l) => l.city).map((l) => [l.city!, cityName(l, lang)!])).entries()]
+  .map(([value, label]) => ({ value, label, n: listings.filter((l) => l.city === value).length }))
+  .sort((a, b) => b.n - a.n);
+---
+<form class="search" action={route('properties', lang)} method="get" role="search" aria-label={t.search.label}>
+  <fieldset class="search__deal">
+    <legend class="visually-hidden">{t.search.deal}</legend>
+    <div class="segmented">
+      <input type="radio" name="deal" id="search-sale" value="sale" checked />
+      <label for="search-sale">{t.search.sale}</label>
+      <input type="radio" name="deal" id="search-rent" value="rent" />
+      <label for="search-rent">{t.search.rent}</label>
+    </div>
+  </fieldset>
+  <div class="field">
+    <label for="search-cat">{t.search.type}</label>
+    <select class="control" id="search-cat" name="cat">
+      <option value="">{t.search.anyType}</option>
+      {cats.map(([k, c]) => <option value={k}>{c.label[lang]}</option>)}
+    </select>
+  </div>
+  <div class="field">
+    <label for="search-city">{t.search.city}</label>
+    <select class="control" id="search-city" name="city">
+      <option value="">{t.search.anyCity}</option>
+      {cities.map((c) => <option value={c.value}>{c.label}</option>)}
+    </select>
+  </div>
+  <button class="btn search__submit" type="submit"><Icon name="search" />{t.search.submit}</button>
+</form>
+<style>
+  .search {
+    display: grid; gap: var(--s-4); align-items: end;
+    background: var(--white); color: var(--ink); padding: var(--s-4); border-radius: var(--radius-lg);
+    box-shadow: 0 12px 40px rgb(0 0 0 / 0.18);
+  }
+  .search fieldset { border: 0; padding: 0; min-width: 0; }
+  .search__deal .segmented { width: 100%; }
+  @media (min-width: 40rem) {
+    .search { grid-template-columns: 1fr 1fr; padding: var(--s-5); }
+    .search__deal { grid-column: 1 / -1; }
+    .search__deal .segmented { width: auto; }
+    .search__submit { grid-column: 1 / -1; }
+  }
+  @media (min-width: 62rem) {
+    .search { grid-template-columns: auto 1fr 1fr auto; }
+    .search__deal { grid-column: auto; }
+    .search__submit { grid-column: auto; }
+  }
+</style>

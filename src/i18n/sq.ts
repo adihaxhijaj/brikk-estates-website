@@ -330,6 +330,7 @@ export const sq = {
     ],
     whereTitle: 'Ku punojmë',
     whereIntro: 'Zonat ku kemi publikuar prona:',
+    alsoTitle: 'Më gjerë',
     identity: 'Një identitet i ri. I njëjti përkushtim.',
   },
 

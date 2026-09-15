@@ -6,10 +6,6 @@ export default defineConfig({
   site: 'https://www.brikkestates.com',
   trailingSlash: 'always',
   build: { format: 'directory', inlineStylesheets: 'auto' },
-  image: {
-    // Listing photos are pre-sized to <= 2000px by the import script; derivatives are generated here.
-    layout: 'constrained',
-  },
   prefetch: false,
   devToolbar: { enabled: false },
 });

@@ -1,5 +1,5 @@
 {
-  "name": "website",
+  "name": "brikk-estates-website",
   "type": "module",
   "version": "0.0.1",
   "engines": {
@@ -7,8 +7,12 @@
   },
   "scripts": {
     "dev": "astro dev",
+    "import": "tsx scripts/import-listings.ts",
+    "import:sheets": "tsx scripts/make-contact-sheets.ts",
     "build": "astro build",
+    "build:staging": "cross-env-shell BRIKK_NOINDEX=1 astro build",
     "preview": "astro preview",
+    "check": "astro check",
     "astro": "astro"
   },
   "dependencies": {
@@ -23,8 +27,10 @@
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.10",
+    "@types/node": "^26.5.1",
     "potrace": "^2.1.8",
     "tsx": "^4.23.13",
     "typescript": "^6.0.3"
-  }
+  },
+  "private": true
 }
