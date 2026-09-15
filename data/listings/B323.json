@@ -1,0 +1,21 @@
+{
+  "ref": "B323",
+  "descriptionEn": [
+    "Apartments are offered for sale on Rruga Hajrullah Zymi, Fushë Kosovë.",
+    "The apartments are located in a quiet, developed and highly sought-after area, with easy access to schools, markets and the city's main roads. The location makes them suitable for family living or long-term investment.",
+    "Each apartment has an area of 86.65 m² and includes a living room with kitchen, two bedrooms, a bathroom, a storage room and a terrace.",
+    "The apartments are on floors 1, 3, 6 and 7, facing North–West, with abundant natural light, and are built by Qami Construction.",
+    "This property offers comfort and functionality, making it an excellent choice for families or investment.",
+    "Price by agreement."
+  ],
+  "images": [
+    { "file": "01.jpg", "kind": "terrace", "overlay": "text", "reason": "headline \"BANESË NË SHITJE\" and location label \"HAJRULLAH ZYMI, FUSHË KOSOVË\"" },
+    { "file": "02.jpg", "kind": "interior", "overlay": "brand" },
+    { "file": "03.jpg", "kind": "interior", "overlay": "brand" },
+    { "file": "04.jpg", "kind": "terrace", "overlay": "brand" },
+    { "file": "05.jpg", "kind": "interior", "overlay": "brand" },
+    { "file": "06.jpg", "kind": "interior", "overlay": "brand" },
+    { "file": "07.jpg", "kind": "bathroom", "overlay": "brand" }
+  ],
+  "notes": "Multiple units (floors 1, 3, 6 and 7); floor left null as parsed. Cover image 01.jpg is identical to the covers of B324 and B326 (same building, same developer); the interior photos are similar across the three listings but not identical. Empty rooms labelled 'interior' rather than guessing room function."
+}

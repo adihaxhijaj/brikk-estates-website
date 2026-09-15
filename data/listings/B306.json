@@ -1,0 +1,23 @@
+{
+  "ref": "B306",
+  "descriptionEn": [
+    "A 2+1 apartment is offered for rent in Lagjja e Spitalit, Rruga A – Anna Residence complex.",
+    "A modern and functional apartment, fully furnished and never lived in before, offering the feeling of a fresh start. It is located on the 5th floor of the complex and has a working elevator.",
+    "Its layout includes a living room with kitchen, two bedrooms, one bathroom and a separate WC, as well as a hallway and a balcony with an open view. The garage is included for the convenience and security of the car.",
+    "With easy access and a favourable location in one of the sought-after areas of the city.",
+    "Price by agreement."
+  ],
+  "images": [
+    { "file": "01.jpg", "kind": "building", "overlay": "text", "reason": "cover headline “BANESË ME QIRA – RRUGA A, PRISHTINË”" },
+    { "file": "02.jpg", "kind": "living", "overlay": "brand" },
+    { "file": "03.jpg", "kind": "living-kitchen", "overlay": "brand" },
+    { "file": "04.jpg", "kind": "dining", "overlay": "brand" },
+    { "file": "05.jpg", "kind": "kitchen", "overlay": "brand" },
+    { "file": "06.jpg", "kind": "hallway", "overlay": "brand" },
+    { "file": "07.jpg", "kind": "bedroom", "overlay": "brand" },
+    { "file": "08.jpg", "kind": "bathroom", "overlay": "brand" },
+    { "file": "09.jpg", "kind": "bathroom", "overlay": "brand" },
+    { "file": "10.jpg", "kind": "garage", "overlay": "brand" }
+  ],
+  "notes": "City Prishtinë (parsed from company profile) is also confirmed by the cover graphic 01.jpg “RRUGA A, PRISHTINË”. No size stated anywhere."
+}

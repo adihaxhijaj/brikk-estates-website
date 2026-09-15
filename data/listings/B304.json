@@ -1,0 +1,20 @@
+{
+  "ref": "B304",
+  "descriptionEn": [
+    "A modern space for warehouse, showroom and administration use with a total area of 1360m² is offered for rent, located in Zona Industriale, Prishtina.",
+    "Its layout includes 840m² of warehouse space with a height of 7m, a 270m² showroom and 270m² of administration space, with the possibility of dividing it into independent units according to the tenant's needs.",
+    "The warehouse faces south and offers functional space for various logistics and industrial activities.",
+    "The building is constructed to European standards, with a metal structure, 8cm panels and reinforced concrete flooring, making it ready for immediate use.",
+    "The property offers sufficient parking space for 20 cars and free access for trucks.",
+    "The location is strategic, with easy access to the main road and a fast connection to the main business areas of Prishtina.",
+    "Price by agreement."
+  ],
+  "images": [
+    { "file": "01.jpg", "kind": "building", "overlay": "text", "reason": "cover headline “OBJEKT ME QIRA – ZONA INDUSTRIALE, PRISHTINË” over night photo of the building" },
+    { "file": "02.jpg", "kind": "exterior", "overlay": "brand", "reason": "facade with loading door" },
+    { "file": "03.jpg", "kind": "warehouse", "overlay": "brand" },
+    { "file": "04.jpg", "kind": "warehouse", "overlay": "brand" },
+    { "file": "05.jpg", "kind": "exterior", "overlay": "brand", "reason": "facade photo with hand-drawn red markings on the windows; appears to be a reference image rather than this building" }
+  ],
+  "notes": "05.jpg shows a different-looking facade (tall glazed windows, trees, sunset) with red hand-drawn lines and arrows — it does not match the building in 01–02 and looks like a reference/concept image of a planned modification. Consider excluding or confirming with the client. Parsed areaNet 1360 is the stated total (840 + 270 + 270 per the caption)."
+}

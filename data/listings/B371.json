@@ -1,0 +1,21 @@
+{
+  "ref": "B371",
+  "descriptionEn": [
+    "Apartment for sale with an area of 81.15m², located in Fushë Kosovë, on Rruga Pajazit Islami, near the Eli Abi market.",
+    "The apartment is part of a building by Model Slovenia and is located in a practical location for everyday living, with easy access to services and main roads.",
+    "The space is well organised and consists of a living room with kitchen, two bedrooms, one bathroom, one storage room and one balcony. The layout makes the apartment suitable for family living, but also for investment.",
+    "An important advantage is that the apartment has an ownership certificate and is currently rented out, with the option of continuing the lease for buyers seeking immediate income from the property.",
+    "Key details:",
+    "Location: Rr. Pajazit Islami, Fushë Kosovë\nBuilder: Model Slovenia\nArea: 81.15m²\nPrice: €75,000"
+  ],
+  "valuesEn": { "landmark": "near the Eli Abi market" },
+  "images": [
+    { "file": "01.jpg", "kind": "living", "overlay": "brand", "reason": "logo and small script tagline \"E menduar për jetë.\" only" },
+    { "file": "02.jpg", "kind": "kitchen", "overlay": "brand", "reason": "logo and small script tagline only" },
+    { "file": "03.jpg", "kind": "living", "overlay": "brand", "reason": "logo and small script tagline only" },
+    { "file": "04.jpg", "kind": "bedroom", "overlay": "brand", "reason": "logo and small script tagline only" },
+    { "file": "05.jpg", "kind": "bedroom", "overlay": "brand", "reason": "logo and small script tagline only" },
+    { "file": "06.jpg", "kind": "bathroom", "overlay": "brand", "reason": "logo and small script tagline only" },
+    { "file": "07.jpg", "kind": "balcony", "overlay": "brand", "reason": "logo and small script tagline only" }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "ref": "B374",
+  "descriptionEn": [
+    "Apartment for sale with an area of 60m², located on Rruga Eqrem Çabej, within the Hira Residence complex, built by ACE Group.",
+    "The apartment is in a practical location for everyday living, with easy access to services and main roads in Fushë Kosovë.",
+    "The space is well organised and consists of a living room, a separate kitchen with access to a terrace, one bedroom, one bathroom and a functional hallway. The furnishing is careful and makes the apartment ready to live in without the need for additional investment.",
+    "An important advantage is that the property has a storage room in the basement with an area of 3.4m², as well as an ownership certificate, making the purchase process clearer and more secure.",
+    "The price of the property is €55,000."
+  ],
+  "images": [
+    { "file": "01.jpg", "kind": "living", "overlay": "brand", "reason": "logo and small script tagline \"E menduar për jetë.\" only" },
+    { "file": "02.jpg", "kind": "dining", "overlay": "brand", "reason": "logo and small script tagline only" },
+    { "file": "03.jpg", "kind": "kitchen", "overlay": "brand", "reason": "logo and small script tagline only" },
+    { "file": "04.jpg", "kind": "balcony", "overlay": "brand", "reason": "outdoor space off the kitchen (caption calls it 'terasë'); logo and small script tagline only" },
+    { "file": "05.jpg", "kind": "bedroom", "overlay": "brand", "reason": "logo and small script tagline only" },
+    { "file": "06.jpg", "kind": "hallway", "overlay": "brand", "reason": "entrance hallway; logo and small script tagline only" },
+    { "file": "07.jpg", "kind": "bathroom", "overlay": "brand", "reason": "logo and small script tagline only" }
+  ],
+  "notes": "Developer kept as parsed from 'ndërtim nga ACE Group'. The caption says the kitchen opens onto a 'terasë'; 04.jpg shows a narrow balcony-type space, so the 'terrace' feature relies on the caption wording."
+}

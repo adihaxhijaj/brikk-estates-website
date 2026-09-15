@@ -1,0 +1,22 @@
+{
+  "ref": "B320",
+  "descriptionEn": [
+    "A house is offered for sale in the centre of Fushë Kosovë.",
+    "The house is located on the streets Shefki Kuleta and Xhemajl Mustafa, near Albi Market, in a developed and central area, with easy access to the main services. The setting is ideal for investment and living, with the possibility of extension up to 7 floors.",
+    "The property includes a plot of 5 ares, a building with 400 m² of apartments (4 three-room apartments), ground-floor commercial units of 200 m² and a garage of 200 m². The building has two floors + ground floor, a landscaped yard and an entrance gate for privacy and security.",
+    "This property offers excellent opportunities for long-term investment, with large spaces for living, commercial units and garages, and regular documentation with an ownership certificate.",
+    "Price by agreement."
+  ],
+  "valuesEn": { "landmark": "near Albi Market" },
+  "images": [
+    { "file": "01.jpg", "kind": "building", "overlay": "text", "reason": "headline \"SHTËPI NË SHITJE\" and location label \"RRUGA SHEFKI KULETA, FUSHË KOSOVË\"" }
+  ],
+  "overrides": {
+    "street": {
+      "value": "Rruga Shefki Kuleta",
+      "evidence": ["rrugët Shefki Kuleta dhe Xhemajl Mustafa", "image:01.jpg RRUGA SHEFKI KULETA, FUSHË KOSOVË"],
+      "note": "caption names two streets (Shefki Kuleta and Xhemajl Mustafa); the listing's own cover graphic names Rruga Shefki Kuleta"
+    }
+  },
+  "notes": "Caption states \"dy kate + kat përdhes\" (two floors + ground floor) — totalFloors left null rather than derived. Areas are stated per use (400 m² apartments, 200 m² commercial units, 200 m² garage) and were not summed; areaNet left null. Building contains 4 three-room apartments and ground-floor commercial units although the listing type is a house."
+}

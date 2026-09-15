@@ -1,0 +1,28 @@
+{
+  "ref": "B352",
+  "descriptionEn": [
+    "Modern house for sale with a living area of 174 m², built on a plot of 3 ares, located in Fushë Kosovë, on Rruga Pajazit Islami.",
+    "The house has two floors, is new and ready for furnishing, with regular documentation (notarised contract).",
+    "Layout of the spaces:\nFloor I:\nLiving room (sallon)\nKitchen\nOne bedroom\nBathroom\nFloor II:\n3 bedrooms\nBathroom",
+    "The house offers a functional floor plan, quality construction and ample space for comfortable family living.",
+    "The location is favourable, with infrastructure nearby, making this property an ideal choice for living.",
+    "Price by agreement"
+  ],
+  "images": [
+    { "file": "01.jpg", "kind": "exterior", "overlay": "text", "reason": "headline \"SHTËPI NË SHITJE\" and location label \"PAJAZIT ISLAMI, FUSHË KOSOVË\"" },
+    { "file": "02.jpg", "kind": "exterior", "overlay": "brand" },
+    { "file": "03.jpg", "kind": "yard", "overlay": "brand" },
+    { "file": "04.jpg", "kind": "interior", "overlay": "brand", "reason": "empty room with sliding doors to the garden" },
+    { "file": "05.jpg", "kind": "interior", "overlay": "brand", "reason": "empty room" },
+    { "file": "06.jpg", "kind": "interior", "overlay": "brand", "reason": "empty room" },
+    { "file": "07.jpg", "kind": "interior", "overlay": "brand", "reason": "empty room" },
+    { "file": "08.jpg", "kind": "interior", "overlay": "brand", "reason": "empty room" },
+    { "file": "09.jpg", "kind": "bathroom", "overlay": "brand" },
+    { "file": "10.jpg", "kind": "bathroom", "overlay": "brand" }
+  ],
+  "overrides": {
+    "totalFloors": { "value": 2, "evidence": ["Shtëpia është dykatëshe"], "note": "'dykatëshe' = two-storey house" },
+    "isNewBuild": { "value": true, "evidence": ["e re dhe gati për mobilim"], "note": "caption states the house is new" }
+  },
+  "notes": "Bedrooms and bathrooms are stated per floor only (Kati I: one bedroom, bathroom; Kati II: 3 bedrooms, bathroom); totals left null per the no-summing rule."
+}

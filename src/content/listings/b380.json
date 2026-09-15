@@ -1,0 +1,196 @@
+{
+  "ref": "B380",
+  "slugSq": "b380-banese-ne-shitje-prishtine",
+  "slugEn": "b380-apartment-for-sale-prishtine",
+  "postedAt": "2026-08-22",
+  "instagramUrl": "https://www.instagram.com/p/DcV3d_TiqHX/",
+  "deal": "sale",
+  "type": "apartment",
+  "multipleUnits": false,
+  "titleSq": "Banesë në shitje në Prishtinë",
+  "titleEn": "Apartment for sale in Prishtina",
+  "city": "Prishtinë",
+  "cityEn": "Prishtina",
+  "neighbourhood": null,
+  "neighbourhoodLoc": null,
+  "street": "Rruga Muharrem Fejza",
+  "complex": null,
+  "landmark": "pranë Lagjes së Kaltër",
+  "landmarkEn": "near Lagjja e Kaltër",
+  "country": "XK",
+  "developer": null,
+  "isNewBuild": null,
+  "completion": null,
+  "completionEn": null,
+  "areaNet": 70.58,
+  "areaApprox": false,
+  "areaTerrace": 56.29,
+  "plotAres": null,
+  "floor": 1,
+  "floorTo": null,
+  "totalFloors": null,
+  "orientation": "W",
+  "bedrooms": 2,
+  "bathrooms": 1,
+  "wc": null,
+  "livingWithKitchen": true,
+  "storage": null,
+  "balcony": null,
+  "features": [
+    "elevator",
+    "furnished",
+    "terrace"
+  ],
+  "legal": {
+    "ownershipCertificate": true,
+    "notaryContract": true,
+    "contractViaLawyer": null,
+    "inLegalisation": null,
+    "contractWithDeveloper": null
+  },
+  "price": 140000,
+  "pricePerM2": null,
+  "pricePerAre": null,
+  "priceOnRequest": false,
+  "rentMonthly": null,
+  "deposit": null,
+  "minContractMonths": null,
+  "extras": {
+    "financing": null,
+    "installments": null,
+    "tradeIn": null,
+    "tenanted": null,
+    "rentalIncome": null,
+    "garageOptional": null,
+    "tradeInEn": null
+  },
+  "aiVisualisation": false,
+  "aiDisclaimerSq": null,
+  "aiDisclaimerEn": null,
+  "status": "unconfirmed",
+  "hidden": false,
+  "descriptionSq": [
+    "Ofrohet për shitje banesë e vendosur në Rrugën Muharrem Fejza, pranë Lagjes së Kaltër, në Prishtinë.",
+    "Prona ka sipërfaqe prej 70.58m² hapësirë banimi dhe 56.29m² terasë, duke ofruar një kombinim shumë të mirë mes hapësirës së brendshme dhe asaj të jashtme.",
+    "Banesa ndodhet në katin e 1-rë, në objekt me lift, dhe ka orientim nga Perëndimi.",
+    "Hapësira përbëhet nga qëndrimi ditor me kuzhinë, dy dhoma gjumi dhe një banjo. Banesa është plotësisht e mobiluar dhe e gatshme për banim.",
+    "Prona posedon fletë poseduese dhe kontrata e shitblerjes realizohet te noteri.",
+    "Çmimi i pronës është 140,000€, i diskutueshëm."
+  ],
+  "descriptionEn": [
+    "Offered for sale: an apartment located on Rruga Muharrem Fejza, near Lagjja e Kaltër, in Prishtina.",
+    "The property has an area of 70.58m² of living space and a 56.29m² terrace, offering a very good combination of indoor and outdoor space.",
+    "The apartment is located on the 1st floor, in a building with an elevator, and faces West.",
+    "The space consists of a living room with kitchen, two bedrooms and one bathroom. The apartment is fully furnished and ready to move in.",
+    "The property has an ownership certificate and the sale contract is signed at the notary.",
+    "The price of the property is €140,000, negotiable."
+  ],
+  "descriptionEnIsTranslation": true,
+  "extraCaptions": [],
+  "images": [
+    {
+      "src": "../../assets/listings/b380/01.jpg",
+      "file": "01.jpg",
+      "width": 2730,
+      "height": 1820,
+      "kind": "living",
+      "overlay": "brand",
+      "hasTextOverlay": false,
+      "altSq": "Qëndrimi ditor, banesë në shitje në Prishtinë, Ref B380 (1/8)",
+      "altEn": "Living room, apartment for sale in Prishtina, Ref B380 (1/8)"
+    },
+    {
+      "src": "../../assets/listings/b380/02.jpg",
+      "file": "02.jpg",
+      "width": 2730,
+      "height": 1820,
+      "kind": "kitchen",
+      "overlay": "brand",
+      "hasTextOverlay": false,
+      "altSq": "Kuzhina, banesë në shitje në Prishtinë, Ref B380 (2/8)",
+      "altEn": "Kitchen, apartment for sale in Prishtina, Ref B380 (2/8)"
+    },
+    {
+      "src": "../../assets/listings/b380/03.jpg",
+      "file": "03.jpg",
+      "width": 2730,
+      "height": 1820,
+      "kind": "kitchen",
+      "overlay": "brand",
+      "hasTextOverlay": false,
+      "altSq": "Kuzhina, banesë në shitje në Prishtinë, Ref B380 (3/8)",
+      "altEn": "Kitchen, apartment for sale in Prishtina, Ref B380 (3/8)"
+    },
+    {
+      "src": "../../assets/listings/b380/04.jpg",
+      "file": "04.jpg",
+      "width": 2730,
+      "height": 1820,
+      "kind": "terrace",
+      "overlay": "brand",
+      "hasTextOverlay": false,
+      "altSq": "Tarraca, banesë në shitje në Prishtinë, Ref B380 (4/8)",
+      "altEn": "Terrace, apartment for sale in Prishtina, Ref B380 (4/8)"
+    },
+    {
+      "src": "../../assets/listings/b380/05.jpg",
+      "file": "05.jpg",
+      "width": 2730,
+      "height": 1820,
+      "kind": "interior",
+      "overlay": "brand",
+      "hasTextOverlay": false,
+      "altSq": "Hapësira e brendshme, banesë në shitje në Prishtinë, Ref B380 (5/8)",
+      "altEn": "Interior space, apartment for sale in Prishtina, Ref B380 (5/8)"
+    },
+    {
+      "src": "../../assets/listings/b380/06.jpg",
+      "file": "06.jpg",
+      "width": 2730,
+      "height": 1820,
+      "kind": "bedroom",
+      "overlay": "brand",
+      "hasTextOverlay": false,
+      "altSq": "Dhoma e gjumit, banesë në shitje në Prishtinë, Ref B380 (6/8)",
+      "altEn": "Bedroom, apartment for sale in Prishtina, Ref B380 (6/8)"
+    },
+    {
+      "src": "../../assets/listings/b380/07.jpg",
+      "file": "07.jpg",
+      "width": 2730,
+      "height": 1820,
+      "kind": "bedroom",
+      "overlay": "brand",
+      "hasTextOverlay": false,
+      "altSq": "Dhoma e gjumit, banesë në shitje në Prishtinë, Ref B380 (7/8)",
+      "altEn": "Bedroom, apartment for sale in Prishtina, Ref B380 (7/8)"
+    },
+    {
+      "src": "../../assets/listings/b380/09.jpg",
+      "file": "09.jpg",
+      "width": 2730,
+      "height": 1820,
+      "kind": "hallway",
+      "overlay": "brand",
+      "hasTextOverlay": false,
+      "altSq": "Korridori, banesë në shitje në Prishtinë, Ref B380 (8/8)",
+      "altEn": "Hallway, apartment for sale in Prishtina, Ref B380 (8/8)"
+    }
+  ],
+  "coverIndex": 0,
+  "provenance": {
+    "overridden": {
+      "landmark": {
+        "from": null,
+        "to": "pranë Lagjes së Kaltër",
+        "evidence": [
+          "pranë Lagjes së Kaltër"
+        ],
+        "note": "proximity to Lagjja e Kaltër stated explicitly; parser only recognises business landmarks"
+      }
+    },
+    "warnings": [],
+    "reviewedImages": true,
+    "translated": true
+  }
+}

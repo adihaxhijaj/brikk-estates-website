@@ -1,0 +1,23 @@
+{
+  "ref": "B346",
+  "descriptionEn": [
+    "Apartment for sale with an area of 64.2 m², located on Rruga Hajrullah Zymi, Fushë Kosovë.\nBuilt by Aron Bau Residence.",
+    "Facing west, it has the following layout of interior spaces: living room, kitchen, one bedroom, one bathroom, one storage room and one balcony.",
+    "It is located on the 7th floor.",
+    "The contract is signed at the notary.",
+    "The heating system is electric underfloor heating.",
+    "The apartment is located in a developed area, close to public and private services.",
+    "Price: by agreement."
+  ],
+  "images": [
+    { "file": "01.jpg", "kind": "living", "overlay": "text", "reason": "headline \"BANESË NË SHITJE\" and location label \"RRUGA DARDANIA, FUSHË KOSOVË\"" },
+    { "file": "02.jpg", "kind": "living", "overlay": "brand" },
+    { "file": "03.jpg", "kind": "kitchen", "overlay": "brand" },
+    { "file": "04.jpg", "kind": "balcony", "overlay": "brand" },
+    { "file": "05.jpg", "kind": "hallway", "overlay": "brand" },
+    { "file": "06.jpg", "kind": "bedroom", "overlay": "brand" },
+    { "file": "07.jpg", "kind": "bedroom", "overlay": "brand" },
+    { "file": "08.jpg", "kind": "bathroom", "overlay": "brand" }
+  ],
+  "notes": "Street contradiction: the caption says Rruga Hajrullah Zymi, but the listing's own cover graphic (01.jpg) is labelled \"RRUGA DARDANIA, FUSHË KOSOVË\". street left at the caption value; maintainer should confirm with the agency. Developer kept as parsed from 'Ndertim nga Aron Bau Residence.'"
+}

@@ -1,0 +1,21 @@
+{
+  "ref": "B309",
+  "descriptionEn": [
+    "An apartment is offered for rent in Lagjja Kodrina, Mati 1, Prishtina.",
+    "The apartment is located on the 10th floor of a modern building with 2 elevators, in a safe, quiet and well-maintained neighbourhood. The space includes a living room with kitchen, one bedroom, one bathroom and a terrace with an open view.",
+    "The apartment has never been lived in and is ready to move into.",
+    "Price by agreement."
+  ],
+  "images": [
+    { "file": "01.jpg", "kind": "building", "overlay": "text", "reason": "cover headline “BANESË ME QIRA – LAGJJA KODRINA, PRISHTINË”" },
+    { "file": "02.jpg", "kind": "living", "overlay": "brand" },
+    { "file": "03.jpg", "kind": "living", "overlay": "brand" },
+    { "file": "04.jpg", "kind": "living-kitchen", "overlay": "brand" },
+    { "file": "05.jpg", "kind": "kitchen", "overlay": "brand" },
+    { "file": "06.jpg", "kind": "kitchen", "overlay": "brand" },
+    { "file": "07.jpg", "kind": "bedroom", "overlay": "brand" },
+    { "file": "08.jpg", "kind": "bedroom", "overlay": "brand", "reason": "abstract painting only" },
+    { "file": "09.jpg", "kind": "bathroom", "overlay": "brand" }
+  ],
+  "notes": "Photos show furniture, but the caption does not say furnished/unfurnished, so no furnishing feature is set. Different unit from B308 (same neighbourhood, same posting day)."
+}

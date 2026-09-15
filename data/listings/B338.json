@@ -1,0 +1,14 @@
+{
+  "ref": "B338",
+  "descriptionEn": [
+    "A plot of 72 ares is offered for sale, located in Shkabaj, Prishtina.",
+    "The plot has full infrastructure, road access, water supply, sewerage, as well as a connection to electricity, and is suitable for low-rise buildings, warehouses or factories.",
+    "It comes with an ownership certificate and the contract is signed at the notary.",
+    "The plot is located in an area with development potential.",
+    "Price: by agreement."
+  ],
+  "images": [
+    { "file": "01.jpg", "kind": "aerial", "overlay": "text", "reason": "plot outline, size label \"72 ARI\", headline \"TOKË NË SHITJE\" and location \"SHKABAJ, PRISHTINË\"" }
+  ],
+  "notes": "Only image is an aerial/satellite view with a size label that matches the caption (72 ares)."
+}

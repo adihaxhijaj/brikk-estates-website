@@ -1,0 +1,26 @@
+{
+  "ref": "B349",
+  "titleSq": "Zyrë/penthouse me qira në Prishtinë",
+  "titleEn": "Office/penthouse for rent in Prishtina",
+  "descriptionEn": [
+    "Office/penthouse for rent with an area of 340 m² + 120 m², located on Rruga A, Prishtina, built by ACG Construction.",
+    "The property faces north–east and has a separate kitchen, 4 usable work spaces, 4 WCs, 2 balconies and a terrace with an area of 120 m².",
+    "The heating system runs on electricity and it is equipped with 4 air conditioners.",
+    "The building in which the property is located is equipped with 2 elevators and offers public parking space.",
+    "The property is located in one of the most sought-after areas at the moment, an area under development with construction under way, with close access from the main roads and near all necessary services. It is very suitable for administrative offices, IT companies, marketing agencies, architecture studios, consulting offices, private medical practices, training centres or various business activities.",
+    "Price by agreement"
+  ],
+  "images": [
+    { "file": "01.jpg", "kind": "render", "overlay": "text", "reason": "architectural visualisation of the building with headline \"PENTHOUSE ME QIRA\" and location label \"RRUGA A, PRISHTINË\"; figures are computer-generated" },
+    { "file": "02.jpg", "kind": "office", "overlay": "brand" },
+    { "file": "03.jpg", "kind": "kitchen", "overlay": "brand" },
+    { "file": "04.jpg", "kind": "terrace", "overlay": "brand", "reason": "photographer's shadow on the floor only, no identifiable person" },
+    { "file": "05.jpg", "kind": "terrace", "overlay": "brand" },
+    { "file": "06.jpg", "kind": "office", "overlay": "brand" },
+    { "file": "07.jpg", "kind": "office", "overlay": "brand" },
+    { "file": "08.jpg", "kind": "office", "overlay": "brand" },
+    { "file": "09.jpg", "kind": "bathroom", "overlay": "brand" },
+    { "file": "10.jpg", "kind": "bathroom", "overlay": "brand" }
+  ],
+  "notes": "Title set to 'Zyrë/penthouse' because the caption offers the unit as 'zyre/penthouse' and the cover graphic says 'PENTHOUSE ME QIRA'; the generated title would say office only. Developer kept as parsed from 'ndertim nga ACG Construction'."
+}

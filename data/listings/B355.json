@@ -1,0 +1,15 @@
+{
+  "ref": "B355",
+  "descriptionEn": [
+    "Commercial unit for sale with an area of about 500 m², located on Rruga Nene Tereza, Fushë Kosovë.",
+    "The unit has direct road access and has an open interior space, on the ground floor.",
+    "It comes with an ownership certificate and the contract is signed at the notary.",
+    "The unit is located in a well-developed area, near all the services needed for running business activities.",
+    "The unit has an active lease with a long-term contract, with a monthly income of 3500 Euro.",
+    "Price: by agreement."
+  ],
+  "images": [
+    { "file": "01.jpg", "kind": "aerial", "overlay": "text", "reason": "headline \"LOKAL NË SHITJE\" and location label \"FUSHË KOSOVË\" over a general aerial view of the town" }
+  ],
+  "notes": "Only image is a general aerial view of Fushë Kosovë; it does not show the unit itself. Paragraphs 2–4 are identical to B353 (another commercial unit in Fushë Kosovë), but street, size and income differ, so not a duplicate."
+}

@@ -1,0 +1,14 @@
+{
+  "ref": "B342",
+  "descriptionEn": [
+    "Land for sale with an area of 60 ares, located in Kodra e Trimave, Prishtina.",
+    "The land has full infrastructure: road access, water supply, sewage, as well as an electricity connection.",
+    "It comes with an ownership certificate and the contract is signed at the notary.",
+    "The land is located in a developed area with high potential for residential construction or for various activities.",
+    "Price: by agreement."
+  ],
+  "images": [
+    { "file": "01.jpg", "kind": "aerial", "overlay": "text", "reason": "headline \"TOKË NË SHITJE\", location label \"KODRA E TRIMAVE, PRISHTINË\" and plot size label \"55 ARI\"" }
+  ],
+  "notes": "Size contradiction: the caption states 60 ari, but the listing's own cover graphic (01.jpg) labels the plot \"55 ARI\". plotAres left at the caption value (60); maintainer should confirm the correct size with the agency."
+}

@@ -1,0 +1,25 @@
+{
+  "ref": "B339",
+  "descriptionEn": [
+    "An apartment of 86.67 m² is offered for sale, located on Rruga Arberia, Fushë Kosovë.\nBuilt by Cima Construction.",
+    "Facing West, it has the following layout of interior spaces: living room, kitchen, 2 bedrooms, one bathroom, one storage room and one balcony.",
+    "It is located on the 4th floor.",
+    "The contract is signed at the notary directly with the construction company.\nThe works will be completed at the end of 2026.",
+    "The heating system is electric underfloor heating.",
+    "The apartment is located in a developed area, near public and private services.",
+    "Price: by agreement."
+  ],
+  "valuesEn": { "completion": "End of 2026" },
+  "images": [
+    { "file": "01.jpg", "kind": "render", "overlay": "text", "reason": "headline \"BANESË NË SHITJE\" and location label \"RRUGA ARBERIA, FUSHË KOSOVË\"" },
+    { "file": "02.jpg", "kind": "floorplan", "overlay": "text", "reason": "floor-plan card with room dimensions and building position diagram" },
+    { "file": "03.jpg", "kind": "render", "overlay": "brand", "reason": "aerial render of the complex" }
+  ],
+  "overrides": {
+    "completion": {
+      "value": "fund te vitit 2026",
+      "evidence": ["Punimet perfundojne ne fund te vitit 2026"],
+      "note": "completion stated explicitly; parser missed it"
+    }
+  }
+}

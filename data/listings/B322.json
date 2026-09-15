@@ -1,0 +1,14 @@
+{
+  "ref": "B322",
+  "descriptionEn": [
+    "An apartment is offered for sale on Rruga Naim Syla, Fushë Kosovë.",
+    "The apartment is located in Lagjja e Doktorëve – Bresje, a quiet, developed and sought-after residential area, with easy access to services and the city's main roads.",
+    "The 60m² space is located on the 5th floor and includes a living room with kitchen, one bedroom, a bathroom and a terrace. The building is modern, built by Alfest Holding, with abundant natural light and only 5 apartments per floor, which guarantees quiet and privacy. The documentation is in order, with an ownership certificate at the notary.",
+    "This property is suitable for families and offers a secure long-term investment.",
+    "Price by agreement."
+  ],
+  "images": [
+    { "file": "01.jpg", "kind": "render", "overlay": "text", "reason": "aerial architectural render of the complex with headline \"BANESË NË SHITJE\" and location label \"BRESJE, FUSHË KOSOVË\"" }
+  ],
+  "notes": "legal.notaryContract=true comes from \"fletë poseduse tek noteri\" (ownership certificate at the notary) — no separate statement that the contract is signed at the notary; maintainer may want to confirm. Neighbourhood sub-area \"lagjen e Doktorëve\" within Bresje. Only image is a CGI render of the complex."
+}

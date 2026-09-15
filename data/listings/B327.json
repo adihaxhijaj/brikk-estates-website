@@ -1,0 +1,20 @@
+{
+  "ref": "B327",
+  "descriptionEn": [
+    "An apartment of 64.2 m² is offered for sale, located in Fushë Kosovë, in Aron Bau Residence, Rruga Hajrullah Zymi, near Euro Store, above Kafe Pollson, built by Aron Bau.",
+    "The apartment has a suitable orientation and includes a living room with kitchen, one bedroom, one bathroom and one balcony. Its heating system is powered by electricity and it is equipped with air conditioning. The building in which the apartment is located is equipped with an elevator and offers sufficient space for parking.",
+    "The apartment is located on the 7th floor, a high position that offers an open view and less noise.",
+    "It comes with an ownership certificate and the purchase contract is signed at the notary.",
+    "The apartment is located in a developed area of Fushë Kosovë, with close access to the main services, markets, schools and the city's main roads, making it an excellent choice for living or long-term investment.",
+    "Price by agreement."
+  ],
+  "valuesEn": { "landmark": "near Euro Store" },
+  "images": [
+    { "file": "01.jpg", "kind": "building", "overlay": "text", "reason": "headline \"BANESË NË SHITJE\" and location label \"HAJRULLAH ZYMI, FUSHË KOSOVË\"" },
+    { "file": "02.jpg", "kind": "living", "overlay": "brand" },
+    { "file": "03.jpg", "kind": "living-kitchen", "overlay": "brand" },
+    { "file": "04.jpg", "kind": "kitchen", "overlay": "brand" },
+    { "file": "05.jpg", "kind": "bedroom", "overlay": "brand", "reason": "occupant's belongings visible, no persons" },
+    { "file": "06.jpg", "kind": "bathroom", "overlay": "brand" }
+  ]
+}

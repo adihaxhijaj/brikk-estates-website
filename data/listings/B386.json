@@ -1,0 +1,20 @@
+{
+  "ref": "B386",
+  "descriptionEn": [
+    "Offered for sale: a house with 310m² of living area, with about 450m² of usable space in total, located in Lagjja Arbëria, in one of the most sought-after areas of Prishtina.",
+    "The property has a 4-are yard and parking for 2 cars.",
+    "The house is organised on several levels. The basement offers about 30m² of additional space. On the first floor there are the living room with kitchen, both with access to a large terrace, one bedroom, a storage room and a bathroom.",
+    "The second floor consists of three bedrooms, each with a balcony, as well as one bathroom. Two of the rooms offer panoramic views towards the city of Prishtina.",
+    "On the top floor there is a rooftop with an area of about 140m², with an open view over the city.",
+    "The property has an ownership certificate.",
+    "Price: €430,000"
+  ],
+  "images": [
+    { "file": "01.jpg", "kind": "exterior", "overlay": "text", "reason": "house exterior with label \"Arbëri, Prishtinë.\" and price 430,000€ (matches caption)" },
+    { "file": "02.jpg", "kind": "exterior", "overlay": "brand", "reason": "same facade at dusk" }
+  ],
+  "overrides": {
+    "bathrooms": { "value": null, "evidence": ["depo dhe banjo", "si dhe një banjo"], "note": "caption names a bathroom on the first floor and another on the second floor; per-floor counts must not be summed, so the parsed total of 1 is wrong and is left null" }
+  },
+  "notes": "Bedrooms likewise stated per floor (1 on the first floor, 3 on the second) and left null. 02.jpg's dramatic sunset sky looks digitally edited/replaced; consider whether it is acceptable. Only exterior photos, no interior images."
+}

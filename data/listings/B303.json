@@ -1,0 +1,24 @@
+{
+  "ref": "B303",
+  "descriptionEn": [
+    "A modern apartment with an area of 85m² is offered for rent, located in the Art Construction complex in Prishtina.",
+    "The apartment is functionally organised and includes a living room, kitchen, two bedrooms, a hallway, a balcony, one bathroom and one WC.",
+    "The complex is built to contemporary standards and offers a safe and well-maintained environment, with green areas and children's play areas, uninterrupted electricity and water supply, camera surveillance, quality elevators, a fire safety system, a supermarket within the complex, and sufficient parking space for residents.",
+    "Price by agreement."
+  ],
+  "images": [
+    { "file": "01.jpg", "kind": "living", "overlay": "text", "reason": "cover headline “BANESË EXCLUSIVE ME QIRA – MATI 1, PRISHTINË”" },
+    { "file": "02.jpg", "kind": "living", "overlay": "brand" },
+    { "file": "03.jpg", "kind": "living-kitchen", "overlay": "brand" },
+    { "file": "04.jpg", "kind": "kitchen", "overlay": "brand" },
+    { "file": "05.jpg", "kind": "kitchen", "overlay": "brand" },
+    { "file": "06.jpg", "kind": "hallway", "overlay": "brand" },
+    { "file": "07.jpg", "kind": "bedroom", "overlay": "brand" },
+    { "file": "08.jpg", "kind": "bedroom", "overlay": "brand" },
+    { "file": "09.jpg", "kind": "bathroom", "overlay": "brand" }
+  ],
+  "overrides": {
+    "neighbourhood": { "value": "Mati 1", "evidence": ["image:01.jpg cover location label “MATI 1, PRISHTINË”"], "note": "caption names only the Art Construction complex and Prishtinë; the neighbourhood appears on the listing's own cover graphic" }
+  },
+  "notes": "Neighbourhood Mati 1 comes only from the cover graphic (01.jpg), not the caption — please confirm the Art Construction complex is in Mati 1. Caption says 'banjo' + 'tualet' (1 each, parsed)."
+}

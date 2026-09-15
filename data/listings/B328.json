@@ -1,0 +1,24 @@
+{
+  "ref": "B328",
+  "descriptionEn": [
+    "An apartment of 83 m² is offered for sale, located in Fushë Kosovë, within the Apollonia A20 complex, Rruga Hysen Xhakolli, built by the company Tregtia.",
+    "The apartment faces East + West and includes a living room, a kitchen, two bedrooms, a bathroom + WC and a balcony enclosed with folding glass panels, with an unobstructed view. The heating system is electric and the building offers dedicated parking for residents, with access via a ramp. Security is guaranteed, as the corridor in front of the apartment entrance is closed off with iron doors.",
+    "The apartment is located on the 7th floor, which offers an open view and less noise.",
+    "It comes with an ownership certificate and the purchase contract is signed at the notary.",
+    "The apartment is located in a developed area of Fushë Kosovë, with close access to the main roads, markets, public services and schools, making it an excellent choice for family living or long-term investment.",
+    "Price by agreement."
+  ],
+  "images": [
+    { "file": "01.jpg", "kind": "building", "overlay": "text", "reason": "headline \"BANESË NË SHITJE\" and location label \"HYSEN XHAKOLLI, FUSHË KOSOVË\"" },
+    { "file": "02.jpg", "kind": "living", "overlay": "brand" },
+    { "file": "03.jpg", "kind": "living", "overlay": "brand" },
+    { "file": "04.jpg", "kind": "kitchen", "overlay": "brand" },
+    { "file": "05.jpg", "kind": "kitchen", "overlay": "brand" },
+    { "file": "06.jpg", "kind": "balcony", "overlay": "brand" },
+    { "file": "07.jpg", "kind": "bedroom", "overlay": "brand" },
+    { "file": "08.jpg", "kind": "bedroom", "overlay": "brand" },
+    { "file": "09.jpg", "kind": "interior", "overlay": "brand" },
+    { "file": "10.jpg", "kind": "bathroom", "overlay": "brand" }
+  ],
+  "notes": "Interior photos 02–10 are the same photos as B333 02–10 (rental listing of an apartment in the same Apollonia A20 complex by Tregtia, same layout: living room, kitchen, 2 bedrooms, bathroom + WC, enclosed balcony) — likely the same unit offered for sale (B328, Dec 2025) and later for rent (B333, Jan 2026); maintainer should decide which is current. Caption says \"banjo + WC\" without numerals; bathrooms/wc left null."
+}

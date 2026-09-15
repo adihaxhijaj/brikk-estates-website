@@ -1,0 +1,23 @@
+{
+  "ref": "B302",
+  "descriptionEn": [
+    "A duplex with an area of 161m² is offered for rent, located on the 4th and 5th floors of the Prime Group complex in Pejton.",
+    "The duplex is designed in a modern style with a minimalist tone and quality details, creating a comfortable and functional environment. The space includes a naturally lit living room, a fully equipped kitchen, three bedrooms and two elegant bathrooms.",
+    "The property also offers an included parking space.",
+    "The location is very favourable, in the city centre and near schools, shopping centres and key services, making it an ideal choice for families or professionals looking for comfortable living in Prishtina.",
+    "Price by agreement."
+  ],
+  "images": [
+    { "file": "01.jpg", "kind": "living", "overlay": "text", "reason": "cover headline “DUPLEX PREMIUM ME QIRA – PEJTON, PRISHTINE”" },
+    { "file": "02.jpg", "kind": "living", "overlay": "brand" },
+    { "file": "03.jpg", "kind": "stairs", "overlay": "brand" },
+    { "file": "04.jpg", "kind": "kitchen", "overlay": "brand" },
+    { "file": "05.jpg", "kind": "dining", "overlay": "brand" },
+    { "file": "06.jpg", "kind": "hallway", "overlay": "brand", "reason": "painting of a ballerina seen from behind, not an identifiable person" },
+    { "file": "07.jpg", "kind": "bedroom", "overlay": "brand" },
+    { "file": "08.jpg", "kind": "bedroom", "overlay": "brand" },
+    { "file": "09.jpg", "kind": "bedroom", "overlay": "brand" },
+    { "file": "10.jpg", "kind": "bathroom", "overlay": "brand" }
+  ],
+  "notes": "Photos carry a small third-party photographer mark (small zigzag “ΛΛΛ” logo, bottom right) in addition to the BRIKK watermark; they look like professional/architectural photos, so image rights may be worth confirming."
+}

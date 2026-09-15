@@ -1,0 +1,25 @@
+{
+  "ref": "B381",
+  "descriptionEn": [
+    "Offered for sale: an apartment with an area of 59m², located on Rruga Pajazit Islami, near the New Mosque (Xhamia e Re), in Fushë Kosovë.",
+    "The apartment was built by Mendi, is located on the 7th floor and is sold fully furnished.",
+    "The space consists of a living room with kitchen, one bedroom, one bathroom, a storage room and a balcony enclosed with folding glass panels.",
+    "The furniture is new and very little used, while the kitchen is fully equipped by the brand Gorenje, with a 5-year warranty.",
+    "The complex has a private children's park, a school is about 3 minutes away, while markets and other necessary services are within convenient walking distance.",
+    "The price of the property is €55,500."
+  ],
+  "valuesEn": { "landmark": "near the New Mosque (Xhamia e Re)" },
+  "images": [
+    { "file": "01.jpg", "kind": "living-kitchen", "overlay": "text", "reason": "cover with location label \"Rruga Pajazit Islami, Fushë Kosovë.\" and price 55,500€ (matches caption)" },
+    { "file": "02.jpg", "kind": "living", "overlay": "brand" },
+    { "file": "03.jpg", "kind": "kitchen", "overlay": "brand" },
+    { "file": "04.jpg", "kind": "kitchen", "overlay": "brand" },
+    { "file": "05.jpg", "kind": "bedroom", "overlay": "brand" },
+    { "file": "06.jpg", "kind": "bedroom", "overlay": "brand" },
+    { "file": "07.jpg", "kind": "bathroom", "overlay": "brand" },
+    { "file": "08.jpg", "kind": "bathroom", "overlay": "brand" },
+    { "file": "09.jpg", "kind": "balcony", "overlay": "brand", "reason": "enclosed glass balcony; builder name MENDI visible on the railing panel" },
+    { "file": "10.jpg", "kind": "yard", "overlay": "brand", "exclude": true, "reason": "complex playground with several private persons (adults and children) whose faces are discernible at full resolution" }
+  ],
+  "notes": "Cover graphic 01.jpg repeats the caption's street and price (55,500€). 10.jpg excluded because of people at the playground; no other photo shows the children's park."
+}

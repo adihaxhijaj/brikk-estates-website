@@ -1,0 +1,172 @@
+{
+  "ref": "B326",
+  "slugSq": "b326-banese-ne-shitje-fushe-kosove",
+  "slugEn": "b326-apartment-for-sale-fushe-kosove",
+  "postedAt": "2025-12-09",
+  "instagramUrl": "https://www.instagram.com/p/DSDGUZvGG0r/",
+  "deal": "sale",
+  "type": "apartment",
+  "multipleUnits": false,
+  "titleSq": "Banesë në shitje në Fushë Kosovë",
+  "titleEn": "Apartment for sale in Fushë Kosovë",
+  "city": "Fushë Kosovë",
+  "cityEn": "Fushë Kosovë",
+  "neighbourhood": null,
+  "neighbourhoodLoc": null,
+  "street": "Rruga Hajrullah Zymi",
+  "complex": null,
+  "landmark": null,
+  "landmarkEn": null,
+  "country": "XK",
+  "developer": "Qami Construction",
+  "isNewBuild": null,
+  "completion": null,
+  "completionEn": null,
+  "areaNet": 63.37,
+  "areaApprox": false,
+  "areaTerrace": null,
+  "plotAres": null,
+  "floor": 3,
+  "floorTo": null,
+  "totalFloors": null,
+  "orientation": "NW",
+  "bedrooms": 2,
+  "bathrooms": null,
+  "wc": null,
+  "livingWithKitchen": true,
+  "storage": true,
+  "balcony": null,
+  "features": [
+    "terrace"
+  ],
+  "legal": {
+    "ownershipCertificate": null,
+    "notaryContract": null,
+    "contractViaLawyer": null,
+    "inLegalisation": null,
+    "contractWithDeveloper": null
+  },
+  "price": null,
+  "pricePerM2": null,
+  "pricePerAre": null,
+  "priceOnRequest": true,
+  "rentMonthly": null,
+  "deposit": null,
+  "minContractMonths": null,
+  "extras": {
+    "financing": null,
+    "installments": null,
+    "tradeIn": null,
+    "tenanted": null,
+    "rentalIncome": null,
+    "garageOptional": null,
+    "tradeInEn": null
+  },
+  "aiVisualisation": false,
+  "aiDisclaimerSq": null,
+  "aiDisclaimerEn": null,
+  "status": "unconfirmed",
+  "hidden": false,
+  "descriptionSq": [
+    "Ofrohet për shitje banesë në Rrugën Hajrullah Zymi, Fushë Kosovë.",
+    "Banesa ndodhet në një zonë të qetë, të zhvilluar dhe shumë të kërkuar, me qasje të lehtë në shkolla, markete dhe rrugët kryesore të qytetit. Lokacioni e bën të përshtatshme për banim familjar ose investim afatgjatë.",
+    "Hapësira prej 63.37 m² përfshin sallon me kuzhinë, dy dhoma gjumi, banjo, depo dhe terasa.",
+    "Banesa ndodhet në katin e 3-të, me orientim Veri–Perëndim, ndriçim natyral të bollshëm dhe ndërtesë moderne të ndërtuar nga Qami Construction.",
+    "Ky objekt ofron rehati dhe funksionalitet, duke e bërë një zgjedhje të shkëlqyer për familje ose investim.",
+    "Çmimi sipas marrëveshjes."
+  ],
+  "descriptionEn": [
+    "An apartment is offered for sale on Rruga Hajrullah Zymi, Fushë Kosovë.",
+    "The apartment is located in a quiet, developed and highly sought-after area, with easy access to schools, markets and the city's main roads. The location makes it suitable for family living or long-term investment.",
+    "The 63.37 m² space includes a living room with kitchen, two bedrooms, a bathroom, a storage room and a terrace.",
+    "The apartment is located on the 3rd floor, facing North–West, with abundant natural light, in a modern building built by Qami Construction.",
+    "This property offers comfort and functionality, making it an excellent choice for families or investment.",
+    "Price by agreement."
+  ],
+  "descriptionEnIsTranslation": true,
+  "extraCaptions": [],
+  "images": [
+    {
+      "src": "../../assets/listings/b326/02.jpg",
+      "file": "02.jpg",
+      "width": 1620,
+      "height": 1080,
+      "kind": "interior",
+      "overlay": "brand",
+      "hasTextOverlay": false,
+      "altSq": "Hapësira e brendshme, banesë në shitje në Fushë Kosovë, Ref B326 (1/6)",
+      "altEn": "Interior space, apartment for sale in Fushë Kosovë, Ref B326 (1/6)"
+    },
+    {
+      "src": "../../assets/listings/b326/03.jpg",
+      "file": "03.jpg",
+      "width": 1620,
+      "height": 1080,
+      "kind": "interior",
+      "overlay": "brand",
+      "hasTextOverlay": false,
+      "altSq": "Hapësira e brendshme, banesë në shitje në Fushë Kosovë, Ref B326 (2/6)",
+      "altEn": "Interior space, apartment for sale in Fushë Kosovë, Ref B326 (2/6)"
+    },
+    {
+      "src": "../../assets/listings/b326/04.jpg",
+      "file": "04.jpg",
+      "width": 1620,
+      "height": 1080,
+      "kind": "terrace",
+      "overlay": "brand",
+      "hasTextOverlay": false,
+      "altSq": "Tarraca, banesë në shitje në Fushë Kosovë, Ref B326 (3/6)",
+      "altEn": "Terrace, apartment for sale in Fushë Kosovë, Ref B326 (3/6)"
+    },
+    {
+      "src": "../../assets/listings/b326/05.jpg",
+      "file": "05.jpg",
+      "width": 1620,
+      "height": 1080,
+      "kind": "interior",
+      "overlay": "brand",
+      "hasTextOverlay": false,
+      "altSq": "Hapësira e brendshme, banesë në shitje në Fushë Kosovë, Ref B326 (4/6)",
+      "altEn": "Interior space, apartment for sale in Fushë Kosovë, Ref B326 (4/6)"
+    },
+    {
+      "src": "../../assets/listings/b326/06.jpg",
+      "file": "06.jpg",
+      "width": 1620,
+      "height": 1080,
+      "kind": "bathroom",
+      "overlay": "brand",
+      "hasTextOverlay": false,
+      "altSq": "Banjo, banesë në shitje në Fushë Kosovë, Ref B326 (5/6)",
+      "altEn": "Bathroom, apartment for sale in Fushë Kosovë, Ref B326 (5/6)"
+    },
+    {
+      "src": "../../assets/listings/b326/01.jpg",
+      "file": "01.jpg",
+      "width": 1620,
+      "height": 1080,
+      "kind": "terrace",
+      "overlay": "text",
+      "hasTextOverlay": true,
+      "altSq": "Tarraca, banesë në shitje në Fushë Kosovë, Ref B326 (6/6)",
+      "altEn": "Terrace, apartment for sale in Fushë Kosovë, Ref B326 (6/6)"
+    }
+  ],
+  "coverIndex": 0,
+  "provenance": {
+    "overridden": {
+      "developer": {
+        "from": null,
+        "to": "Qami Construction",
+        "evidence": [
+          "ndërtesë moderne të ndërtuar nga Qami Construction"
+        ],
+        "note": "caption names the builder; parser missed it"
+      }
+    },
+    "warnings": [],
+    "reviewedImages": true,
+    "translated": true
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "ref": "B380",
+  "descriptionEn": [
+    "Offered for sale: an apartment located on Rruga Muharrem Fejza, near Lagjja e Kaltër, in Prishtina.",
+    "The property has an area of 70.58m² of living space and a 56.29m² terrace, offering a very good combination of indoor and outdoor space.",
+    "The apartment is located on the 1st floor, in a building with an elevator, and faces West.",
+    "The space consists of a living room with kitchen, two bedrooms and one bathroom. The apartment is fully furnished and ready to move in.",
+    "The property has an ownership certificate and the sale contract is signed at the notary.",
+    "The price of the property is €140,000, negotiable."
+  ],
+  "valuesEn": { "landmark": "near Lagjja e Kaltër" },
+  "images": [
+    { "file": "01.jpg", "kind": "living", "overlay": "brand" },
+    { "file": "02.jpg", "kind": "kitchen", "overlay": "brand", "reason": "kitchen with dining table" },
+    { "file": "03.jpg", "kind": "kitchen", "overlay": "brand" },
+    { "file": "04.jpg", "kind": "terrace", "overlay": "brand" },
+    { "file": "05.jpg", "kind": "interior", "overlay": "brand", "reason": "enclosed tiled room with washing machine and laundry; not described in the caption" },
+    { "file": "06.jpg", "kind": "bedroom", "overlay": "brand" },
+    { "file": "07.jpg", "kind": "bedroom", "overlay": "brand", "reason": "wall shows children's drawings only, no photos of people" },
+    { "file": "08.jpg", "kind": "bathroom", "overlay": "brand", "exclude": true, "reason": "mirror shows the reflection of a person with face visible in profile" },
+    { "file": "09.jpg", "kind": "hallway", "overlay": "brand" }
+  ],
+  "overrides": {
+    "landmark": { "value": "pranë Lagjes së Kaltër", "evidence": ["pranë Lagjes së Kaltër"], "note": "proximity to Lagjja e Kaltër stated explicitly; parser only recognises business landmarks" }
+  },
+  "notes": "Older green brand template (watermark, phone and website footer, green decorative shapes). 05.jpg shows an enclosed room with the same floor tiles as the terrace; the caption does not mention it."
+}

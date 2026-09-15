@@ -1,0 +1,136 @@
+{
+  "ref": "B386",
+  "slugSq": "b386-shtepi-ne-shitje-prishtine",
+  "slugEn": "b386-house-for-sale-prishtine",
+  "postedAt": "2026-08-27",
+  "instagramUrl": "https://www.instagram.com/p/DcjDCmqivyf/",
+  "deal": "sale",
+  "type": "house",
+  "multipleUnits": false,
+  "titleSq": "Shtëpi në shitje në Lagjen Arbëria, Prishtinë",
+  "titleEn": "House for sale in Arbëria, Prishtina",
+  "city": "Prishtinë",
+  "cityEn": "Prishtina",
+  "neighbourhood": "Arbëria",
+  "neighbourhoodLoc": "Lagjen Arbëria",
+  "street": null,
+  "complex": null,
+  "landmark": null,
+  "landmarkEn": null,
+  "country": "XK",
+  "developer": null,
+  "isNewBuild": null,
+  "completion": null,
+  "completionEn": null,
+  "areaNet": 310,
+  "areaApprox": false,
+  "areaTerrace": null,
+  "plotAres": null,
+  "floor": null,
+  "floorTo": null,
+  "totalFloors": null,
+  "orientation": null,
+  "bedrooms": null,
+  "bathrooms": null,
+  "wc": null,
+  "livingWithKitchen": true,
+  "storage": true,
+  "balcony": true,
+  "features": [
+    "parking",
+    "basement",
+    "terrace",
+    "yard"
+  ],
+  "legal": {
+    "ownershipCertificate": true,
+    "notaryContract": null,
+    "contractViaLawyer": null,
+    "inLegalisation": null,
+    "contractWithDeveloper": null
+  },
+  "price": 430000,
+  "pricePerM2": null,
+  "pricePerAre": null,
+  "priceOnRequest": false,
+  "rentMonthly": null,
+  "deposit": null,
+  "minContractMonths": null,
+  "extras": {
+    "financing": null,
+    "installments": null,
+    "tradeIn": null,
+    "tenanted": null,
+    "rentalIncome": null,
+    "garageOptional": null,
+    "tradeInEn": null
+  },
+  "aiVisualisation": false,
+  "aiDisclaimerSq": null,
+  "aiDisclaimerEn": null,
+  "status": "unconfirmed",
+  "hidden": false,
+  "descriptionSq": [
+    "Ofrohet për shitje shtëpi me sipërfaqe prej 310m² banim, me rreth 450m² hapësirë të shfrytëzueshme në total, e vendosur në Lagjen Arbëria, në një nga zonat më të kërkuara të Prishtinës.",
+    "Prona posedon 4 ari oborr dhe parking për 2 vetura.",
+    "Shtëpia është e organizuar në disa nivele. Podrumi ofron rreth 30m² hapësirë shtesë. Në katin e parë gjenden qëndrimi ditor me kuzhinë, të dyja me dalje në një tarracë të madhe, një dhomë gjumi, depo dhe banjo.",
+    "Kati i dytë përbëhet nga tri dhoma gjumi, secila me ballkon, si dhe një banjo. Dy nga dhomat ofrojnë pamje panoramike drejt qytetit të Prishtinës.",
+    "Në katin e fundit ndodhet rooftop me sipërfaqe rreth 140m², me pamje të hapur mbi qytet.",
+    "Prona posedon fletë poseduese.",
+    "Çmimi: 430,000€"
+  ],
+  "descriptionEn": [
+    "Offered for sale: a house with 310m² of living area, with about 450m² of usable space in total, located in Lagjja Arbëria, in one of the most sought-after areas of Prishtina.",
+    "The property has a 4-are yard and parking for 2 cars.",
+    "The house is organised on several levels. The basement offers about 30m² of additional space. On the first floor there are the living room with kitchen, both with access to a large terrace, one bedroom, a storage room and a bathroom.",
+    "The second floor consists of three bedrooms, each with a balcony, as well as one bathroom. Two of the rooms offer panoramic views towards the city of Prishtina.",
+    "On the top floor there is a rooftop with an area of about 140m², with an open view over the city.",
+    "The property has an ownership certificate.",
+    "Price: €430,000"
+  ],
+  "descriptionEnIsTranslation": true,
+  "extraCaptions": [],
+  "images": [
+    {
+      "src": "../../assets/listings/b386/02.jpg",
+      "file": "02.jpg",
+      "width": 1080,
+      "height": 810,
+      "kind": "exterior",
+      "overlay": "brand",
+      "hasTextOverlay": false,
+      "altSq": "Pamja e jashtme, shtëpi në shitje në Lagjen Arbëria, Prishtinë, Ref B386 (1/2)",
+      "altEn": "Exterior, house for sale in Arbëria, Prishtina, Ref B386 (1/2)"
+    },
+    {
+      "src": "../../assets/listings/b386/01.jpg",
+      "file": "01.jpg",
+      "width": 1080,
+      "height": 810,
+      "kind": "exterior",
+      "overlay": "text",
+      "hasTextOverlay": true,
+      "altSq": "Pamja e jashtme, shtëpi në shitje në Lagjen Arbëria, Prishtinë, Ref B386 (2/2)",
+      "altEn": "Exterior, house for sale in Arbëria, Prishtina, Ref B386 (2/2)"
+    }
+  ],
+  "coverIndex": 0,
+  "provenance": {
+    "overridden": {
+      "bathrooms": {
+        "from": 1,
+        "to": null,
+        "evidence": [
+          "depo dhe banjo",
+          "si dhe një banjo"
+        ],
+        "note": "caption names a bathroom on the first floor and another on the second floor; per-floor counts must not be summed, so the parsed total of 1 is wrong and is left null"
+      }
+    },
+    "warnings": [
+      "bedrooms: 2 separate mentions (1, 3); left null"
+    ],
+    "reviewedImages": true,
+    "translated": true
+  }
+}

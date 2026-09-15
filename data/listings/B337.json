@@ -1,0 +1,25 @@
+{
+  "ref": "B337",
+  "descriptionEn": [
+    "A duplex of 112.86 m² is offered for sale, located in the Kodrina neighbourhood, Mati 1, Prishtina.\nIzzy complex, builder Izzy SH.P.K.",
+    "The apartment faces South-East and has the following layout of interior spaces: living room, kitchen, two bedrooms, 3 bathrooms, a storage room and one balcony.\nIt is located on floors 1 & 2.\nThe contract is signed at the notary directly with the construction company.",
+    "The heating system uses electricity.",
+    "The apartment is located in an area with development potential, near public and private services.\nA private garage is also included in the price.",
+    "Price: €1,500/m²"
+  ],
+  "images": [
+    { "file": "01.jpg", "kind": "render", "overlay": "text", "reason": "headline \"BANESË NË SHITJE\" and location label \"LAGJJA KODRINA, PRISHTINË\"" },
+    { "file": "02.jpg", "kind": "floorplan", "overlay": "text", "reason": "3D floor-plan card (numbered rooms)" },
+    { "file": "03.jpg", "kind": "floorplan", "overlay": "text", "reason": "3D floor-plan card (numbered rooms)" },
+    { "file": "04.jpg", "kind": "render", "overlay": "brand", "reason": "architectural render; small generic figures only" },
+    { "file": "05.jpg", "kind": "render", "overlay": "brand" }
+  ],
+  "overrides": {
+    "developer": {
+      "value": "Izzy SH.P.K.",
+      "evidence": ["ndertues Izzy SH.P.K."],
+      "note": "full builder name as stated in the caption"
+    }
+  },
+  "notes": "Price is given per m² only (1500 €/m²); total price not computed. Cover graphic calls it \"BANESË\" while the caption says duplex."
+}

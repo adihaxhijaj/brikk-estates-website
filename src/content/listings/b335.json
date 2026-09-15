@@ -1,0 +1,154 @@
+{
+  "ref": "B335",
+  "slugSq": "b335-banese-ne-shitje-fushe-kosove",
+  "slugEn": "b335-apartment-for-sale-fushe-kosove",
+  "postedAt": "2026-01-09",
+  "instagramUrl": "https://www.instagram.com/p/DTSZ9W8DXIX/",
+  "deal": "sale",
+  "type": "apartment",
+  "multipleUnits": false,
+  "titleSq": "Banesë në shitje në Fushë Kosovë",
+  "titleEn": "Apartment for sale in Fushë Kosovë",
+  "city": "Fushë Kosovë",
+  "cityEn": "Fushë Kosovë",
+  "neighbourhood": null,
+  "neighbourhoodLoc": null,
+  "street": "Rruga Zahir Pajaziti",
+  "complex": null,
+  "landmark": null,
+  "landmarkEn": null,
+  "country": "XK",
+  "developer": "Tehno Home",
+  "isNewBuild": true,
+  "completion": "Qershor 2026",
+  "completionEn": "June 2026",
+  "areaNet": 94.35,
+  "areaApprox": false,
+  "areaTerrace": 66,
+  "plotAres": null,
+  "floor": 4,
+  "floorTo": null,
+  "totalFloors": null,
+  "orientation": null,
+  "bedrooms": 2,
+  "bathrooms": 1,
+  "wc": 1,
+  "livingWithKitchen": null,
+  "storage": null,
+  "balcony": true,
+  "features": [
+    "underfloor-heating",
+    "electric-heating",
+    "terrace"
+  ],
+  "legal": {
+    "ownershipCertificate": null,
+    "notaryContract": true,
+    "contractViaLawyer": null,
+    "inLegalisation": null,
+    "contractWithDeveloper": true
+  },
+  "price": null,
+  "pricePerM2": null,
+  "pricePerAre": null,
+  "priceOnRequest": true,
+  "rentMonthly": null,
+  "deposit": null,
+  "minContractMonths": null,
+  "extras": {
+    "financing": null,
+    "installments": null,
+    "tradeIn": null,
+    "tenanted": null,
+    "rentalIncome": null,
+    "garageOptional": null,
+    "tradeInEn": null
+  },
+  "aiVisualisation": false,
+  "aiDisclaimerSq": null,
+  "aiDisclaimerEn": null,
+  "status": "unconfirmed",
+  "hidden": false,
+  "descriptionSq": [
+    "Ofrohet per shitje banese me siperfaqe 94.35 m², me lokacion ne Rrugen Zahir Pajaziti, Fushe Kosove.\nNdertim nga Tehno Home.",
+    "Ka kete renditje te hapesirave te brendshme: qendrim ditor, kuzhine, 2 dhoma gjumi, nje banjo, nje WC dhe 2 ballkone. Banesa posedon gjithashtu rreth 66 m² tarrace, e cila nuk eshte e perfshire ne planin teknik.",
+    "Ndodhet ne katin e 4.",
+    "Kontrata behet tek noteri direkt me kompanine ndertuese.\nPunimet perfundojne ne Qershor 2026.",
+    "Sistemi i ngrohjes eshte elektrik nen dysheme.",
+    "Banesa ndodhet ne nje zone te zhvilluar, afer sherbimeve publike dhe private.",
+    "Cmimi sipas marreveshjes."
+  ],
+  "descriptionEn": [
+    "An apartment of 94.35 m² is offered for sale, located on Rruga Zahir Pajaziti, Fushë Kosovë.\nBuilt by Tehno Home.",
+    "It has the following layout of interior spaces: living room, kitchen, 2 bedrooms, one bathroom, one WC and 2 balconies. The apartment also has approximately 66 m² of terrace, which is not included in the technical plan.",
+    "It is located on the 4th floor.",
+    "The contract is signed at the notary directly with the construction company.\nThe works will be completed in June 2026.",
+    "The heating system is electric underfloor heating.",
+    "The apartment is located in a developed area, near public and private services.",
+    "Price by agreement."
+  ],
+  "descriptionEnIsTranslation": true,
+  "extraCaptions": [],
+  "images": [
+    {
+      "src": "../../assets/listings/b335/02.jpg",
+      "file": "02.jpg",
+      "width": 960,
+      "height": 960,
+      "kind": "render",
+      "overlay": "brand",
+      "hasTextOverlay": false,
+      "altSq": "Vizualizim, banesë në shitje në Fushë Kosovë, Ref B335 (1/4)",
+      "altEn": "Visualisation, apartment for sale in Fushë Kosovë, Ref B335 (1/4)"
+    },
+    {
+      "src": "../../assets/listings/b335/03.jpg",
+      "file": "03.jpg",
+      "width": 960,
+      "height": 960,
+      "kind": "render",
+      "overlay": "brand",
+      "hasTextOverlay": false,
+      "altSq": "Vizualizim, banesë në shitje në Fushë Kosovë, Ref B335 (2/4)",
+      "altEn": "Visualisation, apartment for sale in Fushë Kosovë, Ref B335 (2/4)"
+    },
+    {
+      "src": "../../assets/listings/b335/04.jpg",
+      "file": "04.jpg",
+      "width": 960,
+      "height": 960,
+      "kind": "render",
+      "overlay": "brand",
+      "hasTextOverlay": false,
+      "altSq": "Vizualizim, banesë në shitje në Fushë Kosovë, Ref B335 (3/4)",
+      "altEn": "Visualisation, apartment for sale in Fushë Kosovë, Ref B335 (3/4)"
+    },
+    {
+      "src": "../../assets/listings/b335/01.jpg",
+      "file": "01.jpg",
+      "width": 960,
+      "height": 960,
+      "kind": "floorplan",
+      "overlay": "text",
+      "hasTextOverlay": true,
+      "altSq": "Planimetria, banesë në shitje në Fushë Kosovë, Ref B335 (4/4)",
+      "altEn": "Floor plan, apartment for sale in Fushë Kosovë, Ref B335 (4/4)"
+    }
+  ],
+  "coverIndex": 0,
+  "provenance": {
+    "overridden": {
+      "completion": {
+        "from": null,
+        "to": "Qershor 2026",
+        "evidence": [
+          "Punimet perfundojne ne Qershor 2026"
+        ],
+        "note": "completion date stated explicitly; parser missed it"
+      }
+    },
+    "warnings": [],
+    "reviewedImages": true,
+    "translated": true
+  }
+}

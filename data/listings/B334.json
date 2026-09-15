@@ -1,0 +1,19 @@
+{
+  "ref": "B334",
+  "descriptionEn": [
+    "An apartment of 92.85 m² is offered for sale, located on Rruga Pajazit Islami, Fushë Kosovë, in a modern building, built by Tehno Home.",
+    "The apartment has the following layout of interior spaces: living room & dining area, separate kitchen, 2 bedrooms, 1 bathroom + 1 WC, 2 balconies",
+    "Apartment floor: 6\nThe building in which the apartment is located is equipped with an elevator and offers sufficient space for parking.",
+    "The apartment is under construction and the works will be completed in June 2026.",
+    "The apartment is located in a developed area of Fushë Kosovë, with close access to the main roads and near schools, kindergartens, markets and the services needed for everyday life.",
+    "Price by agreement."
+  ],
+  "valuesEn": { "completion": "June 2026" },
+  "images": [
+    { "file": "01.jpg", "kind": "floorplan", "overlay": "text", "reason": "3D floor-plan card with size label \"92.85m2\"" },
+    { "file": "02.jpg", "kind": "render", "overlay": "brand" },
+    { "file": "03.jpg", "kind": "render", "overlay": "brand" },
+    { "file": "04.jpg", "kind": "render", "overlay": "brand" }
+  ],
+  "notes": "Size on floor-plan card (92.85m2) matches the caption. Building renders 02–04 are the same Tehno Home renders used in B335 (which gives Rruga Zahir Pajaziti instead of Rruga Pajazit Islami) — possibly the same project; maintainer may want to confirm the street."
+}

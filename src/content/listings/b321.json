@@ -1,0 +1,116 @@
+{
+  "ref": "B321",
+  "slugSq": "b321-banese-ne-shitje-fushe-kosove",
+  "slugEn": "b321-apartment-for-sale-fushe-kosove",
+  "postedAt": "2025-12-08",
+  "instagramUrl": "https://www.instagram.com/p/DSAh0nSDTkX/",
+  "deal": "sale",
+  "type": "apartment",
+  "multipleUnits": false,
+  "titleSq": "Banesë në shitje në Fushë Kosovë",
+  "titleEn": "Apartment for sale in Fushë Kosovë",
+  "city": "Fushë Kosovë",
+  "cityEn": "Fushë Kosovë",
+  "neighbourhood": null,
+  "neighbourhoodLoc": null,
+  "street": "Rruga Hamdi Grajqevci",
+  "complex": "Eliza B",
+  "landmark": null,
+  "landmarkEn": null,
+  "country": "XK",
+  "developer": "Cima Construction",
+  "isNewBuild": null,
+  "completion": null,
+  "completionEn": null,
+  "areaNet": 90,
+  "areaApprox": false,
+  "areaTerrace": null,
+  "plotAres": null,
+  "floor": 6,
+  "floorTo": null,
+  "totalFloors": null,
+  "orientation": "E",
+  "bedrooms": 2,
+  "bathrooms": null,
+  "wc": null,
+  "livingWithKitchen": true,
+  "storage": true,
+  "balcony": true,
+  "features": [
+    "elevator"
+  ],
+  "legal": {
+    "ownershipCertificate": true,
+    "notaryContract": null,
+    "contractViaLawyer": null,
+    "inLegalisation": null,
+    "contractWithDeveloper": null
+  },
+  "price": null,
+  "pricePerM2": null,
+  "pricePerAre": null,
+  "priceOnRequest": true,
+  "rentMonthly": null,
+  "deposit": null,
+  "minContractMonths": null,
+  "extras": {
+    "financing": null,
+    "installments": null,
+    "tradeIn": null,
+    "tenanted": null,
+    "rentalIncome": null,
+    "garageOptional": null,
+    "tradeInEn": null
+  },
+  "aiVisualisation": false,
+  "aiDisclaimerSq": null,
+  "aiDisclaimerEn": null,
+  "status": "unconfirmed",
+  "hidden": false,
+  "descriptionSq": [
+    "Ofrohet për shitje banesë në Rrugën Hamdi Grajqevci, Fushë Kosovë.",
+    "Banesa ndodhet në lagjen Eliza B, një zonë e qetë dhe e organizuar, me cilësi të lartë ndërtimi dhe komunitet të rregulluar. Pozicioni ofron qasje të menjëhershme në shërbime, markete, shkolla dhe rrugët kryesore të qytetit.",
+    "Hapësira prej 90m² ndodhet në katin e 6-të të ndërtesës me ashensor, me orientim nga lindja, dhe përfshin sallon me kuzhinë, dy dhoma gjumi, banjo, depo dhe ballkon. Ndërtesa është moderne, e ndërtuar nga Cima Construction, me ndriçim natyral të bollshëm dhe dokumentacion të rregullt me fletë poseduse.",
+    "Ky objekt është ideal për familje dhe ofron një investim afatgjatë të sigurt.",
+    "Çmimi sipas marrëveshjes."
+  ],
+  "descriptionEn": [
+    "An apartment is offered for sale on Rruga Hamdi Grajqevci, Fushë Kosovë.",
+    "The apartment is located in the Eliza B neighbourhood, a quiet and organised area, with high construction quality and a well-ordered community. The position offers immediate access to services, markets, schools and the city's main roads.",
+    "The 90m² space is located on the 6th floor of a building with an elevator, facing east, and includes a living room with kitchen, two bedrooms, a bathroom, a storage room and a balcony. The building is modern, built by Cima Construction, with abundant natural light and regular documentation with an ownership certificate.",
+    "This property is ideal for families and offers a secure long-term investment.",
+    "Price by agreement."
+  ],
+  "descriptionEnIsTranslation": true,
+  "extraCaptions": [],
+  "images": [
+    {
+      "src": "../../assets/listings/b321/01.jpg",
+      "file": "01.jpg",
+      "width": 1620,
+      "height": 1080,
+      "kind": "render",
+      "overlay": "text",
+      "hasTextOverlay": true,
+      "altSq": "Vizualizim, banesë në shitje në Fushë Kosovë, Ref B321 (1/1)",
+      "altEn": "Visualisation, apartment for sale in Fushë Kosovë, Ref B321 (1/1)"
+    }
+  ],
+  "coverIndex": 0,
+  "provenance": {
+    "overridden": {
+      "complex": {
+        "from": null,
+        "to": "Eliza B",
+        "evidence": [
+          "lagjen Eliza B",
+          "image:01.jpg LAGJJA ELIZA B, FUSHË KOSOVË"
+        ],
+        "note": "complex named as a 'lagje' in the caption"
+      }
+    },
+    "warnings": [],
+    "reviewedImages": true,
+    "translated": true
+  }
+}

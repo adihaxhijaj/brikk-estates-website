@@ -1,0 +1,21 @@
+{
+  "ref": "B385",
+  "descriptionEn": [
+    "Offered for sale: land with an area of 198.8 ares, located in Topliqan, about 6 km from the town of Lipjan.",
+    "The property is located in a practical area for business development and various investments, with convenient access and\nnecessary infrastructure nearby.",
+    "The large area of the property makes it suitable for the development of warehouses, commercial buildings, factories or other projects, depending on the investor's needs.",
+    "Price: €1,500/are\nTotal price: €298,200",
+    "Land for sale in Topliqan, Lipjan",
+    "Offered for sale: land with an area of 198.8 ares, located in Topliqan, about 6 km from the town of Lipjan.",
+    "The property is located in a practical area for business development and various investments, with convenient access and necessary infrastructure nearby.",
+    "The large area of the property makes it suitable for the development of warehouses, commercial buildings, factories or other projects, depending on the investor's needs.",
+    "Price: €1,500/are\nTotal price: €298,200"
+  ],
+  "aiDisclaimerEn": "Note: This image was generated with artificial intelligence (AI) and serves only as a conceptual visualisation of how a future investment on this property could look. The image does not represent an approved project or the existing condition.",
+  "images": [
+    { "file": "01.jpg", "kind": "aerial", "overlay": "text", "reason": "drone view with plot outlined in yellow and label \"Topliqan, Lipjan\", \"198.8 ARI\", \"1500 €/ARI\" (matches caption)" },
+    { "file": "02.jpg", "kind": "aerial", "overlay": "brand", "reason": "drone view with plot boundary outlined in yellow; watermark and footer only" },
+    { "file": "03.jpg", "kind": "render", "overlay": "text", "reason": "AI-generated concept of a warehouse/logistics building on the plot; labelled as an AI concept visualisation" }
+  ],
+  "notes": "PARSER ISSUE: the source caption contains the whole text twice; the first copy has a stray line break after \"me qasje të përshtatshme dhe\", so de-duplication failed and descriptionSq holds 9 paragraphs (paragraphs 5–9 repeat the headline and paragraphs 1–4). Translated 1:1 as required, but the maintainer should de-duplicate the published description. 03.jpg is an AI concept visualisation and must not be shown as the existing state."
+}

@@ -1,0 +1,17 @@
+{
+  "ref": "B345",
+  "descriptionEn": [
+    "Commercial building for rent with an area of 3034 m², located in Aktash, Prishtina.",
+    "The building has full infrastructure, direct road access and is suitable for various business activities.",
+    "Layout of the building:\nBasement + Semi-basement + Ground floor + 5 floors",
+    "The building is located in an area with good traffic flow and close to public and private services.",
+    "Rent: by agreement."
+  ],
+  "images": [
+    { "file": "01.jpg", "kind": "building", "overlay": "text", "reason": "headline \"OBJEKT ME QIRA\", location label \"AKTASH, PRISHTINË\" and size label \"3034 m²\"; building outlined" },
+    { "file": "02.jpg", "kind": "building", "overlay": "brand", "reason": "logo, website footer and yellow outline around the building only" },
+    { "file": "03.jpg", "kind": "building", "overlay": "brand", "reason": "logo, website footer and yellow outline around the building only" },
+    { "file": "04.jpg", "kind": "building", "overlay": "brand", "reason": "logo, website footer and yellow outline around the building only" }
+  ],
+  "notes": "Caption gives the layout as 'Bodrum + Suterine + Perdhes + 5 kate'; totalFloors left null because the count depends on how basement levels are counted."
+}

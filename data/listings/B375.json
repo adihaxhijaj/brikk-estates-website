@@ -1,0 +1,27 @@
+{
+  "ref": "B375",
+  "descriptionEn": [
+    "House for sale with an area of 400m², located on Rruga Sali Butka, in Taslixhe, Prishtina. The house is positioned on a plot of 2 ares and consists of four residential floors, as well as a basement with direct access to the yard.",
+    "On the ground floor there are a reception room, a separate kitchen, one bathroom and a balcony overlooking the yard.",
+    "The first floor consists of a family living room and one bedroom with a balcony, also overlooking the yard.",
+    "On the second floor there are three bedrooms, one bathroom and two balconies, accessed from the rooms.",
+    "The third floor, arranged in the roof space, contains a separate room with an open view towards the city of Prishtina.",
+    "In total, the house has two living rooms, a separate kitchen, five bedrooms, two bathrooms, five balconies and a basement. The property needs partial renovation, offering the opportunity to adapt the spaces to the needs and style of the new owner.",
+    "The house has an ownership certificate and regular documentation.",
+    "The price of the property is €270,000, or €675/m².\nCompensation with a car or an apartment in Prishtina is also accepted, by agreement."
+  ],
+  "valuesEn": { "tradeIn": "a car or an apartment in Prishtina" },
+  "images": [
+    { "file": "01.jpg", "kind": "living", "overlay": "brand", "reason": "logo and decorative frame shape only; framed landscape picture on the wall, no people" },
+    { "file": "02.jpg", "kind": "kitchen", "overlay": "brand", "reason": "logo and decorative frame shape only" },
+    { "file": "03.jpg", "kind": "living", "overlay": "brand", "reason": "logo and decorative frame shape only" },
+    { "file": "04.jpg", "kind": "interior", "overlay": "brand", "reason": "room with balcony door; logo and decorative frame shape only" },
+    { "file": "05.jpg", "kind": "bedroom", "overlay": "brand", "reason": "logo and decorative frame shape only" },
+    { "file": "06.jpg", "kind": "bedroom", "overlay": "brand", "reason": "logo and decorative frame shape only" },
+    { "file": "07.jpg", "kind": "interior", "overlay": "brand", "reason": "empty attic room; logo and decorative frame shape only" },
+    { "file": "08.jpg", "kind": "bedroom", "overlay": "brand", "reason": "attic room with stair railing; logo and decorative frame shape only" },
+    { "file": "09.jpg", "kind": "interior", "overlay": "brand", "reason": "unfinished basement; logo and decorative frame shape only" },
+    { "file": "10.jpg", "kind": "yard", "overlay": "brand", "reason": "logo and decorative frame shape only" }
+  ],
+  "notes": "Caption says 'katër kate banimi, si dhe podrumi' (four residential floors plus basement); totalFloors left null because it is unclear whether the basement should count. Bedrooms (5) and bathrooms (2) are stated as totals in the caption ('Në total…'), not summed."
+}

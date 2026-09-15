@@ -1,0 +1,22 @@
+{
+  "ref": "B310",
+  "descriptionEn": [
+    "A house is offered for rent in Marigona Residence, near Prishtina.",
+    "The house is located in an elite, family-oriented neighbourhood, quiet and safe, with easy access to schools, markets and everyday services. The space has a living room, kitchen, two bedrooms, bathroom and WC, a green yard and reserved parking.",
+    "The property has a total area of 137m², is furnished in a modern style and ready to move into, with natural light in all rooms. It is suitable for long-term living, ideal for families or couples, and offers easy access to every part of the city.",
+    "Price by agreement."
+  ],
+  "images": [
+    { "file": "01.jpg", "kind": "exterior", "overlay": "text", "reason": "cover headline “SHTËPI ME QIRA – MARIGONA RESIDENCE, PRISHTINË”" },
+    { "file": "02.jpg", "kind": "living", "overlay": "brand" },
+    { "file": "03.jpg", "kind": "kitchen", "overlay": "brand" },
+    { "file": "04.jpg", "kind": "bedroom", "overlay": "brand" },
+    { "file": "05.jpg", "kind": "bedroom", "overlay": "brand" },
+    { "file": "06.jpg", "kind": "bedroom", "overlay": "brand" },
+    { "file": "07.jpg", "kind": "bedroom", "overlay": "brand" },
+    { "file": "08.jpg", "kind": "bathroom", "overlay": "brand", "reason": "WC with washing machine" },
+    { "file": "09.jpg", "kind": "bathroom", "overlay": "brand" },
+    { "file": "10.jpg", "kind": "yard", "overlay": "brand" }
+  ],
+  "notes": "Caption says “pranë Prishtinës” (near Prishtina); city Prishtinë comes from the company profile and the cover graphic label “MARIGONA RESIDENCE, PRISHTINË”. Caption ID line reads “ID: 310” (missing B). 'banjo dhe WC' has no numerals, so bathrooms/wc left null. A different house from B314 (also Marigona Residence, different photos and layout)."
+}

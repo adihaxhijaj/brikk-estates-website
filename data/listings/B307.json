@@ -1,0 +1,30 @@
+{
+  "ref": "B307",
+  "descriptionEn": [
+    "Apartments are offered for sale in Ulcinj, along Boulevard Teuta, in the complex built by ACE Group.",
+    "The apartments range in size from 47m² to 75m² and include 1–2 bedrooms, open terraces and functional floor plans, offering natural light and carefully thought-out spaces. The construction is carried out to a high quality by ACE Group, a well-known builder, while the strategic location offers easy access to the sea and the city centre.",
+    "This complex is ideal for holidays by the sea, quiet and comfortable living, or as an investment with guaranteed return potential.",
+    "Price: €2,100/m²."
+  ],
+  "extraCaptionsEn": [
+    [
+      "The apartments on Boulevard Teuta offer functional spaces and terraces with open views, naturally lit throughout the day. Every detail has been designed for comfort and comfortable living, making this property ideal for holidays by the sea or as an investment with a secure return."
+    ],
+    [
+      "The location of the complex is strategic, close to the sea and the city centre, allowing easy access to services and attractions. With quality construction and modern design, these apartments offer a unique opportunity for quiet and pleasant living in Ulcinj."
+    ]
+  ],
+  "images": [
+    { "file": "01.jpg", "kind": "render", "overlay": "text", "reason": "building render with headline “BANESA NË SHITJE – ULQIN, MALI I ZI”" },
+    { "file": "02.jpg", "kind": "floorplan", "overlay": "text", "reason": "floor-plan card “TIPI 1 61.74 m²” with room areas" },
+    { "file": "03.jpg", "kind": "floorplan", "overlay": "text", "reason": "floor-plan card “TIPI 2 47.47 m²” with room areas" },
+    { "file": "04.jpg", "kind": "floorplan", "overlay": "text", "reason": "floor-plan card “TIPI 4 47.47 m²” with room areas" },
+    { "file": "05.jpg", "kind": "floorplan", "overlay": "text", "reason": "floor-plan card “TIPI 5 74.54 m²” with room areas" },
+    { "file": "06.jpg", "kind": "render", "overlay": "brand" },
+    { "file": "07.jpg", "kind": "render", "overlay": "brand" }
+  ],
+  "overrides": {
+    "street": { "value": "Boulevard Teuta", "evidence": ["përgjatë Boulevard Teuta"], "note": "street named in the caption title and body; parser did not pick it up" }
+  },
+  "notes": "Multi-unit project listing. Floor-plan cards show Tipi 1 61.74 m² (2 bedrooms), Tipi 2 47.47 m² (1 bedroom), Tipi 4 47.47 m² (1 bedroom), Tipi 5 74.54 m² (2 bedrooms, bathroom + WC, 3 terraces) — consistent with the caption's 47–75 m² and 1–2 bedrooms. Cards 03 (Tipi 2) and 04 (Tipi 4) show the identical plan and identical room areas; possibly a duplicated card. No Tipi 3 card. CSV size 47 m² is the minimum of the range. Images 01/06/07 are renders (project likely under construction), but the caption does not state new build or completion, so those fields are left null. Legal flag: the caption promises “potencial kthimi të garantuar” (guaranteed return potential) and the extra caption “kthim të sigurt” (secure return) — translated faithfully, but the maintainer may want to review these investment-return claims."
+}

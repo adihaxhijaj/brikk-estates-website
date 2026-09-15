@@ -1,0 +1,27 @@
+{
+  "ref": "B335",
+  "descriptionEn": [
+    "An apartment of 94.35 m² is offered for sale, located on Rruga Zahir Pajaziti, Fushë Kosovë.\nBuilt by Tehno Home.",
+    "It has the following layout of interior spaces: living room, kitchen, 2 bedrooms, one bathroom, one WC and 2 balconies. The apartment also has approximately 66 m² of terrace, which is not included in the technical plan.",
+    "It is located on the 4th floor.",
+    "The contract is signed at the notary directly with the construction company.\nThe works will be completed in June 2026.",
+    "The heating system is electric underfloor heating.",
+    "The apartment is located in a developed area, near public and private services.",
+    "Price by agreement."
+  ],
+  "valuesEn": { "completion": "June 2026" },
+  "images": [
+    { "file": "01.jpg", "kind": "floorplan", "overlay": "text", "reason": "3D floor-plan card with size label \"94.35m2\"" },
+    { "file": "02.jpg", "kind": "render", "overlay": "brand" },
+    { "file": "03.jpg", "kind": "render", "overlay": "brand" },
+    { "file": "04.jpg", "kind": "render", "overlay": "brand" }
+  ],
+  "overrides": {
+    "completion": {
+      "value": "Qershor 2026",
+      "evidence": ["Punimet perfundojne ne Qershor 2026"],
+      "note": "completion date stated explicitly; parser missed it"
+    }
+  },
+  "notes": "Terrace of about 66 m² is approximate (\"rreth 66 m²\") and stated as not included in the technical plan. Size on floor-plan card (94.35m2) matches the caption. Building renders 02–04 are the same Tehno Home renders as B334 (Rruga Pajazit Islami)."
+}

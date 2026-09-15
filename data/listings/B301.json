@@ -1,0 +1,23 @@
+{
+  "ref": "B301",
+  "descriptionEn": [
+    "A duplex with an area of 200m² is offered for rent in Pejton, Prishtina.",
+    "The duplex is designed in a modern style with quality materials, offering a comfortable and functional environment. The space includes a spacious living room with a decorative fireplace, a kitchen fully equipped with contemporary appliances and a dining area, three bedrooms and three bathrooms fitted with luxury elements, including a sauna and jacuzzi.",
+    "Large windows provide abundant natural light and an open view over the city, while the duplex layout with a modern staircase creates a good separation of spaces.",
+    "The property also offers a dedicated garage or parking space.",
+    "The location is very favourable, near institutions and shopping centres, in one of the most sought-after areas of Prishtina.",
+    "Price by agreement."
+  ],
+  "images": [
+    { "file": "01.jpg", "kind": "living", "overlay": "text", "reason": "cover headline “DUPLEX PREMIUM ME QIRA – PEJTON, PRISHTINË”" },
+    { "file": "02.jpg", "kind": "living", "overlay": "brand" },
+    { "file": "03.jpg", "kind": "kitchen", "overlay": "brand" },
+    { "file": "04.jpg", "kind": "dining", "overlay": "brand" },
+    { "file": "05.jpg", "kind": "interior", "overlay": "brand", "reason": "desk/study area" },
+    { "file": "06.jpg", "kind": "interior", "overlay": "brand", "reason": "billiard area near the staircase" },
+    { "file": "07.jpg", "kind": "stairs", "overlay": "brand" },
+    { "file": "08.jpg", "kind": "bedroom", "overlay": "brand" },
+    { "file": "09.jpg", "kind": "bathroom", "overlay": "brand" },
+    { "file": "10.jpg", "kind": "bathroom", "overlay": "brand", "reason": "jacuzzi with city view" }
+  ]
+}

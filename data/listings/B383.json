@@ -1,0 +1,25 @@
+{
+  "ref": "B383",
+  "descriptionEn": [
+    "Offered for sale: an apartment with an area of 95.58m², located on Rruga Dardania, near the former Active Home, now Eli-Ab, only about 2 minutes from the Kastrati petrol station.",
+    "The apartment was built by Britania Homes, is located on the 7th floor and the building has two functioning elevators. It faces East and is fully furnished in a modern style.",
+    "The layout of the apartment consists of a living room with kitchen, two bedrooms, one bathroom, a storage room and a balcony.\nThe property has electric underfloor heating and air conditioning.",
+    "The apartment has an ownership certificate, while the sale contract is signed at the notary.",
+    "Price: Contact us for the price."
+  ],
+  "valuesEn": { "landmark": "near the former Active Home, now Eli-Ab" },
+  "images": [
+    { "file": "01.jpg", "kind": "living", "overlay": "text", "exclude": true, "reason": "three framed family photos on the wall with clearly recognisable faces; cover also carries label \"Rruga Dardania, Fushë Kosovë.\" and \"Kontakto për çmim\"" },
+    { "file": "02.jpg", "kind": "dining", "overlay": "brand", "reason": "dining table with kitchen behind" },
+    { "file": "03.jpg", "kind": "kitchen", "overlay": "brand" },
+    { "file": "04.jpg", "kind": "bedroom", "overlay": "brand" },
+    { "file": "05.jpg", "kind": "bedroom", "overlay": "brand" },
+    { "file": "06.jpg", "kind": "bedroom", "overlay": "brand", "exclude": true, "reason": "large framed portrait of two children on the wall, faces clearly recognisable" },
+    { "file": "07.jpg", "kind": "bathroom", "overlay": "brand" },
+    { "file": "08.jpg", "kind": "balcony", "overlay": "brand" }
+  ],
+  "overrides": {
+    "landmark": { "value": "pranë ish-Active Home, tani Eli-Ab", "evidence": ["pranë ish-Active Home, tani Eli-Ab"], "note": "proximity landmark stated explicitly in the caption" }
+  },
+  "notes": "Cover 01.jpg excluded (family photos), so the gallery starts with 02.jpg; the living room is not shown in any other photo. 01.jpg text matches the caption (street, price on request)."
+}

@@ -1,0 +1,14 @@
+{
+  "ref": "B382",
+  "descriptionEn": [
+    "40 ares of land are offered for sale, located about 3 km from the beach of Tale.",
+    "The property has a cadastrally registered road and access to all basic services.",
+    "There is also the option of dividing it into plots of 5 ares, making it suitable both for a larger investment and for individual plots.",
+    "The price is €3,500 per are.\nTotal price for 40 ares: €140,000"
+  ],
+  "images": [
+    { "file": "01.jpg", "kind": "aerial", "overlay": "text", "reason": "coastal aerial with label \"Tale, Shqipëri\", \"40 ARI\" and price 140,000€ (matches caption)" },
+    { "file": "02.jpg", "kind": "aerial", "overlay": "brand", "reason": "drone view with the plot boundary outlined in yellow; watermark and footer only, no copy" }
+  ],
+  "notes": "01.jpg is a wide coastal aerial of the Tale area, not a view of the plot itself."
+}

@@ -1,0 +1,19 @@
+{
+  "ref": "B370",
+  "descriptionEn": [
+    "On Rruga Gazmend Zajmi, within the Puhiza complex, an apartment suitable for quiet and comfortable living is offered for rent.",
+    "The apartment is located on the 5th floor and has a practical layout for everyday life: living room with kitchen, one bedroom, one bathroom and a balcony.",
+    "The space is comfortable and well organised, suitable for one person or a couple looking for an apartment in a quiet location, with good access to the city.",
+    "The apartment also has a garage for a car.",
+    "Key details:",
+    "Location: Rr. Gazmend Zajmi, Prishtina\nComplex: Puhiza\nFloor: 5\nLayout: living room with kitchen, 1 bedroom, 1 bathroom, balcony\nGarage: yes\nPrice: €500 / month"
+  ],
+  "images": [
+    { "file": "01.jpg", "kind": "living-kitchen", "overlay": "brand", "reason": "logo and small script tagline \"E menduar për jetë.\" only" },
+    { "file": "02.jpg", "kind": "dining", "overlay": "brand", "reason": "logo and small script tagline only" },
+    { "file": "03.jpg", "kind": "kitchen", "overlay": "brand", "reason": "logo and small script tagline only" },
+    { "file": "04.jpg", "kind": "bedroom", "overlay": "brand", "reason": "logo and small script tagline only" },
+    { "file": "05.jpg", "kind": "bathroom", "overlay": "brand", "reason": "logo and small script tagline only" },
+    { "file": "06.jpg", "kind": "view", "overlay": "brand", "reason": "view from the balcony; logo and small script tagline only" }
+  ]
+}

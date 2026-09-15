@@ -1,0 +1,19 @@
+{
+  "ref": "B350",
+  "descriptionEn": [
+    "Apartment for sale with an area of 55 m², located in Fushë Kosovë, on Rruga “Hamdi Grajqevci”, in the Eliza B complex.",
+    "The apartment faces east and has the following layout of interior spaces: living room with kitchen, one bedroom, one bathroom and a balcony.",
+    "The heating system is powered by electricity and the apartment is equipped with air conditioning.",
+    "The building in which the apartment is located has an elevator and has parking space.",
+    "The apartment is located in a sought-after area, with infrastructure nearby, making this location suitable for living / investment.",
+    "Price by agreement"
+  ],
+  "images": [
+    { "file": "01.jpg", "kind": "building", "overlay": "text", "reason": "headline \"BANESË NË SHITJE\" and location label \"HAMDI GRAJQEVCI, FUSHË KOSOVË\"; one tiny unrecognisable passer-by far in the background, kept" },
+    { "file": "02.jpg", "kind": "living", "overlay": "brand", "reason": "empty room" },
+    { "file": "03.jpg", "kind": "hallway", "overlay": "brand" },
+    { "file": "04.jpg", "kind": "interior", "overlay": "brand", "reason": "empty room" },
+    { "file": "05.jpg", "kind": "balcony", "overlay": "brand" },
+    { "file": "06.jpg", "kind": "bathroom", "overlay": "brand" }
+  ]
+}

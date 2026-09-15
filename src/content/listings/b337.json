@@ -1,0 +1,160 @@
+{
+  "ref": "B337",
+  "slugSq": "b337-duplex-ne-shitje-prishtine",
+  "slugEn": "b337-duplex-for-sale-prishtine",
+  "postedAt": "2026-01-09",
+  "instagramUrl": "https://www.instagram.com/p/DTSnLfQDWhx/",
+  "deal": "sale",
+  "type": "duplex",
+  "multipleUnits": false,
+  "titleSq": "Duplex në shitje në Mati 1, Prishtinë",
+  "titleEn": "Duplex for sale in Mati 1, Prishtina",
+  "city": "Prishtinë",
+  "cityEn": "Prishtina",
+  "neighbourhood": "Mati 1",
+  "neighbourhoodLoc": "Mati 1",
+  "street": null,
+  "complex": "Izzy",
+  "landmark": null,
+  "landmarkEn": null,
+  "country": "XK",
+  "developer": "Izzy SH.P.K.",
+  "isNewBuild": true,
+  "completion": null,
+  "completionEn": null,
+  "areaNet": 112.86,
+  "areaApprox": false,
+  "areaTerrace": null,
+  "plotAres": null,
+  "floor": 1,
+  "floorTo": 2,
+  "totalFloors": null,
+  "orientation": "SE",
+  "bedrooms": 2,
+  "bathrooms": 3,
+  "wc": null,
+  "livingWithKitchen": null,
+  "storage": true,
+  "balcony": true,
+  "features": [
+    "electric-heating",
+    "garage"
+  ],
+  "legal": {
+    "ownershipCertificate": null,
+    "notaryContract": true,
+    "contractViaLawyer": null,
+    "inLegalisation": null,
+    "contractWithDeveloper": true
+  },
+  "price": null,
+  "pricePerM2": 1500,
+  "pricePerAre": null,
+  "priceOnRequest": false,
+  "rentMonthly": null,
+  "deposit": null,
+  "minContractMonths": null,
+  "extras": {
+    "financing": null,
+    "installments": null,
+    "tradeIn": null,
+    "tenanted": null,
+    "rentalIncome": null,
+    "garageOptional": null,
+    "tradeInEn": null
+  },
+  "aiVisualisation": false,
+  "aiDisclaimerSq": null,
+  "aiDisclaimerEn": null,
+  "status": "unconfirmed",
+  "hidden": false,
+  "descriptionSq": [
+    "Ofrohet per shitje duplex me siperfaqe 112.86 m², me lokacion ne lagjen Kodrina, Mati 1, Prishtine.\nKompleksi Izzy, ndertues Izzy SH.P.K.",
+    "Banesa ka orientim Jug-Lindje dhe ka kete renditje te hapesirave te brendshme: qendrim ditor, kuzhine, dy dhoma gjumi, 3 banjo, depo dhe nje ballkon.\nNdodhet ne katin e 1 & 2.\nKontrata behet tek noteri direkt me kompanine ndertuese.",
+    "Sistemi i ngrohjes eshte me rryme elektrike.",
+    "Banesa ndodhet ne nje zone me potencial zhvillimi, afer sherbimeve publike dhe private.\nPo ashtu ne cmim perfshihet edhe nje garazhe private.",
+    "Cmimi: 1500 €/m²"
+  ],
+  "descriptionEn": [
+    "A duplex of 112.86 m² is offered for sale, located in the Kodrina neighbourhood, Mati 1, Prishtina.\nIzzy complex, builder Izzy SH.P.K.",
+    "The apartment faces South-East and has the following layout of interior spaces: living room, kitchen, two bedrooms, 3 bathrooms, a storage room and one balcony.\nIt is located on floors 1 & 2.\nThe contract is signed at the notary directly with the construction company.",
+    "The heating system uses electricity.",
+    "The apartment is located in an area with development potential, near public and private services.\nA private garage is also included in the price.",
+    "Price: €1,500/m²"
+  ],
+  "descriptionEnIsTranslation": true,
+  "extraCaptions": [],
+  "images": [
+    {
+      "src": "../../assets/listings/b337/04.jpg",
+      "file": "04.jpg",
+      "width": 1620,
+      "height": 1080,
+      "kind": "render",
+      "overlay": "brand",
+      "hasTextOverlay": false,
+      "altSq": "Vizualizim, duplex në shitje në Mati 1, Prishtinë, Ref B337 (1/5)",
+      "altEn": "Visualisation, duplex for sale in Mati 1, Prishtina, Ref B337 (1/5)"
+    },
+    {
+      "src": "../../assets/listings/b337/05.jpg",
+      "file": "05.jpg",
+      "width": 1620,
+      "height": 1080,
+      "kind": "render",
+      "overlay": "brand",
+      "hasTextOverlay": false,
+      "altSq": "Vizualizim, duplex në shitje në Mati 1, Prishtinë, Ref B337 (2/5)",
+      "altEn": "Visualisation, duplex for sale in Mati 1, Prishtina, Ref B337 (2/5)"
+    },
+    {
+      "src": "../../assets/listings/b337/01.jpg",
+      "file": "01.jpg",
+      "width": 1620,
+      "height": 1080,
+      "kind": "render",
+      "overlay": "text",
+      "hasTextOverlay": true,
+      "altSq": "Vizualizim, duplex në shitje në Mati 1, Prishtinë, Ref B337 (3/5)",
+      "altEn": "Visualisation, duplex for sale in Mati 1, Prishtina, Ref B337 (3/5)"
+    },
+    {
+      "src": "../../assets/listings/b337/02.jpg",
+      "file": "02.jpg",
+      "width": 1620,
+      "height": 1080,
+      "kind": "floorplan",
+      "overlay": "text",
+      "hasTextOverlay": true,
+      "altSq": "Planimetria, duplex në shitje në Mati 1, Prishtinë, Ref B337 (4/5)",
+      "altEn": "Floor plan, duplex for sale in Mati 1, Prishtina, Ref B337 (4/5)"
+    },
+    {
+      "src": "../../assets/listings/b337/03.jpg",
+      "file": "03.jpg",
+      "width": 1620,
+      "height": 1080,
+      "kind": "floorplan",
+      "overlay": "text",
+      "hasTextOverlay": true,
+      "altSq": "Planimetria, duplex në shitje në Mati 1, Prishtinë, Ref B337 (5/5)",
+      "altEn": "Floor plan, duplex for sale in Mati 1, Prishtina, Ref B337 (5/5)"
+    }
+  ],
+  "coverIndex": 0,
+  "provenance": {
+    "overridden": {
+      "developer": {
+        "from": "Izzy",
+        "to": "Izzy SH.P.K.",
+        "evidence": [
+          "ndertues Izzy SH.P.K."
+        ],
+        "note": "full builder name as stated in the caption"
+      }
+    },
+    "warnings": [],
+    "reviewedImages": true,
+    "translated": true
+  }
+}

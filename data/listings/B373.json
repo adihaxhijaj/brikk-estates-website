@@ -1,0 +1,22 @@
+{
+  "ref": "B373",
+  "descriptionEn": [
+    "Apartment for sale with an area of 88.54m², located in Fushë Kosovë, on Rruga Rexhep Hasani / 11 Marsi, a practical location for everyday living with good access to services.",
+    "The apartment is located on the 5th floor and faces east, giving the space good natural light during the first part of the day.",
+    "The space is well organised for family living and consists of a living room with kitchen, two bedrooms, a storage room and a balcony. The layout makes the apartment suitable for personal living, but also as an investment opportunity in Fushë Kosovë.",
+    "An important advantage is that the apartment has an ownership certificate, making the purchase process clearer and more secure for the buyer.",
+    "The price of the property is €77,000."
+  ],
+  "images": [
+    { "file": "01.jpg", "kind": "living-kitchen", "overlay": "brand", "reason": "logo and small script tagline \"E menduar për jetë.\" only" },
+    { "file": "02.jpg", "kind": "living", "overlay": "brand", "reason": "logo and small script tagline only" },
+    { "file": "03.jpg", "kind": "kitchen", "overlay": "brand", "reason": "logo and small script tagline only" },
+    { "file": "04.jpg", "kind": "kitchen", "overlay": "brand", "reason": "logo and small script tagline only" },
+    { "file": "05.jpg", "kind": "balcony", "overlay": "brand", "reason": "logo and small script tagline only" },
+    { "file": "06.jpg", "kind": "bedroom", "overlay": "brand", "reason": "logo and small script tagline only" },
+    { "file": "07.jpg", "kind": "bedroom", "overlay": "brand", "reason": "logo and small script tagline only" },
+    { "file": "08.jpg", "kind": "hallway", "overlay": "brand", "reason": "logo and small script tagline only" },
+    { "file": "09.jpg", "kind": "bathroom", "overlay": "brand", "reason": "logo and small script tagline only" }
+  ],
+  "notes": "The caption does not mention a bathroom although 09.jpg shows one; bathrooms left null (not inferred from photos)."
+}

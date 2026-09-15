@@ -1,0 +1,227 @@
+{
+  "ref": "B315",
+  "slugSq": "b315-shtepi-me-qira-prishtine",
+  "slugEn": "b315-house-for-rent-prishtine",
+  "postedAt": "2025-11-18",
+  "instagramUrl": "https://www.instagram.com/p/DRNAsS1Cg3t/",
+  "deal": "rent",
+  "type": "house",
+  "multipleUnits": false,
+  "titleSq": "Shtëpi me qira në Veternik, Prishtinë",
+  "titleEn": "House for rent in Veternik, Prishtina",
+  "city": "Prishtinë",
+  "cityEn": "Prishtina",
+  "neighbourhood": "Veternik",
+  "neighbourhoodLoc": "Veternik",
+  "street": null,
+  "complex": null,
+  "landmark": null,
+  "landmarkEn": null,
+  "country": "XK",
+  "developer": null,
+  "isNewBuild": null,
+  "completion": null,
+  "completionEn": null,
+  "areaNet": 135,
+  "areaApprox": false,
+  "areaTerrace": null,
+  "plotAres": null,
+  "floor": null,
+  "floorTo": null,
+  "totalFloors": null,
+  "orientation": null,
+  "bedrooms": 3,
+  "bathrooms": 2,
+  "wc": null,
+  "livingWithKitchen": true,
+  "storage": null,
+  "balcony": null,
+  "features": [
+    "furnished",
+    "security-24-7",
+    "gated-community",
+    "terrace",
+    "yard"
+  ],
+  "legal": {
+    "ownershipCertificate": null,
+    "notaryContract": null,
+    "contractViaLawyer": null,
+    "inLegalisation": null,
+    "contractWithDeveloper": null
+  },
+  "price": null,
+  "pricePerM2": null,
+  "pricePerAre": null,
+  "priceOnRequest": true,
+  "rentMonthly": null,
+  "deposit": null,
+  "minContractMonths": null,
+  "extras": {
+    "financing": null,
+    "installments": null,
+    "tradeIn": null,
+    "tenanted": null,
+    "rentalIncome": null,
+    "garageOptional": null,
+    "tradeInEn": null
+  },
+  "aiVisualisation": false,
+  "aiDisclaimerSq": null,
+  "aiDisclaimerEn": null,
+  "status": "unconfirmed",
+  "hidden": false,
+  "descriptionSq": [
+    "Ofrohet me qira shtëpi në Priam Village, Veternik.",
+    "Shtëpia ndodhet në një komunitet të mbyllur, të qetë dhe ekskluziv, me qasje vetëm për banorët dhe siguri 24/7. Lokacioni ofron akses të shpejtë në shërbime esenciale, rrugë lidhëse dhe pika strategjike referimi.",
+    "Hapësira prej 135m² përfshin qëndrim ditor me kuzhinë, tri dhoma gjumi, dy banjo, dhomë teknike, dy terasa dhe oborr privat prej 2.6 ari. Shtëpia është e mobiluar dhe ofron mundësi për mobilim të dy dhomave shtesë sipas dëshirës.",
+    "Objekti është ndërtuar me standarde moderne, në një lagje të mbyllur që garanton siguri, privatësi dhe oborr të gjerë funksional.",
+    "Çmimi sipas marrëveshjes."
+  ],
+  "descriptionEn": null,
+  "descriptionEnIsTranslation": true,
+  "extraCaptions": [
+    {
+      "url": "https://www.instagram.com/p/DRJ-hr-ijOU/",
+      "sq": [
+        "Shtëpi me Qira – Lagjja Priam, Veternik",
+        "Hapësirë funksionale dhe e ndërtuar me standard të lartë:\n• 135 m²\n• 2.60 ari oborr\n• 3 dhoma gjumi\n• 2 banjo\n• Sallon + kuzhinë\n• Dhomë teknike\n• 2 terasa",
+        "E mobiluar, me mundësi mobilimi të dy dhomave shtesë sipas kërkesës.\nLagje e mbyllur me qasje vetëm për banorët dhe siguri 24/7.",
+        "Çmimi: Sipas marrëveshjes"
+      ],
+      "en": null
+    }
+  ],
+  "images": [
+    {
+      "src": "../../assets/listings/b315/01.jpg",
+      "file": "01.jpg",
+      "width": 1440,
+      "height": 960,
+      "kind": "other",
+      "overlay": null,
+      "hasTextOverlay": null,
+      "altSq": "Fotografi e pronës, shtëpi me qira në Veternik, Prishtinë, Ref B315 (1/11)",
+      "altEn": "Property photo, house for rent in Veternik, Prishtina, Ref B315 (1/11)"
+    },
+    {
+      "src": "../../assets/listings/b315/02.jpg",
+      "file": "02.jpg",
+      "width": 1440,
+      "height": 960,
+      "kind": "other",
+      "overlay": null,
+      "hasTextOverlay": null,
+      "altSq": "Fotografi e pronës, shtëpi me qira në Veternik, Prishtinë, Ref B315 (2/11)",
+      "altEn": "Property photo, house for rent in Veternik, Prishtina, Ref B315 (2/11)"
+    },
+    {
+      "src": "../../assets/listings/b315/03.jpg",
+      "file": "03.jpg",
+      "width": 1440,
+      "height": 960,
+      "kind": "other",
+      "overlay": null,
+      "hasTextOverlay": null,
+      "altSq": "Fotografi e pronës, shtëpi me qira në Veternik, Prishtinë, Ref B315 (3/11)",
+      "altEn": "Property photo, house for rent in Veternik, Prishtina, Ref B315 (3/11)"
+    },
+    {
+      "src": "../../assets/listings/b315/04.jpg",
+      "file": "04.jpg",
+      "width": 1440,
+      "height": 960,
+      "kind": "other",
+      "overlay": null,
+      "hasTextOverlay": null,
+      "altSq": "Fotografi e pronës, shtëpi me qira në Veternik, Prishtinë, Ref B315 (4/11)",
+      "altEn": "Property photo, house for rent in Veternik, Prishtina, Ref B315 (4/11)"
+    },
+    {
+      "src": "../../assets/listings/b315/05.jpg",
+      "file": "05.jpg",
+      "width": 1440,
+      "height": 960,
+      "kind": "other",
+      "overlay": null,
+      "hasTextOverlay": null,
+      "altSq": "Fotografi e pronës, shtëpi me qira në Veternik, Prishtinë, Ref B315 (5/11)",
+      "altEn": "Property photo, house for rent in Veternik, Prishtina, Ref B315 (5/11)"
+    },
+    {
+      "src": "../../assets/listings/b315/06.jpg",
+      "file": "06.jpg",
+      "width": 1440,
+      "height": 960,
+      "kind": "other",
+      "overlay": null,
+      "hasTextOverlay": null,
+      "altSq": "Fotografi e pronës, shtëpi me qira në Veternik, Prishtinë, Ref B315 (6/11)",
+      "altEn": "Property photo, house for rent in Veternik, Prishtina, Ref B315 (6/11)"
+    },
+    {
+      "src": "../../assets/listings/b315/07.jpg",
+      "file": "07.jpg",
+      "width": 1440,
+      "height": 960,
+      "kind": "other",
+      "overlay": null,
+      "hasTextOverlay": null,
+      "altSq": "Fotografi e pronës, shtëpi me qira në Veternik, Prishtinë, Ref B315 (7/11)",
+      "altEn": "Property photo, house for rent in Veternik, Prishtina, Ref B315 (7/11)"
+    },
+    {
+      "src": "../../assets/listings/b315/08.jpg",
+      "file": "08.jpg",
+      "width": 1440,
+      "height": 960,
+      "kind": "other",
+      "overlay": null,
+      "hasTextOverlay": null,
+      "altSq": "Fotografi e pronës, shtëpi me qira në Veternik, Prishtinë, Ref B315 (8/11)",
+      "altEn": "Property photo, house for rent in Veternik, Prishtina, Ref B315 (8/11)"
+    },
+    {
+      "src": "../../assets/listings/b315/09.jpg",
+      "file": "09.jpg",
+      "width": 1440,
+      "height": 960,
+      "kind": "other",
+      "overlay": null,
+      "hasTextOverlay": null,
+      "altSq": "Fotografi e pronës, shtëpi me qira në Veternik, Prishtinë, Ref B315 (9/11)",
+      "altEn": "Property photo, house for rent in Veternik, Prishtina, Ref B315 (9/11)"
+    },
+    {
+      "src": "../../assets/listings/b315/10.jpg",
+      "file": "10.jpg",
+      "width": 1440,
+      "height": 960,
+      "kind": "other",
+      "overlay": null,
+      "hasTextOverlay": null,
+      "altSq": "Fotografi e pronës, shtëpi me qira në Veternik, Prishtinë, Ref B315 (10/11)",
+      "altEn": "Property photo, house for rent in Veternik, Prishtina, Ref B315 (10/11)"
+    },
+    {
+      "src": "../../assets/listings/b315/11_video-cover.jpg",
+      "file": "11_video-cover.jpg",
+      "width": 1080,
+      "height": 1920,
+      "kind": "other",
+      "overlay": null,
+      "hasTextOverlay": null,
+      "altSq": "Fotografi e pronës, shtëpi me qira në Veternik, Prishtinë, Ref B315 (11/11)",
+      "altEn": "Property photo, house for rent in Veternik, Prishtina, Ref B315 (11/11)"
+    }
+  ],
+  "coverIndex": 0,
+  "provenance": {
+    "overridden": {},
+    "warnings": [
+      "city \"Prishtinë\" taken from company profile §5 (caption names only Veternik)"
+    ],
+    "reviewedImages": false,
+    "translated": false
+  }
+}

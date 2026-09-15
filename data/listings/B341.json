@@ -1,0 +1,14 @@
+{
+  "ref": "B341",
+  "descriptionEn": [
+    "Land for sale with an area of 37.28 ares, located in Henc, Fushë Kosovë.",
+    "The land has full infrastructure: road access, water supply, sewage, as well as an electricity connection.",
+    "It comes with an ownership certificate and the contract is signed at the notary.",
+    "The land is located in a quiet residential area, ideal for low-rise residential construction.",
+    "Price: by agreement."
+  ],
+  "images": [
+    { "file": "01.jpg", "kind": "aerial", "overlay": "text", "reason": "headline \"TOKË NË SHITJE\" and location label \"HENC, FUSHË KOSOVË\"; plot outlined" },
+    { "file": "02.jpg", "kind": "aerial", "overlay": "text", "reason": "plot outlined with \"37ARI\" size label" }
+  ]
+}

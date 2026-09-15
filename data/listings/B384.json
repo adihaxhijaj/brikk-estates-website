@@ -1,0 +1,18 @@
+{
+  "ref": "B384",
+  "descriptionEn": [
+    "Offered for sale: land with an area of 118 ares, suitable for a warehouse, factory or various business activities.",
+    "The property has direct road access and about 24 metres of frontage. The land is sold only as a whole and is not divided.",
+    "All basic utilities for development are accessible, including electricity, water and sewerage.",
+    "The property has an ownership certificate and there is the possibility of obtaining a building permit for various buildings, depending on the project and the relevant procedures.",
+    "It is located about 8 km from the Municipality of Lipjan.",
+    "Price: €2,000/are\nTotal price: €236,000"
+  ],
+  "aiDisclaimerEn": "Note: This image was generated with artificial intelligence (AI) and serves only as a conceptual visualisation of how a future investment on this property could look. The image does not represent an approved project or the existing condition.",
+  "images": [
+    { "file": "01.jpg", "kind": "aerial", "overlay": "text", "reason": "drone view with plot outlined in yellow and label \"Poturoc, Lipjan\", \"118 ARI\", \"2000 €/ARI\" (matches caption)" },
+    { "file": "02.jpg", "kind": "aerial", "overlay": "brand", "reason": "drone view with plot boundary outlined in yellow; watermark and footer only" },
+    { "file": "03.jpg", "kind": "render", "overlay": "text", "reason": "AI-generated concept of a warehouse complex; labelled \"Vizualizim konceptual me AI / ilustrim i potencialit të investimit të ardhshëm.\"" }
+  ],
+  "notes": "03.jpg is an AI concept visualisation (industrial/warehouse buildings) and must never be presented as the existing state; the caption carries the AI disclaimer. The caption text was posted twice in the source; the parser removed the duplicate."
+}

@@ -1,0 +1,18 @@
+{
+  "ref": "B331",
+  "descriptionEn": [
+    "A plot of 71 ares is offered for sale, located in Miradi e Epërme, Fushë Kosovë, in an industrial zone with high development potential.",
+    "The plot offers the possibility of building an industrial facility, warehouse/logistics or multifunctional business premises, according to the project one wishes to carry out.",
+    "The size of the plot allows the development of projects with a variety of uses. The plot has close access to the main roads and full infrastructure, including road, electricity, water and sewerage.",
+    "It comes with an ownership certificate and the purchase contract is signed at the notary.",
+    "The plot is located in a developed industrial zone of Fushë Kosovë, with close access to the main companies and industrial infrastructure, offering high investment potential and growth in value.",
+    "Price by agreement."
+  ],
+  "images": [
+    { "file": "01.jpg", "kind": "aerial", "overlay": "text", "reason": "plot outline, size label \"71 ARI\", headline \"TRUALL NË SHITJE\" and location \"MIRADI E EPËRME, FUSHË KOSOVË\"" },
+    { "file": "02.jpg", "kind": "aerial", "overlay": "brand", "reason": "plot outline drawn, no text" },
+    { "file": "03.jpg", "kind": "aerial", "overlay": "brand", "reason": "route line drawn, no text" },
+    { "file": "04.jpg", "kind": "aerial", "overlay": "text", "reason": "map pins labelled \"EuroLAB\" and \"SHELL\" and a \"1km\" route label" }
+  ],
+  "notes": "04.jpg shows EuroLAB and SHELL pins with a 1 km route label — these nearby points are not mentioned in the caption."
+}

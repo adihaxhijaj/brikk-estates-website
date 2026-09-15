@@ -1,0 +1,15 @@
+{
+  "ref": "B343",
+  "descriptionEn": [
+    "Land for sale with an area of 10.07 ares, located in Hajvali, Prishtina.",
+    "The land has full infrastructure: road access, water supply, sewage, as well as an electricity connection.",
+    "It comes with an ownership certificate and the contract is signed at the notary.",
+    "The land is located in a developed area with high potential for residential construction or for various activities.",
+    "Price: by agreement."
+  ],
+  "images": [
+    { "file": "01.jpg", "kind": "aerial", "overlay": "text", "reason": "headline \"TOKË NË SHITJE\" and location label \"VETERNIK, PRISHTINË\"; plot outlined" },
+    { "file": "02.jpg", "kind": "aerial", "overlay": "text", "reason": "plot outlined with \"10ARI\" size label" }
+  ],
+  "notes": "Location contradiction: the caption says Hajvali, Prishtinë, but the listing's own cover graphic (01.jpg) is labelled \"VETERNIK, PRISHTINË\". neighbourhood left at the caption value (Hajvali); maintainer should confirm with the agency."
+}

@@ -1,0 +1,174 @@
+{
+  "ref": "B383",
+  "slugSq": "b383-banese-ne-shitje-fushe-kosove",
+  "slugEn": "b383-apartment-for-sale-fushe-kosove",
+  "postedAt": "2026-08-26",
+  "instagramUrl": "https://www.instagram.com/p/DcgaBhOiv2N/",
+  "deal": "sale",
+  "type": "apartment",
+  "multipleUnits": false,
+  "titleSq": "Banesë në shitje në Fushë Kosovë",
+  "titleEn": "Apartment for sale in Fushë Kosovë",
+  "city": "Fushë Kosovë",
+  "cityEn": "Fushë Kosovë",
+  "neighbourhood": null,
+  "neighbourhoodLoc": null,
+  "street": "Rruga Dardania",
+  "complex": null,
+  "landmark": "pranë ish-Active Home, tani Eli-Ab",
+  "landmarkEn": "near the former Active Home, now Eli-Ab",
+  "country": "XK",
+  "developer": "Britania Homes",
+  "isNewBuild": null,
+  "completion": null,
+  "completionEn": null,
+  "areaNet": 95.58,
+  "areaApprox": false,
+  "areaTerrace": null,
+  "plotAres": null,
+  "floor": 7,
+  "floorTo": null,
+  "totalFloors": null,
+  "orientation": "E",
+  "bedrooms": 2,
+  "bathrooms": 1,
+  "wc": null,
+  "livingWithKitchen": true,
+  "storage": true,
+  "balcony": true,
+  "features": [
+    "underfloor-heating",
+    "electric-heating",
+    "air-conditioning",
+    "elevator",
+    "furnished"
+  ],
+  "legal": {
+    "ownershipCertificate": true,
+    "notaryContract": true,
+    "contractViaLawyer": null,
+    "inLegalisation": null,
+    "contractWithDeveloper": null
+  },
+  "price": null,
+  "pricePerM2": null,
+  "pricePerAre": null,
+  "priceOnRequest": true,
+  "rentMonthly": null,
+  "deposit": null,
+  "minContractMonths": null,
+  "extras": {
+    "financing": null,
+    "installments": null,
+    "tradeIn": null,
+    "tenanted": null,
+    "rentalIncome": null,
+    "garageOptional": null,
+    "tradeInEn": null
+  },
+  "aiVisualisation": false,
+  "aiDisclaimerSq": null,
+  "aiDisclaimerEn": null,
+  "status": "unconfirmed",
+  "hidden": false,
+  "descriptionSq": [
+    "Ofrohet për shitje banesë me sipërfaqe prej 95.58m², e vendosur në Rrugën Dardania, pranë ish-Active Home, tani Eli-Ab, vetëm rreth 2 minuta larg pompës Kastrati.",
+    "Banesa është ndërtim nga Britania Homes, ndodhet në katin e 7-të dhe objekti ka dy lifta funksionalë. Ka orientim nga Lindja dhe është komplet e mobiluar me stil modern.",
+    "Organizimi i banesës përbëhet nga qëndrimi ditor me kuzhinë, dy dhoma gjumi, një banjo, depo dhe ballkon.\nProna posedon ngrohje elektrike nën dysheme dhe klimë.",
+    "Banesa ka fletë poseduese, ndërsa kontrata e shitblerjes realizohet te noteri.",
+    "Çmimi: Kontakto për çmimin."
+  ],
+  "descriptionEn": [
+    "Offered for sale: an apartment with an area of 95.58m², located on Rruga Dardania, near the former Active Home, now Eli-Ab, only about 2 minutes from the Kastrati petrol station.",
+    "The apartment was built by Britania Homes, is located on the 7th floor and the building has two functioning elevators. It faces East and is fully furnished in a modern style.",
+    "The layout of the apartment consists of a living room with kitchen, two bedrooms, one bathroom, a storage room and a balcony.\nThe property has electric underfloor heating and air conditioning.",
+    "The apartment has an ownership certificate, while the sale contract is signed at the notary.",
+    "Price: Contact us for the price."
+  ],
+  "descriptionEnIsTranslation": true,
+  "extraCaptions": [],
+  "images": [
+    {
+      "src": "../../assets/listings/b383/02.jpg",
+      "file": "02.jpg",
+      "width": 2730,
+      "height": 1820,
+      "kind": "dining",
+      "overlay": "brand",
+      "hasTextOverlay": false,
+      "altSq": "Tryezaria, banesë në shitje në Fushë Kosovë, Ref B383 (1/6)",
+      "altEn": "Dining area, apartment for sale in Fushë Kosovë, Ref B383 (1/6)"
+    },
+    {
+      "src": "../../assets/listings/b383/03.jpg",
+      "file": "03.jpg",
+      "width": 2730,
+      "height": 1820,
+      "kind": "kitchen",
+      "overlay": "brand",
+      "hasTextOverlay": false,
+      "altSq": "Kuzhina, banesë në shitje në Fushë Kosovë, Ref B383 (2/6)",
+      "altEn": "Kitchen, apartment for sale in Fushë Kosovë, Ref B383 (2/6)"
+    },
+    {
+      "src": "../../assets/listings/b383/04.jpg",
+      "file": "04.jpg",
+      "width": 2730,
+      "height": 1820,
+      "kind": "bedroom",
+      "overlay": "brand",
+      "hasTextOverlay": false,
+      "altSq": "Dhoma e gjumit, banesë në shitje në Fushë Kosovë, Ref B383 (3/6)",
+      "altEn": "Bedroom, apartment for sale in Fushë Kosovë, Ref B383 (3/6)"
+    },
+    {
+      "src": "../../assets/listings/b383/05.jpg",
+      "file": "05.jpg",
+      "width": 2730,
+      "height": 1820,
+      "kind": "bedroom",
+      "overlay": "brand",
+      "hasTextOverlay": false,
+      "altSq": "Dhoma e gjumit, banesë në shitje në Fushë Kosovë, Ref B383 (4/6)",
+      "altEn": "Bedroom, apartment for sale in Fushë Kosovë, Ref B383 (4/6)"
+    },
+    {
+      "src": "../../assets/listings/b383/07.jpg",
+      "file": "07.jpg",
+      "width": 2730,
+      "height": 1820,
+      "kind": "bathroom",
+      "overlay": "brand",
+      "hasTextOverlay": false,
+      "altSq": "Banjo, banesë në shitje në Fushë Kosovë, Ref B383 (5/6)",
+      "altEn": "Bathroom, apartment for sale in Fushë Kosovë, Ref B383 (5/6)"
+    },
+    {
+      "src": "../../assets/listings/b383/08.jpg",
+      "file": "08.jpg",
+      "width": 2730,
+      "height": 1820,
+      "kind": "balcony",
+      "overlay": "brand",
+      "hasTextOverlay": false,
+      "altSq": "Ballkoni, banesë në shitje në Fushë Kosovë, Ref B383 (6/6)",
+      "altEn": "Balcony, apartment for sale in Fushë Kosovë, Ref B383 (6/6)"
+    }
+  ],
+  "coverIndex": 0,
+  "provenance": {
+    "overridden": {
+      "landmark": {
+        "from": null,
+        "to": "pranë ish-Active Home, tani Eli-Ab",
+        "evidence": [
+          "pranë ish-Active Home, tani Eli-Ab"
+        ],
+        "note": "proximity landmark stated explicitly in the caption"
+      }
+    },
+    "warnings": [],
+    "reviewedImages": true,
+    "translated": true
+  }
+}

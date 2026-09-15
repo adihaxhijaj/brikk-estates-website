@@ -1,0 +1,23 @@
+{
+  "ref": "B305",
+  "descriptionEn": [
+    "A penthouse is offered for sale in Fushë Kosovë, with a living area of 96.67m² and a private terrace of 212.45m².",
+    "The penthouse is located on Rruga “Eqrem Qabej”, near Restaurant Nuari, in a developed and sought-after area, with quick access to services, markets, public transport and the city's main infrastructure.",
+    "The apartment offers a living room with kitchen, three bedrooms, two bathrooms and a large private terrace that provides a panorama, privacy and unique usable space. The garage is included in the property.",
+    "The penthouse has natural light throughout the day, quality construction and good maintenance, and is offered unfurnished, making it ready for personalisation according to preference. This property is suitable for families or individuals seeking urban comfort and ample space, with easy access to every part of the city.",
+    "Price: €160,000, with the possibility of financing through BKT Bank, and the contract is signed at the notary."
+  ],
+  "valuesEn": { "landmark": "near Restaurant Nuari" },
+  "images": [
+    { "file": "01.jpg", "kind": "building", "overlay": "text", "reason": "cover headline “PENTHOUSE NË SHITJE – RRUGA EQREM QABEJ, FUSHË KOSOVË”" },
+    { "file": "02.jpg", "kind": "terrace", "overlay": "brand" },
+    { "file": "03.jpg", "kind": "terrace", "overlay": "brand" },
+    { "file": "04.jpg", "kind": "terrace", "overlay": "brand", "reason": "terrace with city view" },
+    { "file": "05.jpg", "kind": "terrace", "overlay": "brand" },
+    { "file": "06.jpg", "kind": "interior", "overlay": "brand", "reason": "empty room" },
+    { "file": "07.jpg", "kind": "hallway", "overlay": "brand" },
+    { "file": "08.jpg", "kind": "interior", "overlay": "brand", "reason": "empty room" },
+    { "file": "09.jpg", "kind": "interior", "overlay": "brand", "reason": "empty room" },
+    { "file": "10.jpg", "kind": "interior", "overlay": "brand", "reason": "empty room" }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "ref": "B378",
+  "descriptionEn": [
+    "Offered for sale: an apartment with an area of 76m² net, located in the Apolonia A19 complex, on Rruga Hysen Xhakolli, near Kafe Plus Minus.",
+    "The apartment was built by “Tregtia”, is located on the 2nd floor and has a view of Rruga Dardania.",
+    "The property was originally laid out as a 2+1 apartment, but it has been redesigned as a 1+1 in collaboration with an architect, with a focus on creating larger and more comfortable spaces.",
+    "Currently, the apartment consists of a living room with kitchen, a main bedroom (Master Bedroom) with a separate dressing room (Walk-in Closet), one bathroom, one WC and a balcony.",
+    "The reorganisation of the floor plan has given the bedroom more space and functionality, while the integrated dressing room creates a cleaner and more practical division of the space.\nThe apartment is fully furnished and ready to move in.",
+    "The area of 76m² is net, while the property transfer process is carried out at the notary.\nThe price of the property is €91,200."
+  ],
+  "valuesEn": { "landmark": "near Kafe Plus Minus" },
+  "images": [
+    { "file": "01.jpg", "kind": "living", "overlay": "brand", "reason": "living room with dining table" },
+    { "file": "02.jpg", "kind": "living-kitchen", "overlay": "brand" },
+    { "file": "03.jpg", "kind": "kitchen", "overlay": "brand" },
+    { "file": "04.jpg", "kind": "dining", "overlay": "brand" },
+    { "file": "05.jpg", "kind": "bedroom", "overlay": "brand" },
+    { "file": "06.jpg", "kind": "bedroom", "overlay": "brand" },
+    { "file": "07.jpg", "kind": "interior", "overlay": "brand", "reason": "walk-in closet" },
+    { "file": "08.jpg", "kind": "balcony", "overlay": "brand" },
+    { "file": "09.jpg", "kind": "hallway", "overlay": "brand" },
+    { "file": "10.jpg", "kind": "bathroom", "overlay": "brand" }
+  ],
+  "notes": "City Fushë Kosovë is not named in the caption; the parser took it from the company profile street list (Rruga Hysen Xhakolli). Photos show the occupants' personal belongings (clothes, toys, stroller) but no people."
+}

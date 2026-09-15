@@ -1,0 +1,21 @@
+{
+  "ref": "B348",
+  "descriptionEn": [
+    "Apartment for rent located on Rruga Hysen Xhakolli, Fushë Kosovë.\nBuilt by Arditi Group.",
+    "It has the following layout of interior spaces: living room, kitchen, two bedrooms, one bathroom, one WC, one storage room and one balcony.",
+    "It is located on the 1st floor.",
+    "The heating system is electric underfloor heating.",
+    "The apartment is located in a developed area, close to public and private services.",
+    "Price: by agreement."
+  ],
+  "images": [
+    { "file": "01.jpg", "kind": "balcony", "overlay": "text", "reason": "headline \"BANESË ME QIRA\" and location label \"HYSEN XHAKOLLI, FUSHË KOSOVË\"" },
+    { "file": "02.jpg", "kind": "interior", "overlay": "brand", "reason": "empty room" },
+    { "file": "03.jpg", "kind": "kitchen", "overlay": "brand" },
+    { "file": "04.jpg", "kind": "interior", "overlay": "brand", "reason": "empty room" },
+    { "file": "05.jpg", "kind": "interior", "overlay": "brand", "reason": "empty room" },
+    { "file": "06.jpg", "kind": "bathroom", "overlay": "brand" },
+    { "file": "07.jpg", "kind": "bathroom", "overlay": "brand", "reason": "WC with washbasin" }
+  ],
+  "notes": "Caption is word-for-word identical to B347 (same street, developer, floor and layout; both posted 2026-01-19), but the photos are different (different kitchen orientation, different balcony view), so these appear to be two separate units in the same building rather than a repost. No size is stated."
+}

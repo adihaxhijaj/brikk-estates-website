@@ -1,0 +1,23 @@
+{
+  "ref": "B333",
+  "descriptionEn": [
+    "An apartment is offered for rent on Rruga Hysen Xhakolli, Fushë Kosovë",
+    "The apartment is located in the Apollonia A20 complex, built by the well-known company Tregtia, in a strategic location near the streets Besa Besë, Hysen Xhakolli and Rruga Dardania, as well as near markets, public institutions and the main services. The area is quiet, established and suitable for family living.",
+    "The space includes a living room, a kitchen, 2 bedrooms, a bathroom + WC and a balcony enclosed with folding glass panels with an open view. The apartment has abundant natural light, a functional layout, and the space is suitable for long-term living.",
+    "In addition, the apartment offers dedicated parking for residents, a secured corridor in front of the entrance and a balcony usable all year round.",
+    "Price by agreement."
+  ],
+  "images": [
+    { "file": "01.jpg", "kind": "aerial", "overlay": "text", "reason": "headline \"BANESË ME QIRA\" and location label \"RRUGA DARDANIA, FUSHË KOSOVË\"" },
+    { "file": "02.jpg", "kind": "living", "overlay": "brand" },
+    { "file": "03.jpg", "kind": "living", "overlay": "brand" },
+    { "file": "04.jpg", "kind": "kitchen", "overlay": "brand" },
+    { "file": "05.jpg", "kind": "kitchen", "overlay": "brand" },
+    { "file": "06.jpg", "kind": "bedroom", "overlay": "brand" },
+    { "file": "07.jpg", "kind": "bedroom", "overlay": "brand" },
+    { "file": "08.jpg", "kind": "interior", "overlay": "brand" },
+    { "file": "09.jpg", "kind": "bathroom", "overlay": "brand" },
+    { "file": "10.jpg", "kind": "balcony", "overlay": "brand" }
+  ],
+  "notes": "Photos 02–10 are the same photos as B328 02–10 (sale listing, Apollonia A20 by Tregtia, 83 m², 7th floor) — likely the same unit, first offered for sale and later for rent; maintainer should check whether B328 is still current. The cover graphic 01.jpg says \"RRUGA DARDANIA\" while the caption title says Rruga Hysen Xhakolli (the caption mentions both streets as nearby). No size, floor or rent amount stated in this caption. Caption says \"banjo + WC\" without numerals; bathrooms/wc left null."
+}

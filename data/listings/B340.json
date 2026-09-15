@@ -1,0 +1,14 @@
+{
+  "ref": "B340",
+  "descriptionEn": [
+    "A plot of 10 ares is offered for sale, located in Llukar, Prishtina.",
+    "The plot has full infrastructure, road access, water supply, sewerage, as well as a connection to electricity.",
+    "It comes with an ownership certificate and the contract is signed at the notary.",
+    "The plot is located in an area with high traffic, ideal for various activities.",
+    "Price: by agreement."
+  ],
+  "images": [
+    { "file": "01.jpg", "kind": "aerial", "overlay": "text", "reason": "plot outline, size label \"10 ARI\", headline \"TOKË NË SHITJE\" and location \"LLUKAR, PRISHTINË\"" }
+  ],
+  "notes": "Only image is a satellite view with a size label that matches the caption (10 ares)."
+}

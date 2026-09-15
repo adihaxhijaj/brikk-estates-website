@@ -1,0 +1,226 @@
+{
+  "ref": "B352",
+  "slugSq": "b352-shtepi-ne-shitje-fushe-kosove",
+  "slugEn": "b352-house-for-sale-fushe-kosove",
+  "postedAt": "2026-02-09",
+  "instagramUrl": "https://www.instagram.com/p/DUivIZTCqrQ/",
+  "deal": "sale",
+  "type": "house",
+  "multipleUnits": false,
+  "titleSq": "Shtëpi në shitje në Fushë Kosovë",
+  "titleEn": "House for sale in Fushë Kosovë",
+  "city": "Fushë Kosovë",
+  "cityEn": "Fushë Kosovë",
+  "neighbourhood": null,
+  "neighbourhoodLoc": null,
+  "street": "Rruga Pajazit Islami",
+  "complex": null,
+  "landmark": null,
+  "landmarkEn": null,
+  "country": "XK",
+  "developer": null,
+  "isNewBuild": true,
+  "completion": null,
+  "completionEn": null,
+  "areaNet": 174,
+  "areaApprox": false,
+  "areaTerrace": null,
+  "plotAres": 3,
+  "floor": null,
+  "floorTo": null,
+  "totalFloors": 2,
+  "orientation": null,
+  "bedrooms": null,
+  "bathrooms": null,
+  "wc": null,
+  "livingWithKitchen": null,
+  "storage": null,
+  "balcony": null,
+  "features": [
+    "unfurnished"
+  ],
+  "legal": {
+    "ownershipCertificate": null,
+    "notaryContract": true,
+    "contractViaLawyer": null,
+    "inLegalisation": null,
+    "contractWithDeveloper": null
+  },
+  "price": null,
+  "pricePerM2": null,
+  "pricePerAre": null,
+  "priceOnRequest": true,
+  "rentMonthly": null,
+  "deposit": null,
+  "minContractMonths": null,
+  "extras": {
+    "financing": null,
+    "installments": null,
+    "tradeIn": null,
+    "tenanted": null,
+    "rentalIncome": null,
+    "garageOptional": null,
+    "tradeInEn": null
+  },
+  "aiVisualisation": false,
+  "aiDisclaimerSq": null,
+  "aiDisclaimerEn": null,
+  "status": "unconfirmed",
+  "hidden": false,
+  "descriptionSq": [
+    "Ofrohet për shitje shtëpi moderne me sipërfaqe banimi 174 m², e ndërtuar në truall prej 3 ari, me lokacion në Fushë Kosovë, në rrugën Pajazit Islami.",
+    "Shtëpia është dykatëshe, e re dhe gati për mobilim, me dokumentacion të rregullt (kontratë e noterizuar).",
+    "Renditja e hapësirave:\nKati I:\nQëndrim ditor (sallon)\nKuzhinë\nNjë dhomë gjumi\nBanjo\nKati II:\n3 dhoma gjumi\nBanjo",
+    "Shtëpia ofron planimetri funksionale, ndërtim cilësor dhe hapësira të bollshme për jetesë komode familjare.",
+    "Lokacioni është i favorshëm, me infrastrukturë afër, duke e bërë këtë pronë zgjedhje ideale për banim.",
+    "Cmimi me marreveshje"
+  ],
+  "descriptionEn": [
+    "Modern house for sale with a living area of 174 m², built on a plot of 3 ares, located in Fushë Kosovë, on Rruga Pajazit Islami.",
+    "The house has two floors, is new and ready for furnishing, with regular documentation (notarised contract).",
+    "Layout of the spaces:\nFloor I:\nLiving room (sallon)\nKitchen\nOne bedroom\nBathroom\nFloor II:\n3 bedrooms\nBathroom",
+    "The house offers a functional floor plan, quality construction and ample space for comfortable family living.",
+    "The location is favourable, with infrastructure nearby, making this property an ideal choice for living.",
+    "Price by agreement"
+  ],
+  "descriptionEnIsTranslation": true,
+  "extraCaptions": [],
+  "images": [
+    {
+      "src": "../../assets/listings/b352/02.jpg",
+      "file": "02.jpg",
+      "width": 1620,
+      "height": 1080,
+      "kind": "exterior",
+      "overlay": "brand",
+      "hasTextOverlay": false,
+      "altSq": "Pamja e jashtme, shtëpi në shitje në Fushë Kosovë, Ref B352 (1/10)",
+      "altEn": "Exterior, house for sale in Fushë Kosovë, Ref B352 (1/10)"
+    },
+    {
+      "src": "../../assets/listings/b352/03.jpg",
+      "file": "03.jpg",
+      "width": 1620,
+      "height": 1080,
+      "kind": "yard",
+      "overlay": "brand",
+      "hasTextOverlay": false,
+      "altSq": "Oborri, shtëpi në shitje në Fushë Kosovë, Ref B352 (2/10)",
+      "altEn": "Yard, house for sale in Fushë Kosovë, Ref B352 (2/10)"
+    },
+    {
+      "src": "../../assets/listings/b352/04.jpg",
+      "file": "04.jpg",
+      "width": 1620,
+      "height": 1080,
+      "kind": "interior",
+      "overlay": "brand",
+      "hasTextOverlay": false,
+      "altSq": "Hapësira e brendshme, shtëpi në shitje në Fushë Kosovë, Ref B352 (3/10)",
+      "altEn": "Interior space, house for sale in Fushë Kosovë, Ref B352 (3/10)"
+    },
+    {
+      "src": "../../assets/listings/b352/05.jpg",
+      "file": "05.jpg",
+      "width": 1620,
+      "height": 1080,
+      "kind": "interior",
+      "overlay": "brand",
+      "hasTextOverlay": false,
+      "altSq": "Hapësira e brendshme, shtëpi në shitje në Fushë Kosovë, Ref B352 (4/10)",
+      "altEn": "Interior space, house for sale in Fushë Kosovë, Ref B352 (4/10)"
+    },
+    {
+      "src": "../../assets/listings/b352/06.jpg",
+      "file": "06.jpg",
+      "width": 1620,
+      "height": 1080,
+      "kind": "interior",
+      "overlay": "brand",
+      "hasTextOverlay": false,
+      "altSq": "Hapësira e brendshme, shtëpi në shitje në Fushë Kosovë, Ref B352 (5/10)",
+      "altEn": "Interior space, house for sale in Fushë Kosovë, Ref B352 (5/10)"
+    },
+    {
+      "src": "../../assets/listings/b352/07.jpg",
+      "file": "07.jpg",
+      "width": 1620,
+      "height": 1080,
+      "kind": "interior",
+      "overlay": "brand",
+      "hasTextOverlay": false,
+      "altSq": "Hapësira e brendshme, shtëpi në shitje në Fushë Kosovë, Ref B352 (6/10)",
+      "altEn": "Interior space, house for sale in Fushë Kosovë, Ref B352 (6/10)"
+    },
+    {
+      "src": "../../assets/listings/b352/08.jpg",
+      "file": "08.jpg",
+      "width": 1620,
+      "height": 1080,
+      "kind": "interior",
+      "overlay": "brand",
+      "hasTextOverlay": false,
+      "altSq": "Hapësira e brendshme, shtëpi në shitje në Fushë Kosovë, Ref B352 (7/10)",
+      "altEn": "Interior space, house for sale in Fushë Kosovë, Ref B352 (7/10)"
+    },
+    {
+      "src": "../../assets/listings/b352/09.jpg",
+      "file": "09.jpg",
+      "width": 1620,
+      "height": 1080,
+      "kind": "bathroom",
+      "overlay": "brand",
+      "hasTextOverlay": false,
+      "altSq": "Banjo, shtëpi në shitje në Fushë Kosovë, Ref B352 (8/10)",
+      "altEn": "Bathroom, house for sale in Fushë Kosovë, Ref B352 (8/10)"
+    },
+    {
+      "src": "../../assets/listings/b352/10.jpg",
+      "file": "10.jpg",
+      "width": 1620,
+      "height": 1080,
+      "kind": "bathroom",
+      "overlay": "brand",
+      "hasTextOverlay": false,
+      "altSq": "Banjo, shtëpi në shitje në Fushë Kosovë, Ref B352 (9/10)",
+      "altEn": "Bathroom, house for sale in Fushë Kosovë, Ref B352 (9/10)"
+    },
+    {
+      "src": "../../assets/listings/b352/01.jpg",
+      "file": "01.jpg",
+      "width": 1620,
+      "height": 1080,
+      "kind": "exterior",
+      "overlay": "text",
+      "hasTextOverlay": true,
+      "altSq": "Pamja e jashtme, shtëpi në shitje në Fushë Kosovë, Ref B352 (10/10)",
+      "altEn": "Exterior, house for sale in Fushë Kosovë, Ref B352 (10/10)"
+    }
+  ],
+  "coverIndex": 0,
+  "provenance": {
+    "overridden": {
+      "totalFloors": {
+        "from": null,
+        "to": 2,
+        "evidence": [
+          "Shtëpia është dykatëshe"
+        ],
+        "note": "'dykatëshe' = two-storey house"
+      },
+      "isNewBuild": {
+        "from": null,
+        "to": true,
+        "evidence": [
+          "e re dhe gati për mobilim"
+        ],
+        "note": "caption states the house is new"
+      }
+    },
+    "warnings": [
+      "bedrooms: 2 separate mentions (1, 3); left null"
+    ],
+    "reviewedImages": true,
+    "translated": true
+  }
+}

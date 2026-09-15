@@ -1,0 +1,21 @@
+{
+  "ref": "B321",
+  "descriptionEn": [
+    "An apartment is offered for sale on Rruga Hamdi Grajqevci, Fushë Kosovë.",
+    "The apartment is located in the Eliza B neighbourhood, a quiet and organised area, with high construction quality and a well-ordered community. The position offers immediate access to services, markets, schools and the city's main roads.",
+    "The 90m² space is located on the 6th floor of a building with an elevator, facing east, and includes a living room with kitchen, two bedrooms, a bathroom, a storage room and a balcony. The building is modern, built by Cima Construction, with abundant natural light and regular documentation with an ownership certificate.",
+    "This property is ideal for families and offers a secure long-term investment.",
+    "Price by agreement."
+  ],
+  "images": [
+    { "file": "01.jpg", "kind": "render", "overlay": "text", "reason": "architectural render of the complex with headline \"BANESË NË SHITJE\" and location label \"LAGJJA ELIZA B, FUSHË KOSOVË\"" }
+  ],
+  "overrides": {
+    "complex": {
+      "value": "Eliza B",
+      "evidence": ["lagjen Eliza B", "image:01.jpg LAGJJA ELIZA B, FUSHË KOSOVË"],
+      "note": "complex named as a 'lagje' in the caption"
+    }
+  },
+  "notes": "Only image is a CGI render of the complex, not a photograph of the apartment. Caption ID line reads \"ID:321\" (missing the B prefix)."
+}

@@ -1,0 +1,26 @@
+{
+  "ref": "B332",
+  "descriptionEn": [
+    "A plot of 33 ares is offered for sale, located in Sllatinë, Fushë Kosovë.",
+    "The plot offers the possibility of residential construction, a tourist facility or business premises, according to the project one wishes to carry out.",
+    "The size of the plot allows construction with a building permit according to the urban plan. The plot has close access to the road and the necessary infrastructure, and is surrounded by residential buildings and business premises.",
+    "It comes with an ownership certificate and the purchase contract is signed at the notary.",
+    "The plot is located in a highly sought-after area of Fushë Kosovë, just 200 m from Pishat e Sllatinës, with easy access to nature and urban areas, offering high development potential and a secure return on investment.",
+    "Price by agreement."
+  ],
+  "valuesEn": { "landmark": "200 m from Pishat e Sllatinës" },
+  "images": [
+    { "file": "01.jpg", "kind": "aerial", "overlay": "text", "reason": "plot outline, size label \"33 ARI\", headline \"TRUALL NË SHITJE\" and location \"SLLATINË, FUSHË KOSOVË\"" },
+    { "file": "02.jpg", "kind": "aerial", "overlay": "text", "reason": "map pin labelled \"RESTAURANT TE PISHAT\" and \"200M\" route label" },
+    { "file": "03.jpg", "kind": "aerial", "overlay": "brand", "reason": "plot outline drawn, no text" },
+    { "file": "04.jpg", "kind": "aerial", "overlay": "brand", "reason": "plot outline drawn, no text" }
+  ],
+  "overrides": {
+    "landmark": {
+      "value": "200 m nga Pishat e Sllatinës",
+      "evidence": ["vetëm 200 m nga Pishat e Sllatinës"],
+      "note": "explicit landmark with distance in the caption; parser only captures afër/pranë phrases"
+    }
+  },
+  "notes": "02.jpg labels the 200 m point as \"Restaurant te Pishat\", while the caption says 200 m from Pishat e Sllatinës — consistent in distance, different naming."
+}

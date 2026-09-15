@@ -1,0 +1,16 @@
+{
+  "ref": "B387",
+  "descriptionEn": [
+    "Offered for sale: an apartment with an area of 56.595m², located on Rruga Agron Rrahmani, in Bresje, within the Linda Premium Residence complex, built by AlTrade Center.",
+    "The apartment is of the 1+1 type, is located on the 8th floor and faces West, with an open view unobstructed by the surrounding buildings.",
+    "The space consists of a living room with kitchen, one bedroom, one bathroom and a terrace accessible from both the bedroom and the living room.",
+    "The property has electric underfloor heating and a central vacuum system integrated into the walls.",
+    "The water supply is supported by a system with heat pumps and smart management, which helps keep the water pressure at a stable level.",
+    "The sale contract is signed at the notary.\nPrice: €810/m²"
+  ],
+  "images": [
+    { "file": "01.jpg", "kind": "render", "overlay": "text", "reason": "3D architectural visualisation of the complex (not a photograph) with label \"Bresje, Fushë Kosovë\", \"56.595m²\", \"810€/m²\" (matches caption); only tiny rendered figures" },
+    { "file": "02.jpg", "kind": "floorplan", "overlay": "text", "reason": "3D floor-plan card on green branded background" }
+  ],
+  "notes": "No photographs of the actual apartment; 01.jpg is a CG render of the complex. The caption says the water supply uses \"pompa termike\" (heat pumps) for water pressure, which is unusual wording (pressure pumps likely meant); heat-pump was deliberately not added as a feature. No total price stated (only €810/m²)."
+}

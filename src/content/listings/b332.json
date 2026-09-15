@@ -1,0 +1,148 @@
+{
+  "ref": "B332",
+  "slugSq": "b332-toke-ne-shitje-fushe-kosove",
+  "slugEn": "b332-land-for-sale-fushe-kosove",
+  "postedAt": "2025-12-22",
+  "instagramUrl": "https://www.instagram.com/p/DSkVEd5l1f3/",
+  "deal": "sale",
+  "type": "land",
+  "multipleUnits": false,
+  "titleSq": "Tokë në shitje në Sllatinë, Fushë Kosovë",
+  "titleEn": "Land for sale in Sllatinë, Fushë Kosovë",
+  "city": "Fushë Kosovë",
+  "cityEn": "Fushë Kosovë",
+  "neighbourhood": "Sllatinë",
+  "neighbourhoodLoc": "Sllatinë",
+  "street": null,
+  "complex": null,
+  "landmark": "200 m nga Pishat e Sllatinës",
+  "landmarkEn": "200 m from Pishat e Sllatinës",
+  "country": "XK",
+  "developer": null,
+  "isNewBuild": null,
+  "completion": null,
+  "completionEn": null,
+  "areaNet": null,
+  "areaApprox": false,
+  "areaTerrace": null,
+  "plotAres": 33,
+  "floor": null,
+  "floorTo": null,
+  "totalFloors": null,
+  "orientation": null,
+  "bedrooms": null,
+  "bathrooms": null,
+  "wc": null,
+  "livingWithKitchen": null,
+  "storage": null,
+  "balcony": null,
+  "features": [],
+  "legal": {
+    "ownershipCertificate": true,
+    "notaryContract": true,
+    "contractViaLawyer": null,
+    "inLegalisation": null,
+    "contractWithDeveloper": null
+  },
+  "price": null,
+  "pricePerM2": null,
+  "pricePerAre": null,
+  "priceOnRequest": true,
+  "rentMonthly": null,
+  "deposit": null,
+  "minContractMonths": null,
+  "extras": {
+    "financing": null,
+    "installments": null,
+    "tradeIn": null,
+    "tenanted": null,
+    "rentalIncome": null,
+    "garageOptional": null,
+    "tradeInEn": null
+  },
+  "aiVisualisation": false,
+  "aiDisclaimerSq": null,
+  "aiDisclaimerEn": null,
+  "status": "unconfirmed",
+  "hidden": false,
+  "descriptionSq": [
+    "Ofrohet për shitje truall me sipërfaqe 33 ari, me lokacion në Sllatinë, Fushë Kosovë.",
+    "Trualli ofron mundësi për ndërtim rezidencial, objekt turistik ose afarist, sipas projektit që dëshirohet të realizohet.",
+    "Sipërfaqja e truallit e lejon ndërtimin me leje ndërtimi sipas planit urbanistik. Trualli ka qasje të afërt në rrugë dhe infrastrukturë të nevojshme, dhe është i rrethuar me ndërtime rezidenciale dhe objekte afariste.",
+    "Është i pajisur me fletë poseduese dhe kontrata e blerjes realizohet te noteri.",
+    "Trualli ndodhet në një zonë shumë të kërkuar të Fushë Kosovës, vetëm 200 m nga Pishat e Sllatinës, me qasje të lehtë në natyrë dhe zonat urbane, duke ofruar potencial të lartë zhvillimi dhe kthim të sigurt të investimit.",
+    "Çmimi sipas marrëveshjes."
+  ],
+  "descriptionEn": [
+    "A plot of 33 ares is offered for sale, located in Sllatinë, Fushë Kosovë.",
+    "The plot offers the possibility of residential construction, a tourist facility or business premises, according to the project one wishes to carry out.",
+    "The size of the plot allows construction with a building permit according to the urban plan. The plot has close access to the road and the necessary infrastructure, and is surrounded by residential buildings and business premises.",
+    "It comes with an ownership certificate and the purchase contract is signed at the notary.",
+    "The plot is located in a highly sought-after area of Fushë Kosovë, just 200 m from Pishat e Sllatinës, with easy access to nature and urban areas, offering high development potential and a secure return on investment.",
+    "Price by agreement."
+  ],
+  "descriptionEnIsTranslation": true,
+  "extraCaptions": [],
+  "images": [
+    {
+      "src": "../../assets/listings/b332/03.jpg",
+      "file": "03.jpg",
+      "width": 1620,
+      "height": 1080,
+      "kind": "aerial",
+      "overlay": "brand",
+      "hasTextOverlay": false,
+      "altSq": "Pamje nga lart, tokë në shitje në Sllatinë, Fushë Kosovë, Ref B332 (1/4)",
+      "altEn": "Aerial view, land for sale in Sllatinë, Fushë Kosovë, Ref B332 (1/4)"
+    },
+    {
+      "src": "../../assets/listings/b332/04.jpg",
+      "file": "04.jpg",
+      "width": 1620,
+      "height": 1080,
+      "kind": "aerial",
+      "overlay": "brand",
+      "hasTextOverlay": false,
+      "altSq": "Pamje nga lart, tokë në shitje në Sllatinë, Fushë Kosovë, Ref B332 (2/4)",
+      "altEn": "Aerial view, land for sale in Sllatinë, Fushë Kosovë, Ref B332 (2/4)"
+    },
+    {
+      "src": "../../assets/listings/b332/01.jpg",
+      "file": "01.jpg",
+      "width": 1620,
+      "height": 1080,
+      "kind": "aerial",
+      "overlay": "text",
+      "hasTextOverlay": true,
+      "altSq": "Pamje nga lart, tokë në shitje në Sllatinë, Fushë Kosovë, Ref B332 (3/4)",
+      "altEn": "Aerial view, land for sale in Sllatinë, Fushë Kosovë, Ref B332 (3/4)"
+    },
+    {
+      "src": "../../assets/listings/b332/02.jpg",
+      "file": "02.jpg",
+      "width": 1620,
+      "height": 1080,
+      "kind": "aerial",
+      "overlay": "text",
+      "hasTextOverlay": true,
+      "altSq": "Pamje nga lart, tokë në shitje në Sllatinë, Fushë Kosovë, Ref B332 (4/4)",
+      "altEn": "Aerial view, land for sale in Sllatinë, Fushë Kosovë, Ref B332 (4/4)"
+    }
+  ],
+  "coverIndex": 0,
+  "provenance": {
+    "overridden": {
+      "landmark": {
+        "from": null,
+        "to": "200 m nga Pishat e Sllatinës",
+        "evidence": [
+          "vetëm 200 m nga Pishat e Sllatinës"
+        ],
+        "note": "explicit landmark with distance in the caption; parser only captures afër/pranë phrases"
+      }
+    },
+    "warnings": [],
+    "reviewedImages": true,
+    "translated": true
+  }
+}

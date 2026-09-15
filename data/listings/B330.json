@@ -1,0 +1,26 @@
+{
+  "ref": "B330",
+  "descriptionEn": [
+    "A plot with a business is offered for sale in Milloshevë, Obiliq.",
+    "The property has a unique position directly on the Prishtina–Mitrovica highway (km 9), with direct access and high visibility.",
+    "It extends over a parcel of 42 ares, surrounded by greenery and organised space, ideal for combining an active business with tourism development.",
+    "The property comprises:\n• A 370 m² restaurant with two functional halls, where one part is active and the other part offers the possibility of a new concept.\n• 5 bungalows with two bedrooms each, suitable for tourist accommodation.\n• A 260 m² residential house, ideal for management, staff or private use.",
+    "Zoning designation of the parcel: Tourism / Commercial – suitable for a Restaurant, Event Center, Hotel or tourist Resort, with no need to change the designation. The ownership is private with regular documentation.",
+    "The location offers a commercial advantage with immediate proximity to well-known points such as Pishina Lili (672.96 m) and Restaurant & Hotel Amazona (1 km), guaranteeing continuous footfall and high income-generation potential.",
+    "This property represents an ideal investment opportunity for buyers looking for a functional business, with real space for expansion and long-term growth.",
+    "Price by agreement."
+  ],
+  "images": [
+    { "file": "01.jpg", "kind": "aerial", "overlay": "text", "reason": "headline \"BIZNES NË SHITJE\" and location label \"MILLOSHEVË, OBILIQ\"" },
+    { "file": "02.jpg", "kind": "aerial", "overlay": "brand" },
+    { "file": "03.jpg", "kind": "exterior", "overlay": "brand" },
+    { "file": "04.jpg", "kind": "exterior", "overlay": "brand" },
+    { "file": "05.jpg", "kind": "yard", "overlay": "brand" },
+    { "file": "06.jpg", "kind": "yard", "overlay": "brand" },
+    { "file": "07.jpg", "kind": "yard", "overlay": "brand" },
+    { "file": "08.jpg", "kind": "exterior", "overlay": "brand" },
+    { "file": "09.jpg", "kind": "exterior", "overlay": "brand" },
+    { "file": "10.jpg", "kind": "exterior", "overlay": "brand" }
+  ],
+  "notes": "Bedrooms stated per bungalow (5 bungalows with two bedrooms each) — not summed; bedrooms left null. Building areas (370 m² restaurant, 260 m² house) not summed; areaNet left null. Caption says \"Pronësia është private me dokumentacion të rregullt\" but does not name an ownership certificate, so legal fields left null. Nearby points (Pishina Lili 672.96 m, Restaurant & Hotel Amazona 1 km) are in the description; landmark left null because two distances are listed."
+}
