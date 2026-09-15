@@ -20,7 +20,7 @@
     --ink-2: #3c4842;          /* secondary text 9.5:1 on paper */
     --muted: #56625b;          /* meta text 6.1:1 on paper, 5.5:1 on cream */
     --line: #dcd7cb;           /* hairlines */
-    --line-strong: #8f998f;    /* form control borders, 3.0:1+ on white */
+    --line-strong: #87918a;    /* form control borders, 3.2:1 on white */
     --danger: #a3261b;         /* form errors 6.6:1 on white */
 
     /* Type */

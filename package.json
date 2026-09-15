@@ -10,7 +10,7 @@
     "import": "tsx scripts/import-listings.ts",
     "import:sheets": "tsx scripts/make-contact-sheets.ts",
     "build": "astro build",
-    "build:staging": "cross-env-shell BRIKK_NOINDEX=1 astro build",
+    "build:staging": "node scripts/build-staging.mjs", "check:dist": "node scripts/check-dist.mjs", "check:contrast": "node scripts/check-contrast.mjs",
     "preview": "astro preview",
     "check": "astro check",
     "astro": "astro"

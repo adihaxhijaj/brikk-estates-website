@@ -169,7 +169,7 @@ export function initFilters(root: Document = document) {
     backdrop?.remove();
     backdrop = null;
     document.documentElement.style.overflow = '';
-    if (restore) (lastFocus ?? openBtn).focus();
+    if (restore) (lastFocus && lastFocus !== document.body && document.contains(lastFocus) ? lastFocus : openBtn).focus();
   }
   openBtn.addEventListener('click', openSheet);
   closeBtn.addEventListener('click', () => closeSheet());
@@ -203,7 +203,8 @@ export function initFilters(root: Document = document) {
   sortSel.addEventListener('change', () => render(true));
   form.addEventListener('submit', (e) => { e.preventDefault(); render(true); closeSheet(); });
   form.addEventListener('reset', () => setTimeout(() => { sortSel.value = ''; render(true); }, 0));
-  clearEmpty?.addEventListener('click', () => { form.reset(); list.closest('section')?.querySelector<HTMLElement>('h1')?.focus?.(); });
+  // The clear button lives in the empty state, which disappears once results return: move focus to the page heading.
+  clearEmpty?.addEventListener('click', () => { window.setTimeout(() => document.querySelector<HTMLElement>('h1')?.focus(), 20); });
   window.addEventListener('popstate', () => { readUrl(); render(false); });
 
   readUrl();

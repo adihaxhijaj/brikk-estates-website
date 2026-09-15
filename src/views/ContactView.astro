@@ -65,10 +65,10 @@ const cards = [
   .contact-hero { padding-block: clamp(3rem, 2rem + 5vw, 6rem); }
   .contact-hero h1 { font-size: var(--fs-2xl); color: var(--cream); line-height: 1.04; }
   .contact-hero p { margin-top: var(--s-4); font-size: var(--fs-md); max-width: 44ch; }
-  .contact-cards { display: grid; gap: var(--s-4); grid-template-columns: repeat(auto-fit, minmax(min(100%, 22rem), 1fr)); }
+  .contact-cards { display: grid; gap: var(--s-4); grid-template-columns: repeat(auto-fit, minmax(min(100%, 30rem), 1fr)); }
   .contact-card { display: grid; gap: var(--s-3); align-content: start; padding: var(--s-5); background: var(--white); border: 1px solid var(--line); border-radius: var(--radius-lg); }
   .contact-card__label { font-size: var(--fs-sm); font-weight: 600; color: var(--muted); font-stretch: 100%; letter-spacing: 0; }
-  .contact-card__value { font-size: var(--fs-lg); font-weight: 750; font-stretch: 105%; overflow-wrap: anywhere; line-height: 1.25; }
+  .contact-card__value { font-size: clamp(1.25rem, 1.1rem + 0.6vw, 1.625rem); font-weight: 750; overflow-wrap: anywhere; line-height: 1.25; }
   .contact-card__actions { display: flex; flex-wrap: wrap; gap: var(--s-2); }
   .contact-card__actions > * { flex: 1 1 11rem; }
   .contact-card__status { font-size: var(--fs-sm); color: var(--green-ink); min-height: 1.4em; }

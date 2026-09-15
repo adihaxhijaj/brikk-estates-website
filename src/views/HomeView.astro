@@ -28,7 +28,9 @@ const catIcons: Record<string, string> = { apartments: 'building-2', houses: 'ho
     <SymbolGraphic class="hero__symbol" animate />
     <div class="container hero__inner">
       <div class="hero__copy">
-        <p class="eyebrow hero__eyebrow">{t.home.eyebrow}</p>
+        <p class="eyebrow hero__eyebrow">
+          {t.home.eyebrow.split(' · ').map((part, i) => <>{i > 0 && <span class="hero__eyebrow-sep" aria-hidden="true"> · </span>}<span class="hero__eyebrow-part">{part}</span></>)}
+        </p>
         <h1 class="hero__title">{t.home.h1}</h1>
         <p class="hero__support">{t.home.support}</p>
       </div>
@@ -105,13 +107,20 @@ const catIcons: Record<string, string> = { apartments: 'building-2', houses: 'ho
   .hero__support { margin-top: var(--s-5); font-size: var(--fs-md); max-width: 38ch; color: var(--cream); }
   .hero__symbol { position: absolute; z-index: -1; width: min(34rem, 80vw); right: -14%; top: -12%; }
   @media (max-width: 47.99rem) {
-    .hero__symbol { width: 15rem; right: -6.5rem; top: -4.5rem; opacity: 1; }
-    .hero__copy { padding-right: 3.5rem; }
+    .hero__symbol { width: 12.5rem; right: -8.25rem; top: -2.5rem; }
+    .hero__copy { padding-right: 4.25rem; }
+    .hero__eyebrow-part { display: block; }
+    .hero__eyebrow-sep { display: none; }
+    .hero__eyebrow { letter-spacing: 0.06em; font-stretch: 106%; font-size: 0.875rem; }
+  }
+  @media (min-width: 48rem) and (max-width: 74.99rem) {
+    .hero__symbol { width: 24rem; right: -9rem; top: -3rem; }
+    .hero__copy { padding-right: 12rem; }
   }
   @media (min-width: 75rem) {
-    .hero__symbol { right: -6%; top: 50%; translate: 0 -54%; width: 36rem; }
-    .hero__copy { max-width: 52rem; padding-right: 20rem; }
-    .hero__search { max-width: 64rem; }
+    .hero__symbol { right: max(-4rem, calc((100vw - var(--max)) / 2 - 8rem)); top: 44%; translate: 0 -50%; width: 30rem; }
+    .hero__copy { max-width: min(52rem, calc(100% - 26rem)); }
+    .hero__search { max-width: 60rem; }
   }
 
   .grid { display: grid; gap: var(--s-5); grid-template-columns: repeat(auto-fill, minmax(min(100%, 17.5rem), 1fr)); }

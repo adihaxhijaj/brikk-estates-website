@@ -9,8 +9,6 @@ interface Props { lang: Lang }
 const { lang } = Astro.props;
 const t = dict(lang);
 const c = t.composer;
-const req = <span class="req">({c.required})</span>;
-const opt = <small>({c.optional})</small>;
 ---
 <form class="composer" id="composer" data-composer novalidate hidden
   data-wa={SITE.whatsapp} data-email={SITE.emailProperties} data-subject={c.emailSubject} data-title={c.messageTitle}
@@ -22,7 +20,7 @@ const opt = <small>({c.optional})</small>;
   </div>
 
   <fieldset class="field composer__deal">
-    <legend class="label">{c.deal} {req}</legend>
+    <legend class="label">{c.deal} <span class="req">({c.required})</span></legend>
     <div class="segmented">
       <input type="radio" name="deal" id="c-sale" value={c.dealSale} checked />
       <label for="c-sale">{c.dealSale}</label>
@@ -33,7 +31,7 @@ const opt = <small>({c.optional})</small>;
 
   <div class="composer__grid">
     <div class="field">
-      <label for="c-type">{c.type} {req}</label>
+      <label for="c-type">{c.type} <span class="req">({c.required})</span></label>
       <select class="control" id="c-type" name="type" required aria-describedby="c-type-err">
         <option value="">{c.choose}</option>
         {Object.values(c.types).map((v) => <option value={v}>{v}</option>)}
@@ -41,35 +39,35 @@ const opt = <small>({c.optional})</small>;
       <p class="field-error" id="c-type-err" hidden></p>
     </div>
     <div class="field">
-      <label for="c-city">{c.city} {req}</label>
+      <label for="c-city">{c.city} <span class="req">({c.required})</span></label>
       <input class="control" id="c-city" name="city" type="text" autocomplete="address-level2" required aria-describedby="c-city-err" />
       <p class="field-error" id="c-city-err" hidden></p>
     </div>
     <div class="field">
-      <label for="c-hood">{c.neighbourhood} {opt}</label>
+      <label for="c-hood">{c.neighbourhood} <small>({c.optional})</small></label>
       <input class="control" id="c-hood" name="neighbourhood" type="text" />
     </div>
     <div class="field">
-      <label for="c-size">{c.size} {opt}</label>
+      <label for="c-size">{c.size} <small>({c.optional})</small></label>
       <input class="control" id="c-size" name="size" type="text" inputmode="decimal" aria-describedby="c-size-hint" />
       <small id="c-size-hint">{c.sizeHint}</small>
     </div>
     <div class="field">
-      <label for="c-price">{c.price} {opt}</label>
+      <label for="c-price">{c.price} <small>({c.optional})</small></label>
       <input class="control" id="c-price" name="price" type="text" inputmode="decimal" />
     </div>
     <div class="field">
-      <label for="c-name">{c.name} {req}</label>
+      <label for="c-name">{c.name} <span class="req">({c.required})</span></label>
       <input class="control" id="c-name" name="name" type="text" autocomplete="name" required aria-describedby="c-name-err" />
       <p class="field-error" id="c-name-err" hidden></p>
     </div>
     <div class="field">
-      <label for="c-phone">{c.phone} {req}</label>
+      <label for="c-phone">{c.phone} <span class="req">({c.required})</span></label>
       <input class="control" id="c-phone" name="phone" type="tel" autocomplete="tel" required aria-describedby="c-phone-err" />
       <p class="field-error" id="c-phone-err" hidden></p>
     </div>
     <div class="field composer__full">
-      <label for="c-note">{c.note} {opt}</label>
+      <label for="c-note">{c.note} <small>({c.optional})</small></label>
       <textarea class="control" id="c-note" name="note" rows="3"></textarea>
     </div>
   </div>

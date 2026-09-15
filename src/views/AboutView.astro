@@ -16,9 +16,8 @@ const listings = await getVisibleListings();
 const cities = ['Prishtinë', 'Fushë Kosovë'];
 const groups = cities.map((city) => {
   const hoods = [...new Set(listings.filter((l) => l.city === city && l.neighbourhood).map((l) => l.neighbourhood!))].sort((x, y) => x.localeCompare(y, 'sq'));
-  const streets = city === 'Fushë Kosovë' ? [...new Set(listings.filter((l) => l.city === city && !l.neighbourhood && l.street).map((l) => l.street!))].sort((x, y) => x.localeCompare(y, 'sq')) : [];
   const cityEn = listings.find((l) => l.city === city)?.cityEn ?? city;
-  return { city, label: lang === 'en' ? cityEn : city, hoods, streets };
+  return { city, label: lang === 'en' ? cityEn : city, hoods };
 });
 const elsewhere = [...new Set(listings.filter((l) => l.city && !cities.includes(l.city)).map((l) => (lang === 'en' ? l.cityEn : l.city)!))];
 const hoodName = (n: string) => (lang === 'en' ? NEIGHBOURHOODS.find((h) => h.name === n)?.en ?? n : n);
@@ -66,7 +65,6 @@ const base = route('properties', lang);
             <h3><a href={`${base}?city=${encodeURIComponent(g.city)}`}>{g.label}</a></h3>
             <ul role="list" class="chips">
               {g.hoods.map((h) => <li><a class="chip" href={`${base}?city=${encodeURIComponent(g.city)}&hood=${encodeURIComponent(h)}`}>{hoodName(h)}</a></li>)}
-              {g.streets.map((s) => <li><span class="chip chip--plain">{s}</span></li>)}
             </ul>
           </div>
         ))}
