@@ -1,0 +1,200 @@
+---
+import Base from './Base.astro';
+import Logo from '../components/Logo.astro';
+import { dict, route, type Lang } from '../i18n';
+import { getVisibleListings } from '../lib/listings';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const t = dict(lang);
+const other: Lang = lang === 'en' ? 'sq' : 'en';
+
+const all = await getVisibleListings();
+
+// "Where we work": only places that actually occur in the catalogue, each linking to the filtered list.
+const propsPath = route('properties', lang);
+const areas = [...all.reduce((m, l) => {
+  const city = lang === 'en' ? l.cityEn : l.city;
+  if (!city) return m;
+  const key = l.neighbourhood ? `${l.neighbourhood}, ${city}` : city;
+  const href = l.neighbourhood
+    ? `${propsPath}?city=${encodeURIComponent(city)}&hood=${encodeURIComponent(l.neighbourhood)}`
+    : `${propsPath}?city=${encodeURIComponent(city)}`;
+  return m.set(key, { href, n: (m.get(key)?.n ?? 0) + 1 });
+}, new Map<string, { href: string; n: number }>())]
+  .sort((a, b) => b[1].n - a[1].n || a[0].localeCompare(b[0]));
+---
+
+<Base
+  lang={lang}
+  title={t.about.metaTitle}
+  description={t.about.metaDescription}
+  path={route('about', lang)}
+  altPath={route('about', other)}
+>
+  <section class="ab-head on-green">
+    <div class="wrap ab-head-in">
+      <div>
+        <h1>{t.about.h1}</h1>
+        <p class="lede ab-identity">{t.about.identity}</p>
+      </div>
+      <Logo variant="stacked" tone="light" width={150} />
+    </div>
+  </section>
+
+  <section class="section wrap-narrow ab-body">
+    {t.about.paragraphs.map((p) => <p>{p}</p>)}
+  </section>
+
+  <section class="section-tight wrap ab-cols">
+    <div>
+      <h2>{t.about.missionTitle}</h2>
+      <ul class="ab-mission">
+        {t.about.mission.map((m) => <li>{m}</li>)}
+      </ul>
+    </div>
+
+    <div>
+      <h2>{t.about.valuesTitle}</h2>
+      <dl class="ab-values">
+        {
+          t.about.values.map((v) => (
+            <div>
+              <dt>{v.title}</dt>
+              <dd>{v.text}</dd>
+            </div>
+          ))
+        }
+      </dl>
+    </div>
+  </section>
+
+  {
+    areas.length > 0 && (
+      <section class="section-tight wrap ab-where">
+        <h2>{t.about.whereTitle}</h2>
+        <p class="note">{t.about.whereIntro}</p>
+        <ul>
+          {areas.map(([label, { href, n }]) => (
+            <li>
+              <a href={href}>
+                {label} <span class="num">{n}</span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </section>
+    )
+  }
+</Base>
+
+<style>
+  .ab-head {
+    padding-block: clamp(2.5rem, 1.5rem + 4vw, 4.5rem);
+  }
+  .ab-head-in {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--s-6);
+    align-items: center;
+    justify-content: space-between;
+  }
+  .ab-head h1 {
+    font-size: var(--step-3);
+  }
+  .ab-identity {
+    margin-block-start: var(--s-3);
+    font-style: italic;
+  }
+
+  .ab-body p {
+    font-size: var(--step-1);
+    color: var(--ink-2);
+  }
+  .ab-body p + p {
+    margin-block-start: var(--s-4);
+  }
+
+  .ab-cols {
+    display: grid;
+    gap: var(--s-7);
+  }
+  .ab-cols h2 {
+    font-size: var(--step-2);
+    margin-block-end: var(--s-4);
+  }
+
+  .ab-mission {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: var(--s-3);
+  }
+  .ab-mission li {
+    font-size: var(--step-1);
+    font-variation-settings: 'wdth' var(--wide);
+    font-weight: 600;
+    padding-inline-start: var(--s-4);
+    border-inline-start: 3px solid var(--leaf);
+  }
+
+  .ab-values {
+    margin: 0;
+    display: grid;
+    gap: var(--s-4);
+  }
+  .ab-values dt {
+    font-weight: 700;
+  }
+  .ab-values dd {
+    margin: 0;
+    color: var(--ink-2);
+  }
+
+  .ab-where h2 {
+    font-size: var(--step-2);
+  }
+  .ab-where .note {
+    margin-block: var(--s-2) var(--s-4);
+  }
+  .ab-where ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--s-2);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .ab-where a {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--s-2);
+    min-height: 40px;
+    padding: var(--s-2) var(--s-4);
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    text-decoration: none;
+    font-size: var(--step--1);
+  }
+  .ab-where a:hover {
+    border-color: var(--green-300);
+  }
+  .ab-where .num {
+    color: var(--ink-3);
+  }
+
+  @media (min-width: 900px) {
+    .ab-cols {
+      grid-template-columns: 1fr 1.4fr;
+      gap: var(--s-8);
+    }
+    .ab-values {
+      grid-template-columns: 1fr 1fr;
+      gap: var(--s-5);
+    }
+  }
+</style>

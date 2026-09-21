@@ -1,99 +1,258 @@
 ---
-// "Submit your property" composer. No backend: validated fields are formatted into a message that opens
-// in WhatsApp or the visitor's email app. Nothing is stored or sent by the site.
+/**
+ * Composes a message about the owner's property and opens WhatsApp or the visitor's email client.
+ * There is no backend: nothing is stored, nothing is sent from here, and no success state is
+ * ever shown. Validation runs before the link is opened.
+ */
 import Icon from './Icon.astro';
-import { SITE } from '../config/site';
 import { dict, type Lang } from '../i18n';
 
-interface Props { lang: Lang }
-const { lang } = Astro.props;
+interface Props {
+  lang: Lang;
+  cities: string[];
+}
+const { lang, cities } = Astro.props;
 const t = dict(lang);
 const c = t.composer;
 ---
-<form class="composer" id="composer" data-composer novalidate hidden
-  data-wa={SITE.whatsapp} data-email={SITE.emailProperties} data-subject={c.emailSubject} data-title={c.messageTitle}
-  data-err-required={c.errorRequired('{label}')} data-err-phone={c.errorPhone} data-opened={c.opened}
-  data-labels={JSON.stringify(c.labels)}>
-  <div class="composer__errors" data-errors tabindex="-1" hidden>
-    <p><strong>{c.errorsTitle}</strong></p>
-    <ul></ul>
+
+<form class="comp" id="composer" data-composer novalidate>
+  <div class="comp-errors" data-comp-errors hidden tabindex="-1" role="alert">
+    <p>{c.errorsTitle}</p>
+    <ul data-comp-error-list></ul>
   </div>
 
-  <fieldset class="field composer__deal">
-    <legend class="label">{c.deal} <span class="req">({c.required})</span></legend>
-    <div class="segmented">
-      <input type="radio" name="deal" id="c-sale" value={c.dealSale} checked />
-      <label for="c-sale">{c.dealSale}</label>
-      <input type="radio" name="deal" id="c-rent" value={c.dealRent} />
-      <label for="c-rent">{c.dealRent}</label>
-    </div>
-  </fieldset>
+  <div class="comp-grid">
+    <p class="field">
+      <label for="c-deal">{c.deal} <span class="req">{c.required}</span></label>
+      <select id="c-deal" name="deal" data-label={c.deal} required>
+        <option value="">{c.choose}</option>
+        <option value={c.dealSale}>{c.dealSale}</option>
+        <option value={c.dealRent}>{c.dealRent}</option>
+      </select>
+    </p>
 
-  <div class="composer__grid">
-    <div class="field">
-      <label for="c-type">{c.type} <span class="req">({c.required})</span></label>
-      <select class="control" id="c-type" name="type" required aria-describedby="c-type-err">
+    <p class="field">
+      <label for="c-type">{c.type} <span class="req">{c.required}</span></label>
+      <select id="c-type" name="type" data-label={c.type} required>
         <option value="">{c.choose}</option>
         {Object.values(c.types).map((v) => <option value={v}>{v}</option>)}
       </select>
-      <p class="field-error" id="c-type-err" hidden></p>
-    </div>
-    <div class="field">
-      <label for="c-city">{c.city} <span class="req">({c.required})</span></label>
-      <input class="control" id="c-city" name="city" type="text" autocomplete="address-level2" required aria-describedby="c-city-err" />
-      <p class="field-error" id="c-city-err" hidden></p>
-    </div>
-    <div class="field">
-      <label for="c-hood">{c.neighbourhood} <small>({c.optional})</small></label>
-      <input class="control" id="c-hood" name="neighbourhood" type="text" />
-    </div>
-    <div class="field">
-      <label for="c-size">{c.size} <small>({c.optional})</small></label>
-      <input class="control" id="c-size" name="size" type="text" inputmode="decimal" aria-describedby="c-size-hint" />
-      <small id="c-size-hint">{c.sizeHint}</small>
-    </div>
-    <div class="field">
-      <label for="c-price">{c.price} <small>({c.optional})</small></label>
-      <input class="control" id="c-price" name="price" type="text" inputmode="decimal" />
-    </div>
-    <div class="field">
-      <label for="c-name">{c.name} <span class="req">({c.required})</span></label>
-      <input class="control" id="c-name" name="name" type="text" autocomplete="name" required aria-describedby="c-name-err" />
-      <p class="field-error" id="c-name-err" hidden></p>
-    </div>
-    <div class="field">
-      <label for="c-phone">{c.phone} <span class="req">({c.required})</span></label>
-      <input class="control" id="c-phone" name="phone" type="tel" autocomplete="tel" required aria-describedby="c-phone-err" />
-      <p class="field-error" id="c-phone-err" hidden></p>
-    </div>
-    <div class="field composer__full">
-      <label for="c-note">{c.note} <small>({c.optional})</small></label>
-      <textarea class="control" id="c-note" name="note" rows="3"></textarea>
-    </div>
+    </p>
+
+    <p class="field">
+      <label for="c-city">{c.city} <span class="req">{c.required}</span></label>
+      <input id="c-city" name="city" list="c-cities" data-label={c.city} required autocomplete="address-level2" />
+      <datalist id="c-cities">{cities.map((x) => <option value={x} />)}</datalist>
+    </p>
+
+    <p class="field">
+      <label for="c-hood">{c.neighbourhood} <span class="opt">{c.optional}</span></label>
+      <input id="c-hood" name="hood" data-label={c.neighbourhood} />
+    </p>
+
+    <p class="field">
+      <label for="c-size">{c.size} <span class="req">{c.required}</span></label>
+      <input id="c-size" name="size" data-label={c.size} placeholder={c.sizeHint} required />
+    </p>
+
+    <p class="field">
+      <label for="c-price">{c.price} <span class="opt">{c.optional}</span></label>
+      <input id="c-price" name="price" data-label={c.price} inputmode="numeric" />
+    </p>
+
+    <p class="field">
+      <label for="c-name">{c.name} <span class="req">{c.required}</span></label>
+      <input id="c-name" name="name" data-label={c.name} autocomplete="name" required />
+    </p>
+
+    <p class="field">
+      <label for="c-phone">{c.phone} <span class="req">{c.required}</span></label>
+      <input id="c-phone" name="phone" type="tel" data-label={c.phone} autocomplete="tel" required />
+    </p>
+
+    <p class="field field-wide">
+      <label for="c-note">{c.note} <span class="opt">{c.optional}</span></label>
+      <textarea id="c-note" name="note" rows="3" data-label={c.note}></textarea>
+    </p>
   </div>
 
-  <div class="composer__actions">
-    <button type="submit" class="btn" value="whatsapp" data-send="whatsapp"><Icon name="message-circle" />{c.sendWhatsApp}</button>
-    <button type="submit" class="btn btn--outline" value="email" data-send="email"><Icon name="mail" />{c.sendEmail}</button>
+  <div class="comp-actions">
+    <button class="btn btn-primary" type="button" data-comp-send="whatsapp">
+      <Icon name="message-circle" size={18} />
+      {c.sendWhatsApp}
+    </button>
+    <button class="btn btn-outline" type="button" data-comp-send="email">
+      <Icon name="mail" size={18} />
+      {c.sendEmail}
+    </button>
   </div>
-  <p class="composer__status" role="status" aria-live="polite" data-status></p>
+
+  <p class="note comp-hint" data-comp-hint aria-live="polite"></p>
 </form>
 
-<script>
-  import '../scripts/composer';
-</script>
-
 <style>
-  .composer { display: grid; gap: var(--s-5); background: var(--white); color: var(--ink); border: 1px solid var(--line); border-radius: var(--radius-lg); padding: clamp(1rem, 0.6rem + 2vw, 2rem); }
-  .composer fieldset { border: 0; padding: 0; min-width: 0; }
-  .composer__grid { display: grid; gap: var(--s-4); }
-  @media (min-width: 40rem) { .composer__grid { grid-template-columns: 1fr 1fr; } .composer__full { grid-column: 1 / -1; } }
-  .req { font-weight: 450; color: var(--muted); font-size: var(--fs-sm); }
-  .composer__actions { display: flex; flex-wrap: wrap; gap: var(--s-3); }
-  .composer__actions .btn { flex: 1 1 14rem; }
-  .composer__errors { border: 2px solid var(--danger); border-radius: var(--radius); padding: var(--s-3) var(--s-4); color: var(--danger); }
-  .composer__errors ul { margin-top: var(--s-2); padding-left: 1.2rem; }
-  .composer__errors a { color: var(--danger); }
-  .composer__status { color: var(--green-ink); font-weight: 550; }
-  .composer__status:empty { display: none; }
+  .comp {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--r-3);
+    padding: var(--s-5);
+  }
+  .comp-grid {
+    display: grid;
+    gap: var(--s-4);
+  }
+  .field {
+    display: grid;
+    gap: var(--s-1);
+    margin: 0;
+  }
+  .field label {
+    font-size: var(--step--1);
+    font-weight: 600;
+    color: var(--ink-2);
+  }
+  .req,
+  .opt {
+    font-weight: 400;
+    color: var(--ink-3);
+  }
+  .field input,
+  .field select,
+  .field textarea {
+    min-height: 44px;
+    padding: var(--s-2) var(--s-3);
+    border: 1px solid var(--line-control);
+    border-radius: var(--r-2);
+    background: var(--surface);
+    width: 100%;
+  }
+  .field textarea {
+    min-height: 88px;
+    resize: vertical;
+  }
+  .field :global([aria-invalid='true']) {
+    border-color: #a3341f;
+  }
+  input[aria-invalid='true'],
+  select[aria-invalid='true'] {
+    border-color: #a3341f;
+  }
+
+  .comp-errors {
+    margin-block-end: var(--s-4);
+    padding: var(--s-4);
+    border-radius: var(--r-2);
+    background: #fbeeea;
+    border: 1px solid #e2b7ab;
+    color: #7a2414;
+  }
+  .comp-errors p {
+    font-weight: 700;
+    margin-block-end: var(--s-2);
+  }
+  .comp-errors ul {
+    margin: 0;
+    padding-inline-start: var(--s-5);
+  }
+
+  .comp-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--s-3);
+    margin-block-start: var(--s-5);
+  }
+  .comp-hint {
+    margin-block-start: var(--s-3);
+  }
+
+  @media (min-width: 680px) {
+    .comp-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+    .field-wide {
+      grid-column: 1 / -1;
+    }
+  }
 </style>
+
+<script>
+  import { dict } from '../i18n';
+  import { SITE } from '../config/site';
+
+  const formEl = document.querySelector<HTMLFormElement>('[data-composer]');
+  if (formEl) {
+    const form = formEl;
+    const t = dict(document.documentElement.lang === 'en' ? 'en' : 'sq');
+    const c = t.composer;
+    const box = form.querySelector<HTMLElement>('[data-comp-errors]');
+    const list = form.querySelector<HTMLElement>('[data-comp-error-list]');
+    const hint = form.querySelector<HTMLElement>('[data-comp-hint]');
+
+    const fields = [...form.querySelectorAll<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>('[data-label]')];
+
+    function validate() {
+      const errors: string[] = [];
+      for (const el of fields) {
+        el.removeAttribute('aria-invalid');
+        const label = el.dataset.label ?? el.name;
+        if (el.required && !el.value.trim()) {
+          errors.push(c.errorRequired(label));
+          el.setAttribute('aria-invalid', 'true');
+        } else if (el.name === 'phone' && el.value.replace(/\D/g, '').length < 8) {
+          errors.push(c.errorPhone);
+          el.setAttribute('aria-invalid', 'true');
+        }
+      }
+
+      if (box && list) {
+        list.innerHTML = '';
+        for (const e of errors) {
+          const li = document.createElement('li');
+          li.textContent = e;
+          list.append(li);
+        }
+        box.hidden = errors.length === 0;
+        if (errors.length) {
+          box.focus();
+          form.querySelector<HTMLElement>('[aria-invalid="true"]')?.focus();
+        }
+      }
+      return errors.length === 0;
+    }
+
+    function message() {
+      const get = (n: string) => (form.elements.namedItem(n) as HTMLInputElement | null)?.value.trim() ?? '';
+      const lines = [
+        c.messageTitle,
+        '',
+        `${c.labels.deal}: ${get('deal')}`,
+        `${c.labels.type}: ${get('type')}`,
+        `${c.labels.city}: ${get('city')}`,
+        get('hood') && `${c.labels.neighbourhood}: ${get('hood')}`,
+        `${c.labels.size}: ${get('size')}`,
+        get('price') && `${c.labels.price}: ${get('price')}`,
+        `${c.labels.name}: ${get('name')}`,
+        `${c.labels.phone}: ${get('phone')}`,
+        get('note') && `${c.labels.note}: ${get('note')}`,
+      ].filter(Boolean);
+      return lines.join('\n');
+    }
+
+    for (const btn of form.querySelectorAll<HTMLButtonElement>('[data-comp-send]')) {
+      btn.addEventListener('click', () => {
+        if (!validate()) return;
+        const body = message();
+        const url =
+          btn.dataset.compSend === 'whatsapp'
+            ? `${SITE.whatsapp}?text=${encodeURIComponent(body)}`
+            : `mailto:${SITE.emailInfo}?subject=${encodeURIComponent(c.emailSubject)}&body=${encodeURIComponent(body)}`;
+        // Opens the app with the message ready. The visitor still has to press send there.
+        // WhatsApp gets a new tab; a mailto: link in a new tab would leave an empty tab behind.
+        if (btn.dataset.compSend === 'whatsapp') window.open(url, '_blank', 'noopener');
+        else location.href = url;
+        if (hint) hint.textContent = c.opened;
+      });
+    }
+  }
+</script>

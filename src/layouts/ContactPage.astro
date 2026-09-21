@@ -1,0 +1,170 @@
+---
+import Base from './Base.astro';
+import Icon from '../components/Icon.astro';
+import { SITE } from '../config/site';
+import { dict, route, type Lang } from '../i18n';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const t = dict(lang);
+const other: Lang = lang === 'en' ? 'sq' : 'en';
+
+const rows = [
+  {
+    label: t.contact.phoneLabel,
+    value: SITE.phoneDisplay,
+    copy: SITE.phoneDisplay,
+    copyLabel: t.contact.copyPhone,
+    actions: [
+      { href: `tel:${SITE.phoneE164}`, icon: 'phone', text: t.contact.call },
+      { href: SITE.whatsapp, icon: 'message-circle', text: t.contact.whatsapp },
+      { href: SITE.viber, icon: 'phone-call', text: t.contact.viber },
+    ],
+  },
+  {
+    label: t.contact.infoLabel,
+    value: SITE.emailInfo,
+    copy: SITE.emailInfo,
+    copyLabel: t.contact.copyEmail(SITE.emailInfo),
+    actions: [{ href: `mailto:${SITE.emailInfo}`, icon: 'mail', text: t.contact.writeEmail }],
+  },
+  {
+    label: t.contact.instagramLabel,
+    value: SITE.instagramHandle,
+    copy: null,
+    copyLabel: null,
+    actions: [{ href: SITE.instagram, icon: 'camera', text: t.contact.openInstagram }],
+  },
+];
+---
+
+<Base
+  lang={lang}
+  title={t.contact.metaTitle}
+  description={t.contact.metaDescription}
+  path={route('contact', lang)}
+  altPath={route('contact', other)}
+>
+  <section class="ct-head on-green">
+    <div class="wrap">
+      <h1>{t.contact.h1}</h1>
+      <p class="lede">{t.contact.intro}</p>
+    </div>
+  </section>
+
+  <section class="section wrap ct-rows">
+    {
+      rows.map((r) => (
+        <div class="ct-row">
+          <div class="ct-row-main">
+            <p class="ct-label">{r.label}</p>
+            <p class="ct-value">{r.value}</p>
+          </div>
+
+          <div class="ct-actions">
+            {r.actions.map((a) => (
+              <a class="btn btn-outline" href={a.href} rel={a.href.startsWith('http') ? 'noopener' : undefined}>
+                <Icon name={a.icon} size={18} />
+                {a.text}
+              </a>
+            ))}
+            {r.copy && (
+              <button class="btn btn-outline ct-copy" type="button" data-copy={r.copy} aria-label={r.copyLabel}>
+                <Icon name="copy" size={18} />
+                <span data-copy-label>{t.contact.copy}</span>
+              </button>
+            )}
+          </div>
+        </div>
+      ))
+    }
+    <p class="sr-only" role="status" data-copy-status></p>
+  </section>
+</Base>
+
+<style>
+  .ct-head {
+    padding-block: clamp(2.5rem, 1.5rem + 4vw, 4.5rem);
+  }
+  .ct-head h1 {
+    font-size: var(--step-3);
+    font-variation-settings: 'wdth' var(--wider);
+  }
+  .ct-head .lede {
+    margin-block-start: var(--s-3);
+  }
+
+  .ct-rows {
+    display: grid;
+    gap: var(--s-4);
+  }
+  .ct-row {
+    display: grid;
+    gap: var(--s-4);
+    padding: var(--s-5);
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--r-3);
+    align-items: center;
+  }
+  .ct-label {
+    font-size: var(--step--1);
+    font-weight: 600;
+    color: var(--ink-3);
+  }
+  .ct-value {
+    font-size: var(--step-1);
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    font-variant-numeric: tabular-nums;
+    margin-block-start: var(--s-1);
+    /* A long email address must wrap rather than push the page sideways at 320px. */
+    overflow-wrap: anywhere;
+  }
+  @media (min-width: 560px) {
+    .ct-value {
+      font-size: var(--step-2);
+    }
+  }
+  .ct-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--s-2);
+  }
+
+  @media (min-width: 860px) {
+    .ct-row {
+      grid-template-columns: minmax(0, 1fr) auto;
+    }
+    .ct-actions {
+      justify-content: flex-end;
+    }
+  }
+</style>
+
+<script>
+  import { dict } from '../i18n';
+
+  const t = dict(document.documentElement.lang === 'en' ? 'en' : 'sq');
+  const status = document.querySelector<HTMLElement>('[data-copy-status]');
+
+  for (const btn of document.querySelectorAll<HTMLButtonElement>('[data-copy]')) {
+    const label = btn.querySelector<HTMLElement>('[data-copy-label]');
+    btn.addEventListener('click', async () => {
+      const say = (msg: string) => {
+        if (label) label.textContent = msg;
+        if (status) status.textContent = msg;
+        setTimeout(() => label && (label.textContent = t.contact.copy), 3000);
+      };
+      try {
+        await navigator.clipboard.writeText(btn.dataset.copy ?? '');
+        say(t.contact.copied);
+      } catch {
+        // Honest failure: tell people to copy it by hand rather than pretending it worked.
+        say(t.contact.copyFailed);
+      }
+    });
+  }
+</script>

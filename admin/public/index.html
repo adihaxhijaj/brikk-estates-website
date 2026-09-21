@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Brikk Admin</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="/app.css" />
+</head>
+<body>
+  <!-- Login -->
+  <main id="view-login" class="login" hidden>
+    <form class="login__card" id="login-form">
+      <img src="/favicon.svg" alt="" width="56" height="56" />
+      <h1>Brikk Estates <span>Admin</span></h1>
+      <label>Name<input class="control" name="name" autocomplete="username" required /></label>
+      <label>Password<input class="control" name="password" type="password" autocomplete="current-password" required /></label>
+      <p class="form-error" id="login-error" role="alert"></p>
+      <button class="btn btn--primary btn--block" type="submit">Log in</button>
+    </form>
+  </main>
+
+  <!-- App -->
+  <div id="view-app" hidden>
+    <header class="topbar">
+      <a class="brand" href="#/" aria-label="All listings"><img src="/favicon.svg" alt="" width="32" height="32" /><span>Brikk <b>Admin</b></span></a>
+      <button class="publish-pill" id="publish-pill" type="button" aria-haspopup="dialog"><span class="dot"></span><span id="publish-text">Website is up to date</span></button>
+      <div class="topbar__user"><span id="user-name"></span><button class="btn btn--ghost btn--sm" id="logout" type="button">Log out</button></div>
+    </header>
+
+    <!-- List -->
+    <main id="view-list" class="page" hidden>
+      <div class="page__head">
+        <div>
+          <h1>Listings</h1>
+          <p class="muted" id="list-count"></p>
+        </div>
+        <a class="btn btn--primary" href="#/new">＋ New listing</a>
+      </div>
+      <div class="toolbar">
+        <input class="control" id="search" type="search" placeholder="Search ref, title or city" aria-label="Search" />
+        <div class="segmented" role="group" aria-label="Show">
+          <button type="button" data-filter="all" aria-pressed="true">All</button>
+          <button type="button" data-filter="admin" aria-pressed="false">Added here</button>
+          <button type="button" data-filter="hidden" aria-pressed="false">Hidden &amp; sold</button>
+        </div>
+      </div>
+      <ul class="rows" id="rows" role="list"></ul>
+    </main>
+
+    <!-- Editor -->
+    <form id="view-edit" class="page page--edit" hidden novalidate>
+      <div class="page__head">
+        <div>
+          <a class="back" href="#/">← All listings</a>
+          <h1 id="edit-title">New listing</h1>
+        </div>
+      </div>
+
+      <section class="card">
+        <h2>Photos</h2>
+        <p class="hint">The first photo is the cover. Drag to reorder, or use the arrows. Photos are resized before upload.</p>
+        <label class="drop" id="drop">
+          <input type="file" id="photo-input" accept="image/jpeg,image/png,image/webp,image/heic,image/heif" multiple />
+          <strong>Add photos</strong><span>Tap to choose, or drop files here</span>
+        </label>
+        <p class="form-error" id="photo-error" role="alert"></p>
+        <ol class="photos" id="photos"></ol>
+      </section>
+
+      <section class="card grid">
+        <h2 class="span-all">Basics</h2>
+        <label>Ref<input class="control" name="ref" required pattern="B\d{3}" /><small>Pre-filled with the next free number.</small></label>
+        <fieldset class="radios"><legend>Deal</legend>
+          <label><input type="radio" name="deal" value="sale" checked /> For sale</label>
+          <label><input type="radio" name="deal" value="rent" /> For rent</label>
+        </fieldset>
+        <label>Property type<select class="control" name="type" id="f-type"></select></label>
+        <label>Status<select class="control" name="status">
+          <option value="available">Available</option>
+          <option value="reserved">Reserved</option>
+          <option value="unconfirmed">Not confirmed</option>
+          <option value="sold">Sold (hidden from site)</option>
+          <option value="rented">Rented (hidden from site)</option>
+        </select></label>
+      </section>
+
+      <section class="card grid">
+        <h2 class="span-all">Location</h2>
+        <label>City<input class="control" name="city" list="city-list" placeholder="e.g. Prishtinë" /><datalist id="city-list"></datalist></label>
+        <label>Neighbourhood<input class="control" name="neighbourhood" list="hood-list" placeholder="e.g. Pejton" /><datalist id="hood-list"></datalist></label>
+        <label>Street<input class="control" name="street" placeholder="optional" /></label>
+        <label>Complex / building<input class="control" name="complex" placeholder="optional" /></label>
+      </section>
+
+      <section class="card grid">
+        <h2 class="span-all">Price</h2>
+        <label data-deal="sale">Price (€)<input class="control" name="price" type="number" min="0" step="1" inputmode="numeric" /></label>
+        <label data-deal="sale">Price per m² (€)<input class="control" name="pricePerM2" type="number" min="0" step="1" inputmode="numeric" /><small>Leave empty to calculate from price and area.</small></label>
+        <label data-deal="rent">Monthly rent (€)<input class="control" name="rentMonthly" type="number" min="0" step="1" inputmode="numeric" /></label>
+        <label data-deal="rent">Deposit (€)<input class="control" name="deposit" type="number" min="0" step="1" inputmode="numeric" /></label>
+        <p class="hint span-all">Leave price empty to show “Price on request”.</p>
+      </section>
+
+      <section class="card grid">
+        <h2 class="span-all">Size &amp; rooms</h2>
+        <label>Area (m²)<input class="control" name="areaNet" type="number" min="0" step="0.01" inputmode="decimal" /></label>
+        <label>Plot (ari)<input class="control" name="plotAres" type="number" min="0" step="0.01" inputmode="decimal" /><small>For land and houses.</small></label>
+        <label>Floor<input class="control" name="floor" type="number" step="1" inputmode="numeric" /><small>0 = ground floor.</small></label>
+        <label>Floors in building<input class="control" name="totalFloors" type="number" min="0" step="1" inputmode="numeric" /></label>
+        <label>Bedrooms<input class="control" name="bedrooms" type="number" min="0" step="1" inputmode="numeric" /></label>
+        <label>Bathrooms<input class="control" name="bathrooms" type="number" min="0" step="1" inputmode="numeric" /></label>
+        <div class="checks span-all">
+          <label><input type="checkbox" name="balcony" /> Balcony</label>
+          <label><input type="checkbox" name="storage" /> Storage room</label>
+          <label><input type="checkbox" name="isNewBuild" id="f-newbuild" /> New build</label>
+        </div>
+        <label data-newbuild>Completion (Albanian)<input class="control" name="completion" placeholder="e.g. dhjetor 2026" /></label>
+        <label data-newbuild>Completion (English)<input class="control" name="completionEn" placeholder="e.g. December 2026" /></label>
+      </section>
+
+      <section class="card">
+        <h2>Features</h2>
+        <div class="checks checks--grid" id="features"></div>
+      </section>
+
+      <section class="card">
+        <h2>Description</h2>
+        <label>Albanian<textarea class="control" name="descriptionSq" rows="9" required placeholder="Leave an empty line between paragraphs."></textarea></label>
+        <label>English <span class="muted">(optional)</span><textarea class="control" name="descriptionEn" rows="9" placeholder="If empty, the English page shows the Albanian text."></textarea></label>
+        <details class="more">
+          <summary>Custom title (optional)</summary>
+          <p class="hint">Normally the title is made for you, e.g. “Banesë në shitje në Pejton, Prishtinë”.</p>
+          <div class="grid">
+            <label>Title (Albanian)<input class="control" name="titleSq" /></label>
+            <label>Title (English)<input class="control" name="titleEn" /></label>
+          </div>
+        </details>
+      </section>
+
+      <div class="savebar">
+        <div class="form-error" id="save-error" role="alert"></div>
+        <div class="savebar__actions">
+          <button class="btn btn--danger-ghost" type="button" id="remove-btn" hidden>Remove listing</button>
+          <a class="btn btn--ghost" href="#/">Cancel</a>
+          <button class="btn btn--primary" type="submit" id="save-btn">Save &amp; publish</button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <dialog class="dialog" id="publish-dialog">
+    <div class="dialog__head">
+      <h2>Publishing</h2>
+      <button class="btn btn--ghost btn--sm" type="button" data-close>Close</button>
+    </div>
+    <p id="publish-detail"></p>
+    <pre class="log" id="publish-log"></pre>
+    <div class="dialog__actions"><button class="btn btn--primary" type="button" id="retry-btn" hidden>Try again</button></div>
+  </dialog>
+
+  <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+  <script src="/app.js" type="module"></script>
+</body>
+</html>

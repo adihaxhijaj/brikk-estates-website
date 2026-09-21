@@ -7,8 +7,8 @@ export const SITE = {
   phoneE164: '+38345667705',
   whatsapp: 'https://wa.me/38345667705',
   viber: 'viber://chat?number=%2B38345667705',
+  /** The one email address for all enquiries. */
   emailInfo: 'info@brikkestates.com',
-  emailProperties: 'properties@brikkestates.com',
   instagram: 'https://www.instagram.com/brikkestates/',
   instagramHandle: '@brikkestates',
 } as const;

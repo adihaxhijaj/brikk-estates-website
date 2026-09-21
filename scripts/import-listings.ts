@@ -3,6 +3,7 @@
 //   npm run import            (idempotent: same sources + annotations -> same output)
 //
 // Sources (read-only, never modified):   ../instagram/index.csv, ../instagram/listings/*/description.txt + NN.jpg
+// Listings added in the office admin app: data/manual/<REF>/listing.json + photos/ (see scripts/lib/manual-listings.ts)
 // Human-verified annotations:            data/listings/<REF>.json  (translations, image review, evidence-backed overrides, status)
 // Output:                                src/content/listings/<ref>.json, src/assets/listings/<ref>/NN.jpg, docs/listing-import-report.md
 import fs from 'node:fs/promises';
@@ -13,6 +14,7 @@ import sharp from 'sharp';
 import { splitDescriptionFile, cleanCaption, parseFields, CITIES, NEIGHBOURHOODS, type Deal, type PropertyType, type Parsed } from './lib/parse-listing.ts';
 import { normalise, slugify } from './lib/text.ts';
 import { TYPE, DEAL_PHRASE, IMAGE_KIND, completionEn } from '../src/i18n/vocab.ts';
+import { readManualListings, buildManualEntry } from './lib/manual-listings.ts';
 
 const SITE = process.cwd();
 const SOURCE = path.resolve(SITE, '..', 'instagram');
@@ -229,7 +231,16 @@ async function main() {
     reportRows.push(ref);
   }
 
-  // Remove stale outputs for listings no longer in the CSV.
+  // Listings added in the admin app.
+  for (const m of await readManualListings()) {
+    if (out.some((e) => e.ref === m.ref)) { fail(m.ref, 'ref is used by an Instagram listing and an admin listing; change the admin listing ref'); continue; }
+    const entry = await buildManualEntry(m, OUT_IMAGES, fail);
+    out.push(entry);
+    await fs.writeFile(path.join(OUT_CONTENT, `${m.ref.toLowerCase()}.json`), JSON.stringify(entry, null, 2) + '\n');
+    reportRows.push(m.ref);
+  }
+
+  // Remove stale outputs for listings no longer in the CSV or the admin app.
   const keep = new Set(out.map((e) => `${e.ref.toLowerCase()}.json`));
   for (const f of await fs.readdir(OUT_CONTENT)) if (f.endsWith('.json') && !keep.has(f)) await fs.unlink(path.join(OUT_CONTENT, f));
 

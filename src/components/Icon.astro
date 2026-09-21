@@ -1,29 +1,33 @@
 ---
-// Functional icons from Lucide (ISC licence, licenses/Lucide-ISC.txt), inlined at build time.
-import fs from 'node:fs';
-import path from 'node:path';
+/**
+ * Thin-line functional icons from lucide-static (ISC). Used only for specs and controls,
+ * never as decoration. Inlined at build time so no icon font or runtime request is needed.
+ */
+const files = import.meta.glob('/node_modules/lucide-static/icons/*.svg', { query: '?raw', import: 'default', eager: true }) as Record<string, string>;
 
-interface Props { name: string; size?: number; class?: string; label?: string }
-const { name, size = 20, class: className, label } = Astro.props;
+interface Props {
+  name: string;
+  size?: number;
+  stroke?: number;
+  class?: string;
+  label?: string | null;
+}
+const { name, size = 20, stroke = 1.6, class: cls = '', label = null } = Astro.props;
 
-const file = path.join(process.cwd(), 'node_modules', 'lucide-static', 'icons', `${name}.svg`);
-const raw = fs.readFileSync(file, 'utf8');
-const inner = raw.replace(/<!--[\s\S]*?-->/g, '').replace(/^[\s\S]*?<svg[^>]*>/, '').replace(/<\/svg>\s*$/, '');
+const raw = files[`/node_modules/lucide-static/icons/${name}.svg`];
+if (!raw) throw new Error(`Icon "${name}" not found in lucide-static.`);
+
+const inner = raw.replace(/^[\s\S]*?<svg[^>]*>/, '').replace(/<\/svg>\s*$/, '').trim();
+const a11y = label ? `role="img" aria-label="${label}"` : 'aria-hidden="true" focusable="false"';
+const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="${stroke}" stroke-linecap="round" stroke-linejoin="round" class="icon ${cls}" ${a11y}>${inner}</svg>`;
 ---
-<svg
-  xmlns="http://www.w3.org/2000/svg"
-  width={size}
-  height={size}
-  viewBox="0 0 24 24"
-  fill="none"
-  stroke="currentColor"
-  stroke-width="1.75"
-  stroke-linecap="round"
-  stroke-linejoin="round"
-  class:list={['icon', className]}
-  aria-hidden={label ? undefined : 'true'}
-  role={label ? 'img' : undefined}
-  aria-label={label}
-  focusable="false"
-  set:html={inner}
-/>
+
+<Fragment set:html={svg} />
+
+<style is:global>
+  .icon {
+    display: inline-block;
+    flex: none;
+    vertical-align: -0.16em;
+  }
+</style>

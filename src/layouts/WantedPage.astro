@@ -1,0 +1,135 @@
+---
+import Base from './Base.astro';
+import Icon from '../components/Icon.astro';
+import { SITE } from '../config/site';
+import { dict, route, type Lang } from '../i18n';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const t = dict(lang);
+const other: Lang = lang === 'en' ? 'sq' : 'en';
+const wa = `${SITE.whatsapp}?text=${encodeURIComponent(t.wanted.whatsappMessage)}`;
+---
+
+<Base
+  lang={lang}
+  title={t.wanted.metaTitle}
+  description={t.wanted.metaDescription}
+  path={route('wanted', lang)}
+  altPath={route('wanted', other)}
+>
+  <section class="wnt-head wrap">
+    <h1>{t.wanted.h1}</h1>
+    <p class="lede">{t.wanted.intro}</p>
+  </section>
+
+  <section class="wrap wnt-blocks">
+    {
+      t.wanted.blocks.map((b) => (
+        <article class="wnt-block">
+          <h2>{b.title}</h2>
+          <p>{b.text}</p>
+          {b.points.length > 0 && (
+            <ul>
+              {b.points.map((p) => (
+                <li>{p}</li>
+              ))}
+            </ul>
+          )}
+        </article>
+      ))
+    }
+  </section>
+
+  <section class="on-green wnt-cta">
+    <div class="wrap wnt-cta-in">
+      <h2>{t.wanted.ctaTitle}</h2>
+      <p class="wnt-actions">
+        <a class="btn btn-cream" href={route('owners', lang)}>
+          {t.wanted.ctaComposer}
+          <Icon name="arrow-right" size={18} />
+        </a>
+        <a class="btn btn-ghost-light" href={wa} rel="noopener">
+          <Icon name="message-circle" size={18} />
+          WhatsApp
+        </a>
+      </p>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .wnt-head {
+    padding-block: var(--s-7) var(--s-5);
+  }
+  .wnt-head h1 {
+    font-size: var(--step-3);
+  }
+  .wnt-head .lede {
+    margin-block-start: var(--s-4);
+  }
+
+  .wnt-blocks {
+    display: grid;
+    gap: var(--s-5);
+    padding-block-end: var(--s-7);
+  }
+  .wnt-block {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--r-3);
+    padding: var(--s-5);
+  }
+  .wnt-block h2 {
+    font-size: var(--step-1);
+  }
+  .wnt-block p {
+    margin-block-start: var(--s-3);
+    color: var(--ink-2);
+    max-width: var(--measure);
+  }
+  .wnt-block ul {
+    list-style: none;
+    margin: var(--s-4) 0 0;
+    padding: 0;
+    display: grid;
+    gap: var(--s-2);
+  }
+  .wnt-block li {
+    position: relative;
+    padding-inline-start: var(--s-5);
+    color: var(--ink-2);
+  }
+  .wnt-block li::before {
+    content: '';
+    position: absolute;
+    inset-inline-start: 0;
+    inset-block-start: 0.62em;
+    width: 9px;
+    height: 10px;
+    background: var(--leaf);
+    clip-path: polygon(50% 0, 100% 34%, 100% 100%, 0 100%, 0 34%);
+  }
+
+  .wnt-cta {
+    padding-block: clamp(2.5rem, 1.5rem + 3vw, 4rem);
+  }
+  .wnt-cta-in h2 {
+    font-size: var(--step-2);
+    font-variation-settings: 'wdth' var(--wide);
+  }
+  .wnt-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--s-3);
+    margin-block-start: var(--s-4);
+  }
+
+  @media (min-width: 900px) {
+    .wnt-blocks {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+</style>

@@ -8,6 +8,8 @@ export const sq = {
 
   nav: {
     label: 'Navigimi kryesor',
+    /** E gjithë katalogu nën një zë të vetëm; filtrat bëjnë ndarjen. */
+    properties: 'Prona',
     sale: 'Shitje',
     rent: 'Qira',
     land: 'Toka & investime',
@@ -15,6 +17,7 @@ export const sq = {
     owners: 'Për pronarët',
     about: 'Rreth nesh',
     contact: 'Kontakt',
+    request: 'Krijo kërkesë',
     menu: 'Menu',
     close: 'Mbyll',
     call: 'Telefono Brikk Estates',
@@ -30,7 +33,7 @@ export const sq = {
   tagline: 'Nga prona e duhur, tek personi i duhur.',
 
   home: {
-    eyebrow: 'Agjenci patundshmërie · Prishtinë & Fushë Kosovë',
+    eyebrow: 'Agjenci patundshmërie në Kosovë',
     h1: 'Nga prona e duhur, tek personi i duhur.',
     support: 'Prona për shitje dhe me qira në Kosovë, për blerës, pronarë dhe investitorë.',
     latestTitle: 'Pronat më të reja',
@@ -40,9 +43,9 @@ export const sq = {
     whyTitle: 'Pse Brikk Estates',
     why: [
       { title: 'Dokumentacion i qartë', text: 'Çdo shitje prezantohet me statusin e fletës poseduese dhe kontratën te noteri.' },
-      { title: 'Njohje e tregut lokal', text: 'Rrugë, komplekse dhe ndërtues në Prishtinë dhe Fushë Kosovë.' },
+      { title: 'Njohje e tregut', text: 'Punojmë në të gjithë Kosovën, si dhe me prona bregdetare në Mal të Zi dhe Shqipëri.' },
       { title: 'Prezantim profesional', text: 'Fotografi cilësore dhe promovim i targetuar.' },
-      { title: 'Gjithmonë afër jush', text: 'Telefon, Viber dhe WhatsApp.' },
+      { title: 'Gjithmonë afër jush', text: 'Një kontakt i vetëm ju shoqëron nga pyetja e parë deri te nënshkrimi te noteri.' },
     ],
     ownersTitle: 'Prona juaj meriton më mirë.',
     ownersText: 'Ne e vendosim pronën tuaj përballë njerëzve të duhur, me fotografi profesionale, promovim strategjik dhe përzgjedhje të kujdesshme të qiramarrësve.',
@@ -125,6 +128,25 @@ export const sq = {
     emptyWhatsApp: 'Përshëndetje, po kërkoj një pronë: ',
   },
 
+  /**
+   * Emrat e etiketave. Vetëm "shitje", "qira", "e rezervuar", "e shitur" dhe "e dhënë me qira"
+   * përdoren sot; të tjerat presin të dhëna përkatëse (shih src/lib/labels.ts).
+   */
+  labels: {
+    exclusive: 'Ekskluzive',
+    sale: 'Shitje',
+    rent: 'Qira',
+    new: 'E re',
+    featured: 'E veçuar',
+    reduced: 'Çmim i ulur',
+    reserved: 'E rezervuar',
+    sold: 'E shitur',
+    rented: 'E dhënë me qira',
+    soon: 'Së shpejti',
+    investment: 'Investim',
+    offmarket: 'Jashtë tregut',
+  },
+
   card: {
     ref: 'Ref',
     priceOnRequest: 'Çmimi sipas marrëveshjes',
@@ -153,6 +175,8 @@ export const sq = {
     description: 'Përshkrimi',
     otherCaptions: 'Nga postimet e tjera për këtë pronë',
     translationNote: '',
+    /** English page of a listing the office published without an English text. */
+    albanianOnlyNote: '',
     aiNote: 'Shënim për imazhet',
     similar: 'Prona të ngjashme',
     ask: 'Pyet për këtë pronë',
@@ -221,6 +245,128 @@ export const sq = {
       tenanted: 'Prona ka qiramarrës aktiv',
       rentalIncome: (v: string) => `Të ardhura mujore nga qiraja: ${v}`,
       garageOptional: 'Garazh në dispozicion jashtë çmimit',
+    },
+  },
+
+  request: {
+    metaTitle: 'Krijo kërkesë për pronë | Brikk Estates',
+    metaDescription:
+      'Nuk e gjetët pronën që kërkoni? Na tregoni çfarë ju nevojitet dhe ju kontaktojmë kur kemi diçka të përshtatshme.',
+    h1: 'Nuk e gjetët atë që kërkoni?',
+    intro:
+      'Jo çdo pronë publikohet. Na tregoni çfarë kërkoni dhe kur na vjen diçka e përshtatshme, ju kontaktojmë.',
+    formTitle: 'Të dhënat e kërkesës',
+    formIntro:
+      'Plotësoni fushat dhe hapni mesazhin e gatshëm në WhatsApp ose në aplikacionin tuaj të email-it. Asgjë nuk dërgohet pa e shtypur ju butonin e dërgimit atje.',
+    deal: 'Dëshironi të',
+    dealBuy: 'blini',
+    dealRent: 'merrni me qira',
+    type: 'Lloji i pronës',
+    area: 'Qyteti ose lagjja',
+    areaHint: 'p.sh. Prishtinë, Fushë Kosovë',
+    size: 'Sipërfaqja e dëshiruar',
+    budget: 'Buxheti',
+    rooms: 'Dhoma gjumi',
+    timing: 'Kur ju nevojitet',
+    note: 'Detaje të tjera',
+    messageTitle: 'Përshëndetje Brikk Estates, po kërkoj një pronë.',
+    emailSubject: 'Kërkesë për pronë',
+    labels: {
+      deal: 'Kërkoj të',
+      type: 'Lloji',
+      area: 'Zona',
+      size: 'Sipërfaqja',
+      budget: 'Buxheti',
+      rooms: 'Dhoma gjumi',
+      timing: 'Afati',
+      name: 'Emri',
+      phone: 'Telefoni',
+      note: 'Detaje',
+    },
+  },
+
+  legal: {
+    lastUpdated: 'Përditësuar më',
+    terms: {
+      metaTitle: 'Kushtet e përdorimit | Brikk Estates',
+      metaDescription: 'Kushtet e përdorimit të ueb-faqes së Brikk Estates.',
+      h1: 'Kushtet e përdorimit',
+      intro:
+        'Këto kushte vlejnë për përdorimin e ueb-faqes brikkestates.com. Duke e përdorur faqen, ju pajtoheni me to.',
+      sections: [
+        {
+          title: 'Informacioni për pronat',
+          body: [
+            'Pronat e publikuara këtu vijnë nga listimet tona dhe nga të dhënat që na i japin pronarët. Përshkrimet, sipërfaqet, çmimet dhe fotografitë janë orientuese dhe nuk përbëjnë ofertë detyruese.',
+            'Disponueshmëria nuk është e garantuar. Një pronë e publikuar mund të jetë shitur, dhënë me qira ose tërhequr nga tregu. Disponueshmëria konfirmohet gjatë kontaktit.',
+            'Para çdo vendimi, të dhënat e pronës, dokumentacioni dhe statusi ligjor duhet të verifikohen te burimi zyrtar dhe te noteri.',
+          ],
+        },
+        {
+          title: 'Përdorimi i faqes',
+          body: [
+            'Përmbajtja e faqes, duke përfshirë tekstet, fotografitë dhe identitetin vizual, është pronë e Brikk Estates ose e përdorur me leje. Nuk lejohet kopjimi ose ripublikimi komercial pa pëlqim me shkrim.',
+            'Nuk lejohet mbledhja automatike e të dhënave nga faqja, as përdorimi i saj në mënyrë që dëmton funksionimin e shërbimit.',
+          ],
+        },
+        {
+          title: 'Lidhjet e jashtme',
+          body: [
+            'Faqja përmban lidhje drejt shërbimeve të palëve të treta, si Instagram dhe WhatsApp. Ne nuk kontrollojmë përmbajtjen dhe kushtet e tyre.',
+          ],
+        },
+        {
+          title: 'Ndryshimet',
+          body: ['Këto kushte mund të përditësohen. Versioni në fuqi është ai i publikuar në këtë faqe.'],
+        },
+        {
+          title: 'Kontakti',
+          body: ['Për çdo pyetje lidhur me këto kushte, na shkruani në info@brikkestates.com.'],
+        },
+      ],
+    },
+    privacy: {
+      metaTitle: 'Politika e privatësisë | Brikk Estates',
+      metaDescription:
+        'Si i trajton Brikk Estates të dhënat tuaja. Kjo ueb-faqe nuk përdor cookies, analitikë apo gjurmues.',
+      h1: 'Politika e privatësisë',
+      intro: 'Kjo faqe është e thjeshtë me qëllim: ajo nuk ju gjurmon dhe nuk mbledh të dhëna për ju.',
+      sections: [
+        {
+          title: 'Çfarë nuk bën kjo faqe',
+          body: [
+            'Nuk përdor cookies. Nuk përdor Google Analytics apo ndonjë mjet tjetër analitike. Nuk ka pixel gjurmues, harta të integruara, dritare bisede apo rrjete reklamash.',
+            'Për këtë arsye nuk shfaqet asnjë njoftim për cookies: nuk ka çfarë të pranoni.',
+          ],
+        },
+        {
+          title: 'Formularët në faqe',
+          body: [
+            'Faqja nuk ka server që pranon të dhëna. Formularët "Krijo kërkesë" dhe "Dërgoni të dhënat e pronës" nuk dërgojnë asgjë vetë: ato vetëm përgatisin një mesazh dhe hapin WhatsApp ose aplikacionin tuaj të email-it. Mesazhi dërgohet vetëm nëse e shtypni ju butonin e dërgimit atje.',
+            'Deri në atë moment, të dhënat mbeten në pajisjen tuaj.',
+          ],
+        },
+        {
+          title: 'Kur na shkruani',
+          body: [
+            'Kur na kontaktoni me telefon, WhatsApp, Viber ose email, i marrim të dhënat që na jepni, si emri, numri i telefonit dhe kërkesa juaj. I përdorim vetëm për t’ju përgjigjur dhe për t’ju ndihmuar me pronën.',
+            'Komunikimi përmes WhatsApp, Viber, Instagram dhe email-it kalon përmes ofruesve përkatës, të cilët kanë politikat e veta të privatësisë.',
+            'Të dhënat tuaja nuk i shesim dhe nuk i ndajmë me palë të treta për qëllime marketingu.',
+          ],
+        },
+        {
+          title: 'Të drejtat tuaja',
+          body: [
+            'Mund të na kërkoni në çdo kohë qasje në të dhënat që kemi për ju, korrigjimin ose fshirjen e tyre. Na shkruani në info@brikkestates.com.',
+          ],
+        },
+        {
+          title: 'Strehimi i faqes',
+          body: [
+            'Faqja shërbehet si faqe statike. Ofruesi i strehimit mund të mbajë regjistra teknikë të serverit, si adresa IP, për arsye sigurie dhe funksionimi.',
+          ],
+        },
+      ],
     },
   },
 
@@ -330,18 +476,16 @@ export const sq = {
     ],
     whereTitle: 'Ku punojmë',
     whereIntro: 'Zonat ku kemi publikuar prona:',
-    alsoTitle: 'Më gjerë',
     identity: 'Një identitet i ri. I njëjti përkushtim.',
   },
 
   contact: {
     metaTitle: 'Kontakt | Brikk Estates',
-    metaDescription: 'Kontaktoni Brikk Estates në +383 45 66 77 05 (telefon, Viber, WhatsApp), info@brikkestates.com ose properties@brikkestates.com.',
+    metaDescription: 'Kontaktoni Brikk Estates në +383 45 66 77 05 (telefon, Viber, WhatsApp) ose info@brikkestates.com.',
     h1: 'Gjithmonë afër jush.',
     intro: 'Na telefononi ose na shkruani në Viber, WhatsApp ose email.',
     phoneLabel: 'Telefon, Viber dhe WhatsApp',
-    infoLabel: 'Email i përgjithshëm',
-    propertiesLabel: 'Pyetje për prona',
+    infoLabel: 'Email',
     instagramLabel: 'Instagram',
     call: 'Telefono',
     whatsapp: 'Shkruaj në WhatsApp',
@@ -358,9 +502,12 @@ export const sq = {
   footer: {
     navTitle: 'Faqet',
     contactTitle: 'Kontakt',
+    legalTitle: 'Të dhëna ligjore',
     rights: (y: number) => `© ${y} Brikk Estates`,
     wanted: 'Kërkojmë prona',
     all: 'Të gjitha pronat',
+    terms: 'Kushtet e përdorimit',
+    privacy: 'Politika e privatësisë',
   },
 
   notFound: {

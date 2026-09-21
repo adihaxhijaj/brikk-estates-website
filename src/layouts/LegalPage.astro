@@ -1,0 +1,89 @@
+---
+/**
+ * Terms of use and privacy policy.
+ *
+ * Both are written from what is verifiably true about this site: it is static, it sets no
+ * cookies, it runs no analytics, and its forms have no backend. Nothing here invents a company
+ * registration number, a registered address, or a governing jurisdiction — those need input
+ * from the agency and should be added by the agency's lawyer.
+ */
+import Base from './Base.astro';
+import { SITE } from '../config/site';
+import { dict, formatDate, route, type PageKey, type Lang } from '../i18n';
+
+interface Props {
+  lang: Lang;
+  doc: 'terms' | 'privacy';
+}
+const { lang, doc } = Astro.props;
+const t = dict(lang);
+const page = t.legal[doc];
+const other: Lang = lang === 'en' ? 'sq' : 'en';
+const key: PageKey = doc;
+
+/** Bumped by hand when the wording changes, so the date is never a lie. */
+const LAST_UPDATED = '2026-09-15';
+---
+
+<Base
+  lang={lang}
+  title={page.metaTitle}
+  description={page.metaDescription}
+  path={route(key, lang)}
+  altPath={route(key, other)}
+>
+  <article class="legal wrap-narrow">
+    <header class="legal-head">
+      <h1>{page.h1}</h1>
+      <p class="lede">{page.intro}</p>
+      <p class="note">{t.legal.lastUpdated} {formatDate(LAST_UPDATED, lang)}</p>
+    </header>
+
+    {
+      page.sections.map((s) => (
+        <section class="legal-section">
+          <h2>{s.title}</h2>
+          {s.body.map((p) => (
+            <p>{p}</p>
+          ))}
+        </section>
+      ))
+    }
+
+    <section class="legal-section">
+      <h2>{t.footer.contactTitle}</h2>
+      <p>
+        <a href={`mailto:${SITE.emailInfo}`}>{SITE.emailInfo}</a> · <a href={`tel:${SITE.phoneE164}`}>{SITE.phoneDisplay}</a>
+      </p>
+    </section>
+  </article>
+</Base>
+
+<style>
+  .legal {
+    padding-block: var(--s-7) var(--s-8);
+  }
+  .legal-head h1 {
+    font-size: var(--step-3);
+  }
+  .legal-head .lede {
+    margin-block-start: var(--s-4);
+  }
+  .legal-head .note {
+    margin-block-start: var(--s-3);
+  }
+  .legal-section {
+    margin-block-start: var(--s-7);
+  }
+  .legal-section h2 {
+    font-size: var(--step-1);
+    margin-block-end: var(--s-3);
+  }
+  .legal-section p {
+    color: var(--ink-2);
+    max-width: var(--measure);
+  }
+  .legal-section p + p {
+    margin-block-start: var(--s-3);
+  }
+</style>

@@ -1,214 +1,202 @@
-// Client-side filtering and sorting of the server-rendered property list.
-// State lives in the URL query string; back/forward restore it. Without JS the full list is shown.
+/**
+ * Client-side filtering for the property index pages.
+ *
+ * Progressive enhancement: the server already rendered every card for this category. This module
+ * only hides, reorders and counts them. If it never runs, the page is still a complete,
+ * usable listing page and the filter form falls back to a plain GET submit.
+ */
 
-type Item = { el: HTMLElement; d: DOMStringMap; index: number };
-const NUM = ['pmin', 'pmax', 'amin', 'amax'] as const;
-
-export function initFilters(root: Document = document) {
-  const list = root.querySelector<HTMLElement>('[data-results]');
-  const form = root.querySelector<HTMLFormElement>('[data-filters-form]');
-  const panel = root.querySelector<HTMLElement>('[data-filters-panel]');
-  const bar = root.querySelector<HTMLElement>('[data-filters-bar]');
-  if (!list || !form || !panel || !bar) return;
-
-  const openBtn = bar.querySelector<HTMLButtonElement>('[data-filters-open]')!;
-  const closeBtn = panel.querySelector<HTMLButtonElement>('[data-filters-close]')!;
-  const applyBtn = panel.querySelector<HTMLButtonElement>('[data-filters-apply]')!;
-  const sortSel = bar.querySelector<HTMLSelectElement>('[data-sort]')!;
-  const countEl = root.querySelector<HTMLElement>('[data-count]');
-  const emptyEl = root.querySelector<HTMLElement>('[data-empty]');
-  const activeBadge = bar.querySelector<HTMLElement>('[data-active-count]');
-  const clearEmpty = root.querySelector<HTMLButtonElement>('[data-clear-empty]');
-  const items: Item[] = [...list.querySelectorAll<HTMLElement>(':scope > li')].map((el, index) => ({ el, d: el.dataset, index }));
-  const desktop = window.matchMedia('(min-width: 62rem)');
-  const countTemplate = countEl?.dataset.template ?? '';
-  const countOne = countEl?.dataset.one ?? '';
-  const applyTemplate = applyBtn.dataset.labelTemplate ?? '';
-  const applyOne = applyBtn.dataset.labelOne ?? '';
-
-  bar.hidden = false;
-  panel.hidden = !desktop.matches;
-
-  const fields = () => ({
-    deal: val('deal'), cat: val('cat'), city: val('city'), hood: val('hood'),
-    pmin: num('pmin'), pmax: num('pmax'), amin: num('amin'), amax: num('amax'),
-    beds: num('beds'), furnished: checked('furnished'), new: checked('new'),
-  });
-  type State = ReturnType<typeof fields>;
-  function el(name: string) { return form!.elements.namedItem(name) as HTMLInputElement | HTMLSelectElement | null; }
-  function val(name: string) { return (el(name)?.value ?? '').trim(); }
-  function num(name: string) { const v = val(name); return v === '' || Number.isNaN(Number(v)) ? null : Number(v); }
-  function checked(name: string) { return (el(name) as HTMLInputElement | null)?.checked ?? false; }
-
-  function matches(d: DOMStringMap, s: State, skip?: keyof State) {
-    const n = (k: string) => (d[k] === undefined || d[k] === '' ? null : Number(d[k]));
-    if (skip !== 'deal' && s.deal && d.deal !== s.deal) return false;
-    if (skip !== 'cat' && s.cat && d.cat !== s.cat) return false;
-    if (skip !== 'city' && s.city && d.city !== s.city) return false;
-    if (skip !== 'hood' && s.hood && d.hood !== s.hood) return false;
-    const price = n('price'), area = n('area'), beds = n('beds');
-    if (s.pmin !== null && (price === null || price < s.pmin)) return false;
-    if (s.pmax !== null && (price === null || price > s.pmax)) return false;
-    if (s.amin !== null && (area === null || area < s.amin)) return false;
-    if (s.amax !== null && (area === null || area > s.amax)) return false;
-    if (skip !== 'beds' && s.beds !== null && (beds === null || beds < s.beds)) return false;
-    if (s.furnished && d.furnished !== '1') return false;
-    if (s.new && d.new !== '1') return false;
-    return true;
-  }
-
-  function sortItems(mode: string) {
-    const n = (it: Item, k: string) => (it.d[k] ? Number(it.d[k]) : null);
-    const sorted = [...items].sort((a, b) => {
-      if (mode === 'price-asc' || mode === 'price-desc') {
-        const pa = n(a, 'price'), pb = n(b, 'price');
-        if (pa === null && pb === null) return a.index - b.index;
-        if (pa === null) return 1; // price on request after priced listings
-        if (pb === null) return -1;
-        return mode === 'price-asc' ? pa - pb : pb - pa;
-      }
-      if (mode === 'size') {
-        const sa = n(a, 'area'), sb = n(b, 'area');
-        if (sa === null && sb === null) return a.index - b.index;
-        if (sa === null) return 1;
-        if (sb === null) return -1;
-        return sb - sa;
-      }
-      return a.index - b.index;
-    });
-    sorted.forEach((it) => list!.appendChild(it.el));
-  }
-
-  function updateFacets(s: State) {
-    for (const name of ['deal', 'cat', 'city', 'hood', 'beds'] as const) {
-      const select = el(name) as HTMLSelectElement | null;
-      if (!select) continue;
-      for (const opt of [...select.options]) {
-        if (!opt.value) continue;
-        const trial = { ...s, [name]: name === 'beds' ? Number(opt.value) : opt.value } as State;
-        let ok = items.some((it) => matches(it.d, trial));
-        if (name === 'hood' && s.city && opt.dataset.city && opt.dataset.city !== s.city) ok = false;
-        const keep = ok || opt.selected;
-        opt.hidden = !keep;
-        opt.disabled = !keep;
-      }
-    }
-  }
-
-  function render(push: boolean) {
-    const s = fields();
-    let shown = 0;
-    for (const it of items) {
-      const ok = matches(it.d, s);
-      it.el.hidden = !ok;
-      if (ok) shown++;
-    }
-    sortItems(sortSel.value);
-    updateFacets(s);
-    if (countEl) countEl.textContent = shown === 1 ? countOne : countTemplate.replace('999999', String(shown));
-    applyBtn.textContent = shown === 1 ? applyOne : applyTemplate.replace('999999', String(shown));
-    if (emptyEl) emptyEl.hidden = shown > 0;
-    const active = Object.entries(s).filter(([, v]) => v !== '' && v !== null && v !== false).length;
-    if (activeBadge) { activeBadge.hidden = active === 0; activeBadge.textContent = String(active); }
-
-    const params = new URLSearchParams();
-    for (const [k, v] of Object.entries(s)) {
-      if (v === '' || v === null || v === false) continue;
-      params.set(k, v === true ? '1' : String(v));
-    }
-    if (sortSel.value) params.set('sort', sortSel.value);
-    const qs = params.toString();
-    const url = `${location.pathname}${qs ? `?${qs}` : ''}${location.hash}`;
-    if (url !== `${location.pathname}${location.search}${location.hash}`) {
-      if (push) history.pushState({ filters: qs }, '', url);
-      else history.replaceState({ filters: qs }, '', url);
-    }
-  }
-
-  function readUrl() {
-    const p = new URLSearchParams(location.search);
-    for (const c of [...form!.elements] as HTMLInputElement[]) {
-      if (c.type === 'checkbox') c.checked = false;
-      else if (c.tagName === 'SELECT' || c.tagName === 'INPUT') c.value = '';
-    }
-    for (const [k, v] of p) {
-      if (k === 'sort') continue;
-      const input = el(k);
-      if (!input) continue;
-      if (input instanceof HTMLInputElement && input.type === 'checkbox') input.checked = v === '1';
-      else if (input instanceof HTMLSelectElement) {
-        if ([...input.options].some((o) => o.value === v)) input.value = v;
-      } else input.value = NUM.includes(k as (typeof NUM)[number]) && Number.isNaN(Number(v)) ? '' : v;
-    }
-    const sort = p.get('sort') ?? '';
-    sortSel.value = [...sortSel.options].some((o) => o.value === sort) ? sort : '';
-  }
-
-  // ---- mobile sheet ----
-  let backdrop: HTMLDivElement | null = null;
-  let lastFocus: HTMLElement | null = null;
-  function openSheet() {
-    lastFocus = document.activeElement as HTMLElement;
-    panel!.hidden = false;
-    panel!.setAttribute('role', 'dialog');
-    panel!.setAttribute('aria-modal', 'true');
-    openBtn.setAttribute('aria-expanded', 'true');
-    backdrop = document.createElement('div');
-    backdrop.className = 'filters-backdrop';
-    backdrop.addEventListener('click', () => closeSheet());
-    document.body.appendChild(backdrop);
-    document.documentElement.style.overflow = 'hidden';
-    panel!.querySelector<HTMLElement>('select, input, button')?.focus();
-  }
-  function closeSheet(restore = true) {
-    if (desktop.matches) return;
-    panel!.hidden = true;
-    panel!.setAttribute('role', 'region');
-    panel!.removeAttribute('aria-modal');
-    openBtn.setAttribute('aria-expanded', 'false');
-    backdrop?.remove();
-    backdrop = null;
-    document.documentElement.style.overflow = '';
-    if (restore) (lastFocus && lastFocus !== document.body && document.contains(lastFocus) ? lastFocus : openBtn).focus();
-  }
-  openBtn.addEventListener('click', openSheet);
-  closeBtn.addEventListener('click', () => closeSheet());
-  panel.addEventListener('keydown', (e) => {
-    if (desktop.matches || panel.hidden) return;
-    if (e.key === 'Escape') { e.preventDefault(); closeSheet(); }
-    if (e.key === 'Tab') {
-      const f = [...panel.querySelectorAll<HTMLElement>('button, select, input, [href]')].filter((x) => !x.hasAttribute('disabled') && x.offsetParent !== null);
-      if (!f.length) return;
-      if (e.shiftKey && document.activeElement === f[0]) { e.preventDefault(); f.at(-1)!.focus(); }
-      else if (!e.shiftKey && document.activeElement === f.at(-1)) { e.preventDefault(); f[0].focus(); }
-    }
-  });
-  desktop.addEventListener('change', () => {
-    backdrop?.remove(); backdrop = null; document.documentElement.style.overflow = '';
-    panel.hidden = !desktop.matches;
-    panel.setAttribute('role', 'region'); panel.removeAttribute('aria-modal');
-    openBtn.setAttribute('aria-expanded', 'false');
-  });
-
-  // ---- events ----
-  form.addEventListener('change', (e) => {
-    const t = e.target as HTMLElement;
-    if (t instanceof HTMLSelectElement && t.name === 'city') {
-      const hood = el('hood') as HTMLSelectElement | null;
-      const sel = hood?.selectedOptions[0];
-      if (hood && sel?.dataset.city && t.value && sel.dataset.city !== t.value) hood.value = '';
-    }
-    render(true);
-  });
-  sortSel.addEventListener('change', () => render(true));
-  form.addEventListener('submit', (e) => { e.preventDefault(); render(true); closeSheet(); });
-  form.addEventListener('reset', () => setTimeout(() => { sortSel.value = ''; render(true); }, 0));
-  // The clear button lives in the empty state, which disappears once results return: move focus to the page heading.
-  clearEmpty?.addEventListener('click', () => { window.setTimeout(() => document.querySelector<HTMLElement>('h1')?.focus(), 20); });
-  window.addEventListener('popstate', () => { readUrl(); render(false); });
-
-  readUrl();
-  render(false);
+interface Strings {
+  results: (n: number) => string;
+  apply: (n: number) => string;
 }
 
-initFilters();
+type Card = {
+  el: HTMLElement;
+  deal: string;
+  category: string;
+  city: string;
+  hood: string;
+  /** Sale price or monthly rent in EUR; null when on request. */
+  price: number | null;
+  /** Net area in m², land converted at 1 are = 100 m²; null when unstated. */
+  size: number | null;
+  beds: number | null;
+  furnished: boolean;
+  isNew: boolean;
+  posted: string;
+};
+
+const num = (v: string | undefined) => (v === undefined || v === '' ? null : Number(v));
+
+export function initFilters(strings: Strings) {
+  const formEl = document.querySelector<HTMLFormElement>('[data-filters]');
+  const listEl = document.querySelector<HTMLElement>('[data-listing-grid]');
+  const countEl = document.querySelector<HTMLElement>('[data-result-count]');
+  const empty = document.querySelector<HTMLElement>('[data-empty]');
+  const applyBtn = document.querySelector<HTMLElement>('[data-filters-apply]');
+  if (!formEl || !listEl) return;
+  const form = formEl;
+  const list = listEl;
+
+  const cards: Card[] = [...list.querySelectorAll<HTMLElement>('[data-ref]')].map((el) => ({
+    el,
+    deal: el.dataset.deal ?? '',
+    category: el.dataset.category ?? '',
+    city: el.dataset.city ?? '',
+    hood: el.dataset.hood ?? '',
+    price: num(el.dataset.price),
+    size: num(el.dataset.size),
+    beds: num(el.dataset.beds),
+    furnished: el.dataset.furnished === '1',
+    isNew: el.dataset.new === '1',
+    posted: el.dataset.posted ?? '',
+  }));
+
+  const field = (name: string) => form.elements.namedItem(name) as HTMLInputElement | HTMLSelectElement | null;
+
+  /** Query string -> controls. Only keys this form actually has are applied. */
+  function readUrl() {
+    const q = new URLSearchParams(location.search);
+    for (const [key, value] of q) {
+      const el = field(key);
+      if (!el) continue;
+      if (el instanceof HTMLInputElement && el.type === 'checkbox') el.checked = value === '1';
+      else el.value = value;
+    }
+  }
+
+  /** Controls -> query string, omitting empty values so shared links stay short. */
+  function writeUrl(replace = false) {
+    const q = new URLSearchParams();
+    for (const el of [...form.elements] as (HTMLInputElement | HTMLSelectElement)[]) {
+      if (!el.name) continue;
+      if (el instanceof HTMLInputElement && el.type === 'checkbox') {
+        if (el.checked) q.set(el.name, '1');
+      } else if (el.value) {
+        q.set(el.name, el.value);
+      }
+    }
+    const url = q.toString() ? `${location.pathname}?${q}` : location.pathname;
+    if (replace) history.replaceState(null, '', url);
+    else history.pushState(null, '', url);
+  }
+
+  function apply(updateUrl: 'push' | 'replace' | 'none' = 'push') {
+    const deal = field('deal')?.value ?? '';
+    const category = field('category')?.value ?? '';
+    const city = field('city')?.value ?? '';
+    const hood = field('hood')?.value ?? '';
+    const pmin = num(field('pmin')?.value);
+    const pmax = num(field('pmax')?.value);
+    const smin = num(field('smin')?.value);
+    const smax = num(field('smax')?.value);
+    const beds = num(field('beds')?.value);
+    const furnished = (field('furnished') as HTMLInputElement | null)?.checked ?? false;
+    const isNew = (field('new') as HTMLInputElement | null)?.checked ?? false;
+    const sort = field('sort')?.value ?? 'newest';
+
+    let shown = 0;
+    for (const c of cards) {
+      const ok =
+        (!deal || c.deal === deal) &&
+        (!category || c.category === category) &&
+        (!city || c.city === city) &&
+        (!hood || c.hood === hood) &&
+        // A price filter can only include listings that state a price.
+        (pmin === null || (c.price !== null && c.price >= pmin)) &&
+        (pmax === null || (c.price !== null && c.price <= pmax)) &&
+        (smin === null || (c.size !== null && c.size >= smin)) &&
+        (smax === null || (c.size !== null && c.size <= smax)) &&
+        (beds === null || (c.beds !== null && c.beds >= beds)) &&
+        (!furnished || c.furnished) &&
+        (!isNew || c.isNew);
+
+      c.el.hidden = !ok;
+      if (ok) shown++;
+    }
+
+    const visible = cards.filter((c) => !c.el.hidden);
+    const byPrice = (dir: 1 | -1) => (a: Card, b: Card) => {
+      // Listings without a price always sort after priced ones, in both directions.
+      if (a.price === null && b.price === null) return b.posted.localeCompare(a.posted);
+      if (a.price === null) return 1;
+      if (b.price === null) return -1;
+      return (a.price - b.price) * dir;
+    };
+    const sorters: Record<string, (a: Card, b: Card) => number> = {
+      newest: (a, b) => b.posted.localeCompare(a.posted),
+      'price-asc': byPrice(1),
+      'price-desc': byPrice(-1),
+      size: (a, b) => (b.size ?? -1) - (a.size ?? -1) || b.posted.localeCompare(a.posted),
+    };
+    visible.sort(sorters[sort] ?? sorters.newest);
+    for (const c of visible) list.append(c.el);
+
+    if (countEl) countEl.textContent = strings.results(shown);
+    if (applyBtn) applyBtn.textContent = strings.apply(shown);
+    if (empty) empty.hidden = shown > 0;
+
+    if (updateUrl !== 'none') writeUrl(updateUrl === 'replace');
+  }
+
+  form.addEventListener('input', () => apply('replace'));
+  form.addEventListener('change', () => apply('replace'));
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    apply('push');
+    closeSheet();
+  });
+
+  // Both of them: one in the filter footer, one in the empty-results block.
+  for (const clear of document.querySelectorAll('[data-filters-clear]')) {
+    clear.addEventListener('click', () => {
+      form.reset();
+      for (const el of [...form.elements] as HTMLInputElement[]) {
+        if (el.type === 'checkbox') el.checked = false;
+        else if (el.tagName === 'INPUT') el.value = '';
+        else if (el.tagName === 'SELECT') (el as unknown as HTMLSelectElement).selectedIndex = 0;
+      }
+      apply('push');
+    });
+  }
+
+  // ---- Mobile filter sheet ----
+  const openBtn = document.querySelector<HTMLButtonElement>('[data-filters-open]');
+  const closeBtn = document.querySelector<HTMLButtonElement>('[data-filters-close]');
+
+  function openSheet() {
+    form.classList.add('is-open');
+    openBtn?.setAttribute('aria-expanded', 'true');
+    document.body.style.overflow = 'hidden';
+    closeBtn?.focus();
+  }
+  function closeSheet() {
+    if (!form.classList.contains('is-open')) return;
+    form.classList.remove('is-open');
+    openBtn?.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+    openBtn?.focus();
+  }
+
+  openBtn?.addEventListener('click', openSheet);
+  closeBtn?.addEventListener('click', closeSheet);
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeSheet();
+  });
+
+  // Back/forward through filter states, which are pushed as query strings.
+  window.addEventListener('popstate', () => {
+    for (const el of [...form.elements] as HTMLInputElement[]) {
+      if (el.type === 'checkbox') el.checked = false;
+      else if (el.tagName === 'INPUT') el.value = '';
+      else if (el.tagName === 'SELECT') (el as unknown as HTMLSelectElement).selectedIndex = 0;
+    }
+    readUrl();
+    apply('none');
+  });
+
+  readUrl();
+  apply('none');
+}
+

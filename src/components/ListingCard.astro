@@ -1,78 +1,197 @@
 ---
-import { Picture } from 'astro:assets';
+import { Image } from 'astro:assets';
 import Icon from './Icon.astro';
-import { listingPath, type Lang } from '../i18n';
-import { dict } from '../i18n';
-import { dealLabel, locationLine, priceView, specItems, title, type Listing } from '../lib/listings';
+import { dict, listingPath, type Lang } from '../i18n';
+import { priceView, specItems, title as listingTitle, locationLine, type Listing } from '../lib/listings';
+import { labelsFor } from '../lib/labels';
 
-interface Props { listing: Listing; lang: Lang; eager?: boolean; headingLevel?: 'h2' | 'h3' }
-const { listing: l, lang, eager = false, headingLevel = 'h3' } = Astro.props;
+interface Props {
+  listing: Listing;
+  lang: Lang;
+  /** The first card in a grid above the fold loads eagerly. */
+  eager?: boolean;
+  sizes?: string;
+}
+const { listing: l, lang, eager = false, sizes = '(min-width: 1200px) 340px, (min-width: 760px) 44vw, 92vw' } = Astro.props;
+
 const t = dict(lang);
-const cover = l.images[l.coverIndex];
+const cover = l.images[l.coverIndex] ?? l.images[0];
 const pv = priceView(l, lang);
 const specs = specItems(l, lang);
-const H = headingLevel;
-const alt = lang === 'en' ? cover.altEn : cover.altSq;
+const href = listingPath(l, lang);
+const loc = locationLine(l, lang);
+const labels = labelsFor(l, lang);
+
+// One accessible name for the whole card, so screen readers do not hear "link" five times.
+const accessibleName = [
+  labels.map((b) => b.text).join(', '),
+  listingTitle(l, lang),
+  loc,
+  pv.onRequest ? t.card.priceOnRequest : pv.main,
+  `${t.card.ref} ${l.ref}`,
+]
+  .filter(Boolean)
+  .join('. ');
 ---
+
 <article class="card">
-  <div class="card__media">
-    <Picture
+  <div class="card-frame">
+    <Image
       src={cover.src}
-      alt={alt}
-      formats={['avif', 'webp']}
-      widths={[360, 560, 800]}
-      sizes="(min-width: 75rem) 22rem, (min-width: 48rem) 45vw, 92vw"
+      alt=""
+      widths={[340, 520, 760]}
+      sizes={sizes}
+      width={520}
+      height={390}
       loading={eager ? 'eager' : 'lazy'}
-      fetchpriority={eager ? 'high' : undefined}
-      class="card__img"
+      decoding="async"
     />
-  </div>
-  <div class="card__body">
-    <div class="card__meta">
-      <span class:list={['badge', l.deal === 'sale' ? 'badge--sale' : 'badge--rent']}>{dealLabel(l, lang)}</span>
-      <span class="ref">{t.card.ref} {l.ref}</span>
-    </div>
-    <p class="card__price tabular">
-      {pv.onRequest ? <span class="card__price-request">{t.card.priceOnRequest}</span> : <>{pv.main}{pv.sub && <span class="card__price-sub"> {pv.sub}</span>}</>}
+    <p class="card-badges" aria-hidden="true">
+      {labels.map((b) => <span class={`badge ${b.className}`}>{b.text}</span>)}
     </p>
-    <H class="card__title"><a href={listingPath(l, lang)} class="card__link">{title(l, lang)}</a></H>
-    {locationLine(l, lang) && (
-      <p class="card__loc"><Icon name="map-pin" size={16} /><span>{locationLine(l, lang)}</span></p>
-    )}
-    {specs.length > 0 && (
-      <ul role="list" class="card__specs">
-        {specs.map((s) => (
-          <li><Icon name={s.icon} size={17} /><span aria-hidden="true">{s.label}</span><span class="visually-hidden">{s.srLabel}</span></li>
-        ))}
-      </ul>
-    )}
+  </div>
+
+  <div class="card-body">
+    <p class="card-price price">
+      {pv.onRequest ? <span class="card-price-req">{t.card.priceOnRequest}</span> : pv.main}
+      {pv.sub && <span class="card-price-sub">{pv.sub}</span>}
+    </p>
+
+    <h3 class="card-title">
+      <a href={href} aria-label={accessibleName}>{listingTitle(l, lang)}</a>
+    </h3>
+
+    {loc && <p class="card-loc">{loc}</p>}
+
+    <div class="card-specs">
+      {
+        specs.map((s) => (
+          <span class="card-spec">
+            <Icon name={s.icon} size={16} />
+            {s.label}
+          </span>
+        ))
+      }
+      <span class="card-ref num">{t.card.ref} {l.ref}</span>
+    </div>
   </div>
 </article>
+
 <style>
   .card {
-    position: relative; display: flex; flex-direction: column; height: 100%;
-    background: var(--white); border: 1px solid var(--line); border-radius: var(--radius-lg); overflow: hidden;
-    transition: box-shadow var(--t-fast) var(--ease), border-color var(--t-fast) var(--ease);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--r-3);
+    overflow: hidden;
+    transition: border-color var(--t) var(--ease), box-shadow var(--t) var(--ease);
   }
-  .card:hover { box-shadow: var(--shadow); border-color: #cfc9bb; }
-  .card:focus-within { outline: 3px solid var(--green); outline-offset: 2px; }
-  .card__media { aspect-ratio: 4 / 3; background: var(--cream-soft); overflow: hidden; }
-  .card__media :global(picture) { display: block; width: 100%; height: 100%; }
-  .card__media :global(img) { width: 100%; height: 100%; object-fit: cover; }
-  .card__body { display: flex; flex-direction: column; gap: var(--s-2); padding: var(--s-4) var(--s-4) var(--s-5); flex: 1; }
-  .card__meta { display: flex; align-items: center; justify-content: space-between; gap: var(--s-3); }
-  .card__price { font-size: var(--fs-md); font-weight: 750; font-stretch: 108%; color: var(--ink); line-height: 1.3; }
-  .card__price-sub { font-size: var(--fs-sm); font-weight: 500; color: var(--muted); font-stretch: 100%; }
-  .card__price-request { font-size: var(--fs-base); font-weight: 650; color: var(--green-ink); font-stretch: 100%; }
-  .card__title { font-size: var(--fs-base); font-weight: 650; font-stretch: 100%; letter-spacing: 0; line-height: 1.35; }
-  .card__link { color: var(--ink); text-decoration: none; }
-  .card__link::after { content: ''; position: absolute; inset: 0; }
-  .card__link:focus-visible { outline: none; }
-  .card:hover .card__link { text-decoration: underline; text-decoration-thickness: 1px; }
-  .card__loc { display: flex; gap: var(--s-2); align-items: flex-start; color: var(--ink-2); font-size: var(--fs-sm); line-height: 1.4; }
-  .card__loc :global(svg) { flex: none; margin-top: 1px; color: var(--green); }
-  .card__specs { display: flex; flex-wrap: wrap; gap: var(--s-2) var(--s-4); margin-top: auto; padding-top: var(--s-3); border-top: 1px solid var(--line); font-size: var(--fs-sm); color: var(--ink-2); }
-  .card__specs li { display: inline-flex; align-items: center; gap: 0.4rem; font-variant-numeric: tabular-nums; }
-  .card__specs :global(svg) { color: var(--green); flex: none; }
-  @media (forced-colors: active) { .card { border: 1px solid CanvasText; } }
+  .card:hover {
+    border-color: var(--line-strong);
+    box-shadow: 0 6px 20px -12px #1a211d40;
+  }
+  .card:has(a:focus-visible) {
+    outline: 3px solid var(--focus-dark);
+    outline-offset: 2px;
+  }
+
+  .card-frame {
+    position: relative;
+    aspect-ratio: 4 / 3;
+    background: var(--surface-2);
+  }
+  .card-frame :global(img) {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .card-badges {
+    position: absolute;
+    inset-block-start: var(--s-3);
+    inset-inline-start: var(--s-3);
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--s-2);
+    margin: 0;
+    max-width: calc(100% - var(--s-5));
+  }
+
+  .card-body {
+    display: flex;
+    flex-direction: column;
+    gap: var(--s-1);
+    padding: var(--s-4) var(--s-4) var(--s-4);
+    flex: 1;
+  }
+
+  .card-price {
+    font-size: var(--step-1);
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    margin: 0;
+  }
+  .card-price-req {
+    font-size: var(--step-0);
+    font-weight: 600;
+    color: var(--ink-2);
+  }
+  .card-price-sub {
+    font-size: var(--step--1);
+    font-weight: 400;
+    color: var(--ink-3);
+    margin-inline-start: var(--s-2);
+  }
+
+  .card-title {
+    font-size: var(--step-0);
+    font-weight: 600;
+    line-height: 1.3;
+    letter-spacing: 0;
+    font-variation-settings: 'wdth' 100;
+    margin: 0;
+  }
+  .card-title a {
+    text-decoration: none;
+  }
+  /* The whole card is the link target. */
+  .card-title a::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+  }
+  .card-title a:focus-visible {
+    outline: none;
+  }
+
+  .card-loc {
+    font-size: var(--step--1);
+    color: var(--ink-2);
+    margin: 0;
+  }
+
+  .card-specs {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--s-2) var(--s-4);
+    margin-block-start: auto;
+    padding-block-start: var(--s-3);
+    border-block-start: 1px solid var(--line);
+    font-size: var(--step--1);
+    color: var(--ink-2);
+    font-variant-numeric: tabular-nums;
+  }
+  .card-spec {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--s-1);
+    white-space: nowrap;
+  }
+  .card-ref {
+    margin-inline-start: auto;
+    color: var(--ink-3);
+    letter-spacing: 0.03em;
+  }
 </style>

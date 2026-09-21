@@ -1,0 +1,138 @@
+---
+/** Specification table. Only populated fields appear — nothing is estimated or filled in. */
+import { dict, formatArea, formatAres, formatNumber, type Lang } from '../i18n';
+import { FEATURE } from '../i18n/vocab';
+import { floorLabel, orientationLabel, typeLabel, dealLabel, cityName, type Listing } from '../lib/listings';
+
+interface Props {
+  listing: Listing;
+  lang: Lang;
+}
+const { listing: l, lang } = Astro.props;
+const t = dict(lang);
+const r = t.detail.rows;
+
+const rows: [string, string][] = [];
+const add = (label: string, value: string | null | undefined) => {
+  if (value !== null && value !== undefined && value !== '') rows.push([label, value]);
+};
+
+add(r.ref, l.ref);
+add(r.deal, dealLabel(l, lang));
+add(r.type, typeLabel(l, lang));
+add(r.city, cityName(l, lang));
+add(r.neighbourhood, l.neighbourhood);
+add(r.street, l.street);
+add(r.complex, l.complex);
+add(r.landmark, lang === 'en' ? l.landmarkEn : l.landmark);
+if (l.country && l.country !== 'XK') add(r.country, t.detail.countries[l.country]);
+add(r.developer, l.developer);
+if (l.isNewBuild === true) add(r.newBuild, r.yes);
+add(r.completion, lang === 'en' ? l.completionEn ?? l.completion : l.completion);
+if (l.areaNet !== null) add(r.areaNet, (l.areaApprox ? `${t.detail.approx} ` : '') + formatArea(l.areaNet, lang));
+if (l.areaTerrace !== null) add(r.areaTerrace, formatArea(l.areaTerrace, lang));
+if (l.plotAres !== null) add(r.plotAres, formatAres(l.plotAres, lang));
+add(r.floor, floorLabel(l, lang));
+add(r.orientation, orientationLabel(l, lang));
+if (l.bedrooms !== null) add(r.bedrooms, formatNumber(l.bedrooms, lang));
+if (l.bathrooms !== null) add(r.bathrooms, formatNumber(l.bathrooms, lang));
+if (l.wc !== null) add(r.wc, formatNumber(l.wc, lang));
+if (l.livingWithKitchen !== null) add(r.livingWithKitchen, l.livingWithKitchen ? r.livingWithKitchenYes : r.livingWithKitchenNo);
+if (l.storage === true) add(r.storage, r.yes);
+if (l.balcony === true) add(r.balcony, r.yes);
+
+const features = l.features.map((f) => FEATURE[f]?.[lang] ?? null).filter((x): x is string => Boolean(x));
+---
+
+<div class="spec">
+  <h2 id="specs">{t.detail.specs}</h2>
+  <table>
+    <tbody>
+      {
+        rows.map(([label, value]) => (
+          <tr>
+            <th scope="row">{label}</th>
+            <td>{value}</td>
+          </tr>
+        ))
+      }
+    </tbody>
+  </table>
+
+  {
+    features.length > 0 && (
+      <>
+        <h2 id="features" class="spec-features-title">
+          {t.detail.features}
+        </h2>
+        <ul class="spec-features">
+          {features.map((f) => (
+            <li>{f}</li>
+          ))}
+        </ul>
+      </>
+    )
+  }
+</div>
+
+<style>
+  .spec h2 {
+    font-size: var(--step-1);
+    margin-block-end: var(--s-3);
+  }
+  .spec-features-title {
+    margin-block-start: var(--s-6);
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  th,
+  td {
+    text-align: start;
+    padding: var(--s-3) 0;
+    border-block-end: 1px solid var(--line);
+    vertical-align: top;
+    font-size: var(--step-0);
+  }
+  th {
+    font-weight: 500;
+    color: var(--ink-2);
+    width: 45%;
+    padding-inline-end: var(--s-4);
+  }
+  td {
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+  }
+  tr:last-child th,
+  tr:last-child td {
+    border-block-end: 0;
+  }
+
+  .spec-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 210px), 1fr));
+    gap: var(--s-2) var(--s-5);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .spec-features li {
+    position: relative;
+    padding-inline-start: var(--s-5);
+    padding-block: var(--s-1);
+    color: var(--ink-2);
+  }
+  .spec-features li::before {
+    content: '';
+    position: absolute;
+    inset-inline-start: 0;
+    inset-block-start: 0.65em;
+    width: 9px;
+    height: 9px;
+    background: var(--leaf);
+    /* A single house piece from the symbol, used as a marker. */
+    clip-path: polygon(50% 0, 100% 34%, 100% 100%, 0 100%, 0 34%);
+  }
+</style>

@@ -1,0 +1,477 @@
+---
+import Base from './Base.astro';
+import Icon from '../components/Icon.astro';
+import Gallery from '../components/Gallery.astro';
+import SpecTable from '../components/SpecTable.astro';
+import ContactPanel from '../components/ContactPanel.astro';
+import ListingCard from '../components/ListingCard.astro';
+import { SITE } from '../config/site';
+import { dict, formatDate, formatEuro, listingPath, route, type Lang } from '../i18n';
+import { labelsFor } from '../lib/labels';
+import {
+  dealLabel,
+  locationLine,
+  metaDescription,
+  similarListings,
+  specItems,
+  title as listingTitle,
+  typeLabel,
+  type Listing,
+} from '../lib/listings';
+
+interface Props {
+  listing: Listing;
+  all: Listing[];
+  lang: Lang;
+}
+const { listing: l, all, lang } = Astro.props;
+const t = dict(lang);
+const other: Lang = lang === 'en' ? 'sq' : 'en';
+
+const name = listingTitle(l, lang);
+const loc = locationLine(l, lang);
+const specs = specItems(l, lang);
+const similar = similarListings(l, all);
+const description = lang === 'en' ? l.descriptionEn : l.descriptionSq;
+
+const legalRows = (
+  [
+    ['ownershipCertificate', l.legal.ownershipCertificate],
+    ['notaryContract', l.legal.notaryContract],
+    ['contractViaLawyer', l.legal.contractViaLawyer],
+    ['inLegalisation', l.legal.inLegalisation],
+    ['contractWithDeveloper', l.legal.contractWithDeveloper],
+  ] as const
+).filter(([, v]) => v === true);
+
+const extras: string[] = [];
+if (l.extras.financing) extras.push(t.detail.extras.financing(l.extras.financing));
+if (l.extras.installments === true) extras.push(t.detail.extras.installments);
+const tradeIn = lang === 'en' ? l.extras.tradeInEn ?? l.extras.tradeIn : l.extras.tradeIn;
+if (tradeIn) extras.push(t.detail.extras.tradeIn(tradeIn));
+if (l.extras.tenanted === true) extras.push(t.detail.extras.tenanted);
+if (l.extras.rentalIncome !== null) extras.push(t.detail.extras.rentalIncome(formatEuro(l.extras.rentalIncome, lang)));
+if (l.extras.garageOptional === true) extras.push(t.detail.extras.garageOptional);
+
+const rentRows: [string, string][] = [];
+if (l.deal === 'rent') {
+  if (l.deposit !== null) rentRows.push([t.detail.deposit, formatEuro(l.deposit, lang)]);
+  if (l.minContractMonths !== null) rentRows.push([t.detail.minContract, t.detail.months(l.minContractMonths)]);
+}
+
+const cover = l.images[l.coverIndex] ?? l.images[0];
+const waHref = `${SITE.whatsapp}?text=${encodeURIComponent(t.detail.whatsappMessage(l.ref, name))}`;
+
+// RealEstateListing, with an Offer only where a price actually exists.
+const price = l.price ?? l.rentMonthly;
+const jsonLd: Record<string, unknown> = {
+  '@context': 'https://schema.org',
+  '@type': 'RealEstateListing',
+  name,
+  url: new URL(listingPath(l, lang), SITE.url).href,
+  datePosted: l.postedAt,
+  description: description?.join(' ') ?? name,
+  identifier: l.ref,
+  provider: { '@id': `${SITE.url}/#agency` },
+};
+if (l.city) jsonLd.address = { '@type': 'PostalAddress', addressLocality: l.city, addressCountry: l.country ?? 'XK' };
+if (l.areaNet !== null) jsonLd.floorSize = { '@type': 'QuantitativeValue', value: l.areaNet, unitCode: 'MTK' };
+if (l.bedrooms !== null) jsonLd.numberOfBedrooms = l.bedrooms;
+if (price !== null) {
+  const offer: Record<string, unknown> = { '@type': 'Offer', price, priceCurrency: 'EUR' };
+  // Rent is a monthly amount.
+  if (l.price === null) offer.priceSpecification = { '@type': 'UnitPriceSpecification', price, priceCurrency: 'EUR', unitCode: 'MON' };
+  // Availability only where the agency has confirmed it; the page itself never claims it otherwise.
+  if (l.status === 'available') offer.availability = 'https://schema.org/InStock';
+  jsonLd.offers = offer;
+}
+---
+
+<Base
+  lang={lang}
+  title={`${name} | ${t.card.ref} ${l.ref} | ${SITE.name}`}
+  description={metaDescription(l, lang)}
+  path={listingPath(l, lang)}
+  altPath={listingPath(l, other)}
+  ogImage={cover.src.src}
+  ogType="article"
+  jsonLd={jsonLd}
+  bodyClass="has-actionbar"
+>
+  <nav class="crumbs wrap" aria-label={t.detail.breadcrumb}>
+    <ol>
+      <li><a href={route('home', lang)}>{SITE.name}</a></li>
+      <li><a href={route('properties', lang)}>{t.footer.all}</a></li>
+      <li><a href={route(l.deal === 'sale' ? 'sale' : 'rent', lang)}>{dealLabel(l, lang)}</a></li>
+    </ol>
+  </nav>
+
+  <div class="wrap det-gal">
+    <Gallery listing={l} lang={lang} />
+  </div>
+
+  <div class="wrap det">
+    <div class="det-main">
+      <header class="det-head">
+        <p class="det-badges">
+          {labelsFor(l, lang).map((b) => <span class={`badge ${b.className}`}>{b.text}</span>)}
+          <span class="det-type">{typeLabel(l, lang)}</span>
+          <span class="det-ref num">{t.card.ref} {l.ref}</span>
+        </p>
+        <h1>{name}</h1>
+        {loc && <p class="det-loc">{loc}</p>}
+      </header>
+
+      {
+        specs.length > 0 && (
+          <ul class="facts" aria-label={t.detail.keyFacts}>
+            {specs.map((s) => (
+              <li>
+                <Icon name={s.icon} size={20} stroke={1.5} />
+                <span class="facts-label num">{s.label}</span>
+              </li>
+            ))}
+          </ul>
+        )
+      }
+
+      {
+        description && (
+          <section class="det-block">
+            <h2>{t.detail.description}</h2>
+            {/* Listings added in the admin app without English carry the Albanian text in descriptionEn. */}
+            {description.map((p) => (
+              <p lang={lang === 'en' && !l.descriptionEnIsTranslation ? 'sq' : undefined}>{p}</p>
+            ))}
+            {lang === 'en' && (
+              <p class="note det-translation">{l.descriptionEnIsTranslation ? t.detail.translationNote : t.detail.albanianOnlyNote}</p>
+            )}
+          </section>
+        )
+      }
+
+      {
+        l.aiVisualisation && (
+          <p class="det-ai">
+            <Icon name="info" size={18} />
+            <span>{(lang === 'en' ? l.aiDisclaimerEn : l.aiDisclaimerSq) ?? l.aiDisclaimerSq}</span>
+          </p>
+        )
+      }
+
+      <section class="det-block">
+        <SpecTable listing={l} lang={lang} />
+      </section>
+
+      {
+        (legalRows.length > 0 || rentRows.length > 0 || extras.length > 0) && (
+          <section class="det-block det-trust">
+            {legalRows.length > 0 && (
+              <div>
+                <h2>{t.detail.legalTitle}</h2>
+                <ul class="legal">
+                  {legalRows.map(([k]) => (
+                    <li>
+                      <Icon name="circle-check-big" size={19} />
+                      {t.detail.legal[k]}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+
+            {(rentRows.length > 0 || extras.length > 0) && (
+              <div>
+                <h2>{t.detail.extrasTitle}</h2>
+                <ul class="extras">
+                  {rentRows.map(([label, value]) => (
+                    <li>
+                      <span>{label}</span>
+                      <strong class="num">{value}</strong>
+                    </li>
+                  ))}
+                  {extras.map((e) => (
+                    <li>
+                      <span>{e}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+          </section>
+        )
+      }
+
+      {
+        l.extraCaptions.length > 0 && (
+          <section class="det-block">
+            <h2>{t.detail.otherCaptions}</h2>
+            {l.extraCaptions.map((c) => {
+              const paras = lang === 'en' ? c.en : c.sq;
+              return paras ? paras.map((p) => <p>{p}</p>) : null;
+            })}
+          </section>
+        )
+      }
+
+      <p class="det-source">
+        {/* Listings added in the admin app have no Instagram post. */}
+        {
+          l.instagramUrl && (
+            <a href={l.instagramUrl} rel="noopener">
+              <Icon name="camera" size={17} />
+              {t.detail.instagram}
+            </a>
+          )
+        }
+        <span class="note">{t.detail.postedOn} {formatDate(l.postedAt, lang)}</span>
+      </p>
+    </div>
+
+    <div class="det-aside">
+      <ContactPanel listing={l} lang={lang} />
+    </div>
+  </div>
+
+  {
+    similar.length > 0 && (
+      <section class="section wrap">
+        <h2 class="sim-title">{t.detail.similar}</h2>
+        <ul class="grid-cards">
+          {similar.map((s) => (
+            <li>
+              <ListingCard listing={s} lang={lang} />
+            </li>
+          ))}
+        </ul>
+      </section>
+    )
+  }
+
+  <div class="actionbar">
+    <a class="btn btn-primary" href={`tel:${SITE.phoneE164}`}>
+      <Icon name="phone" size={18} />
+      {t.detail.call}
+    </a>
+    <a class="btn btn-outline" href={waHref} rel="noopener">
+      <Icon name="message-circle" size={18} />
+      {t.detail.whatsapp}
+    </a>
+  </div>
+</Base>
+
+<style>
+  .crumbs {
+    padding-block: var(--s-4) var(--s-2);
+  }
+  .crumbs ol {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--s-2);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-size: var(--step--1);
+    color: var(--ink-3);
+  }
+  .crumbs li + li::before {
+    content: '/';
+    margin-inline-end: var(--s-2);
+    color: var(--line-strong);
+  }
+  .crumbs a {
+    color: var(--ink-2);
+    text-decoration: none;
+  }
+  .crumbs a:hover {
+    text-decoration: underline;
+  }
+
+  .det-gal {
+    padding-block-end: var(--s-5);
+  }
+
+  .det {
+    display: grid;
+    gap: var(--s-6);
+    align-items: start;
+    padding-block-end: var(--s-7);
+  }
+
+  .det-head {
+    margin-block-end: var(--s-5);
+  }
+  .det-badges {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--s-3);
+    margin-block-end: var(--s-3);
+  }
+  .det-type,
+  .det-ref {
+    font-size: var(--step--1);
+    color: var(--ink-3);
+  }
+  .det h1 {
+    font-size: var(--step-3);
+  }
+  .det-loc {
+    margin-block-start: var(--s-2);
+    font-size: var(--step-1);
+    color: var(--ink-2);
+  }
+
+  .facts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--s-3) var(--s-6);
+    list-style: none;
+    margin: 0 0 var(--s-6);
+    padding: var(--s-4) 0;
+    border-block: 1px solid var(--line);
+  }
+  .facts li {
+    display: flex;
+    align-items: center;
+    gap: var(--s-2);
+    color: var(--ink-2);
+  }
+  .facts-label {
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  .det-block {
+    margin-block-end: var(--s-7);
+  }
+  .det-block h2 {
+    font-size: var(--step-1);
+    margin-block-end: var(--s-3);
+  }
+  .det-block p {
+    max-width: var(--measure);
+    color: var(--ink-2);
+  }
+  .det-block p + p {
+    margin-block-start: var(--s-3);
+  }
+  .det-translation {
+    margin-block-start: var(--s-4);
+    font-style: italic;
+  }
+
+  .det-ai {
+    display: flex;
+    gap: var(--s-3);
+    align-items: flex-start;
+    padding: var(--s-4);
+    margin-block-end: var(--s-6);
+    background: var(--surface-2);
+    border-radius: var(--r-2);
+    font-size: var(--step--1);
+    color: var(--ink-2);
+  }
+
+  .det-trust {
+    display: grid;
+    gap: var(--s-6);
+  }
+  .legal,
+  .extras {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: var(--s-2);
+  }
+  .legal li {
+    display: flex;
+    align-items: center;
+    gap: var(--s-3);
+    font-weight: 600;
+  }
+  .legal :global(.icon) {
+    color: var(--green-500);
+  }
+  .extras li {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--s-3);
+    justify-content: space-between;
+    padding-block: var(--s-2);
+    border-block-end: 1px solid var(--line);
+    color: var(--ink-2);
+  }
+
+  .det-source {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--s-2) var(--s-5);
+    padding-block-start: var(--s-4);
+    border-block-start: 1px solid var(--line);
+    font-size: var(--step--1);
+  }
+  .det-source a {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--s-2);
+    min-height: 44px;
+    color: var(--ink-2);
+  }
+
+  .sim-title {
+    font-size: var(--step-2);
+    margin-block-end: var(--s-5);
+  }
+  .grid-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr));
+    gap: var(--s-5);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* ---- Mobile action bar. Reserves its own space so it never covers the last content. ---- */
+  .actionbar {
+    position: fixed;
+    inset-block-end: 0;
+    inset-inline: 0;
+    z-index: 40;
+    display: none;
+    gap: var(--s-2);
+    padding: var(--s-2) var(--gutter);
+    padding-block-end: max(var(--s-2), env(safe-area-inset-bottom));
+    background: #fbfaf7f2;
+    backdrop-filter: blur(6px);
+    border-block-start: 1px solid var(--line);
+  }
+  .actionbar .btn {
+    flex: 1;
+  }
+
+  @media (max-width: 899px) {
+    .actionbar {
+      display: flex;
+    }
+    :global(body.has-actionbar) {
+      padding-block-end: 72px;
+    }
+  }
+
+  @media (min-width: 900px) {
+    .det {
+      grid-template-columns: minmax(0, 1fr) 340px;
+      gap: var(--s-7);
+    }
+    .det-aside {
+      position: sticky;
+      top: calc(var(--header-h) + var(--s-4));
+    }
+    .det-trust {
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
+    }
+  }
+</style>

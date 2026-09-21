@@ -1,4 +1,8 @@
 ---
-import View from '../../../../views/PropertiesView.astro';
+import ListingIndex from '../../../../layouts/ListingIndex.astro';
+import { indexPage } from '../../../../lib/indexPages';
+
+const page = await indexPage('newBuilds', 'en');
 ---
-<View lang="en" kind="newBuilds" />
+
+<ListingIndex lang="en" {...page} />

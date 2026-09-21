@@ -10,29 +10,38 @@ const lum = (hex) => {
 };
 const ratio = (a, b) => { const [x, y] = [lum(a), lum(b)].sort((p, q) => q - p); return (x + 0.05) / (y + 0.05); };
 
-// [foreground, background, minimum, usage]
+// [foreground, background, minimum, usage] — pairs as used in src/styles/*.css and the components.
 const pairs = [
-  ['ink', 'paper', 4.5, 'body text on listing grids'],
-  ['ink', 'white', 4.5, 'card text'],
+  ['ink', 'paper', 4.5, 'body text'],
+  ['ink', 'surface', 4.5, 'card and panel text'],
   ['ink-2', 'paper', 4.5, 'secondary text'],
-  ['ink-2', 'white', 4.5, 'card location/specs'],
-  ['muted', 'paper', 4.5, 'meta text, availability note'],
-  ['muted', 'white', 4.5, 'meta text in cards'],
-  ['muted', 'cream-soft', 4.5, 'meta text on cream sections'],
-  ['green-ink', 'paper', 4.5, 'links'],
-  ['green-ink', 'tint', 4.5, 'rent badge, legal block'],
-  ['cream', 'green', 4.5, 'text on green surfaces'],
-  ['white', 'green', 4.5, 'primary button label, sale badge'],
-  ['cream', 'green-deep', 4.5, 'button hover, action bar'],
-  ['leaf', 'green', 3, 'eyebrows (large/UI), focus ring on dark'],
-  ['green', 'white', 3, 'focus ring & control borders on light'],
-  ['line-strong', 'white', 3, 'form control borders'],
-  ['danger', 'white', 4.5, 'form errors'],
-  ['green-ink', 'cream', 4.5, 'cream button label'],
-  ['white', 'green-deep', 4.5, 'filter badge / hover'],
+  ['ink-2', 'surface', 4.5, 'card location and specs'],
+  ['ink-2', 'surface-2', 4.5, 'AI image note'],
+  ['ink-3', 'paper', 4.5, 'notes, breadcrumbs, listing type and ref'],
+  ['ink-3', 'surface', 4.5, 'notes and refs in cards and panels'],
+  ['ink-3', 'surface-2', 4.5, 'notes on inset panels'],
+  ['green-500', 'paper', 4.5, 'section links'],
+  ['green-500', 'surface', 4.5, 'links in cards'],
+  ['on-green', 'green-500', 4.5, 'text on green sections and header'],
+  ['on-green-2', 'green-500', 4.5, 'secondary text and links on green'],
+  ['on-green-2', 'green-600', 4.5, 'mobile menu panel'],
+  ['cream', 'green-500', 4.5, 'headings on green, primary button label'],
+  ['cream', 'green-700', 4.5, 'primary button hover'],
+  ['green-700', 'cream', 4.5, 'cream button and header request button'],
+  ['leaf-text', 'green-500', 4.5, 'hero eyebrow, footer headings'],
+  ['leaf', 'green-500', 3, 'nav underline and graphic accents (non-text)'],
+  ['focus-dark', 'paper', 3, 'focus ring on light'],
+  ['focus', 'green-500', 3, 'focus ring on green'],
+  ['line-control', 'surface', 3, 'form control borders'],
+  ['on-label-light', 'label-sale', 4.5, 'sale badge'],
+  ['on-label-light', 'label-sold', 4.5, 'sold badge'],
+  ['on-label-dark', 'label-rent', 4.5, 'rent badge'],
+  ['on-label-dark', 'label-reserved', 4.5, 'reserved badge'],
+  ['on-label-dark', 'label-rented', 4.5, 'rented badge'],
 ];
 let fail = 0;
 for (const [fg, bg, min, use] of pairs) {
+  if (!tok[fg] || !tok[bg]) throw new Error(`Unknown token in pair ${fg} on ${bg}; update scripts/check-contrast.mjs.`);
   const r = ratio(tok[fg], tok[bg]);
   const ok = r >= min;
   if (!ok) fail++;

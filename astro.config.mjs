@@ -6,8 +6,10 @@ export default defineConfig({
   site: 'https://www.brikkestates.com',
   trailingSlash: 'always',
   build: { format: 'directory', inlineStylesheets: 'auto' },
-  // 'class' lets a parent's scoped styles reach the root element of child components it passes a class to.
-  scopedStyleStrategy: 'class',
+  image: {
+    // Listing photos are pre-sized to <= 2000px by the import script; derivatives are generated here.
+    layout: 'constrained',
+  },
   prefetch: false,
   devToolbar: { enabled: false },
 });

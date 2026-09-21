@@ -1,0 +1,111 @@
+---
+import '../styles/tokens.css';
+import '../styles/base.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE, NOINDEX } from '../config/site';
+import { dict, type Lang } from '../i18n';
+
+interface Props {
+  lang: Lang;
+  title: string;
+  description: string;
+  /** Path of this page, e.g. "/prona/shitje/". */
+  path: string;
+  /** Equivalent page in the other language, e.g. "/en/properties/sale/". */
+  altPath: string;
+  /** Absolute or site-relative OG image. Defaults to the brand card. */
+  ogImage?: string;
+  ogType?: 'website' | 'article';
+  /** Extra JSON-LD (e.g. RealEstateListing) rendered alongside the agency graph. */
+  jsonLd?: unknown;
+  bodyClass?: string;
+  /** The shared 404 page: not indexable, and no canonical or language alternates of its own. */
+  notFound?: boolean;
+}
+
+const { lang, title, description, path, altPath, ogImage = '/og-default.jpg', ogType = 'website', jsonLd, bodyClass = '', notFound = false } = Astro.props;
+const t = dict(lang);
+
+const abs = (p: string) => new URL(p, SITE.url).href;
+// Listing text (typed in the admin app) ends up in JSON-LD. Escaping "<" as a JSON unicode escape keeps a
+// "</script>" inside it from closing the script element; JSON parsers read the same text.
+const toJsonLd = (data: unknown) => JSON.stringify(data).replace(/</g, '\\u003c');
+const canonical = abs(path);
+const sqPath = lang === 'sq' ? path : altPath;
+const enPath = lang === 'en' ? path : altPath;
+
+// Truthful only: no address, no opening hours, no ratings.
+const agency = {
+  '@context': 'https://schema.org',
+  '@type': 'RealEstateAgent',
+  '@id': `${SITE.url}/#agency`,
+  name: SITE.name,
+  url: SITE.url,
+  logo: abs('/logo.svg'),
+  image: abs('/og-default.jpg'),
+  telephone: SITE.phoneE164,
+  email: SITE.emailInfo,
+  areaServed: [
+    { '@type': 'City', name: 'Prishtinë' },
+    { '@type': 'City', name: 'Fushë Kosovë' },
+  ],
+  sameAs: [SITE.instagram],
+};
+---
+
+<!doctype html>
+<html lang={t.htmlLang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Set before paint so JS-only affordances (menu toggle, filter sheet, lightbox) never flash
+         for visitors without JavaScript, who get the plain server-rendered version instead. -->
+    <script is:inline>document.documentElement.classList.add('js');</script>
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    {
+      !notFound && (
+        <>
+          <link rel="canonical" href={canonical} />
+          <link rel="alternate" hreflang="sq" href={abs(sqPath)} />
+          <link rel="alternate" hreflang="en" href={abs(enPath)} />
+          <link rel="alternate" hreflang="x-default" href={abs(sqPath)} />
+        </>
+      )
+    }
+
+    {NOINDEX ? <meta name="robots" content="noindex, nofollow" /> : notFound && <meta name="robots" content="noindex" />}
+
+    <link rel="icon" href="/favicon.ico" sizes="32x32" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <meta name="theme-color" content="#285943" />
+
+    <link rel="preload" href="/fonts/archivo-latin.woff2" as="font" type="font/woff2" crossorigin />
+
+    <meta property="og:site_name" content={SITE.name} />
+    <meta property="og:type" content={ogType} />
+    <meta property="og:locale" content={lang === 'en' ? 'en_GB' : 'sq_AL'} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    {!notFound && <meta property="og:url" content={canonical} />}
+    <meta property="og:image" content={abs(ogImage)} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={abs(ogImage)} />
+
+    <script type="application/ld+json" is:inline set:html={toJsonLd(agency)} />
+    {jsonLd && <script type="application/ld+json" is:inline set:html={toJsonLd(jsonLd)} />}
+  </head>
+
+  <body class={bodyClass}>
+    <a class="skip" href="#main">{t.skipToContent}</a>
+    <Header lang={lang} path={path} altPath={altPath} />
+    <main id="main" tabindex="-1">
+      <slot />
+    </main>
+    <Footer lang={lang} />
+  </body>
+</html>

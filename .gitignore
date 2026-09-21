@@ -25,3 +25,23 @@ pnpm-debug.log*
 
 # import working files (regenerated)
 data/import-draft/
+
+# office admin app: logins and sessions stay on the office computer
+admin/config.json
+admin/sessions.json
+# Vercel CLI link + prebuilt output
+.vercel/
+
+.vercel
+.env*
+
+# logs, caches, coverage, editor settings
+*.log
+.cache/
+coverage/
+.vscode/
+
+# generated reports (not needed to build or run)
+docs/lighthouse/
+docs/logo-compare/
+docs/listing-import-report.md

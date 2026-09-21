@@ -1,0 +1,356 @@
+---
+/**
+ * "Krijo kërkesë" — for buyers and tenants who cannot find what they want in the catalogue.
+ *
+ * Same honesty rules as the owner composer: there is no backend. The buttons compose a message
+ * and open WhatsApp or the visitor's email client. Nothing is stored, nothing is sent from here,
+ * and no "sent successfully" state is ever shown.
+ */
+import Base from './Base.astro';
+import Icon from '../components/Icon.astro';
+import parts from '../assets/brand/logo-parts.json';
+import { SITE } from '../config/site';
+import { dict, route, type Lang } from '../i18n';
+import { CATEGORY } from '../i18n/vocab';
+import { getVisibleListings } from '../lib/listings';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const t = dict(lang);
+const r = t.request;
+const other: Lang = lang === 'en' ? 'sq' : 'en';
+
+const all = await getVisibleListings();
+const cities = [...new Set(all.map((l) => (lang === 'en' ? l.cityEn : l.city)).filter((c): c is string => Boolean(c)))].sort();
+
+const sym = parts.symbol as { viewBox: number[]; paths: string[] };
+---
+
+<Base
+  lang={lang}
+  title={r.metaTitle}
+  description={r.metaDescription}
+  path={route('request', lang)}
+  altPath={route('request', other)}
+>
+  <section class="req-hero on-green">
+    <div class="wrap req-hero-in">
+      <div>
+        <h1>{r.h1}</h1>
+        <p class="lede req-intro">{r.intro}</p>
+      </div>
+      <svg class="req-mark" viewBox={sym.viewBox.join(' ')} aria-hidden="true">
+        <g fill={parts.colours.leaf}>{sym.paths.map((d) => <path d={d} />)}</g>
+      </svg>
+    </div>
+  </section>
+
+  <section class="section wrap-narrow">
+    <h2 class="req-title">{r.formTitle}</h2>
+    <p class="lede req-lede">{r.formIntro}</p>
+
+    <form class="comp" data-request novalidate>
+      <div class="comp-errors" data-req-errors hidden tabindex="-1" role="alert">
+        <p>{t.composer.errorsTitle}</p>
+        <ul data-req-error-list></ul>
+      </div>
+
+      <div class="comp-grid">
+        <p class="field">
+          <label for="r-deal">{r.deal} <span class="req-flag">{t.composer.required}</span></label>
+          <select id="r-deal" name="deal" data-label={r.deal} required>
+            <option value="">{t.composer.choose}</option>
+            <option value={r.dealBuy}>{r.dealBuy}</option>
+            <option value={r.dealRent}>{r.dealRent}</option>
+          </select>
+        </p>
+
+        <p class="field">
+          <label for="r-type">{r.type} <span class="req-flag">{t.composer.required}</span></label>
+          <select id="r-type" name="type" data-label={r.type} required>
+            <option value="">{t.composer.choose}</option>
+            {Object.values(CATEGORY).map((c) => <option value={c.label[lang]}>{c.label[lang]}</option>)}
+          </select>
+        </p>
+
+        <p class="field">
+          <label for="r-area">{r.area} <span class="req-flag">{t.composer.required}</span></label>
+          <input id="r-area" name="area" list="r-cities" data-label={r.area} placeholder={r.areaHint} required />
+          <datalist id="r-cities">{cities.map((c) => <option value={c} />)}</datalist>
+        </p>
+
+        <p class="field">
+          <label for="r-budget">{r.budget} <span class="opt">{t.composer.optional}</span></label>
+          <input id="r-budget" name="budget" data-label={r.budget} inputmode="numeric" />
+        </p>
+
+        <p class="field">
+          <label for="r-size">{r.size} <span class="opt">{t.composer.optional}</span></label>
+          <input id="r-size" name="size" data-label={r.size} placeholder={t.composer.sizeHint} />
+        </p>
+
+        <p class="field">
+          <label for="r-rooms">{r.rooms} <span class="opt">{t.composer.optional}</span></label>
+          <input id="r-rooms" name="rooms" data-label={r.rooms} inputmode="numeric" />
+        </p>
+
+        <p class="field">
+          <label for="r-name">{t.composer.name} <span class="req-flag">{t.composer.required}</span></label>
+          <input id="r-name" name="name" data-label={t.composer.name} autocomplete="name" required />
+        </p>
+
+        <p class="field">
+          <label for="r-phone">{t.composer.phone} <span class="req-flag">{t.composer.required}</span></label>
+          <input id="r-phone" name="phone" type="tel" data-label={t.composer.phone} autocomplete="tel" required />
+        </p>
+
+        <p class="field">
+          <label for="r-timing">{r.timing} <span class="opt">{t.composer.optional}</span></label>
+          <input id="r-timing" name="timing" data-label={r.timing} />
+        </p>
+
+        <p class="field field-wide">
+          <label for="r-note">{r.note} <span class="opt">{t.composer.optional}</span></label>
+          <textarea id="r-note" name="note" rows="3" data-label={r.note}></textarea>
+        </p>
+      </div>
+
+      <div class="comp-actions">
+        <button class="btn btn-primary" type="button" data-req-send="whatsapp">
+          <Icon name="message-circle" size={18} />
+          {t.composer.sendWhatsApp}
+        </button>
+        <button class="btn btn-outline" type="button" data-req-send="email">
+          <Icon name="mail" size={18} />
+          {t.composer.sendEmail}
+        </button>
+      </div>
+
+      <p class="note comp-hint" data-req-hint aria-live="polite"></p>
+    </form>
+
+    <p class="req-direct">
+      <a href={`tel:${SITE.phoneE164}`}>
+        <Icon name="phone" size={17} />
+        {SITE.phoneDisplay}
+      </a>
+      <a href={`mailto:${SITE.emailInfo}`}>
+        <Icon name="mail" size={17} />
+        {SITE.emailInfo}
+      </a>
+    </p>
+  </section>
+</Base>
+
+<style>
+  .req-hero {
+    padding-block: clamp(2.5rem, 1.5rem + 4vw, 4.5rem);
+    overflow: hidden;
+  }
+  .req-hero-in {
+    position: relative;
+    display: grid;
+    align-items: center;
+  }
+  .req-hero h1 {
+    font-size: var(--step-3);
+    font-variation-settings: 'wdth' var(--wide);
+    max-width: 18ch;
+  }
+  .req-intro {
+    margin-block-start: var(--s-4);
+    max-width: 56ch;
+  }
+  .req-mark {
+    position: absolute;
+    inset-block-start: 50%;
+    inset-inline-end: -8%;
+    translate: 0 -50%;
+    width: min(320px, 32vw);
+    opacity: 0.14;
+    pointer-events: none;
+  }
+
+  .req-title {
+    font-size: var(--step-2);
+  }
+  .req-lede {
+    margin-block: var(--s-3) var(--s-5);
+  }
+
+  .comp {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--r-3);
+    padding: var(--s-5);
+  }
+  .comp-grid {
+    display: grid;
+    gap: var(--s-4);
+  }
+  .field {
+    display: grid;
+    gap: var(--s-1);
+    margin: 0;
+  }
+  .field label {
+    font-size: var(--step--1);
+    font-weight: 600;
+    color: var(--ink-2);
+  }
+  .req-flag,
+  .opt {
+    font-weight: 400;
+    color: var(--ink-3);
+  }
+  .field input,
+  .field select,
+  .field textarea {
+    min-height: 44px;
+    padding: var(--s-2) var(--s-3);
+    border: 1px solid var(--line-control);
+    border-radius: var(--r-2);
+    background: var(--surface);
+    width: 100%;
+  }
+  .field textarea {
+    min-height: 88px;
+    resize: vertical;
+  }
+  input[aria-invalid='true'],
+  select[aria-invalid='true'] {
+    border-color: #a3341f;
+  }
+
+  .comp-errors {
+    margin-block-end: var(--s-4);
+    padding: var(--s-4);
+    border-radius: var(--r-2);
+    background: #fbeeea;
+    border: 1px solid #e2b7ab;
+    color: #7a2414;
+  }
+  .comp-errors p {
+    font-weight: 700;
+    margin-block-end: var(--s-2);
+  }
+  .comp-errors ul {
+    margin: 0;
+    padding-inline-start: var(--s-5);
+  }
+
+  .comp-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--s-3);
+    margin-block-start: var(--s-5);
+  }
+  .comp-hint {
+    margin-block-start: var(--s-3);
+  }
+
+  .req-direct {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--s-3) var(--s-6);
+    margin-block-start: var(--s-5);
+  }
+  .req-direct a {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--s-2);
+    min-height: 44px;
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  @media (min-width: 680px) {
+    .comp-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+    .field-wide {
+      grid-column: 1 / -1;
+    }
+  }
+</style>
+
+<script>
+  import { dict } from '../i18n';
+  import { SITE } from '../config/site';
+
+  const formEl = document.querySelector<HTMLFormElement>('[data-request]');
+  if (formEl) {
+    const form = formEl;
+    const t = dict(document.documentElement.lang === 'en' ? 'en' : 'sq');
+    const c = t.composer;
+    const r = t.request;
+    const box = form.querySelector<HTMLElement>('[data-req-errors]');
+    const list = form.querySelector<HTMLElement>('[data-req-error-list]');
+    const hint = form.querySelector<HTMLElement>('[data-req-hint]');
+    const fields = [...form.querySelectorAll<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>('[data-label]')];
+
+    function validate() {
+      const errors: string[] = [];
+      for (const el of fields) {
+        el.removeAttribute('aria-invalid');
+        const label = el.dataset.label ?? el.name;
+        if (el.required && !el.value.trim()) {
+          errors.push(c.errorRequired(label));
+          el.setAttribute('aria-invalid', 'true');
+        } else if (el.name === 'phone' && el.value.replace(/\D/g, '').length < 8) {
+          errors.push(c.errorPhone);
+          el.setAttribute('aria-invalid', 'true');
+        }
+      }
+      if (box && list) {
+        list.innerHTML = '';
+        for (const e of errors) {
+          const li = document.createElement('li');
+          li.textContent = e;
+          list.append(li);
+        }
+        box.hidden = errors.length === 0;
+        if (errors.length) form.querySelector<HTMLElement>('[aria-invalid="true"]')?.focus();
+      }
+      return errors.length === 0;
+    }
+
+    function message() {
+      const get = (n: string) => (form.elements.namedItem(n) as HTMLInputElement | null)?.value.trim() ?? '';
+      return [
+        r.messageTitle,
+        '',
+        `${r.labels.deal}: ${get('deal')}`,
+        `${r.labels.type}: ${get('type')}`,
+        `${r.labels.area}: ${get('area')}`,
+        get('budget') && `${r.labels.budget}: ${get('budget')}`,
+        get('size') && `${r.labels.size}: ${get('size')}`,
+        get('rooms') && `${r.labels.rooms}: ${get('rooms')}`,
+        get('timing') && `${r.labels.timing}: ${get('timing')}`,
+        `${r.labels.name}: ${get('name')}`,
+        `${r.labels.phone}: ${get('phone')}`,
+        get('note') && `${r.labels.note}: ${get('note')}`,
+      ]
+        .filter(Boolean)
+        .join('\n');
+    }
+
+    for (const btn of form.querySelectorAll<HTMLButtonElement>('[data-req-send]')) {
+      btn.addEventListener('click', () => {
+        if (!validate()) return;
+        const body = message();
+        const url =
+          btn.dataset.reqSend === 'whatsapp'
+            ? `${SITE.whatsapp}?text=${encodeURIComponent(body)}`
+            : `mailto:${SITE.emailInfo}?subject=${encodeURIComponent(r.emailSubject)}&body=${encodeURIComponent(body)}`;
+        // Opens the app with the message ready. The visitor still has to press send there.
+        // WhatsApp gets a new tab; a mailto: link in a new tab would leave an empty tab behind.
+        if (btn.dataset.reqSend === 'whatsapp') window.open(url, '_blank', 'noopener');
+        else location.href = url;
+        if (hint) hint.textContent = c.opened;
+      });
+    }
+  }
+</script>

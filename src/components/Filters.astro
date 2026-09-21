@@ -1,165 +1,300 @@
 ---
-// Filter + sort controls for property index pages. Hidden without JavaScript (the full list stays usable);
-// src/scripts/filters.ts reveals and drives them. Options are generated from the listings on this page.
+/**
+ * Filter + sort controls. State lives in the URL query string so results are shareable and the
+ * back button works. Without JavaScript the controls still submit as a plain GET form, and the
+ * server-rendered list for the category stays fully visible either way.
+ */
 import Icon from './Icon.astro';
-import { CATEGORY } from '../i18n/vocab';
 import { dict, type Lang } from '../i18n';
-import { categoryOf, cityName, type Listing } from '../lib/listings';
+import { CATEGORY } from '../i18n/vocab';
+import type { Facets } from '../lib/facets';
 
-interface Props { lang: Lang; listings: Listing[]; showDeal: boolean }
-const { lang, listings, showDeal } = Astro.props;
+interface Props {
+  lang: Lang;
+  facets: Facets;
+  action: string;
+  /** Hide the deal control on pages that are already a single deal. */
+  showDeal?: boolean;
+}
+const { lang, facets, action, showDeal = true } = Astro.props;
 const t = dict(lang);
-
-const count = <T,>(arr: T[], f: (x: T) => boolean) => arr.filter(f).length;
-const cats = Object.entries(CATEGORY).filter(([k]) => listings.some((l) => categoryOf(l) === k));
-const cities = [...new Map(listings.filter((l) => l.city).map((l) => [l.city!, cityName(l, lang)!])).entries()]
-  .map(([value, label]) => ({ value, label, n: count(listings, (l) => l.city === value) }))
-  .sort((a, b) => b.n - a.n || a.label.localeCompare(b.label));
-const hoods = [...new Map(listings.filter((l) => l.neighbourhood).map((l) => [l.neighbourhood!, l.city ?? ''])).entries()]
-  .map(([value, city]) => ({ value, city }))
-  .sort((a, b) => a.value.localeCompare(b.value, 'sq'));
-const hasBeds = listings.some((l) => l.bedrooms !== null);
-const hasFurnished = listings.some((l) => l.features.includes('furnished'));
-const hasNew = listings.some((l) => l.isNewBuild);
-const hasPrice = listings.some((l) => l.price !== null || l.rentMonthly !== null);
-const hasArea = listings.some((l) => l.areaNet !== null);
-const bedOptions = [1, 2, 3, 4].filter((n) => listings.some((l) => (l.bedrooms ?? 0) >= n));
 ---
-<div class="filters-bar" data-filters-bar hidden>
-  <button type="button" class="btn btn--outline filters-bar__open" aria-expanded="false" aria-controls="filters-panel" data-filters-open>
-    <Icon name="sliders-horizontal" />{t.filters.open}<span class="filters-bar__badge tabular" data-active-count hidden></span>
-  </button>
-  <div class="field filters-bar__sort">
-    <label for="f-sort">{t.filters.sort}</label>
-    <select class="control" id="f-sort" name="sort" form="filters-form" data-sort>
-      <option value="">{t.filters.sortNewest}</option>
-      {hasPrice && <option value="price-asc">{t.filters.sortPriceAsc}</option>}
-      {hasPrice && <option value="price-desc">{t.filters.sortPriceDesc}</option>}
-      {hasArea && <option value="size">{t.filters.sortSize}</option>}
-    </select>
-  </div>
-</div>
 
-<div class="filters" id="filters-panel" data-filters-panel hidden role="region" aria-labelledby="filters-title">
-  <div class="filters__head">
-    <h2 id="filters-title" class="filters__title">{t.filters.title}</h2>
-    <button type="button" class="filters__close" data-filters-close aria-label={t.filters.close}><Icon name="x" size={22} /></button>
-  </div>
-  <form id="filters-form" class="filters__form" data-filters-form action="" method="get">
-    {showDeal && (
-      <div class="field">
-        <label for="f-deal">{t.filters.deal}</label>
-        <select class="control" id="f-deal" name="deal">
-          <option value="">{t.filters.any}</option>
-          <option value="sale">{t.search.sale}</option>
-          <option value="rent">{t.search.rent}</option>
-        </select>
-      </div>
-    )}
-    {cats.length > 1 && (
-      <div class="field">
-        <label for="f-cat">{t.filters.category}</label>
-        <select class="control" id="f-cat" name="cat">
-          <option value="">{t.filters.any}</option>
-          {cats.map(([k, c]) => <option value={k}>{c.label[lang]}</option>)}
-        </select>
-      </div>
-    )}
-    {cities.length > 1 && (
-      <div class="field">
-        <label for="f-city">{t.filters.city}</label>
-        <select class="control" id="f-city" name="city">
-          <option value="">{t.filters.any}</option>
-          {cities.map((c) => <option value={c.value}>{c.label}</option>)}
-        </select>
-      </div>
-    )}
-    {hoods.length > 1 && (
-      <div class="field">
-        <label for="f-hood">{t.filters.neighbourhood}</label>
-        <select class="control" id="f-hood" name="hood">
-          <option value="">{t.filters.any}</option>
-          {hoods.map((h) => <option value={h.value} data-city={h.city}>{h.value}</option>)}
-        </select>
-      </div>
-    )}
-    {hasPrice && (
-      <fieldset class="field filters__range">
-        <legend class="label">{t.filters.price}</legend>
-        <div class="filters__pair">
-          <label class="visually-hidden" for="f-pmin">{t.filters.priceMin}</label>
-          <input class="control tabular" id="f-pmin" name="pmin" type="number" inputmode="numeric" min="0" step="1" placeholder={t.filters.min} />
-          <label class="visually-hidden" for="f-pmax">{t.filters.priceMax}</label>
-          <input class="control tabular" id="f-pmax" name="pmax" type="number" inputmode="numeric" min="0" step="1" placeholder={t.filters.max} />
-        </div>
+<div class="filters-shell">
+  <button class="btn btn-outline filters-open" type="button" data-filters-open aria-expanded="false" aria-controls="filters">
+    <Icon name="sliders-horizontal" size={18} />
+    {t.filters.open}
+  </button>
+
+  <form class="filters" id="filters" method="get" action={action} data-filters>
+    <div class="filters-head">
+      <h2>{t.filters.title}</h2>
+      <button class="filters-close" type="button" data-filters-close>
+        <Icon name="x" size={20} />
+        <span class="sr-only">{t.filters.close}</span>
+      </button>
+    </div>
+
+    <div class="filters-body">
+      {
+        showDeal && facets.deals.length > 1 && (
+          <p class="field">
+            <label for="f-deal">{t.filters.deal}</label>
+            <select id="f-deal" name="deal">
+              <option value="">{t.filters.any}</option>
+              <option value="sale">{t.search.sale}</option>
+              <option value="rent">{t.search.rent}</option>
+            </select>
+          </p>
+        )
+      }
+
+      {
+        facets.categories.length > 1 && (
+          <p class="field">
+            <label for="f-category">{t.filters.category}</label>
+            <select id="f-category" name="category">
+              <option value="">{t.filters.any}</option>
+              {facets.categories.map((c) => (
+                <option value={c}>{CATEGORY[c as keyof typeof CATEGORY].label[lang]}</option>
+              ))}
+            </select>
+          </p>
+        )
+      }
+
+      {
+        facets.cities.length > 1 && (
+          <p class="field">
+            <label for="f-city">{t.filters.city}</label>
+            <select id="f-city" name="city">
+              <option value="">{t.filters.any}</option>
+              {facets.cities.map((c) => (
+                <option value={c}>{c}</option>
+              ))}
+            </select>
+          </p>
+        )
+      }
+
+      {
+        facets.neighbourhoods.length > 1 && (
+          <p class="field">
+            <label for="f-hood">{t.filters.neighbourhood}</label>
+            <select id="f-hood" name="hood">
+              <option value="">{t.filters.any}</option>
+              {facets.neighbourhoods.map((n) => (
+                <option value={n}>{n}</option>
+              ))}
+            </select>
+          </p>
+        )
+      }
+
+      <fieldset class="field range">
+        <legend>{t.filters.price}</legend>
+        <span>
+          <label class="sr-only" for="f-pmin">{t.filters.priceMin}</label>
+          <input id="f-pmin" name="pmin" type="number" inputmode="numeric" min="0" step="1000" placeholder={t.filters.min} />
+        </span>
+        <span aria-hidden="true">–</span>
+        <span>
+          <label class="sr-only" for="f-pmax">{t.filters.priceMax}</label>
+          <input id="f-pmax" name="pmax" type="number" inputmode="numeric" min="0" step="1000" placeholder={t.filters.max} />
+        </span>
       </fieldset>
-    )}
-    {hasArea && (
-      <fieldset class="field filters__range">
-        <legend class="label">{t.filters.size}</legend>
-        <div class="filters__pair">
-          <label class="visually-hidden" for="f-amin">{t.filters.sizeMin}</label>
-          <input class="control tabular" id="f-amin" name="amin" type="number" inputmode="numeric" min="0" step="1" placeholder={t.filters.min} />
-          <label class="visually-hidden" for="f-amax">{t.filters.sizeMax}</label>
-          <input class="control tabular" id="f-amax" name="amax" type="number" inputmode="numeric" min="0" step="1" placeholder={t.filters.max} />
-        </div>
+
+      <fieldset class="field range">
+        <legend>{t.filters.size}</legend>
+        <span>
+          <label class="sr-only" for="f-smin">{t.filters.sizeMin}</label>
+          <input id="f-smin" name="smin" type="number" inputmode="numeric" min="0" step="10" placeholder={t.filters.min} />
+        </span>
+        <span aria-hidden="true">–</span>
+        <span>
+          <label class="sr-only" for="f-smax">{t.filters.sizeMax}</label>
+          <input id="f-smax" name="smax" type="number" inputmode="numeric" min="0" step="10" placeholder={t.filters.max} />
+        </span>
       </fieldset>
-    )}
-    {hasBeds && (
-      <div class="field">
-        <label for="f-beds">{t.filters.bedrooms}</label>
-        <select class="control" id="f-beds" name="beds">
-          <option value="">{t.filters.bedroomsAny}</option>
-          {bedOptions.map((n) => <option value={n}>{t.filters.bedroomsMin(n)}</option>)}
+
+      {
+        facets.bedrooms.length > 0 && (
+          <p class="field">
+            <label for="f-beds">{t.filters.bedrooms}</label>
+            <select id="f-beds" name="beds">
+              <option value="">{t.filters.bedroomsAny}</option>
+              {facets.bedrooms.map((n) => (
+                <option value={String(n)}>{t.filters.bedroomsMin(n)}</option>
+              ))}
+            </select>
+          </p>
+        )
+      }
+
+      <div class="checks">
+        {
+          facets.hasFurnished && (
+            <label class="check">
+              <input type="checkbox" name="furnished" value="1" />
+              <span>{t.filters.furnished}</span>
+            </label>
+          )
+        }
+        {
+          facets.hasNewBuild && (
+            <label class="check">
+              <input type="checkbox" name="new" value="1" />
+              <span>{t.filters.newBuild}</span>
+            </label>
+          )
+        }
+      </div>
+
+      <p class="field">
+        <label for="f-sort">{t.filters.sort}</label>
+        <select id="f-sort" name="sort">
+          <option value="newest">{t.filters.sortNewest}</option>
+          <option value="price-asc">{t.filters.sortPriceAsc}</option>
+          <option value="price-desc">{t.filters.sortPriceDesc}</option>
+          <option value="size">{t.filters.sortSize}</option>
         </select>
-      </div>
-    )}
-    {(hasFurnished || hasNew) && (
-      <div class="filters__checks">
-        {hasFurnished && <label class="check"><input type="checkbox" name="furnished" value="1" />{t.filters.furnished}</label>}
-        {hasNew && <label class="check"><input type="checkbox" name="new" value="1" />{t.filters.newBuild}</label>}
-      </div>
-    )}
-    <div class="filters__actions">
-      <button type="submit" class="btn btn--block filters__apply" data-filters-apply data-label-template={t.filters.apply(999999)} data-label-one={t.filters.apply(1)}>{t.filters.apply(listings.length)}</button>
-      <button type="reset" class="btn btn--outline btn--block" data-filters-clear>{t.filters.clear}</button>
+      </p>
+    </div>
+
+    <div class="filters-foot">
+      <button class="btn btn-primary filters-apply" type="submit" data-filters-apply>{t.filters.apply(0)}</button>
+      <button class="btn btn-outline" type="button" data-filters-clear>{t.filters.clear}</button>
     </div>
   </form>
 </div>
 
 <style>
-  .filters-bar { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: var(--s-3); margin-bottom: var(--s-5); }
-  .filters-bar__sort { display: flex; align-items: center; gap: var(--s-3); }
-  .filters-bar__sort label { white-space: nowrap; }
-  .filters-bar__sort .control { min-width: 13rem; }
-  .filters-bar__badge { display: inline-grid; place-items: center; min-width: 1.5rem; height: 1.5rem; padding: 0 0.35rem; border-radius: 999px; background: var(--green); color: var(--white); font-size: var(--fs-xs); }
-
-  .filters { background: var(--white); }
-  .filters__head { display: flex; align-items: center; justify-content: space-between; gap: var(--s-3); margin-bottom: var(--s-4); }
-  .filters__title { font-size: var(--fs-md); }
-  .filters__close { display: grid; place-items: center; width: 44px; height: 44px; border: 0; background: transparent; border-radius: var(--radius); color: var(--ink); }
-  .filters__close:hover { background: var(--cream-soft); }
-  .filters__form { display: grid; gap: var(--s-4); }
-  .filters__range { border: 0; padding: 0; min-width: 0; }
-  .filters__pair { display: grid; grid-template-columns: 1fr 1fr; gap: var(--s-2); }
-  .filters__checks { display: grid; gap: var(--s-1); }
-  .filters__actions { display: grid; gap: var(--s-2); }
-
-  /* Mobile/tablet: bottom sheet */
-  @media (max-width: 61.99rem) {
-    .filters {
-      position: fixed; inset: auto 0 0 0; z-index: 70; max-height: min(88dvh, 100%); overflow-y: auto; overscroll-behavior: contain;
-      padding: var(--s-4) var(--gutter) calc(var(--s-4) + env(safe-area-inset-bottom));
-      border-radius: var(--radius-lg) var(--radius-lg) 0 0; box-shadow: 0 -12px 40px rgb(0 0 0 / 0.25);
-    }
-    .filters__actions { position: sticky; bottom: calc(-1 * (var(--s-4) + env(safe-area-inset-bottom))); background: var(--white); padding-block: var(--s-3) var(--s-2); margin-inline: calc(-1 * var(--gutter)); padding-inline: var(--gutter); border-top: 1px solid var(--line); }
-    :global(.filters-backdrop) { position: fixed; inset: 0; z-index: 60; background: rgb(23 33 28 / 0.5); }
+  .filters-open {
+    display: none;
+    width: 100%;
   }
-  /* Desktop: sidebar */
-  @media (min-width: 62rem) {
-    .filters-bar__open { display: none; }
-    .filters { position: sticky; top: calc(var(--header-h) + var(--s-4)); border: 1px solid var(--line); border-radius: var(--radius-lg); padding: var(--s-5); max-height: calc(100vh - var(--header-h) - var(--s-6)); overflow-y: auto; }
-    .filters__close { display: none; }
-    .filters__apply { display: none; }
+
+  .filters {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--r-3);
+    padding: var(--s-4);
+  }
+  .filters-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-block-end: var(--s-4);
+  }
+  .filters-head h2 {
+    font-size: var(--step-1);
+  }
+  .filters-close {
+    display: none;
+    width: 44px;
+    height: 44px;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--r-2);
+  }
+
+  .filters-body {
+    display: grid;
+    gap: var(--s-4);
+  }
+  .field {
+    display: grid;
+    gap: var(--s-1);
+    margin: 0;
+    border: 0;
+    padding: 0;
+    min-inline-size: 0;
+  }
+  .field label,
+  .field legend {
+    font-size: var(--step--1);
+    font-weight: 600;
+    color: var(--ink-2);
+    padding: 0;
+  }
+  .field select,
+  .field input {
+    min-height: 44px;
+    width: 100%;
+    padding: 0 var(--s-3);
+    border: 1px solid var(--line-control);
+    border-radius: var(--r-2);
+    background: var(--surface);
+  }
+  .range {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: var(--s-2);
+  }
+  .range legend {
+    grid-column: 1 / -1;
+  }
+
+  .checks {
+    display: grid;
+    gap: var(--s-2);
+  }
+  .check {
+    display: flex;
+    align-items: center;
+    gap: var(--s-3);
+    min-height: 44px;
+    font-size: var(--step-0);
+    cursor: pointer;
+  }
+  .check input {
+    width: 20px;
+    height: 20px;
+    accent-color: var(--green-500);
+  }
+
+  .filters-foot {
+    display: grid;
+    gap: var(--s-2);
+    margin-block-start: var(--s-5);
+  }
+  /* With JS the list updates live, so "Show N" is only the sheet's close action on mobile. */
+  :global(html.js) .filters-apply {
+    display: none;
+  }
+
+  @media (max-width: 899px) {
+    .filters-open {
+      display: inline-flex;
+    }
+    :global(html.js) .filters {
+      display: none;
+    }
+    :global(html.js) .filters.is-open {
+      display: block;
+      position: fixed;
+      inset: 0;
+      z-index: 60;
+      border-radius: 0;
+      border: 0;
+      overflow-y: auto;
+      padding: var(--s-4) var(--gutter) calc(var(--s-5) + env(safe-area-inset-bottom));
+      overscroll-behavior: contain;
+    }
+    :global(html.js) .filters.is-open .filters-close {
+      display: inline-flex;
+    }
+    :global(html.js) .filters.is-open .filters-apply {
+      display: inline-flex;
+      position: sticky;
+      inset-block-end: 0;
+    }
+    :global(html.js) .filters.is-open .filters-foot {
+      position: sticky;
+      inset-block-end: 0;
+      background: var(--surface);
+      padding-block-start: var(--s-3);
+    }
   }
 </style>

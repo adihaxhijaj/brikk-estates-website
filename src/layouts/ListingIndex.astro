@@ -1,0 +1,185 @@
+---
+import Base from './Base.astro';
+import Icon from '../components/Icon.astro';
+import ListingCard from '../components/ListingCard.astro';
+import Filters from '../components/Filters.astro';
+import type { Facets } from '../lib/facets';
+import { SITE } from '../config/site';
+import { dict, route, type PageKey, type Lang } from '../i18n';
+import { categoryOf, type Listing } from '../lib/listings';
+
+interface Props {
+  lang: Lang;
+  pageKey: PageKey;
+  h1: string;
+  intro?: string | null;
+  title: string;
+  description: string;
+  listings: Listing[];
+  showDeal?: boolean;
+}
+const { lang, pageKey, h1, intro = null, title, description, listings, showDeal = true } = Astro.props;
+const t = dict(lang);
+const other: Lang = lang === 'en' ? 'sq' : 'en';
+const action = route(pageKey, lang);
+
+// Facet options come from the listings actually on this page, so nothing with zero results appears.
+const uniq = <T,>(xs: (T | null | undefined)[]) => [...new Set(xs.filter((x): x is T => x !== null && x !== undefined))];
+const facets: Facets = {
+  deals: uniq(listings.map((l) => l.deal)),
+  categories: uniq(listings.map((l) => categoryOf(l))),
+  cities: uniq(listings.map((l) => (lang === 'en' ? l.cityEn : l.city))).sort((a, b) => a.localeCompare(b)),
+  neighbourhoods: uniq(listings.map((l) => l.neighbourhood)).sort((a, b) => a.localeCompare(b)),
+  bedrooms: uniq(listings.map((l) => l.bedrooms)).filter((n) => n > 0).sort((a, b) => a - b),
+  hasFurnished: listings.some((l) => l.features.includes('furnished')),
+  hasNewBuild: listings.some((l) => l.isNewBuild === true),
+};
+
+/** Land is filtered in m² alongside everything else: 1 are = 100 m². */
+const sizeOf = (l: Listing) => l.areaNet ?? (l.plotAres !== null ? l.plotAres * 100 : null);
+const priceOf = (l: Listing) => l.price ?? l.rentMonthly;
+
+const emptyWhatsApp = `${SITE.whatsapp}?text=${encodeURIComponent(t.filters.emptyWhatsApp)}`;
+---
+
+<Base lang={lang} title={title} description={description} path={action} altPath={route(pageKey, other)}>
+  <div class="idx-head">
+    <div class="wrap">
+      <h1>{h1}</h1>
+      {intro && <p class="lede idx-intro">{intro}</p>}
+      <p class="idx-meta">
+        <span class="num" data-result-count aria-live="polite">{t.filters.results(listings.length)}</span>
+        <span class="idx-avail">{t.listings.availability}</span>
+      </p>
+    </div>
+  </div>
+
+  <div class="wrap idx-body">
+    <aside class="idx-side">
+      <Filters lang={lang} facets={facets} action={action} showDeal={showDeal} />
+    </aside>
+
+    <div class="idx-results">
+      <ul class="grid-cards" data-listing-grid>
+        {
+          listings.map((l, i) => (
+            <li
+              data-ref={l.ref}
+              data-deal={l.deal}
+              data-category={categoryOf(l)}
+              data-city={lang === 'en' ? l.cityEn ?? '' : l.city ?? ''}
+              data-hood={l.neighbourhood ?? ''}
+              data-price={priceOf(l) ?? ''}
+              data-size={sizeOf(l) ?? ''}
+              data-beds={l.bedrooms ?? ''}
+              data-furnished={l.features.includes('furnished') ? '1' : '0'}
+              data-new={l.isNewBuild === true ? '1' : '0'}
+              data-posted={l.postedAt}
+            >
+              <ListingCard listing={l} lang={lang} eager={i < 3} sizes="(min-width: 1100px) 330px, (min-width: 700px) 44vw, 92vw" />
+            </li>
+          ))
+        }
+      </ul>
+
+      <div class="idx-empty" data-empty hidden>
+        <h2>{t.filters.emptyTitle}</h2>
+        <p>{t.filters.emptyText}</p>
+        <p class="idx-empty-actions">
+          <button class="btn btn-outline" type="button" data-filters-clear>{t.filters.clear}</button>
+          <a class="btn btn-primary" href={emptyWhatsApp} rel="noopener">
+            <Icon name="message-circle" size={18} />
+            {t.filters.emptyCta}
+          </a>
+        </p>
+      </div>
+    </div>
+  </div>
+</Base>
+
+<style>
+  .idx-head {
+    padding-block: var(--s-6) var(--s-5);
+    border-block-end: 1px solid var(--line);
+    background: var(--surface);
+  }
+  .idx-head h1 {
+    font-size: var(--step-3);
+  }
+  .idx-intro {
+    margin-block-start: var(--s-3);
+  }
+  .idx-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--s-2) var(--s-5);
+    align-items: baseline;
+    margin-block-start: var(--s-4);
+    font-size: var(--step--1);
+  }
+  .idx-meta .num {
+    font-weight: 700;
+    color: var(--ink);
+  }
+  .idx-avail {
+    color: var(--ink-3);
+  }
+
+  .idx-body {
+    display: grid;
+    gap: var(--s-5);
+    padding-block: var(--s-6) var(--s-7);
+    align-items: start;
+  }
+
+  .grid-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 270px), 1fr));
+    gap: var(--s-5);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .idx-empty {
+    padding: var(--s-7) var(--s-5);
+    text-align: center;
+    border: 1px dashed var(--line-strong);
+    border-radius: var(--r-3);
+  }
+  .idx-empty h2 {
+    font-size: var(--step-1);
+  }
+  .idx-empty p {
+    margin-block-start: var(--s-3);
+    color: var(--ink-2);
+    max-width: 52ch;
+    margin-inline: auto;
+  }
+  .idx-empty-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--s-3);
+    justify-content: center;
+    margin-block-start: var(--s-5);
+  }
+
+  @media (min-width: 900px) {
+    .idx-body {
+      grid-template-columns: 280px minmax(0, 1fr);
+      gap: var(--s-6);
+    }
+    .idx-side {
+      position: sticky;
+      top: calc(var(--header-h) + var(--s-4));
+    }
+  }
+</style>
+
+<script>
+  import { initFilters } from '../scripts/filters';
+  import { dict } from '../i18n';
+
+  const t = dict(document.documentElement.lang === 'en' ? 'en' : 'sq');
+  initFilters({ results: t.filters.results, apply: t.filters.apply });
+</script>

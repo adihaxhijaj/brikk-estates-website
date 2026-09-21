@@ -1,0 +1,12 @@
+# Only used if someone runs a plain `vercel deploy` from this folder. The admin app publishes with
+# `vercel build` + `vercel deploy --prebuilt`, which uploads .vercel/output only.
+# Never upload office-only files: admin logins/sessions, listing sources and working files.
+admin/
+data/
+docs/
+scripts/
+backups/
+dist/
+.astro/
+*.log
+.env*

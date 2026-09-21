@@ -10,6 +10,8 @@ export const en: Dict = {
 
   nav: {
     label: 'Main navigation',
+    /** The whole catalogue under a single entry; the filters do the dividing. */
+    properties: 'Properties',
     sale: 'Sale',
     rent: 'Rent',
     land: 'Land & investment',
@@ -17,6 +19,7 @@ export const en: Dict = {
     owners: 'For owners',
     about: 'About',
     contact: 'Contact',
+    request: 'Send a request',
     menu: 'Menu',
     close: 'Close',
     call: 'Call Brikk Estates',
@@ -32,7 +35,7 @@ export const en: Dict = {
   tagline: 'From the right property, to the right person.',
 
   home: {
-    eyebrow: 'Real estate agency · Prishtina & Fushë Kosovë',
+    eyebrow: 'Real estate agency in Kosovo',
     h1: 'From the right property, to the right person.',
     support: 'Property for sale and rent in Kosovo, for buyers, owners and investors.',
     latestTitle: 'Latest properties',
@@ -42,9 +45,9 @@ export const en: Dict = {
     whyTitle: 'Why Brikk Estates',
     why: [
       { title: 'Clear documentation', text: 'Every sale states the ownership-certificate status and the notary contract.' },
-      { title: 'Local knowledge', text: 'Streets, complexes and builders across Prishtina and Fushë Kosovë.' },
+      { title: 'Market knowledge', text: 'We work across Kosovo, and with coastal property in Montenegro and Albania.' },
       { title: 'Professional presentation', text: 'Quality photography and targeted promotion.' },
-      { title: 'Always close to you', text: 'Phone, Viber and WhatsApp.' },
+      { title: 'Always close to you', text: 'One point of contact stays with you from the first question to the signing at the notary.' },
     ],
     ownersTitle: 'Your property deserves better.',
     ownersText: 'We put your property in front of the right people, with professional photography, strategic promotion and careful selection of tenants.',
@@ -127,6 +130,25 @@ export const en: Dict = {
     emptyWhatsApp: 'Hello, I am looking for a property: ',
   },
 
+  /**
+   * Label names. Only sale, rent, reserved, sold and rented are used today; the rest are ready
+   * for when the catalogue carries the matching data (see src/lib/labels.ts).
+   */
+  labels: {
+    exclusive: 'Exclusive',
+    sale: 'For sale',
+    rent: 'For rent',
+    new: 'New listing',
+    featured: 'Featured',
+    reduced: 'Price reduced',
+    reserved: 'Reserved',
+    sold: 'Sold',
+    rented: 'Rented',
+    soon: 'Coming soon',
+    investment: 'Investment',
+    offmarket: 'Off market',
+  },
+
   card: {
     ref: 'Ref',
     priceOnRequest: 'Price on request',
@@ -155,6 +177,8 @@ export const en: Dict = {
     description: 'Description',
     otherCaptions: 'From other posts about this property',
     translationNote: 'Translated from the original Albanian listing.',
+    /** English page of a listing the office published without an English text. */
+    albanianOnlyNote: 'This description is available in Albanian only.',
     aiNote: 'Note about the images',
     similar: 'Similar properties',
     ask: 'Ask about this property',
@@ -223,6 +247,127 @@ export const en: Dict = {
       tenanted: 'Property has an active tenant',
       rentalIncome: (v: string) => `Monthly rental income: ${v}`,
       garageOptional: 'Garage available separately from the price',
+    },
+  },
+
+  request: {
+    metaTitle: 'Send a property request | Brikk Estates',
+    metaDescription:
+      'Not finding the property you want? Tell us what you need and we will get in touch when something suitable comes up.',
+    h1: 'Not finding what you need?',
+    intro:
+      'Not every property gets published. Tell us what you are looking for, and when something suitable reaches us, we will get in touch.',
+    formTitle: 'Your request',
+    formIntro:
+      'Fill in the fields and open the prepared message in WhatsApp or your email app. Nothing is sent until you press send there.',
+    deal: 'You want to',
+    dealBuy: 'buy',
+    dealRent: 'rent',
+    type: 'Property type',
+    area: 'City or neighbourhood',
+    areaHint: 'e.g. Prishtinë, Fushë Kosovë',
+    size: 'Size you need',
+    budget: 'Budget',
+    rooms: 'Bedrooms',
+    timing: 'When you need it',
+    note: 'Anything else',
+    messageTitle: 'Hello Brikk Estates, I am looking for a property.',
+    emailSubject: 'Property request',
+    labels: {
+      deal: 'Looking to',
+      type: 'Type',
+      area: 'Area',
+      size: 'Size',
+      budget: 'Budget',
+      rooms: 'Bedrooms',
+      timing: 'Timing',
+      name: 'Name',
+      phone: 'Phone',
+      note: 'Details',
+    },
+  },
+
+  legal: {
+    lastUpdated: 'Last updated',
+    terms: {
+      metaTitle: 'Terms of use | Brikk Estates',
+      metaDescription: 'Terms of use for the Brikk Estates website.',
+      h1: 'Terms of use',
+      intro: 'These terms apply to your use of brikkestates.com. By using the site, you accept them.',
+      sections: [
+        {
+          title: 'Property information',
+          body: [
+            'The properties shown here come from our own listings and from information supplied by owners. Descriptions, sizes, prices and photographs are indicative and do not constitute a binding offer.',
+            'Availability is not guaranteed. A published property may already be sold, let or withdrawn. Availability is confirmed when you contact us.',
+            'Before any decision, property details, documentation and legal status should be verified at source and with the notary.',
+          ],
+        },
+        {
+          title: 'Using the site',
+          body: [
+            'The content of this site, including text, photographs and the visual identity, belongs to Brikk Estates or is used with permission. Copying or commercial republication without written consent is not permitted.',
+            'Automated harvesting of data from the site is not permitted, nor is any use that harms the operation of the service.',
+          ],
+        },
+        {
+          title: 'External links',
+          body: [
+            'The site links to third-party services such as Instagram and WhatsApp. We do not control their content or their terms.',
+          ],
+        },
+        {
+          title: 'Changes',
+          body: ['These terms may be updated. The version in force is the one published on this page.'],
+        },
+        {
+          title: 'Contact',
+          body: ['For any question about these terms, write to info@brikkestates.com.'],
+        },
+      ],
+    },
+    privacy: {
+      metaTitle: 'Privacy policy | Brikk Estates',
+      metaDescription:
+        'How Brikk Estates handles your data. This website uses no cookies, no analytics and no trackers.',
+      h1: 'Privacy policy',
+      intro: 'This site is deliberately simple: it does not track you and it does not collect data about you.',
+      sections: [
+        {
+          title: 'What this site does not do',
+          body: [
+            'It uses no cookies. It uses no Google Analytics or any other analytics tool. There are no tracking pixels, embedded maps, chat widgets or advertising networks.',
+            'That is why you see no cookie banner: there is nothing to consent to.',
+          ],
+        },
+        {
+          title: 'The forms on this site',
+          body: [
+            'The site has no server that receives data. The "Send a request" and "Submit your property" forms send nothing themselves: they only prepare a message and open WhatsApp or your email app. The message is sent only if you press send there.',
+            'Until that moment, what you typed stays on your device.',
+          ],
+        },
+        {
+          title: 'When you contact us',
+          body: [
+            'When you reach us by phone, WhatsApp, Viber or email, we receive the details you give us, such as your name, phone number and what you are looking for. We use them only to reply and to help you with the property.',
+            'Communication through WhatsApp, Viber, Instagram and email passes through those providers, each with its own privacy policy.',
+            'We do not sell your data and do not share it with third parties for marketing.',
+          ],
+        },
+        {
+          title: 'Your rights',
+          body: [
+            'You can ask us at any time what data we hold about you, and ask for it to be corrected or deleted. Write to info@brikkestates.com.',
+          ],
+        },
+        {
+          title: 'Hosting',
+          body: [
+            'The site is served as a static site. The hosting provider may keep technical server logs, such as IP addresses, for security and operational reasons.',
+          ],
+        },
+      ],
     },
   },
 
@@ -332,18 +477,16 @@ export const en: Dict = {
     ],
     whereTitle: 'Where we work',
     whereIntro: 'Areas where we have published properties:',
-    alsoTitle: 'Further afield',
     identity: 'A new identity. The same dedication.',
   },
 
   contact: {
     metaTitle: 'Contact | Brikk Estates',
-    metaDescription: 'Contact Brikk Estates on +383 45 66 77 05 (phone, Viber, WhatsApp), info@brikkestates.com or properties@brikkestates.com.',
+    metaDescription: 'Contact Brikk Estates on +383 45 66 77 05 (phone, Viber, WhatsApp) or info@brikkestates.com.',
     h1: 'Always close to you.',
     intro: 'Call us, or write to us on Viber, WhatsApp or by email.',
     phoneLabel: 'Phone, Viber and WhatsApp',
-    infoLabel: 'General enquiries',
-    propertiesLabel: 'Property enquiries',
+    infoLabel: 'Email',
     instagramLabel: 'Instagram',
     call: 'Call',
     whatsapp: 'Message on WhatsApp',
@@ -359,10 +502,13 @@ export const en: Dict = {
 
   footer: {
     navTitle: 'Pages',
+    legalTitle: 'Legal',
     contactTitle: 'Contact',
     rights: (y: number) => `© ${y} Brikk Estates`,
     wanted: 'Properties wanted',
     all: 'All properties',
+    terms: 'Terms of use',
+    privacy: 'Privacy policy',
   },
 
   notFound: {

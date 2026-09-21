@@ -1,25 +1,50 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import { dict, ROUTES } from '../i18n';
+import Base from '../layouts/Base.astro';
+import Icon from '../components/Icon.astro';
+import { dict, route } from '../i18n';
 
-const sq = dict('sq');
+// Albanian is the default language, so the shared 404 speaks Albanian with an English line under it.
+const t = dict('sq');
 const en = dict('en');
+// The 404 is served at whatever URL was missing, so the language switch leads to each home page.
 ---
-<BaseLayout lang="sq" title={sq.notFound.title} description={sq.notFound.text} alternates={ROUTES.home}>
-  <section class="section">
-    <div class="container nf">
-      <h1>{sq.notFound.h1}</h1>
-      <p>{sq.notFound.text}</p>
-      <p><a class="btn" href={ROUTES.properties.sq}>{sq.notFound.cta}</a></p>
-      <div lang="en" class="nf__en">
-        <h2>{en.notFound.h1}</h2>
-        <p>{en.notFound.text}</p>
-        <p><a class="btn btn--outline" href={ROUTES.properties.en}>{en.notFound.cta}</a></p>
-      </div>
-    </div>
+
+<Base lang="sq" title={t.notFound.title} description={t.notFound.text} path={route('home', 'sq')} altPath={route('home', 'en')} notFound>
+  <section class="nf wrap">
+    <h1>{t.notFound.h1}</h1>
+    <p class="lede">{t.notFound.text}</p>
+    <p class="nf-en" lang="en">{en.notFound.h1} {en.notFound.text}</p>
+
+    <p class="nf-actions">
+      <a class="btn btn-primary" href={route('properties', 'sq')}>
+        {t.notFound.cta}
+        <Icon name="arrow-right" size={18} />
+      </a>
+      <a class="btn btn-outline" href={route('home', 'sq')}>Brikk Estates</a>
+      <a class="btn btn-outline" href={route('properties', 'en')} lang="en">{en.notFound.cta}</a>
+    </p>
   </section>
-</BaseLayout>
+</Base>
+
 <style>
-  .nf { display: grid; gap: var(--s-4); justify-items: start; }
-  .nf__en { display: grid; gap: var(--s-3); justify-items: start; margin-top: var(--s-6); padding-top: var(--s-5); border-top: 1px solid var(--line); }
+  .nf {
+    padding-block: var(--s-9) var(--s-8);
+    max-width: 62ch;
+  }
+  .nf h1 {
+    font-size: var(--step-3);
+  }
+  .nf .lede {
+    margin-block-start: var(--s-4);
+  }
+  .nf-en {
+    margin-block-start: var(--s-3);
+    color: var(--ink-3);
+  }
+  .nf-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--s-3);
+    margin-block-start: var(--s-6);
+  }
 </style>

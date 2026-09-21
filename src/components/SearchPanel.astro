@@ -1,61 +1,147 @@
 ---
-// Home search. A plain GET form to the properties page, so it works without JavaScript.
+/**
+ * Plain GET form to the properties index. Works with JavaScript disabled — the index page
+ * reads the same query parameters server-side-rendered filters use.
+ */
 import Icon from './Icon.astro';
 import { dict, route, type Lang } from '../i18n';
 import { CATEGORY } from '../i18n/vocab';
-import { categoryOf, cityName, type Listing } from '../lib/listings';
 
-interface Props { lang: Lang; listings: Listing[] }
-const { lang, listings } = Astro.props;
+interface Props {
+  lang: Lang;
+  /** Cities that actually occur in the catalogue, most common first. */
+  cities: string[];
+}
+const { lang, cities } = Astro.props;
 const t = dict(lang);
-const cats = Object.entries(CATEGORY).filter(([k]) => listings.some((l) => categoryOf(l) === k));
-const cities = [...new Map(listings.filter((l) => l.city).map((l) => [l.city!, cityName(l, lang)!])).entries()]
-  .map(([value, label]) => ({ value, label, n: listings.filter((l) => l.city === value).length }))
-  .sort((a, b) => b.n - a.n);
 ---
-<form class="search" action={route('properties', lang)} method="get" role="search" aria-label={t.search.label}>
-  <fieldset class="search__deal">
-    <legend class="visually-hidden">{t.search.deal}</legend>
-    <div class="segmented">
-      <input type="radio" name="deal" id="search-sale" value="sale" checked />
-      <label for="search-sale">{t.search.sale}</label>
-      <input type="radio" name="deal" id="search-rent" value="rent" />
-      <label for="search-rent">{t.search.rent}</label>
-    </div>
+
+<form class="search" method="get" action={route('properties', lang)} role="search">
+  <h2 class="sr-only">{t.search.label}</h2>
+
+  <fieldset class="search-deal">
+    <legend class="sr-only">{t.search.deal}</legend>
+    <label>
+      <input type="radio" name="deal" value="sale" checked />
+      <span>{t.search.sale}</span>
+    </label>
+    <label>
+      <input type="radio" name="deal" value="rent" />
+      <span>{t.search.rent}</span>
+    </label>
   </fieldset>
-  <div class="field">
-    <label for="search-cat">{t.search.type}</label>
-    <select class="control" id="search-cat" name="cat">
-      <option value="">{t.search.anyType}</option>
-      {cats.map(([k, c]) => <option value={k}>{c.label[lang]}</option>)}
-    </select>
+
+  <div class="search-fields">
+    <p class="search-field">
+      <label for="s-type">{t.search.type}</label>
+      <select id="s-type" name="category">
+        <option value="">{t.search.anyType}</option>
+        {Object.entries(CATEGORY).map(([k, c]) => <option value={k}>{c.label[lang]}</option>)}
+      </select>
+    </p>
+
+    <p class="search-field">
+      <label for="s-city">{t.search.city}</label>
+      <select id="s-city" name="city">
+        <option value="">{t.search.anyCity}</option>
+        {cities.map((c) => <option value={c}>{c}</option>)}
+      </select>
+    </p>
+
+    <button class="btn btn-primary search-submit" type="submit">
+      <Icon name="search" size={18} />
+      {t.search.submit}
+    </button>
   </div>
-  <div class="field">
-    <label for="search-city">{t.search.city}</label>
-    <select class="control" id="search-city" name="city">
-      <option value="">{t.search.anyCity}</option>
-      {cities.map((c) => <option value={c.value}>{c.label}</option>)}
-    </select>
-  </div>
-  <button class="btn search__submit" type="submit"><Icon name="search" />{t.search.submit}</button>
 </form>
+
 <style>
   .search {
-    display: grid; gap: var(--s-4); align-items: end;
-    background: var(--white); color: var(--ink); padding: var(--s-4); border-radius: var(--radius-lg);
-    box-shadow: 0 12px 40px rgb(0 0 0 / 0.18);
+    background: var(--surface);
+    color: var(--ink);
+    border-radius: var(--r-3);
+    padding: var(--s-4);
+    display: grid;
+    gap: var(--s-4);
+    box-shadow: 0 18px 40px -28px #0d1f18a6;
   }
-  .search fieldset { border: 0; padding: 0; min-width: 0; }
-  .search__deal .segmented { width: 100%; }
-  @media (min-width: 40rem) {
-    .search { grid-template-columns: 1fr 1fr; padding: var(--s-5); }
-    .search__deal { grid-column: 1 / -1; }
-    .search__deal .segmented { width: auto; }
-    .search__submit { grid-column: 1 / -1; }
+
+  .search-deal {
+    display: flex;
+    gap: var(--s-1);
+    border: 0;
+    padding: 0;
+    margin: 0;
+    background: var(--surface-2);
+    border-radius: var(--r-2);
+    padding: var(--s-1);
+    width: fit-content;
   }
-  @media (min-width: 62rem) {
-    .search { grid-template-columns: auto 1fr 1fr auto; }
-    .search__deal { grid-column: auto; }
-    .search__submit { grid-column: auto; }
+  .search-deal label {
+    position: relative;
+  }
+  .search-deal input {
+    position: absolute;
+    opacity: 0;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    cursor: pointer;
+  }
+  .search-deal span {
+    display: block;
+    padding: var(--s-2) var(--s-5);
+    min-height: 40px;
+    display: grid;
+    place-items: center;
+    border-radius: var(--r-1);
+    font-size: var(--step--1);
+    font-weight: 600;
+    color: var(--ink-2);
+    transition: background var(--t) var(--ease), color var(--t) var(--ease);
+  }
+  .search-deal input:checked + span {
+    background: var(--green-500);
+    color: var(--cream);
+  }
+  .search-deal input:focus-visible + span {
+    outline: 3px solid var(--focus-dark);
+    outline-offset: 2px;
+  }
+
+  .search-fields {
+    display: grid;
+    gap: var(--s-3);
+    grid-template-columns: 1fr;
+  }
+  .search-field {
+    display: grid;
+    gap: var(--s-1);
+    margin: 0;
+  }
+  .search-field label {
+    font-size: var(--step--1);
+    font-weight: 600;
+    color: var(--ink-2);
+  }
+  .search-field select {
+    min-height: 46px;
+    padding: 0 var(--s-3);
+    border: 1px solid var(--line-control);
+    border-radius: var(--r-2);
+    background: var(--surface);
+    width: 100%;
+  }
+  .search-submit {
+    align-self: end;
+    min-height: 46px;
+  }
+
+  @media (min-width: 620px) {
+    .search-fields {
+      grid-template-columns: 1fr 1fr auto;
+      align-items: end;
+    }
   }
 </style>

@@ -2,77 +2,175 @@
 import Icon from './Icon.astro';
 import { SITE } from '../config/site';
 import { dict, type Lang } from '../i18n';
-import { dealLabel, priceView, title, type Listing } from '../lib/listings';
+import { priceView, title as listingTitle, type Listing } from '../lib/listings';
 
-interface Props { listing: Listing; lang: Lang; url: string }
-const { listing: l, lang, url } = Astro.props;
+interface Props {
+  listing: Listing;
+  lang: Lang;
+}
+const { listing: l, lang } = Astro.props;
 const t = dict(lang);
-const name = title(l, lang);
-const summary = [name, l.complex].filter(Boolean).join(', ');
-const wa = `${SITE.whatsapp}?text=${encodeURIComponent(t.detail.whatsappMessage(l.ref, summary))}`;
-const mail = `mailto:${SITE.emailProperties}?subject=${encodeURIComponent(t.detail.emailSubject(l.ref, name))}`;
+
 const pv = priceView(l, lang);
+const name = listingTitle(l, lang);
+const message = t.detail.whatsappMessage(l.ref, name);
+const waHref = `${SITE.whatsapp}?text=${encodeURIComponent(message)}`;
+const mailHref = `mailto:${SITE.emailInfo}?subject=${encodeURIComponent(t.detail.emailSubject(l.ref, name))}&body=${encodeURIComponent(message)}`;
 ---
-<aside class="contact-panel" aria-labelledby="contact-panel-title">
-  <div class="contact-panel__head">
-    <span class:list={['badge', l.deal === 'sale' ? 'badge--sale' : 'badge--rent']}>{dealLabel(l, lang)}</span>
-    <span class="ref">{t.card.ref} {l.ref}</span>
+
+<aside class="panel" aria-labelledby="ask-heading">
+  <p class="panel-ref num">{t.card.ref} {l.ref}</p>
+
+  <p class="panel-price price">
+    {pv.onRequest ? <span class="panel-price-req">{t.card.priceOnRequest}</span> : pv.main}
+    {pv.sub && <span class="panel-price-sub">{pv.sub}</span>}
+  </p>
+
+  <h2 id="ask-heading" class="panel-title">{t.detail.ask}</h2>
+
+  <div class="panel-actions">
+    <a class="btn btn-primary" href={`tel:${SITE.phoneE164}`}>
+      <Icon name="phone" size={18} />
+      {t.detail.call}
+    </a>
+    <a class="btn btn-outline" href={waHref} rel="noopener">
+      <Icon name="message-circle" size={18} />
+      {t.detail.whatsapp}
+    </a>
+    <a class="btn btn-outline" href={SITE.viber}>
+      <Icon name="phone-call" size={18} />
+      {t.detail.viber}
+    </a>
+    <a class="btn btn-outline" href={mailHref}>
+      <Icon name="mail" size={18} />
+      {t.detail.email}
+    </a>
   </div>
-  <p class="contact-panel__price tabular">
-    {pv.onRequest ? t.card.priceOnRequest : <>{pv.main}{pv.sub && <span class="contact-panel__sub"> {pv.sub}</span>}</>}
+
+  <p class="panel-phone">
+    <a href={`tel:${SITE.phoneE164}`}>{SITE.phoneDisplay}</a>
+    <span class="note">{t.detail.viberNote}</span>
   </p>
-  <h2 id="contact-panel-title" class="contact-panel__title">{t.detail.ask}</h2>
-  <ul role="list" class="contact-panel__actions">
-    <li><a class="btn btn--block" href={`tel:${SITE.phoneE164}`}><Icon name="phone" />{t.detail.call}</a></li>
-    <li><a class="btn btn--block" href={wa}><Icon name="message-circle" />{t.detail.whatsapp}</a></li>
-    <li><a class="btn btn--outline btn--block" href={SITE.viber}><Icon name="phone-call" />{t.detail.viber}</a></li>
-    <li><a class="btn btn--outline btn--block" href={mail}><Icon name="mail" />{t.detail.email}</a></li>
-  </ul>
-  <p class="contact-panel__phone">
-    <span class="tabular">{SITE.phoneDisplay}</span>
-    <span class="contact-panel__note">{t.detail.viberNote}</span>
-  </p>
-  <div class="contact-panel__share">
-    <button type="button" class="btn btn--outline btn--block" data-share data-url={url} data-title={`${name} · Ref ${l.ref}`} data-copy-label={t.detail.copyLink} data-ok={t.detail.copied} data-fail={t.detail.copyFailed} data-status="share-status" hidden>
-      <Icon name="share-2" /><span data-label>{t.detail.share}</span>
+
+  <div class="panel-share">
+    <button class="panel-share-btn" type="button" data-share data-url={Astro.url.pathname} data-title={name}>
+      <Icon name="share-2" size={17} />
+      <span data-share-label>{t.detail.share}</span>
     </button>
-    <p id="share-status" class="contact-panel__status" role="status" aria-live="polite"></p>
+    <span class="sr-only" role="status" data-share-status></span>
   </div>
 </aside>
 
-<div class="action-bar" data-action-bar>
-  <a class="btn" href={`tel:${SITE.phoneE164}`}><Icon name="phone" />{t.detail.call}</a>
-  <a class="btn btn--cream" href={wa}><Icon name="message-circle" />{t.detail.whatsapp}</a>
-</div>
-
-<script>
-  import '../scripts/copy-share';
-</script>
-
 <style>
-  .contact-panel { background: var(--white); border: 1px solid var(--line); border-radius: var(--radius-lg); padding: var(--s-5); display: grid; gap: var(--s-3); }
-  .contact-panel__head { display: flex; justify-content: space-between; align-items: center; gap: var(--s-3); }
-  .contact-panel__price { font-size: var(--fs-lg); font-weight: 780; font-stretch: 110%; line-height: 1.2; }
-  .contact-panel__sub { font-size: var(--fs-sm); font-weight: 500; color: var(--muted); font-stretch: 100%; }
-  .contact-panel__title { font-size: var(--fs-md); margin-top: var(--s-2); }
-  .contact-panel { min-width: 0; }
-  .contact-panel__actions { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 8.5rem), 1fr)); gap: var(--s-2); }
-  .contact-panel__actions .btn { padding-inline: 0.6rem; }
-  .contact-panel__phone { display: grid; gap: 2px; font-weight: 650; }
-  .contact-panel__note { font-weight: 450; font-size: var(--fs-sm); color: var(--muted); }
-  .contact-panel__status { font-size: var(--fs-sm); color: var(--green-ink); min-height: 1.4em; margin-top: var(--s-1); }
-
-  .action-bar {
-    position: fixed; left: 0; right: 0; bottom: 0; z-index: 40;
-    display: grid; grid-template-columns: 1fr 1fr; gap: var(--s-2);
-    padding: var(--s-2) var(--gutter) calc(var(--s-2) + env(safe-area-inset-bottom));
-    background: var(--green); box-shadow: 0 -6px 20px rgb(0 0 0 / 0.18);
+  .panel {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--r-3);
+    padding: var(--s-5);
   }
-  .action-bar .btn { min-height: 48px; }
-  .action-bar .btn:not(.btn--cream) { --btn-bg: var(--green-deep); --btn-bd: rgb(239 232 216 / 0.55); --btn-fg: var(--cream); }
-  :global(body.has-action-bar) { padding-bottom: calc(64px + env(safe-area-inset-bottom)); }
-  @media (min-width: 62rem) {
-    .action-bar { display: none; }
-    :global(body.has-action-bar) { padding-bottom: 0; }
+  .panel-ref {
+    font-size: var(--step--1);
+    color: var(--ink-3);
+    letter-spacing: 0.04em;
+    margin: 0;
+  }
+  .panel-price {
+    font-size: var(--step-2);
+    font-weight: 700;
+    letter-spacing: -0.015em;
+    margin-block: var(--s-1) var(--s-4);
+  }
+  .panel-price-req {
+    font-size: var(--step-1);
+    color: var(--ink-2);
+  }
+  .panel-price-sub {
+    display: block;
+    font-size: var(--step--1);
+    font-weight: 400;
+    color: var(--ink-3);
+    letter-spacing: 0;
+  }
+  .panel-title {
+    font-size: var(--step-0);
+    font-weight: 600;
+    font-variation-settings: 'wdth' 100;
+    color: var(--ink-2);
+    margin-block-end: var(--s-3);
+  }
+  .panel-actions {
+    display: grid;
+    gap: var(--s-2);
+  }
+  .panel-phone {
+    margin-block-start: var(--s-4);
+    display: grid;
+    gap: var(--s-1);
+    font-weight: 600;
+  }
+  .panel-phone a {
+    text-decoration: none;
+  }
+  .panel-phone .note {
+    font-weight: 400;
+  }
+  .panel-share {
+    margin-block-start: var(--s-4);
+    padding-block-start: var(--s-4);
+    border-block-start: 1px solid var(--line);
+  }
+  .panel-share-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--s-2);
+    min-height: 44px;
+    font-size: var(--step--1);
+    font-weight: 600;
+    color: var(--ink-2);
+  }
+  .panel-share-btn:hover {
+    color: var(--ink);
   }
 </style>
+
+<script>
+  import { dict } from '../i18n';
+
+  const btn = document.querySelector<HTMLButtonElement>('[data-share]');
+  const label = document.querySelector<HTMLElement>('[data-share-label]');
+  const status = document.querySelector<HTMLElement>('[data-share-status]');
+
+  if (btn && label) {
+    const t = dict(document.documentElement.lang === 'en' ? 'en' : 'sq');
+    const canShare = typeof navigator.share === 'function';
+
+    // Honest label: without the Share API this button copies a link, so say so.
+    if (!canShare) label.textContent = t.detail.copyLink;
+
+    const say = (msg: string) => {
+      label.textContent = msg;
+      if (status) status.textContent = msg;
+      setTimeout(() => {
+        label.textContent = canShare ? t.detail.share : t.detail.copyLink;
+      }, 3000);
+    };
+
+    btn.addEventListener('click', async () => {
+      const url = location.href;
+      if (canShare) {
+        try {
+          await navigator.share({ title: btn.dataset.title ?? document.title, url });
+          return;
+        } catch {
+          /* dismissed, or unavailable: fall through to copying */
+        }
+      }
+      try {
+        await navigator.clipboard.writeText(url);
+        say(t.detail.copied);
+      } catch {
+        say(t.detail.copyFailed);
+      }
+    });
+  }
+</script>

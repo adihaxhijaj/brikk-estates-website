@@ -1,0 +1,13 @@
+---
+import ListingDetail from '../../../layouts/ListingDetail.astro';
+import { getVisibleListings } from '../../../lib/listings';
+
+export async function getStaticPaths() {
+  const all = await getVisibleListings();
+  return all.map((listing) => ({ params: { slug: listing.slugEn }, props: { listing, all } }));
+}
+
+const { listing, all } = Astro.props;
+---
+
+<ListingDetail listing={listing} all={all} lang="en" />

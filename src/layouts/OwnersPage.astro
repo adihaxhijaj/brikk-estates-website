@@ -1,0 +1,212 @@
+---
+import Base from './Base.astro';
+import Icon from '../components/Icon.astro';
+import OwnerComposer from '../components/OwnerComposer.astro';
+import parts from '../assets/brand/logo-parts.json';
+import { SITE } from '../config/site';
+import { dict, route, type Lang } from '../i18n';
+import { getVisibleListings } from '../lib/listings';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const t = dict(lang);
+const other: Lang = lang === 'en' ? 'sq' : 'en';
+
+const all = await getVisibleListings();
+const cities = [...new Set(all.map((l) => (lang === 'en' ? l.cityEn : l.city)).filter((c): c is string => Boolean(c)))].sort();
+
+const sym = parts.symbol as { viewBox: number[]; paths: string[] };
+---
+
+<Base
+  lang={lang}
+  title={t.owners.metaTitle}
+  description={t.owners.metaDescription}
+  path={route('owners', lang)}
+  altPath={route('owners', other)}
+>
+  <section class="own-hero on-green">
+    <div class="wrap own-hero-in">
+      <div>
+        <h1>{t.owners.h1}</h1>
+        <p class="lede own-intro">{t.owners.intro}</p>
+        <a class="btn btn-cream" href="#composer">
+          {t.owners.composerTitle}
+          <Icon name="arrow-right" size={18} />
+        </a>
+      </div>
+      <svg class="own-mark" viewBox={sym.viewBox.join(' ')} aria-hidden="true">
+        <g fill={parts.colours.leaf}>{sym.paths.map((d) => <path d={d} />)}</g>
+      </svg>
+    </div>
+  </section>
+
+  <section class="section wrap own-cols">
+    <div>
+      <h2>{t.owners.servicesTitle}</h2>
+      <ul class="own-services">
+        {t.owners.services.map((s) => <li>{s}</li>)}
+      </ul>
+    </div>
+
+    <div>
+      <h2>{t.owners.processTitle}</h2>
+      <ol class="own-process">
+        {
+          t.owners.process.map((p, i) => (
+            <li>
+              <span class="own-step num">{i + 1}</span>
+              <div>
+                <h3>{p.title}</h3>
+                <p>{p.text}</p>
+              </div>
+            </li>
+          ))
+        }
+      </ol>
+    </div>
+  </section>
+
+  <section class="section-tight wrap own-composer">
+    <h2 id="composer-title">{t.owners.composerTitle}</h2>
+    <p class="lede">{t.owners.composerIntro}</p>
+    <OwnerComposer lang={lang} cities={cities} />
+
+    <p class="own-direct">
+      <a href={`tel:${SITE.phoneE164}`}>
+        <Icon name="phone" size={17} />
+        {SITE.phoneDisplay}
+      </a>
+      <a href={`mailto:${SITE.emailInfo}`}>
+        <Icon name="mail" size={17} />
+        {SITE.emailInfo}
+      </a>
+    </p>
+  </section>
+</Base>
+
+<style>
+  .own-hero {
+    padding-block: clamp(2.5rem, 1.5rem + 4vw, 4.5rem);
+    overflow: hidden;
+  }
+  .own-hero-in {
+    position: relative;
+    display: grid;
+    align-items: center;
+  }
+  .own-hero h1 {
+    font-size: var(--step-3);
+    font-variation-settings: 'wdth' var(--wide);
+    max-width: 20ch;
+  }
+  .own-intro {
+    margin-block: var(--s-4) var(--s-5);
+    max-width: 58ch;
+  }
+  .own-mark {
+    position: absolute;
+    inset-block-start: 50%;
+    inset-inline-end: -8%;
+    translate: 0 -50%;
+    width: min(360px, 34vw);
+    opacity: 0.14;
+    pointer-events: none;
+  }
+
+  .own-cols {
+    display: grid;
+    gap: var(--s-7);
+  }
+  .own-cols h2 {
+    font-size: var(--step-2);
+    margin-block-end: var(--s-4);
+  }
+
+  .own-services {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: var(--s-3);
+    max-width: var(--measure);
+  }
+  .own-services li {
+    position: relative;
+    padding-inline-start: var(--s-6);
+    font-size: var(--step-1);
+    color: var(--ink-2);
+  }
+  /* A single house piece from the symbol as the list marker. */
+  .own-services li::before {
+    content: '';
+    position: absolute;
+    inset-inline-start: 0;
+    inset-block-start: 0.5em;
+    width: 12px;
+    height: 13px;
+    background: var(--green-500);
+    clip-path: polygon(50% 0, 100% 34%, 100% 100%, 0 100%, 0 34%);
+  }
+
+  .own-process {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: var(--s-5);
+  }
+  .own-process li {
+    display: flex;
+    gap: var(--s-4);
+    align-items: flex-start;
+  }
+  .own-step {
+    flex: none;
+    display: grid;
+    place-items: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 999px;
+    background: var(--green-500);
+    color: var(--cream);
+    font-weight: 700;
+  }
+  .own-process h3 {
+    font-size: var(--step-1);
+  }
+  .own-process p {
+    color: var(--ink-2);
+    margin-block-start: var(--s-1);
+  }
+
+  .own-composer h2 {
+    font-size: var(--step-2);
+  }
+  .own-composer .lede {
+    margin-block: var(--s-3) var(--s-5);
+  }
+  .own-direct {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--s-3) var(--s-6);
+    margin-block-start: var(--s-5);
+  }
+  .own-direct a {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--s-2);
+    min-height: 44px;
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  @media (min-width: 900px) {
+    .own-cols {
+      grid-template-columns: 1fr 1fr;
+      gap: var(--s-8);
+    }
+  }
+</style>

@@ -5,6 +5,11 @@ import fs from 'node:fs';
 import path from 'node:path';
 
 const DIST = 'dist';
+// Contact addresses come from the site config, so this check follows any change made there.
+const siteConfig = fs.readFileSync('src/config/site.ts', 'utf8');
+const emails = [...siteConfig.matchAll(/email\w*:\s*'([^']+@[^']+)'/g)].map((m) => m[1]);
+const escapeRe = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+const mailtoOk = new RegExp(`^mailto:(${emails.map(escapeRe).join('|')})(\\?|$)`);
 const pages = [];
 (function walk(dir) {
   for (const e of fs.readdirSync(dir, { withFileTypes: true })) {
@@ -56,7 +61,7 @@ for (const file of pages) {
     } else if (u.startsWith('tel:') && u !== 'tel:+38345667705') problems.push(`${rel}: unexpected tel ${u}`);
     else if (u.startsWith('https://wa.me/') && !u.startsWith('https://wa.me/38345667705')) problems.push(`${rel}: unexpected WhatsApp ${u}`);
     else if (u.startsWith('viber:') && u !== 'viber://chat?number=%2B38345667705') problems.push(`${rel}: unexpected Viber ${u}`);
-    else if (u.startsWith('mailto:') && !/^mailto:(info|properties)@brikkestates\.com(\?|$)/.test(u)) problems.push(`${rel}: unexpected mailto ${u}`);
+    else if (u.startsWith('mailto:') && !mailtoOk.test(u)) problems.push(`${rel}: unexpected mailto ${u}`);
   }
   for (const m of html.matchAll(/srcset="([^"]+)"/g)) {
     for (const part of m[1].split(',')) {
@@ -72,7 +77,7 @@ for (const file of pages) {
 const listingPagesSq = pages.filter((p) => /[\\/]prona[\\/]b\d{3}-/.test(p)).length;
 const listingPagesEn = pages.filter((p) => /[\\/]en[\\/]properties[\\/]b\d{3}-/.test(p)).length;
 const allIndex = fs.readFileSync(path.join(DIST, 'prona', 'index.html'), 'utf8');
-const cardsInHtml = (allIndex.match(/class="card__link/g) ?? []).length;
+const cardsInHtml = (allIndex.match(/<li[^>]* data-ref="B\d{3}"/g) ?? []).length;
 
 console.log(`${pages.length} HTML pages, ${links} internal links/assets, ${jsonld} JSON-LD blocks`);
 console.log(`listing pages: sq ${listingPagesSq}, en ${listingPagesEn}; cards in static /prona/ HTML: ${cardsInHtml}`);

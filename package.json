@@ -10,8 +10,12 @@
     "import": "tsx scripts/import-listings.ts",
     "import:sheets": "tsx scripts/make-contact-sheets.ts",
     "build": "astro build",
-    "build:staging": "node scripts/build-staging.mjs", "check:dist": "node scripts/check-dist.mjs", "check:contrast": "node scripts/check-contrast.mjs",
+    "build:staging": "node scripts/build-staging.mjs",
+    "check:dist": "node scripts/check-dist.mjs",
+    "check:contrast": "node scripts/check-contrast.mjs",
     "preview": "astro preview",
+    "admin": "tsx admin/server.ts",
+    "admin:user": "tsx admin/users.ts",
     "check": "astro check",
     "astro": "astro"
   },
@@ -28,7 +32,6 @@
   "devDependencies": {
     "@astrojs/check": "^0.9.10",
     "@types/node": "^26.5.1",
-    "potrace": "^2.1.8",
     "tsx": "^4.23.13",
     "typescript": "^6.0.3"
   },

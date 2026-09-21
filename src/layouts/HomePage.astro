@@ -1,0 +1,328 @@
+---
+import Base from './Base.astro';
+import Icon from '../components/Icon.astro';
+import ListingCard from '../components/ListingCard.astro';
+import SearchPanel from '../components/SearchPanel.astro';
+import parts from '../assets/brand/logo-parts.json';
+import { SITE } from '../config/site';
+import { dict, route, type Lang } from '../i18n';
+import { cityName, getVisibleListings } from '../lib/listings';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const t = dict(lang);
+const other: Lang = lang === 'en' ? 'sq' : 'en';
+
+const all = await getVisibleListings();
+const latest = all.slice(0, 8);
+
+// In the page's language: the index filters match on the same names (cityEn on /en/).
+const cities = [...all.reduce((m, l) => {
+  const c = cityName(l, lang);
+  return c ? m.set(c, (m.get(c) ?? 0) + 1) : m;
+}, new Map<string, number>())]
+  .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))
+  .map(([c]) => c);
+
+const sym = parts.symbol as { viewBox: number[]; paths: string[] };
+// Each piece sits on a 60° spoke; the brand moment slides it in along its own spoke.
+const spokes = sym.paths.map((d, i) => {
+  const a = ((-90 + i * 60) * Math.PI) / 180;
+  return { d, dx: Math.cos(a) * 26, dy: Math.sin(a) * 26, delay: i * 45 };
+});
+---
+
+<Base
+  lang={lang}
+  title={t.meta.homeTitle}
+  description={t.meta.homeDescription}
+  path={route('home', lang)}
+  altPath={route('home', other)}
+>
+  <section class="hero on-green">
+    <div class="wrap hero-in">
+      <div class="hero-copy">
+        <p class="eyebrow hero-eyebrow">{t.home.eyebrow}</p>
+        <h1>{t.home.h1}</h1>
+        <p class="lede hero-support">{t.home.support}</p>
+        <SearchPanel lang={lang} cities={cities} />
+      </div>
+
+      <div class="hero-mark" aria-hidden="true">
+        <svg viewBox={sym.viewBox.join(' ')} data-hero-symbol>
+          <g fill={parts.colours.leaf}>
+            {spokes.map((p) => <path d={p.d} style={`--dx:${p.dx}px; --dy:${p.dy}px; --delay:${p.delay}ms`} />)}
+          </g>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="head">
+        <h2>{t.home.latestTitle}</h2>
+        <a class="head-link" href={route('properties', lang)}>
+          {t.home.viewAll}
+          <Icon name="arrow-right" size={18} />
+        </a>
+      </div>
+      <ul class="grid-cards">
+        {
+          latest.map((l, i) => (
+            <li>
+              <ListingCard listing={l} lang={lang} eager={i < 2} />
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <h2 class="why-title">{t.home.whyTitle}</h2>
+      <ul class="why">
+        {
+          t.home.why.map((w) => (
+            <li>
+              <svg class="why-mark" viewBox={sym.viewBox.join(' ')} aria-hidden="true">
+                <path d={sym.paths[0]} fill={parts.colours.green} />
+              </svg>
+              <h3>{w.title}</h3>
+              <p>{w.text}</p>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </section>
+
+  <section class="on-green owners-band">
+    <div class="wrap owners-in">
+      <div>
+        <h2>{t.home.ownersTitle}</h2>
+        <p class="lede">{t.home.ownersText}</p>
+      </div>
+      <a class="btn btn-cream" href={route('owners', lang)}>
+        {t.home.ownersCta}
+        <Icon name="arrow-right" size={18} />
+      </a>
+    </div>
+  </section>
+
+  <section class="section-tight">
+    <div class="wrap contact-strip">
+      <h2>{t.home.contactTitle}</h2>
+      <div class="contact-actions">
+        <a class="btn btn-primary" href={`tel:${SITE.phoneE164}`}>
+          <Icon name="phone" size={18} />
+          {SITE.phoneDisplay}
+        </a>
+        <a class="btn btn-outline" href={SITE.whatsapp} rel="noopener">
+          <Icon name="message-circle" size={18} />
+          WhatsApp
+        </a>
+        <a class="btn btn-outline" href={SITE.viber}>
+          <Icon name="phone-call" size={18} />
+          Viber
+        </a>
+        <a class="btn btn-outline" href={`mailto:${SITE.emailInfo}`}>
+          <Icon name="mail" size={18} />
+          {SITE.emailInfo}
+        </a>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  /* ---- Hero ---- */
+  .hero {
+    position: relative;
+    overflow: hidden;
+    padding-block: clamp(2.5rem, 1.5rem + 5vw, 5.5rem);
+  }
+  .hero-in {
+    position: relative;
+    display: grid;
+    gap: var(--s-6);
+    align-items: center;
+  }
+  .hero-copy {
+    position: relative;
+    z-index: 1;
+    max-width: 720px;
+  }
+  .hero-eyebrow {
+    color: var(--leaf-text);
+    margin-block-end: var(--s-4);
+  }
+  .hero h1 {
+    font-size: var(--step-4);
+    font-variation-settings: 'wdth' var(--wider);
+    max-width: 16ch;
+  }
+  .hero-support {
+    margin-block: var(--s-4) var(--s-6);
+    max-width: 48ch;
+  }
+
+  .hero-mark {
+    position: absolute;
+    inset-block-start: 50%;
+    inset-inline-end: calc(var(--gutter) * -1);
+    translate: 22% -50%;
+    width: min(560px, 46vw);
+    opacity: 0.16;
+    pointer-events: none;
+  }
+  .hero-mark svg {
+    width: 100%;
+    height: auto;
+  }
+
+  /* Brand moment: pieces settle into the ring once per tab session. */
+  .hero-mark path {
+    opacity: 1;
+  }
+  :global(html.js) [data-hero-symbol].play path {
+    animation: settle 620ms var(--ease) both;
+    animation-delay: var(--delay);
+  }
+  @keyframes settle {
+    from {
+      opacity: 0;
+      translate: var(--dx) var(--dy);
+    }
+    to {
+      opacity: 1;
+      translate: 0 0;
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    :global(html.js) [data-hero-symbol].play path {
+      animation: none;
+    }
+  }
+
+  @media (min-width: 900px) {
+    .hero-in {
+      grid-template-columns: minmax(0, 1fr);
+    }
+  }
+
+  /* ---- Section heads ---- */
+  .head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: var(--s-3);
+    margin-block-end: var(--s-5);
+  }
+  .head-link {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--s-2);
+    font-weight: 600;
+    font-size: var(--step-0);
+    text-decoration: none;
+    color: var(--green-500);
+    min-height: 44px;
+  }
+  .head-link:hover {
+    text-decoration: underline;
+  }
+
+  .grid-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr));
+    gap: var(--s-5);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .why-title {
+    margin-block-end: var(--s-5);
+    font-size: var(--step-2);
+  }
+
+  /* ---- Why ---- */
+  .why {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
+    gap: var(--s-6) var(--s-5);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .why li {
+    display: grid;
+    gap: var(--s-2);
+    align-content: start;
+  }
+  .why-mark {
+    width: 20px;
+    height: 23px;
+    margin-block-end: var(--s-1);
+  }
+  .why h3 {
+    font-size: var(--step-1);
+  }
+  .why p {
+    color: var(--ink-2);
+    max-width: 38ch;
+  }
+
+  /* ---- Owners band ---- */
+  .owners-band {
+    padding-block: clamp(2.5rem, 1.5rem + 4vw, 4.5rem);
+  }
+  .owners-in {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--s-5);
+    align-items: center;
+    justify-content: space-between;
+  }
+  .owners-in h2 {
+    font-size: var(--step-3);
+    font-variation-settings: 'wdth' var(--wide);
+    max-width: 18ch;
+  }
+  .owners-in .lede {
+    margin-block-start: var(--s-3);
+    max-width: 52ch;
+  }
+
+  /* ---- Contact strip ---- */
+  .contact-strip h2 {
+    font-size: var(--step-2);
+    margin-block-end: var(--s-4);
+    max-width: 24ch;
+  }
+  .contact-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--s-3);
+  }
+</style>
+
+<script>
+  // Runs once per tab session; never blocks interaction.
+  const mark = document.querySelector<SVGElement>('[data-hero-symbol]');
+  if (mark) {
+    let played = false;
+    try {
+      played = Boolean(sessionStorage.getItem('brikk-hero-played'));
+      if (!played) sessionStorage.setItem('brikk-hero-played', '1');
+    } catch {
+      /* private mode: the animation simply plays again next load */
+    }
+    if (!played) mark.classList.add('play');
+  }
+</script>
